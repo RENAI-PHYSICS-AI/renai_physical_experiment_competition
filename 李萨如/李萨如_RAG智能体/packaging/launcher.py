@@ -43,6 +43,7 @@ def application_environment() -> dict[str, str]:
             ),
             "LISSAJOUS_JULIA_PROJECT_DIR": str(root / "julia_app"),
             "LISSAJOUS_WEB_HOST": "127.0.0.1",
+            "LISSAJOUS_WEB_BROWSER_HOST": "localhost",
             "LISSAJOUS_WEB_PORT": str(JULIA_PORT),
             "LISSAJOUS_LLM_API_KEY": reveal_api_key(),
             "STREAMLIT_BROWSER_GATHER_USAGE_STATS": "false",

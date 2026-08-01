@@ -12,8 +12,6 @@ using LinearAlgebra
 using Printf
 using WGLMakie
 
-WGLMakie.activate!(; use_html_widgets = true)
-
 const TWO_PI = 2pi
 const ACCENT_X = RGBf(0.18, 0.78, 0.92)
 const ACCENT_Y = RGBf(0.94, 0.35, 0.50)
@@ -31,12 +29,24 @@ function first_existing_font(candidates)
 end
 
 function configure_theme!()
+    app_font = normpath(
+        joinpath(
+            Sys.BINDIR,
+            "..",
+            "share",
+            "lissajous",
+            "fonts",
+            "NotoSansCJKsc-Regular.otf",
+        ),
+    )
     regular = first_existing_font([
+        app_font,
         raw"C:\Windows\Fonts\msyh.ttc",
         "/System/Library/Fonts/PingFang.ttc",
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     ])
     bold = first_existing_font([
+        app_font,
         raw"C:\Windows\Fonts\msyhbd.ttc",
         "/System/Library/Fonts/PingFang.ttc",
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
@@ -61,8 +71,6 @@ function configure_theme!()
         ),
     )
 end
-
-configure_theme!()
 
 function ellipse_geometry(amplitude_x, amplitude_y, phase)
     matrix = [
@@ -573,6 +581,8 @@ function run_self_test()
 end
 
 function main()
+    WGLMakie.activate!(; use_html_widgets = true)
+    configure_theme!()
     if "--self-test" in ARGS
         run_self_test()
         return

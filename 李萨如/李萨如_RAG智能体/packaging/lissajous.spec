@@ -76,5 +76,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name="李萨如图形实验智能助教",
+    name="LissajousExperimentTutor",
 )

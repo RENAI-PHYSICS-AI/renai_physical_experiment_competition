@@ -1,0 +1,14 @@
+name = "LissajousWebRuntime"
+uuid = "6c265387-8668-4f23-b83c-9ec46f0b3d74"
+version = "1.0.0"
+
+[deps]
+Bonito = "824d6782-a2ef-11e9-3a09-e5662e0c26f8"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
+
+[compat]
+Bonito = "4.2"
+WGLMakie = "0.13"
+julia = "1.10"

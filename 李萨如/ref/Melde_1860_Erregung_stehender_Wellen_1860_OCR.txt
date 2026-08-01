@@ -1,0 +1,1081 @@
+===== PDF 544 / PRINTED 513 =====
+1860. ANNALEN No, 12.
+
+DER PHYSIK UND CHEMIE.
+BAND CXI.
+
+I. Ueber die Erregung stehender VVellen eines
+fadenförmigen Körpers; von Dr. F. Melde.
+
+(Zweite Abtheilung.)
+
+Die nachfolgende Arbeit ist als die Fortsetzung derjenigen
+zu betrachten, welch ’n Pogg. Ann. Bd. 109, S. 193 von
+
+mir veröffentlicht - :ue, uud an welche sie sich mit dem
+23. Paragraphen © ....st, um leichter auf bereits Bekanntes
+hinweisen zu kön::. .. Sie konnte deshalb nicht f:iher jener
+ersten Abtheilung fo'zen, iheils weil ich durch . Were Ar-
+
+beiten in Anspruch genommen war, theils weil ich vorher
+eine theoretische Untersuchung über den in Rede stehen-
+den Gegenstand anstellen mufste, um nicht in der Auffas-
+sung und Erklärung vieler der nachfolgenden Erscheinun-
+gen Fehler zu begehen.
+
+Aus dieser theoretischen Untersuchung sind bereits ein-
+zelne Resultate, ohne weiteren Nachweis ihrer Richtigkeit,
+in die vorliegende Arbeit aufgenommen, in der Voraussicht,
+dafs ich dieselben demnächst im Znsammenhauge mit andern
+gefundenen, der Oeffentlichkeit übergeben werde. Um den
+Gegenstand dieser theoretischen Untersuchung jedoch vor-
+Jäufig anzudeuten, sey bemerkt, dafs er die allgemeine Dar-
+stellung derjenigen Erscheinungen betrifft, welche theilweise
+schon bekannt wurden durch die Experimente mit Hülfe
+des Wheatstone’schen Kaleidophons, theilweise durch
+die in jeder Beziehung so interessante Abhandlung des
+Hrn. Lissajous in den Ann. de chim. et de phys. Bd. LI,
+p- 147. 1857.
+
+In Betreff der ersten Abtheilung gegenwärtiger Unter-
+suchung mufs ich zur Berichtigung anführen, dafs die Stivaw-
+
+Poggendorff’s Annal. Bd. CXI. ES
+
+===== PDF 545 / PRINTED 514 =====
+514
+
+gabeln, welche ich zu den Versuchen anwandte, nicht den
+
+Ton des. © sondern, des. c gaben. , Es beeinträchtigt dieses
+jedoch nicht die bereits mitgetheilten Resultate in ihrer
+Richtigkeit und es ist nur nölhig, da wo durch Buchstaben
+Töne bezeichnet sind, diese eine Octave tiefer zu denken,
+
+Im folgenden gilt demnach als Gabelton das c.
+
+8. 23.
+
+In der Fig. 6, Tab. Il, Bd, 109 ist die Einrichtung ver-
+sinnlicht, welche ich traf, um mit zweien Stimmgabeln zu
+experimentiren. Mit Hülfe dieser Einrichtung wird man
+die, im'8. 19 angegebenen Resultate, von Neuem, mit grö-
+fserer Leichtigkeit und Allgemeinheit bestätigt finden. Man
+drehe nämlich die eine der Stimmgabeln, etwa die rechte,
+in die Parallelstellung, die linke aber in die Transversal-
+stellung. Besitzt nun der Faden eine Hauptspannung, so
+wird sich, beim Anstreichen der rechten Gabel, eine An-
+zahl halber Wellenlängen zeigen, welche eben jener Span-
+nung' entspricht, beim Anstreichen der linken Gabel dage-
+gen, wird sich diese Zahl verdoppeln. Besitzt der Faden
+dagegen eine Nebenspannung, so wird sich die Anzahl der
+halben Wellenlängen in beiden Fällen gleich bleiben.
+
+Die Leichtigkeit dieses Versuchs im Vergleich zu dem,
+im $. 19 angegebenen, besteht darin, dafs man nicht erst
+Drehungen vorzunehmen hat, um einmal die Gabel parallel
+das anderemal transversal auf den Faden schwingend zu
+machen, sondern dafs man von vornherein in den beiden
+Stimmgabeln eine parallel und eine transversal schwingende
+besitzt. Da es bei diesem Versuche wesentlich ist, dafs
+der Faden‘ bei der Parallel- wie bei der Transversalstel-
+lung dieselbe Spannung besitzt, so wurde diels bei dem
+Versuche mit einer Stimmgabel nur dadurch erreicht, dafs
+man im Stande war, den Ton zu hören, welchen der Fa-
+den seiner ganzen Länge nach gab, was jedoch nur noch
+bei der zweiten Hauptspannung möglich war, Bei der An-
+wendung zweier Stimmgabeln dagegen ist man von diesem
+Hören unabhängig gemacht, man kann mithin den Versuch
+
+===== PDF 546 / PRINTED 515 =====
+515
+
+für eine beliebige Spannung anstellen, und hierin besteht
+seine Allgemeinheit.
+8. 24.
+
+Für die weitern Versuche benutzte ich zunächst den,
+in der Fig. 4 Tab. II Bd, 109 abgebildeten und 8. 11 be-
+schriebenen Apparat. Seine Einrichtung gestattete indefs
+nur, eine bestimmte Fadenstrecke, deren Länge gleich der
+Länge des Radius, womit der Kreisbogen AB beschrieben
+war, der Untersuchung zu unterwerfen. Für die Folge
+wurde es nun wesentlich, Fadenstrecken verschiedener
+Länge benutzen zu können, und ich habe deshalb statt
+des bereits bekannten Apparats einen andern construirt,
+der diesen Anforderungen entspricht, und jenen wohl auch
+noch an Einfachheit übertrifft, Die Fig, 1 Taf, VIII ver-
+sinnlicht diesen neuen Apparat. A nnd B stellen zwei ziem-
+lich starke prisınatische Holzstücke vor, welche rechtwink-
+lich zu einander eingefügt sind, und so einen Winkelhaken
+bilden. Das Stück B, welches in der Figur horizontal He-
+gend erscheint, ist bei o mit einem verticalen Loche durch*
+bohrt, um in dasselbe die Stimmgabel einzuschrauben, wel-
+che übrigens ganz atf die im $. 11 angegebene Weise her-
+gerichtet ist, und so festgeschraubt seyn mufs, dafs sie noch
+bequem eine Drehung um ihre Axe gestattet, In gleicher
+Höhe mit dem Punkte m ist das Holzstück A von vorn nach
+hinten mit einem horizontalen Loche durchbohrt, welches
+dazu bestimmt ist, eine Axe aufzunehmen, um welche sich
+die Leiste € drehen kann. Das Feststellen der Leiste €
+unter einem beliebigen Winkel gegen den Horizont wird
+durch die bei r vorgeschraubte Mutter bewirkt. Längs der
+Holzleiste € ist die Klammer k verschiebbar, welche die
+kleine Klemmschraube / trägt, um hierin das andere Ende
+des Fadens zu befestigen. Diese Einrichtungen des Appa-
+rats gestatten nun erstens: die Gabel beliebig um ihre Axe
+zu drehen; zweitens: den Faden durch die Drehung der
+Leiste € um die Axe mr beliebig gegen den Horizont zu
+spannen; drittens: durch die Verschiebung der Klammer k
+
+längs der Leiste C hald ein längeres bald ein kürzeres Fa-
+a.
+
+===== PDF 547 / PRINTED 516 =====
+516
+
+denstück abzugränzen. Es wurde, jedoch aufserdem noch
+wünschenswerth, den ganzen Apparat um eine horizontale
+Axe drehen zu können, und um diefs zu erreichen ist, senk-
+recht in das Stück B ein cylindrischer Zapfen horizontal
+eingelassen, dessen freies Ende in ein cylindrisches, die
+Schraubzwinge D horizontal durchbohrendes, Loch pafst,
+und hier mittelst der Mutter s angezogen werden kann.
+Der ganze Apparat ist also zunächst in der Schraubzwinge
+D und mit dieser etwa an einer Tischplatte befestigt. Noch
+sey bemerkt, dafs auf der vordern Seite der Leiste C ein
+Maafsstab, nach Centimetern abgetheilt, verzeichnet ist, um
+sofort. eine bestimmte Fadenstrecke abzumessen und auch
+um auf der Länge des schwingenden Fadens bestimmte
+Orientirungspunkte zu haben.
+8. 25.
+
+Bisher war nur von solchen Schwingungen des Fadens
+die Rede, bei denen er eine ganze Anzahl halber Wellen-
+längen bildete. Die fortgesetzten Experimente lehrten mich
+zunächst solche kennen, bei denen diese Anzahl eine ge-
+brochene. Diefls findet nämlich dann statt, wenn die Gabel
+transversal anf den Faden schwingt, also, wenn entweder
+der Faden horizontal läuft und die Gabel aus der, in der
+Fig. 1 gezeichneten Ruhelage um 90° herausgedreht wird, oder
+wenn der Faden vertical läuft und die Gabel beliebig steht.
+
+Giebt man unter einer dieser Voraussetzungen dem Fa-
+den nun z, B, die dritte Nebenspannung, so zeigt er drei
+halbe Wellenlängen Fig. 2, @ und schreitet man durch all
+mähliches Anziehen des Fadens von der dritten zur zwei-
+ten Nebenspannung fort, so zeigt derselbe bei diesen TTeber-
+gangsspannungen zwei halbe Wellenlängen und noch einen
+Bruchtheil einer halben Wellenlänge, der zunächst der Ga-
+bel liegt und um so kleiner wird, je mehr sich die Span.
+nung der zweiten Nebenspannung nähert. Die Figuren 2,
+b, €, d, stellen. den Faden in ‘dreien Momenten dar, bei
+denen er gerade (2+443), (2 +24) (244) halbe Wellen-
+längen bildet; die Knotenpunkte rücken. hierbei immer nä-
+her an das Ende m heran, bis endlich, wenn die zweite
+
+===== PDF 548 / PRINTED 517 =====
+547
+
+Nebenspannung erreicht ist, 0, mit m zusammenfällt. Bei
+diesem Uebergange erkennt man ferner ein sehr deutliches
+Ab- und Zunehmen in den Elongationsweiten der halben
+Wellenlängen, nämlich: von der dritten Nebenspannung an
+nehmen die Elongationen sehr rasch ab, bis zu dem Mo-
+mente, wo er (2 +4) halbe Weilenlängen bildet, und von
+hier an wiederum zu, bis die zweite Nebenspannung er-
+reicht ist.
+
+Schreitet ınan von der zweiten zur ersten Nebemnspan-
+nung fort, so zeigt der Faden bei den Uebergangsspannun-
+gen eine halbe Wellenlänge und noch einen Bruchtheil
+einer halben Wellenlänge, wie die Figuren 3, b, c, d, ver-
+sinnlichen, für die Momente, wo er gerade (1L+1), (1+321)
+(1+4) halbe Wellenläugen bildet, Man erkennt wiederum
+ein Abnehmen der Elongationen von der zweiten Neben-
+spannung an bis zu dem Punkte, wo er (1+4) halbe
+Wellenlängen zeigt und von hier an ein Zunehmen bis zur
+ersten Nebenspannung.
+
+Geht man über die erste Nebenspannung hinaus, so zeigt
+der Faden nur noch einen Bruchtheil einer halben Wel-
+lenlänge, wie die Figuren 4, b, c versinnlichen für die Mo-
+mente, wo dieser Bruchtheil gleich 3 und % ist. Geht man
+noch über die der Fig. 4, c entsprechende Spannung hin-
+aus, so werden sich begreiflicher Weise die Figuren nicht
+mehr von der Figur 4, c unterscheiden, wiewohl man die
+weitern Bruchtheile einer halben Wellenlänge kleiner als
++ zu betrachten hat.
+
+Man wird nach dem Gesagten die Erscheinungen vor-
+aussehen, welche stattfinden, wenn man von einer niedri-
+geren Spannung, wie etwa von der fünften Nebenspannung,
+ausgegangen wäre und diese Spannung‘ successiv in die
+vierte, dritte u, s. w. Nebenspaunung übergeführt hätte,
+
+Um eine Erklärung abzugeben für das Ab- und Zu-
+nehmen der Elongationsweiten, beachte man folgendes; Der
+eine Endpunkt m des Fadens ist kein fester Punkt, sondern
+er schwingt zwischen bestimmten Gränzen « und @ Fig. 2; b
+hin und her, deren Weite von der Schwingungsweite der
+
+===== PDF 549 / PRINTED 518 =====
+518
+
+Gabel abhängt. Bei derjenigen Spannung nun, wo der
+Faden (n-+4) halbe Wellenlängen bildet, wird die Elon-
+gationsweite, welche den Schwingungsmaximis (nämlich den
+Mittelpunkten der halben Wellen) entspricht, gleich seyn
+müssen der Elongationsweite des Punktes m, gleich «7, da
+ja der Punkt m in diesen Fällen der Mittelpunkt einer hal-
+ben Wellenlänge ist. Diese Eigenschaft verliert aber der
+Punkt m bei solchen Spannungen, wo der Faden nicht
+genau (2 + 4) halbe Wellenlänge bildet, seine Elongations-
+weite «x entspricht demnach der Elongationsweite solcher
+Punkte, die gleichweit rechts oder links von den Schwin-
+gungsmaximis entfernt liegen, die Elongationsweiten der letz-
+tern müssen demnach gröfser seyn als @f.
+
+Zugleich leuchtet noch ein, dafs die Zeichnungen der
+Figuren 2, a; 3,a; 4, a; der Wirklichkeit nicht vollständig
+entsprechen, indem ja auch in diesen Fällen der Punkt m
+kein Punkt der Ruhe ist, sondern dafs z, B, die Fig, 3, a
+nur den Moment darstellt, in welchem der Knotenpunkt 0,
+sehr nahe an m gerückt ist. Nur mit Rücksicht auf diese
+Erklärungsweise kann man also von einer ganzen Anzahl
+halber Wellenlängen bei den Nebenspannungen reden.
+
+8. 26.
+
+Da die Nebenschwingungen bei der Parallelstellung der
+Gabel ebenfalls sichtbar sind, so liels sich voraussehen, dafs
+die im vorigen Paragraphen angeführten Erscheinungen auch
+bei dieser Stellung der Gabel auftreten würden. Da bei
+den Uebergangsspainungen, wie im vorigen Paragraphen
+nachgewiesen, die Elongationen sehr rasch abnehmen, da
+ferner bei der Parallelstellung der Gabel eine viel geringere
+Componente transversal auf den Faden wirkt, wie bei der
+Transversalstellung, so war es leicht zu erklären, warum
+sich die dem vorigen Paragraphen analogen Erscheinungen
+jetzt bei der Parallelstellung nicht unmittelbar mit dem Auge
+verfolgen liefsen und es lag der Gedanke nah, dafs diels
+mit Hülfe eines Papierreiterchens gelingen müfste. Da aber
+Papierreiter auf einem Faden, wegen der vorhandenen Fä-
+serchen, sich nicht frei genng bewegen können, so wver-
+
+===== PDF 550 / PRINTED 519 =====
+5419
+
+tauschte ich den Faden mit einer dünnen Darmsaite ( Vio-
+line). Bevor ich jedoch. die gewonnenen Resultate an-
+führe, ımuls ich zunächst erwähnen, dafs das anzuwendende
+Papierreiterchen so leicht wie möglich seyn‘ mufs, da ein
+schwereres, den Kuotenpunkten eine andere Lage ertheilt,
+wie der Fall seyn würde, wenn die Saite ganz frei schwänge
+oder doch nur schr. wenig belastet wäre. Ferner ist dar-
+auf hinzuweisen, dafs die Knotenpunkte an den Stellen
+liegen, wo das Reiterchen einmal rechts, das anderemal
+links in der Nachbarschaft aufgesetzt, sich in entgegenge-
+setzier Richtung bewegt. Dieses entgegengesetzte Bewegen
+kann aber seyn, entweder beiderseits nach der betreffen-
+den Stelle hin oder beiderseits von ihr hinweg; in beiden
+Fällen ist die betreffende Stelle ein Knotenpunkt und es
+gelten in dieser Beziehung dieselben Betrachtungen, wel-
+che in einer frühern Arbeit von mir (Pogg. Ann, Bd, 109,
+S. 43) über die Knotenlinien angestellt wurden,
+
+Ich spannte nun bei der Parallelstellung der Gabel ein
+Stück ‚der Saite gleich 45 Centim. horizontal aus, und gab
+ihr die dritte Nebenspannung, was ich nach dem Frühern
+($.17) dadurch erreichte, dafs ich jene 1. Octave und 1, Quinte
+tiefer stimmte als ©. Von dieser Spannung aus schritt ich
+allmählich bis zur zweiten Nebeuspannung (ersten Haupt-
+spannung) fort, und stimmte die Saite zunächst so, dafs sie
+nur noch 1 Octave und 1 Quarte tiefer war als c. Es
+zeigte sich nun folgendes: Sobald das Reiterchen nahe beim
+Punkte m Fig. 5 Taf. VII aufgesetzt wurde, bewegte es
+sich beim Anstreichen der Gabel von m weg und blieb
+auf einem Punkte o, liegen, der von m um 12 Centim,
+entfernt war, brachte ich das Reiterchen etwas links von
+diesem Punkte o, an, so lief es abermals nach 0, hin, so-
+mit war 0, als ein Knotenpunkt nachgewiesen. Zwischen
+diesem Punkte 0, und dem Punkte Z in der Mitte liegt ein
+Punkt, der in Fig. 5 Taf. VIII mit 0, bezeichnet istz,wurde
+das Reiterchen in dessen Nachbarschaft rechts und links
+aufgeseizt, so bewegte es sich. beidemal von ihm hinweg,
+mithin war auch 0, ein Knotenpunkt, der von 0, und !
+
+===== PDF 551 / PRINTED 520 =====
+520
+
+um 16,5 Centim, entfernt lag. Hierauf wurde nun die Ga-
+bel um 90° herumgedreht, um sie transversal auf die Saite
+schwingen zu lassen, und dann zuzusehen, ob bei dieser
+Stellung die Lage der Punkte o, und 0, dieselbe blieb,
+wie bei der Parallelstellung. Bei der, im Vergleich zu dem
+früher angewandten Seidenfaden, viel dickeren Seite, konnte
+ich nur ungefähr, selbst bei der Transversalstellung, die
+Lage der Knotenpunkte erkennen, und um sie genau zu
+bestimmen, wurde auch jetzt das Reiterchen benutzt, mit
+Rücksicht auf folgendes: Die Nebenschwingungen bei der
+Parallelstellung gehen nämlich meistens in einer Vertical-
+ebene bei der Transversalstellung dagegen in einer Hori-
+zontalebene vor sich. Diese letzteren Schwingungen würden
+nun das Reiterchen entweder leicht abwerfen, wenn seine
+Form nicht gerade günstig getroffen ist, oder es doch
+so unregelmäfsig bewegen, dafs man nicht mit Sicherheit
+die Knotenpunkte: ermitteln könnte. Diefs wird aber er-
+möglicht, wenn man den ganzen Apparat um die Axe s her-
+umdreht, bis die Schwingungsebene wieder vertical gewor-
+den ist. Der Versuch zeigte, dafs die Punkte 0, und 0,
+an dieselben Stellen zu liegen kamen wie bei der Paral-
+lelstellung.
+
+Hiernach wurde ein zweiter Versuch angestellt, indem
+der Saite eine etwas höhere Spannung mitgetheilt wurde,
+dadurch, dafs ich sie eine Octave und nur noch eine Ters
+tiefer stimmte wie die Gabel. Es zeigte sich aber wiederum,
+dafs: die Knotenpunkte näher an m heranrückten und so-
+wohl bei der Parallelstellung wie bei ‚der Transversalstel-
+Jung an diessiben Stellen zu liegen kamen.
+
+Auch ein dritter Versuch, bei dem die Saite eine 00
+tave und eine Sekunde tiefer stimmte wie c, ergab dieselben
+Resultate, wodurch. also nachgewiesen ist, dafs auch bei der -
+Parallelstellung der (abel, der fadenförmige Körper sich
+
+in stehender Wellenbewegung mit einer gebrochenen An-
+zahl. halber Wellenlängen befinden kann,
+8. 27.
+
+In der ersten Abtheilung gegenwär iger Untersuchung
+
+===== PDF 552 / PRINTED 521 =====
+521
+
+hatte sich ergeben, dafs bei allen Nebenschwingungen der fa-
+denförmige Körper einen Ton gab, der unisono klang mit dem
+Tone der Stimmgabel, in unserem speciellen Falle also das c,
+Dieser Satz wurde zunächst nachgewiesen für eine ganze
+Anzahl halber Wellenlängen, und es entstand die Frage, ob
+er auch bei den Fällen gültig war, welche in den beiden
+vorhergehenden $$S. betrachtet wurden, nämlich bei einer
+gebrochenen Anzahl halber Wellen. Da ich in diesen Fäl-
+len, während die Saite schwang, keinen Ton vernahm, der
+von dem € verschieden war, so konnte diefs seinen Grund
+vielleicht‘ darin haben, dafs die Intensität des Saitentons
+zu gering war, um aufs Gehör zu wirken, der Ton selbst
+konnte aber dann immerhin von c verschieden seyn. Die
+Annahme der Verschiedenheit wurde aber durch die ge-
+nauere Beachtung der im vorigen $, angestellten Versuche
+als unstatthaft erwiesen, Bei dem ersten Versuche hatte
+ich die Saite so gespannt, dafs sie ihrer ganzen Länge nach
+schwingend eine Octave und eine Quarte tiefer klang als €.
+Sollte sie also bei derselben Spannung das c selbst geben,
+so durfte, mit Rücksicht darauf, dafs die ganze Saite 45 Cen-
+tim, lang war, von ihr nur ein Stück klingen = 45.4.3
+Centim, d. h. ein Stück = 16,8 Centim. Die durch den
+Versuch sich ergebende Länge der Entfernung der beiden
+Knotenpunkte 0, und 0, betrug 16,5 Centim, Diese Ent-
+fernung der Knotenpunkte bestimmt aber die Länge einer
+Halbwelle und diese wiederum den Ton der ganzen Saite,
+sey es, dafs sie eine ganze oder gebrochene Zahl halber
+Wellen bildet. Da nun die, durch den Versuch sich er-
+gebende, von der berechneten Halbwelle nur um 0,3 Centim,
+abweicht und da diese Abweichung als hinlänglich klein
+angesehen werden kann, um vernachlässigt zu werden, so
+folgt, dafs bei dem ersten Versuche der Ton der Saite,
+mochte er gehört werden oder nicht, gleich © war,
+Dieselbe Uebereinstimmung in der Länge der berech-
+neten Halbwelle und der durch den Versuch erhaltenen,
+ergab sich für die folgenden Spannungen des vorigen $.,
+wo die Saite einmal eine Octave und eine Terz, das andere-
+
+===== PDF 553 / PRINTED 522 =====
+522
+
+mal‘ eine Octave und‘ eine Sekunde tiefer‘ stimmte wie ©
+wodurch also nachgewiesen, dafs auch bei den Nebenschwin-
+gungen mit einer gebrochenen Anzahl halber Wellenlängen
+der fadenförmige Körper unisono klingt mit der Gabel,
+
+$. 28,
+Bisishierheri war nur won derjenigen Untersuchung die
+Rede, welche sich bezog auf die Anzahl der schwingenden
+Theile des Fadens so wie auf den Zusammenhang, in. wel-
+chem diese Anzahl steht mit dem Tone der Stimmgabel und
+dem Tone des Fadens, auf die Natur der Schwingungen
+des Fadens nämlich darauf, ob dieselben ebene Schwingun-
+gen oder nicht, wurde bis jetzt noch keine genügende Rück-
+sicht genommen. Diese Natur hängt num der Hauptsache
+nach ab von der Stellung der Gabel und der Lage des Fa-
+dens und um die Erscheinungen einzeln zu übersehen, will
+ich folgende Fälle unterscheiden: Nämlich welcher Natur
+sind die Fadenschwingungen
+1) Bei der horizontalen Lage des Fadens und einer be-
+liebigen Stellung der Gabel, wobei letztere jedoch
+hier wie im folgenden immer verlical bleibt,
+
+2) Bei der Parallelstellung der (yabel und einer beliebt
+gen Lage des Fadens,
+
+3) Bei der Transversalstellung der Gabel und einer be-
+liebigen Lage des Fadens.
+
+4) Bei der verticalen Lage des Fadens und einer belie-
+bigen Stellung der Gabel.
+
+5) Bei einer beliebigen Stellung der Gabel und einer
+beliebigen Lage des Fadens.
+
+Die in der Fig. 1 Taf. VILL gezeichnete Stellung der
+Gabel, bei welcher also die Linie m! mit der Zinkenebene
+zusammenfällt, und zugleich rechtwinklig steht auf der Ebene
+des Winkelhaken AB, möge als Anfangsstellung betrachtet
+werden, und ich will die Drehungswinkel der: Gabel in
+dem Sinne zählen, in welchem, von oben gesehen, das
+Streichstäbchen sich wie der Zeiger einer Uhr bewegt. Hier-
+nach ist ersichtlich, dafs bei einer vollen Umdrehung die
+
+===== PDF 554 / PRINTED 523 =====
+523
+
+Gabel zweimal eine Transversal- und zweimal eine Paral-
+lelstellung erreicht. Ferner möge die in der Fig. 1 Taf. VII
+gezeichnete horizontale Lage des Fadens als Anfangslage
+gedacht werden, und die Zählung des Drehungswinkels wie-
+der in dem Sinne genommen werden, in welchem der Fa-
+den, von vorn gesehen, sich wie der Zeiger einer Uhr be-
+wegt. Bei einer vollen Umdrehung würde also der Faden
+zweimal eine Vertical- ‘und zweimal eine Horizontallage
+annehbınen. Diese vollen Umdrehungen sind nun, begreif-
+licher Weise bei dem Apparate nicht möglich, weder bei
+der Gabel noch bei dem Faden, jedoch wird dieser Um-
+stand die Auseinandersetzung der Erscheinungen nicht beein-
+trächtigen.
+
+Da wir es ferner im folgenden mit Flächen und Curven
+zu ihun haben, so mögen diese auf ein räumliches recht-
+winkliges Coordinatenkreuz bezogen werden. Der Anfangs-
+punkt dieses Coordinatenkreuzes falle mit dem Punkte m,
+die zAxe mit der Liniej m} zusammen, die xz Ebene denke
+man sich weiterhin als eine durch m/ und senkrecht zur
+Ebene des Winkelhakens AB gelegte Verticalebene. Die-
+sen Annahmen gemäfs, wird die yAxe ihre horizontale Lage
+stets beibehalten, ebenso die zxzzEbene, die x und z Axe
+dagegen so wie die xy und yz Ebene werden bei der Dre-
+hung des Fadens eine Drehung mit erleiden. Die positiven x
+mögen von m nach hin gezählt werden; die positiven y
+von m aus nach der Seite hin, wo das Streichstäbchen bei
+einer Drehung der Gabel um 90° aus ihrer Anfangsstellung
+zu liegen kommt; die positiven z mögen bei der in der
+Fig. 1 Taf. VILL gezeichneten Lage gezählt werden, von m
+aus nach oben von der Gabel hinweg, wodurch auch ihre
+Lage bei einer andern Neigung des Fadens bestimmt ist.
+
+Weiterhin sey bemerkt, dafs die nachfolgenden Ver-
+suche nur bei der ersten Hauptspannung angestellt wurden,
+da ich mich von vornherein überzeugt hatte, dafs bei den
+
+übrigen Hauptspannungen keine neuen Erscheinungen auf-
+traten.
+
+===== PDF 555 / PRINTED 524 =====
+524
+
+8. 29. I
+
+Während nun der Faden eine vollständige Doppelschwin-
+gung vollendet, wird er eine eigenthümliche im allgemeinen
+doppeltgekrümmte Fläche beschreiben, die wir füglich eine
+Schwingungsfläche vennen können; ein jeder Punkt des Fa-
+dens bewegt sich hierbei in einer Curve, die ich analog
+ınit dem Namen Schwingungscurve bezeichnen werde. Für
+die vorläufige Beartheilung der Schwingungsflächen wird es
+hinreichen, wenn ich dieselben durch Zeichnung darstelle io
+ihren Projeclionen auf die zy und x Ebene und wenn
+ich fernerhin noch für verschiedene Punkte des Fadens die
+betreffenden Projectionen der Schwihgungscurven in der
+y= Ebene durch Zeichnung versinnliche. Um aber die
+Schwingangscurven während der Untersuchung gehörig deut-
+lich dem Auge sichtbar zu machen, verfuhr ich einfach so,
+dafs ich Seidenfüden von dunkler Farbe benutzte, und auf
+denselben in bestimmten Abständen von 5 zu 5 Centim,
+mit Farbe feine weifßse Punkte anbrachte. Bei der An-
+wendung eines mit einem feinen Silber- oder Golddraht
+übersponnenen Seidenfadens hat man zwar diese specielle
+Markirung einzelner Punkte nicht nöthig, da man schon
+durch den Reflex des Lichtes dieselbe erhält, aber es isl
+ein solcher Faden deshalb wiederum weniger zu den Ver-
+suchen empfehlenswerth, weil er eine zu grofse Steifigkeit
+besitzt.
+
+$. 30.
+Ad 1, 8. 28,
+
+Faden in der horisontalen Lage; Gabel in einer belie-
+bigen Stellung.
+
+Wenn der Faden genau eine Oclave tiefer gestinun
+wurde als die Gabel, also genau = 6 und die Gabel be-
+fand sich in der Anfangsstellung, so schwang er in einer
+Verticalebene (x= Ebene). Die Schwingungseurven waren
+schwach gekrümmte zur Axe der x symmetrisch gelegene:
+Curven, mit ihrer Convexität dem Ponkte m zugekehrt,
+Diese Couvexität verringerte sich mehr und mehr, je nach-
+dem der beschreibende ‘Punkt näher an dem Punkte & lag,
+
+===== PDF 556 / PRINTED 525 =====
+525
+
+Für die Beurtheilung der ganzen Erscheinung ist die Fig. 6
+Taf, VIII gezeichnet, Wurde der Faden etwa einen Vier-
+telton tiefer gestimmt als c, so gelang es. bei schwachem
+Anstreichen der Gabel, die angeführten Erscheinungen in
+der zy Ebene vor sich gehend zu sehen, meistens jedoch
+hörte in diesem Falle der Faden auf, ebene Schwingungen
+zu machen, und beschrieb eine eigenthümliche krumme Fläche,
+welche anf die xy Ebene projicirt, das Bild. einer halben
+Welle darbot, Fig. 7, a, in ihrer Projection auf die zzEbene
+dagegen zwei halbe Wellen zeigte, Fig. 7, b. Die Projec-
+tionen der Schwingungscurven auf die yz Ebene, waren mit
+Ausnahme derjenigen, welche der Mittelpunkt, des Fadens
+beschrieb, und welche in der betreffenden Projection als
+horizontale Gerade erschien, lauter 8 ähnliche Curven. Für
+die Punkte «, 2 und @, sind diese Projectionen in Fig, 7, c
+dargestellt,
+
+Aus der, im Eingange gegenwärtiger Arbeit erwähnten
+theoretischen Untersuchung, ergab sich, dafs die in Rede
+stehende Fläche dann bei der Bewegung des Fadens ge:
+bildet wird, wenn man voraussetzt, es sey dieser genöthigt,
+zwei ebene Wellenbewegungen zu gleicher Zeit auszuführen,
+von denen die eine mil einer halben Wellenlänge in der
+xy Ebene, die andere mit zwei halben Wellenlängen dage-
+gen in der zz Ebene vor sich gehe, und wenn man wei-
+terhin voraussetzt, dafs er diesen beiden Bewegungen gleich-
+zeitig Folge leistet im Momente, wo er die Ruhelage pas-
+sirt. Unter diesen Voraussetzungen erhält man als Glei-
+chung der Fläche:
+
+a 2rinlan A (1),
+
+= r,sinax ri’sinnx?
+worin r, und r, die Elongationsweiten bedeuten, welche
+den Mittelpunkten der halben Wellen in der zz und zy Ebene
+entsprechen, und wobei ferner die Länge des Fadens als 1
+betrachtet werden mufs. Die Fläche ist symmetrisch zur
+z% wie auch zar zy Ebene gelegen, und läuft zusammen
+einmal in einer mit der x Axe zusammenfallenden Geraden Im,
+das anderemal mit einer Geraden pq Fig, 7 a, Taf, VII,
+
+===== PDF 557 / PRINTED 526 =====
+526
+
+welche in der xy Ebene durch die Mitte von Im parallel
+mit der y Axe gelegt werden kann.
+
+Streicht man dagegen stärker an, unter der beibehalte.
+nen Voraussetzung, dafs der Faden etwas tiefer stimmt wie
+ec, so ändert sich die Schwingungsfläche wesentlich ab. Sie
+ist nämlich jetzt symmetrisch gelegen in Beziehung auf eine
+Ebene, die man sich durch die zxAxe gelegt denken kann
+unter einem Winkel mit der xy Ebene, welcher wächst |
+mit der Stärke des Anstreichens, Die Projectionen auf die
+yz Ebene der den Punkten «, @ und f, entsprechenden
+Schwingungscurven sind in der Fig. 8, a und b gezeichnet.
+Die Fig. 8, a stellt die Erscheinung dar, welche stattfindet,
+wenn sich die Symmetrieebene von der positiven y nach
+der positiven 5 Axe neigt, die Fig. 8, b dagegen, wenn sich
+die letztere beim Anstreichen von der positiven y nach der
+negativen = Axe neigt. Die Fläche hat hierbei die Eigen-
+schaft in zweien Geraden zusammenzulaufen verloren; die
+Schwingungscurve, welche der Mittelpunkt «x des Fadens
+beschreibt stellt eine Ellipse dar, die den Punkten 9 und ß,
+entsprechenden Curven sind zwar auch noch 8 ähnliche
+Figuren aber nur in Beziehung auf eine durch sie gelegte
+Linie symmetrisch. Denken wir uns ferner durch die Mitte «
+eine Ebene senkrecht zur z Axe gelegt, so war die Fläche
+(1) auch symmetrisch zu dieser, die letztere Fläche dagegen
+hat diese Eigenschaft verloren.
+
+Aus der theoretischen Untersuchung ergab sich, daß
+diese Fläche gebildet wird von einem schwingenden Faden,
+der gezwungen ist, seiner ganzen Länge nach elliptische
+Schwingungen auszuführen, wobei die grofsen Axen der
+Ellipsen, welche die einzelnen Punkte beschreiben, wit der
+
+Symmetrieebene zusammenfallen, und der gleichzeitig ge-
+zwungen ist, mit zwei halben Wellenlängen ebene Schwin-
+gungen auszuführen, in einer Ebene, die durch die x Axe
+senkrecht zur Symmetrieebene gelegt werden kann. Es
+möge einstweilen unterbleiben, die Gleichung der zuletzt
+besprochenen Schwingungsfläche anzugeben, und ich wende
+mich zur Beschreibung derjenigen Flächen und Curven,
+
+===== PDF 558 / PRINTED 527 =====
+527
+
+welche der Faden erzeugt, sobald nun die Gabel aus der
+Anfangsstellung herausgedreht wird.
+
+Auch hierbei sind zunächst wiederum zwei Fälle zu un-
+terscheiden, nämlich erstens der, wo der Fadenton genau
+gleich c, zweitens der, wo er etwas liefer als © ist. Im
+ersten Falle beschreibt der Faden eine Fläche, deren Pro-
+jection auf die xxx Ebene eine halbe Welle, dagegen auf
+die xy Ebene zwei halbe Wellen darstellt, Fig. 9, a und b.
+Die Schwingungscurven stellen in ihrer Projection anf die
+yz Ebene, mit Ausnahme derjenigen, welche von dem
+Punkte x herrührt und welche eine verticale Gerade ist,
+Tauter Parabeln vor, Fig. 9, ce. Die Fläche unterscheidet sich
+von den beiden vorher betrachteten wesentlich dadurch,
+dafs sie eine ungeschlossene ist; ferner ist sie nur symme-
+trisch gelegen bezüglich der xy Ebene und kehrt mit dem
+zwischen @ und m gelegenen Theile dem in der Richtung
+der negativen y Axe sehenden Beobachter die convexe, mit
+dem zwischen &« und Z gelegenen Theile dagegen die con-
+cave Seite zu.
+
+Die theoretische Untersuchung ergab, dafs diese Fläche
+dann beschrieben wird, wenn der Faden genöthigt ist, zwei
+zu einander senkrechte ebene Schwingungsbewegungen zu
+machen, von denen die eine mit einer halben Welle in
+der zz Ebene, die andere, mit zwei halben Wellen, in der
+zy Ebene vor sich geht, wobei aber dieses erstere Bestre-
+ben erst auftritt, wenn der Faden vermöge der zweiten
+Bewegung sich im Maximo der Elongation befindet. Unter
+diesen Voraussetzungen erhält man als Gleichung der Fläche
+folgende:
+
+y=r, sin2nz(1— 27) al A C2
+
+r’, sin mx)
+
+Jemehr sich der Drehungswinkel der Gabel einem Win-
+kel von 90° nähert, oder mit andern Worten, je näher
+die Gabel der Transversalstellung kommt, desto mehr nimmt
+die erstere Schwingungsbewegung ab, desto mehr die letz-
+tere zu, bis endlich, wenn die Transversalstellung erreicht
+ist, der Faden nur die letztere allein zeigt, und zwei ebene
+
+===== PDF 559 / PRINTED 528 =====
+528
+
+halbe Wellen bildet, ‚deren Ebene mit der zy Ebene zu-
+sammenfällt. Geht die Drehung in den zweiten Quadranten
+über, so finden dieselben Erscheinungen statt, wie im er
+sten, nur mit dem Unterschiede, dafs der Theil der Fläche
+der zwischen x und m liegt, dem in der Richtung der ne-
+gativen y Axe sehenden Beobachter die concave, der zwi-
+schen &« und Z gelegene Theil die convexe Seite zukehrt.
+Im dritten Quadranten ist wieder alles wie im ersten, ebenso
+im vierten wie im zweiten. ‘
+Wird zweitens der Faden etwas tiefer gestimmt als das
+c, so erhält man beim Herausdrehen der Gabel aus der
+Parallelstellung zunächst bei schwachem Anstreichen, eint
+Fläche, deren Projeclion in der zz Ebene gleich der in
+Fig. 9, @ gezeichneten. Die Projectionen der Schwingungs-
+curven auf die yz Ebene sind so geworden, wie die Fig. 10
+Taf. VIM versinnlicht. Der Mittelpunkt @ beschreibt wie-
+derum eine verlicale Gerade, die übrigen Punkte des Fadens
+liefern Curven, welche 8 ähnlich sind, zugleich aber eine
+parabolische Biegung erkennen lassen, also gewissermafsen
+die Eigenschaften der Curven Fig. 7, c und der Fig, 9, c mit
+einander zu verbinden scheinen. Diese Schwingungsfläche
+entsteht dann, wenn der Faden genöthigt ist, zwei zu ein-
+ander senkrechte ebene Schwingungsbewegungen auszufüh-
+ren, die eine mit einer halben Welle in der zz Ebene, die
+andere mit zei halben Wellen in der xy Ebene, wobei
+aber die erstere Bewegung in einem Momente auftritt, wo
+der Faden vermöge der zweiten Bewegung die Ruhelage
+verlassen, aber noch nicht das Maximum ‚der Elongations-
+weite erreicht hat, Unter diesen Voraussetzungen erbält
+man zur Gleichung der Fläche;
+y=r,sin2aw [== 2cosn FE Vi
+
+r,sinax 1? sine
+
+—+sinzö(1 Ze Nr
+
+oder wenn wir setzen r, sin2az= b, r, sinng=@
+
+y=b [2c0snöL 5 Vı—-S+sinzo(1 —2 3)]
+
+===== PDF 560 / PRINTED 529 =====
+529
+
+worin 3 die Phasendifferenz bedeutet, d. bh. die Gröfse,
+welche angiebt, um wie viel Theile der Zeiteinheit, der
+Faden vermöge der zweiten Schwingungsart vorausgeeilt
+ist, im Momente, wo er vermöge der ersten Schwingungs-
+art die Gleichgewichtslage passirt.
+
+Streicht man dagegen stärker an, so ändert sich die
+Schwingungsfläche wesentlich ab, und ınan erhält zu Schwin-
+gungscurven in der Ebene yz aufser der, welche die Mitte
+des Fadens beschreibt, und welche eine Ellipse ist, lauter
+Figuren, wie in der Fig. 11 bei 8 und ß, dargestellt ist.
+Die Fläche ist bezüglich auf keine Ebene symmetrisch. Sie
+entsteht, wenn der Faden vermöge der ersten Schwingungs-
+art genöthigt ist, elliptische Schwingungen auszuführen, ver-
+möge der zweiten aber ebene Schwingungen, deren Ebene
+zusammenfällt mit einer durch die x Axe und die kleine
+Axe der von « beschriebenen Ellipse gelegten Ebene. Un-
+ter denselben Voraussetzungen haben wir aber auch schon
+die durch die Fig. 8, a und b _versinnlichte Fläche entstehen
+sehen; bei jener Fläche Fig. 8 ist aber der Werth von ö
+ein anderer, auf welche Erörterungen ich hier jedoch nicht
+näber eingehen will.
+
+8. 31.
+Ad23. 8. 28.
+Die Gabel in der Parallelstellung , der Faden in einer
+beliebigen Lage.
+
+Wurde der Faden genau — c gestimmt, so schwang er,
+wie bekannt, bei der horizontalen Lage in einer Vertical-
+ebene. Bei dem Herausdrehen aus der horizontalen Lage
+bis allmählich in die verticale, behielt er dieselbe Schwin-
+gungsart bei, so lange die Neigung nicht gröfser als etwa
+60° bis 70° betrug. Wurde der Drehungswinkel gröfser,
+so konnte ich die in Fig. 12, @ dargestellte Erscheinung
+deutlich wahrnehinen. Nämlich die rechte obere Hälfte
+ebenso die linke untere schien gleichsam verbreitert zu
+seyn und diese Verbreiterung ging beim Vergröfsern des
+Drehungswinkels in ein Auseinandertreten der betreffenden
+
+Poggendorff’s Annal. Bd, CXI. 34
+
+===== PDF 561 / PRINTED 530 =====
+530
+
+Theile ’des Fadens über, wie die! Fig. 12, versinnlicht: Je
+näher. der Faden der verticalen Stellung: kam, ‘desto mehr
+vergröfserte sich dieses Auseinandertreten, desto ‘ kleiner
+wurde ‚die der halben Welle zugehörige Elongationsweite,
+bis endlich, wenn die verticale Lage erreicht‘ war, letztere
+gleich Null'geworden, und nunmehr der Faden zwei ebene
+halbe Wellen bildete, deren Ebene mit’ der Verticalebene
+(@%=) zusammenfiel. N
+
+Ging die Drehung des Fadens in den zweiten Quadran-
+ten über, so’ erhielt man ganz dieselben Erscheinungen, nur
+mit dem Unterschiede, das jetzt das Auseinandertreten links
+oben‘ und rechts unten stattfand. | Der dre "Oandran
+zeigte alles wiederum wie der’ erste, ebenso derzrikrtumie |
+der zweite, un vn.
+
+"Wirssechen also hier offenbar das Bestrebei des-Padeng
+zwei Schwingungsarten zugleich auszuführen, nur in‘ ande-
+rer Weise als es im vorigen S, sich gezeigt‘ hatte. Die
+richtige Auffassung der zuletzt betrachteten Schwingungs-
+art‘ ergab ‚sich jedoch erst aus der 'aufmerksamen Betrach-
+tung der Erscheinungen, welche bei dem Falle 5 8.28 auf-
+traten, nach deren Auseinandersetzung ich’ auf den’ jetzigen
+Fall zurückkommen werde.
+
+Wurde der Faden etwas liefer gestimmt wie c, so konnie
+ich dureh‘ stärkeres und‘ schwächeres Anstreichen ‘alle die
+Schwingungsarten hervorbringen, die ich im vorigentS:Män
+gegeben.
+
+8.32 4.
+Ad-3/ 8. 28. ER
+
+Gabel in der Transversalstellung, Faden in einer beiten |
+bigen Lage,
+
+In“diesem Falle zeigte der Faden, "wem er genau = 0
+gestimmt‘ war, sioei halbe Wellenlängen, deren Ebene stets
+mit der @y Ebene zusammnenfiel, Oft jedoch gingen diese
+ebenen Schwingungen, namentlich bei stärkerem Anstreichen,
+im elliptische and ‘kreisförmige über, AT T
+
+—“—
+
+===== PDF 562 / PRINTED 531 =====
+531
+
+” N weis AN $ 33. vv; in | 7]
+Ad 4, 8. 28 vi
+
+Faden in der Verticallage, (Gabel‘ in: einer! Beliebigen
+Stellung, '
+
+Dieser Fall bietet die Erscheitungen dar, welche über.
+haupt bei der Transversalstellung der Gabel auftreten. Da
+der Faden auch von Transversalschwingungen der Gabel
+erregt ‘wird, wenn er horizontal liegt, und die‘ Gabel um
+90° aus'der Anfangsstellung gedreht ist, so ‚wird man bei
+letzterer Transversalstellung dieselben Erscheinungen auf-
+treten sehen, welche jetzt als speciell dem Falle 4 8. 28
+angehörig auseinander gesetzt werden sollen. In ‚diesem
+Falle werden die Erscheinungen andere, wenn die Länge
+des Fadens sich ändert. Zunächst nahm ich Fadenstrecken,
+deren Länge über 35 Centim, betrug und‘ fand, dafs bei
+der ersten Hauptspannung der Faden bei‘ schwächerem An-
+streichen zwei ebene halbe Wellen bildete, deren‘ Ebene
+mit der Zinkenebene der Gabel zusammenfiel und’ mit ‚die-
+ser sich drehte. Bei stärkerem Anstreichen gingen ‘die
+Schwingungen über in’ elliptische und kreisförmige, Wurde
+die Länge des Fadens geringer genommen als 35 Centim.,
+so erhielt ich nur bei ganz schwachem Anstreichen die
+soeben angegebenen Erscheinungen, Bei stärkerem An-
+streichen zeigte der Faden wieder zweierlei Schwingungs-
+arten zu gleicher Zeit, nämlich zu der eigentlichen Schwin-
+gungsart nach zwei halben Wellen, trat die mit einer hal-
+ben Welle hinzu. Die Schwingungsfiguren waren aber
+nunmehr gänzlich verschieden‘ von denen, welche wir bis-
+her kennen lernten. Die Fig. 13 Taf, VHU stellt die den
+Punkten‘ und #, zugehörigen Schwingungscurven dar. Der
+Punkt ‚x beschrieb stets eine, mit der Zinkenebene der Ga-
+bel zusammenfallende horizontale Gerade, für den Fall, dafs
+ich 'dürch gleichmäfsiges Anstreichen die einmal vorhandene
+Schwingungsart festzuhalten im Stande war. Gelang dieses
+nicht, so rotirte die ganze Schwingungsfläche um die Axe
+des Fadens und dann fiel auch die ‘vom Punkte @ beschrie-
+
+sw WENN ; 3hay N
+
+===== PDF 563 / PRINTED 532 =====
+532
+
+bene Gerade nicht mehr mit der Zinkenebene zusammen,
+wiewohl sie immer horizontal blieb. Auch änderten sich
+bei dieser Rotation der Schwingungsfläche die Schwingungs-
+curven in ganz gesetzmäfsiger Weise ab, welche ich jedoch
+nicht wohl genauer auseinanderseizen könnte, ohne auf
+theoretische Betrachtungen näher einzugehen. Es sey nur
+im Voraus erwähnt, dafs die eigenthümlichen hier in Rede
+stehenden Schwingungsflächen und Schwingungscurven dann
+erzeugt werden, wenn der Faden seiner ganzen Länge nach
+ebene Schwingungen vollbringt und zu gleicher Zeit gend-
+thigt ist bei der Abtheilungsart nach zwei halben Wellen,
+elliptische oder kreisförmige Bewegungen zu machen.
+
+Zugleich war in diesem vierten Falle folgende Erschei-
+nung von Interesse, Angenommen die Länge des Fadens
+betrüge 30 Centim., so beträgt die Länge der Halbwelle
+15 Centim. Nahm ich num die Länge des Fadens gleich
+60 Centim. und gab ihm nicht die erste Hauptspannung
+(zweite Nebenspannung) sondern die zweite Hauptspannung
+(vierte Nebenspannung) so zeigte die obere Hälfte dessel-
+ben die oben angegebenen Erscheinungen, ebenso die un
+tere, die Mitte des Fadens bildete aber einen eigentlichen
+Knotenpunkt. Es waren also dreierlei Schwingungsarten
+vorhanden: erstens, die Abtheilungsart nach wier halben
+Wellen jede = 15 Centim, (gemäfs der vierten Nebenspan-
+nung), zweitens: die Abtheilungsart nach zwei halben Wel-
+len, jede =30 Centim , (gemäfs der zweiten Hauptspannung);
+drittens: die Abtheilungsart, wonach die kreisförmigen
+Schwingungen der beiden untern Viertel des Fadens mit
+den ebenen Schwingungen der unteren Hälfte desselben,
+und ebenso die Kkreisförmigen Schwingungen der beiden
+obern Viertel mit den ebenen der obern Hälfte desselben
+sich vereinigten. Die Schwingungsfläche lief also zwischen
+dem ersten und zweiten ebenso zwischen dem dritten‘ und
+vierten Viertel in eine horizontale Grade, in der Mitte da
+gegen in einen Punkt zusammen,
+
+Bei allen Hauptspannungen nun, also bei allen graden
+Nebenspannungen, wird man diese Erscheinungen verfolgen
+
+===== PDF 564 / PRINTED 533 =====
+533
+
+können, so z, B, wird sich bei der fünften Hauptspannung
+(zehnten Nebenspannung) der Faden in 5 Theile theilen,
+von denen je zwei durch einen Knotenpunkt geschieden
+sind, zugleich aber wird man in jedem dieser Theile die
+oben erwähnte vereinigte Schwingungsart der kreisförmigen
+und ebenen Schwingungen erblicken. Gab ich aber dem
+Faden eine ungerade Nebenspannung, so trat in diesem
+Falle nicht nur nicht die zuletzt erwähnte interessante Er-
+scheinung auf, sondern der Faden zeigte überhaupt auf sei-
+ner ganzen Länge nur eine Schwingungsart, mochte ich
+diese Länge so grofs genommen haben als ich wollte; bei
+der fünften Nebenspannung also konnte ich keine andere
+Abtheilungsart erkennen als die nach fünf halben Wellen-
+Jängen, Der Grund, weshalb die geraden und ungeraden
+Nebenspannungen, wesentlich verschiedene Erscheinungen
+zeigen, ist leicht einzusehen. Die ganzen Erscheinungen,
+welche wir überhaupt in dem $. 29 u. f. kennen lernten,
+sind blofs hervorgegangen aus dem Bestreben des Fadens
+einen bestimmten Ton und die nächst höhere oder tiefere
+Octave desselben gleichzeitig ertönen zu lassen. Nach
+dem Gesetze von der Theilungsart einer Saite bei den
+harmonischen Tönen leuchtet aber ein, dafs dieses nur
+dann möglich ist, wenn die Anzahl der halben Wellen, mit
+denen dieselbe schwingt, eine gerade ist. Ist diese Anzahl
+dagegen ungerade, so wird nie die untere Octave mit er-
+klingen können; bei der dritten Nebenspannung z. B, wird
+also der Faden nie eine Abtheilungsart machen können,
+welche durch die Fig. 14 Taf. VIIL angedeutet ist,
+
+8. 34.
+Ad 5, 8. 28.
+Gabel in ‚einer beliebigen Stellung, Faden in einer belie-
+bigen Lage.
+
+Dieser Fall als der allgemeinste wird alle Erscheinungen
+die wir im Vorigen einzeln kennen lernten, zeigen müssen
+es kommt mir daher nur darauf an, das hervorzuheben, was
+etwa zu den vorhandenen Erscheinungen noch als neu hin-
+zukommt. Wir haben Schwingungsflächen kennen gelernt,
+
+===== PDF 565 / PRINTED 534 =====
+534
+
+welche. ‚dadurch „erzeugt, wurden ‚dafs ‚der‘ Faden
+rechtwinklig zu einander gerichteter. ebenen.
+
+wegungen gleichzeitig folgen mufste, | In, u
+
+Falle zeigen sich nun auch hm atanel  A
+gungscurven, die entstanden sind dadurch, dafs diese Schwin-
+gungsbewegungen nach ‚einer halben Welle ‚und, gleichzeitig
+nach zweien halben Wellen nicht mehr unter einem rechten
+Winkel zu einander geneigt sind. Ich will hier nur dieje-
+nige Schwingungsfläche etwas näher betrachten, welche der
+durch die Fig. 9 Taf. VILL a,b, c dargestellten, entspricht.
+Die beiden Projectionszeichnungen @ und b. erleiden keine
+Veränderung; die Schwingungscurven dagegen nehmen die
+in Fig. 15, @ gezeichnete Gestalt an, ohne aufzuhören Pa-
+rabeln zu seyn. Sind ‚die beiden Schwingungsbewegungen
+unter‘ einem noch spitzern. Winkel gegen, einander. geneigt
+als der; welcher der Fig. 15, «entspricht, so zeigen. die
+Schwingungscurven die in Fig, 15, 6. gezeichnete Gestalt
+und ist endlich dieser, Winkel gleich Null geworden, so
+gewahrt man bei ihnen die in Fig. 15, ©
+
+scheinung, - Die Schwingungscurven, sind nämlich‘ nunmehr
+gerade Linien und zwar; zeigt.die bei 9 ‚oben, ı
+
+unten eine Verbreiterung, Es ist ‚dieser specielle Fall.aber
+kein anderer, als der unter -2/$« 31. betrachtete, und, durch
+die. Fig. 12, a,b dargestellte. ‚Ganz; ähnliche‘ Uebergänge
+erleiden die übrigen Schwingungsflächen und Schwingungs-
+
+curven, welche der, in ‚den vorigen S$: betrachtelens denk
+sprechen, voha dub
+
+$. 35. wc
+
+Neben den bis jetzt angeführten Schwingungsarten des
+Fadens, verdient noch eine andere Berücksichtigung, welche
+stattfindet zwischen zwei Hauptspannungen. bei, der Paral-
+lelstellung der Gabel und der horizontalen Lage des Fadens,
+welche ‚aber ganz verschieden ist von den Nebetischwingun-
+gen. Giebt man dem Faden z. B, die dritte Hauptspannung
+bei‘ einer Länge von etwa 40 Centim., so, bildeten drei
+halbe Wellenlängen, streicht man nun. immer ‚stärker, so
+
+gelingt. es stalt der dritten Hauptschwingung‘ die, zweite
+
+===== PDF 566 / PRINTED 535 =====
+535
+
+Hauptschwingung, heranszubringen, und 'läfst ınan. jetzb in
+der Stärke des Anstreichens langsam nach, so. zeigt der Fa-
+den die in Fig. 16 @, Taf. VIM dargestellte Erscheinung.
+Wäre man' von der vierten zur dritten Hauptschwingung
+übergegangen und von letzterer. wieder langsam ‚abwärts,
+so. hälte man die Erscheinung: Fig. 16, b erhalten, ‚Diese
+
+eigenthümliche stehende Wellenbewegung verdient noch, eine
+nähere Untersuchung. ul
+
+Nachtrag.
+
+Die Methode, welche..ich in Anwendung gebracht, habe,
+zur Erzeugung stehender Wellen eines fadenförmigen Kör-
+pers scheint mir die vortheilhafteste zu seyn, von, denen,
+die ‚bis jetzt bekaunt sind, einestheils, wegen der. geridgen
+Vorrichtungen, ‚die ‚sie‘ verlangt, anderntheils ‚wegen, der
+Nettigkeit, in, der, sie die Schwingungsvorgänge ‚dem. Auge
+xersinnlicht,, ‚Ich, verkenne. hierbei. nicht den‘ Werth; der
+Methode, welche Hr. Dove. in Pogg. Ann. Bd. 87 veröf-
+fentlichte, bei der mit Hülfe eines Elektromagneten stehende
+Wellenbewegungen bei einer Saite, einer Siahllamelle,ete., er-
+zeugt ‚werden, ‚aber ‚ich glaube nicht, ‚dafs, diese, Methode
+vor. der meinigen „den, Vorzug, verdient. Noch bevor mir
+die Dove’sche Methode bekannt war, hatte ich ‚ein ganz
+ähnliches, Verfahren ‚eingeschlagen, indem. ich‘ einfach an
+dem Anker eines Du Bois-Reymond’schen Inductions-
+apparates einen Seidenfaden befestigte und diesen, nun an
+irgend einer andern Stelle beliebig spannte. Auf diese ein-
+fache Manier konnte ich 10. bis ‚12 Fufs lange Fäden auf
+das Schönste in stehende Wellenbewegungen versetzen, So-
+bald ich aber die Natur der, Schwingungen näher, zu ,unter-
+suchen begam, schien es mir sehr unvortheilhaft,, diese letztere
+Methode, in Anwendung zu bringen,..schon ‚deshalb, weil
+man. eines ‚oder zweier Elemente bedarf, um den Apparat
+in.Gang zu setzen. h ml
+
+‚Die Anwendung der. von ‚mir bekannt, N TEMASUIUN Me.
+thode ist. keineswegs beschränkt, auf das bereits Mitgetheilte,
+
+===== PDF 567 / PRINTED 536 =====
+536
+
+im Gegentheil wird sie sich noch sehr modificiren; one
+vielfältigen lassen,
+
+Was die Modification anbetrifft, so will jeb:daraufianf:
+merksam machen, dafs man statt einer Stimmgabel auch einen
+einfachen Stahlstab benutzen kann. Diesen Stahlstab kann
+man so wählen, dafs seine Schwingungen viel intensiver sind
+als bei einer Stimmgabel, und in Folge dessen wird man
+die Schwingungserscheinungen auch in einem viel grofsar-
+tigern Maafsstab darstellen können. Mit Hülfe einer etwa
+1 Zoll breiten und 4 Linie dicken Stahllamelle konnte ich
+eine 12 bis 15 Fufs lange seidene Schnur, die etwa 4 Linie
+dick war, mit Leichtigkeit in stehende Wellenbewegung mit
+beliebig vielen Schwingungsknoten versetzen.
+
+In Betreff der weitern Anwendungen, welche die Me-
+thode gestattet, will ich auf folgendes aufmerksam machen,
+Bisher habe ich blofs eine Stimmgabel benutzt, mit Aus-
+nahme eines Falles, der im $. 23 angeführt. Durch die
+specielle Anwendung zweier Stimmgabeln, wodurch also
+beide Enden des Fadens aufhören feste Punkte zu seyn,
+wird man noch eine Reihe interessanter Erscheinungen dem
+Auge versinnlichen können. Diefs wird schon der Fall
+seyn, wenn beide Stimmgabeln unisono stimmen, noch mehr
+aber werden sich die Erscheinungen vervielfältigen‘ lassen,
+wenn man die Stimmgabeln so wählt, dafs sie ein bestimm-
+tes Intervall bilden, Sollte Jemand diesen Fall weiter zu
+verfolgen die Absicht haben, so würde er natürlich der
+Einfachheit und Billigkeit wegen die Stimmgabeln verlassen,
+und die Einrichtung mit Stahlstäben treffen, die man ja
+leicht, in einem beliebigen Intervall stehend, sich herrichten
+kann.
+
+Ich will schliefslich noch auf eine ganz andere Methode
+aufmerksam machen, durch die man im Stande ist, einen
+Faden mit mehr oder weniger Schwingungsknoten im eine
+stehende Wellenbewegung zu versetzen. Sie besteht einfach
+darin, dafs man einem aus einer Oeffnung, am besten einer
+runden von etwa 3 bis 4 Linien Durchmesser, austretenden
+Luftstrome einen schlaff gespannten Faden entgegenhält.
+
+===== PDF 568 / PRINTED 537 =====
+537
+
+Hat man ihn etwa mit drei halben Wellenlängen in Schwin-
+gung gebracht, so braucht man dann nur, während er so
+schwingt, ihn etwas anzuziehen, um zwei oder blofs eine
+halbe Wellenlänge zu erhalten. Die Stelle des Fadens,
+welche ınan gerade der Oeffnung -entgegenhalten mufs, wird
+man leicht ermitteln. Ich fand, dafs etwa der Punkt in +
+von dem einen Ende an gerechnet am geeignetsten war.
+Gegenwärtige Untersuchung sowie die frühere, welche
+in Pogg. Annal. veröffentlicht wurden, sind in dem mathe-
+
+matisch-physikalischen Institute der hiesigen Universität an-
+gestellt worden.
+
+Marburg, den 11. October 1860.
+
+—

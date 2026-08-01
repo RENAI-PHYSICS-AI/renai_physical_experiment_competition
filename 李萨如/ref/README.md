@@ -88,7 +88,8 @@
 - `DenHartog_1956_Mechanical_Vibrations.pdf`：机械振动经典教材，涉及自由振动、受迫振动和正常模。
 - `Fourier_1878_Analytical_Theory_of_Heat.pdf`：傅里叶级数与周期振动分解的经典数学来源。
 - `Helmholtz_1895_On_the_Sensations_of_Tone.pdf`：复合音、泛音、拍频和共鸣的经典著作。
-- `Melde_1860_Erregung_stehender_Wellen_Annalen_volume.pdf`：弦上驻波和驻波实验的经典文献。
+- `Melde_1860_Erregung_stehender_Wellen_Annalen_volume.pdf`：包含 Melde 论文第二部分的《物理年鉴》第 111 卷扫描本。
+- `Melde_1860_Erregung_stehender_Wellen_1860_OCR.pdf`：从扫描本提取的 Melde 第二部分（印刷页 513–537），带逐页德文 OCR 文字层；论文讨论弦上驻波，并明确联系 Lissajous 的工作。
 - `Terquem_1878_Courbes_de_deux_mouvements_vibratoires_perpendiculaires.pdf`：两个相互垂直振动合成曲线的经典论文。
 
 ## 继续补充的开放文献

@@ -1,0 +1,15 @@
+name = "SoundSpeedWebRuntime"
+uuid = "f3a72534-fab7-4c0e-8ea8-a2f412075547"
+version = "1.0.0"
+
+[deps]
+Bonito = "824d6782-a2ef-11e9-3a09-e5662e0c26f8"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
+
+[compat]
+Bonito = "4.2"
+WGLMakie = "0.13"
+julia = "1.10"

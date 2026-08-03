@@ -158,7 +158,15 @@ def launch_julia_web_server() -> subprocess.Popen | None:
     if not packaged_executable and not JULIA_WEB_PATH.exists():
         raise FileNotFoundError(f"未找到 Julia 网页实验程序：{JULIA_WEB_PATH}")
 
-    log_path = JULIA_PROJECT_DIR / "web_stdout.log"
+    log_dir = os.getenv("LISSAJOUS_LOG_DIR", "").strip()
+    if log_dir:
+        persistent_log_dir = os.path.abspath(log_dir)
+        os.makedirs(persistent_log_dir, exist_ok=True)
+        log_path = os.path.join(persistent_log_dir, "julia_web.log")
+    else:
+        log_path = JULIA_PROJECT_DIR / "web_stdout.log"
+    from pathlib import Path
+    log_path = Path(log_path)
     _JULIA_WEB_LOG = log_path.open("a", encoding="utf-8")
     creation_flags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
     creation_flags |= getattr(subprocess, "CREATE_NO_WINDOW", 0)
@@ -193,6 +201,6 @@ def ensure_julia_web_server(timeout: float = 75.0) -> subprocess.Popen | None:
         if julia_web_server_ready():
             return process
         if process is not None and process.poll() is not None:
-            raise RuntimeError("Julia 网页实验服务启动失败，请检查 web_stdout.log。")
+            raise RuntimeError(f"Julia 网页实验服务启动失败，请检查日志：{getattr(_JULIA_WEB_LOG, 'name', 'web_stdout.log')}")
         time.sleep(0.5)
     raise TimeoutError("Julia 网页实验服务启动超时，请稍后刷新页面。")

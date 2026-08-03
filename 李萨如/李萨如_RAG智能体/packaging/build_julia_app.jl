@@ -31,6 +31,7 @@ Pkg.develop(path = SOURCE_DIR)
 Pkg.instantiate()
 
 using PackageCompiler
+using LissajousWebRuntime
 
 create_app(
     SOURCE_DIR,
@@ -49,5 +50,12 @@ isfile(FONT_LICENSE) && cp(
     joinpath(font_dir, basename(FONT_LICENSE));
     force = true,
 )
+
+# WGLMakie reads shader source files at render time. PackageCompiler otherwise
+# preserves the build machine's package path inside the sysimage.
+wgl_asset_source = Base.pkgdir(LissajousWebRuntime.WGLMakie, "assets")
+wgl_asset_dir = joinpath(OUTPUT_DIR, "share", "lissajous", "wglmakie_assets")
+isdir(wgl_asset_dir) && rm(wgl_asset_dir; recursive = true, force = true)
+cp(wgl_asset_source, wgl_asset_dir; force = true)
 
 println("Julia app created at $(OUTPUT_DIR)")

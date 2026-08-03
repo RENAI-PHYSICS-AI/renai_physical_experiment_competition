@@ -20,6 +20,31 @@ const ACCENT_MINOR = RGBf(0.36, 0.82, 0.55)
 const PANEL_BG = RGBf(0.075, 0.085, 0.105)
 const MUTED = RGBf(0.58, 0.62, 0.70)
 const BUTTON_BG = RGBf(0.13, 0.15, 0.19)
+const WGL_SHADER_FILES = (
+    "mesh.frag",
+    "mesh.vert",
+    "particles.vert",
+    "sprites.frag",
+    "sprites.vert",
+    "volume.frag",
+    "volume.vert",
+    "voxel.frag",
+    "voxel.vert",
+)
+
+function load_packaged_wgl_shaders!()
+    asset_dir = normpath(
+        joinpath(Sys.BINDIR, "..", "share", "lissajous", "wglmakie_assets"),
+    )
+    isdir(asset_dir) || return false
+    for name in WGL_SHADER_FILES
+        path = joinpath(asset_dir, name)
+        isfile(path) || error("缺少 WGLMakie 着色器文件：$(path)")
+        WGLMakie.ALL_SHADERS[name] = read(path, String)
+    end
+    println("已从便携运行时加载 WGLMakie 着色器：$(asset_dir)")
+    return true
+end
 
 function first_existing_font(candidates)
     for candidate in candidates
@@ -678,6 +703,7 @@ function run_self_test()
 end
 
 function main()
+    load_packaged_wgl_shaders!()
     WGLMakie.activate!(; use_html_widgets = true)
     configure_theme!()
     if "--self-test" in ARGS

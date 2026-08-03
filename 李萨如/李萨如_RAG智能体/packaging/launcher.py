@@ -45,8 +45,13 @@ def heartbeat_handler(state: HeartbeatState) -> type[BaseHTTPRequestHandler]:
         def send_ok(self) -> None:
             self.send_response(204)
             self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.send_header("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
             self.send_header("Cache-Control", "no-store")
             self.end_headers()
+
+        def do_OPTIONS(self) -> None:
+            self.send_ok()
 
         def do_GET(self) -> None:
             if self.path.startswith("/heartbeat"):
@@ -56,6 +61,10 @@ def heartbeat_handler(state: HeartbeatState) -> type[BaseHTTPRequestHandler]:
         def do_POST(self) -> None:
             if self.path.startswith("/closed"):
                 state.closed()
+            elif self.path.startswith("/client-log"):
+                length = min(int(self.headers.get("Content-Length", "0") or "0"), 65536)
+                payload = self.rfile.read(length).decode("utf-8", errors="replace")
+                write_browser_log(payload)
             self.send_ok()
 
         def log_message(self, _format: str, *_args: object) -> None:
@@ -75,13 +84,22 @@ def start_heartbeat_server() -> tuple[ThreadingHTTPServer, HeartbeatState, str]:
 
 
 def log_path() -> Path:
+    return log_dir() / "launcher.log"
+
+
+def log_dir() -> Path:
     directory = Path(os.getenv("LOCALAPPDATA", Path.home())) / "LissajousExperimentTutor" / "logs"
     directory.mkdir(parents=True, exist_ok=True)
-    return directory / "launcher.log"
+    return directory
 
 
 def write_log(message: str) -> None:
     with log_path().open("a", encoding="utf-8") as handle:
+        handle.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {message}\n")
+
+
+def write_browser_log(message: str) -> None:
+    with (log_dir() / "browser_diagnostics.log").open("a", encoding="utf-8") as handle:
         handle.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {message}\n")
 
 
@@ -127,6 +145,7 @@ def application_environment(
             "LISSAJOUS_WEB_BROWSER_HOST": "127.0.0.1",
             "LISSAJOUS_WEB_PORT": str(julia_port),
             "LISSAJOUS_STREAMLIT_PORT": str(streamlit_port),
+            "LISSAJOUS_LOG_DIR": str(log_dir()),
             "LISSAJOUS_LLM_API_KEY": reveal_api_key(),
             "STREAMLIT_BROWSER_GATHER_USAGE_STATS": "false",
         }
@@ -300,7 +319,10 @@ def open_browser(url: str) -> None:
         "--enable-unsafe-swiftshader",
         url,
     ]
-    write_log(f"Opening browser: {browser}")
+    write_log(
+        "Opening browser: "
+        f"{browser}; flags=--ignore-gpu-blocklist --enable-webgl --enable-webgl2 --enable-unsafe-swiftshader"
+    )
     subprocess.Popen(
         arguments,
         stdout=subprocess.DEVNULL,
@@ -316,6 +338,11 @@ def main() -> int:
     streamlit_port = find_available_port(DEFAULT_STREAMLIT_PORT)
     julia_port = find_available_port(DEFAULT_JULIA_PORT)
     app_url = f"http://127.0.0.1:{streamlit_port}"
+    write_log(
+        "Launcher environment: "
+        f"bundle_root={bundle_root()}; log_dir={log_dir()}; "
+        f"python_exe={sys.executable}; streamlit_port={streamlit_port}; julia_port={julia_port}"
+    )
 
     heartbeat_server, heartbeat_state, heartbeat_url = start_heartbeat_server()
     creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)

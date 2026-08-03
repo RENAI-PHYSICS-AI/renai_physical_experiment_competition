@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 
 import streamlit.components.v1 as components
 
@@ -61,10 +62,19 @@ def render_experiment(name: str, height: int = 820) -> None:
 
 
 def render_julia_experiment(name: str, julia_url: str, route: str, height: int = 820) -> None:
+    heartbeat_url = os.getenv("LISSAJOUS_HEARTBEAT_URL", "").strip()
+    client_log_url = (
+        heartbeat_url[:-10] + "/client-log"
+        if heartbeat_url.endswith("/heartbeat")
+        else heartbeat_url + "/client-log"
+        if heartbeat_url
+        else ""
+    )
     settings = json.dumps(
         {
             "juliaUrl": f"{julia_url}{route}",
             "title": name,
+            "clientLogUrl": client_log_url,
         },
         ensure_ascii=False,
     )
@@ -311,11 +321,37 @@ _JULIA_ONLY_HTML = r"""
   const settings = __SETTINGS__;
   const frame = document.getElementById('julia');
   const loading = document.getElementById('loading');
+  function clientLog(type, detail) {
+    if (!settings.clientLogUrl) return;
+    const body = JSON.stringify({
+      type,
+      title: settings.title,
+      url: settings.juliaUrl,
+      detail: String(detail || ''),
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString()
+    });
+    fetch(settings.clientLogUrl, {method:'POST', mode:'no-cors', cache:'no-store', body}).catch(() => {});
+  }
+  clientLog('wrapper-start', 'opening Julia iframe');
   frame.src = settings.juliaUrl + (settings.juliaUrl.includes('?') ? '&' : '?') + 'attempt=' + Date.now();
+  frame.addEventListener('load', () => clientLog('iframe-load', frame.src));
+  frame.addEventListener('error', () => clientLog('iframe-error', frame.src));
   window.addEventListener('message', event => {
     if (event.source !== frame.contentWindow || !event.data) return;
-    if (event.data.type === 'lissajous-wgl-ready') loading.classList.add('hidden');
+    if (event.data.type === 'lissajous-wgl-ready') {
+      clientLog('wgl-ready', event.data.detail || '');
+      loading.classList.add('hidden');
+    }
+    if (event.data.type === 'lissajous-wgl-failed') {
+      clientLog('wgl-failed', event.data.detail || '');
+    }
   });
+  window.addEventListener('error', event => clientLog('wrapper-error', `${event.message} ${event.filename}:${event.lineno}`));
+  window.addEventListener('unhandledrejection', event => clientLog('wrapper-unhandledrejection', event.reason || ''));
+  setTimeout(() => {
+    if (!loading.classList.contains('hidden')) clientLog('wrapper-timeout', 'WGL ready message was not received after 60 seconds');
+  }, 60000);
 })();
 </script>
 </body>

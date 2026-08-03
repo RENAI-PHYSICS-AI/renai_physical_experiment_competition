@@ -1,5 +1,6 @@
 param(
-    [switch]$SkipJulia
+    [switch]$SkipJulia,
+    [string]$JuliaAppSource = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -10,7 +11,12 @@ $Secrets = Join-Path $AppDir ".streamlit\secrets.toml"
 $EmbeddedSecret = Join-Path $PackagingDir "_embedded_secret.py"
 $Spec = Join-Path $PackagingDir "lissajous_onefile.spec"
 $Dist = Join-Path $PackagingDir "dist"
-$AsciiStage = Join-Path $env:LOCALAPPDATA "LissajousTutorBuild\julia_app"
+$DefaultJuliaStage = Join-Path $env:LOCALAPPDATA "LissajousTutorBuild\julia_app"
+$AsciiStage = if ($JuliaAppSource) {
+    (Resolve-Path -LiteralPath $JuliaAppSource -ErrorAction Stop).Path
+} else {
+    $DefaultJuliaStage
+}
 $BuildStamp = Get-Date -Format "yyyyMMdd_HHmmss"
 $ShortBuildRoot = Join-Path $env:SystemDrive "LT\LissajousOnefile_$BuildStamp"
 $PythonDist = Join-Path $ShortBuildRoot "dist"
@@ -27,6 +33,9 @@ if (-not (Test-Path -LiteralPath $Secrets)) {
 & $Python (Join-Path $PackagingDir "encode_secret.py") $Secrets $EmbeddedSecret
 
 if (-not $SkipJulia) {
+    if ($JuliaAppSource) {
+        throw "指定 -JuliaAppSource 时请同时使用 -SkipJulia。"
+    }
     $env:LISSAJOUS_JULIA_OUTPUT_DIR = $AsciiStage
     & julia --startup-file=no (Join-Path $PackagingDir "build_julia_app.jl")
     if ($LASTEXITCODE -ne 0) { throw "Julia 应用构建失败。" }

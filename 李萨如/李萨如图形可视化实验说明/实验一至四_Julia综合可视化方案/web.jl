@@ -534,6 +534,102 @@ const PAGE_STYLE = """
 html, body { margin: 0; min-height: 100%; background: #0b0f14; color: #eef3f8; }
 body { overflow-x: auto; font-family: 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; }
 .lab-page { min-width: 960px; min-height: 760px; padding: 8px; box-sizing: border-box; background: #0b0f14; }
+body:has(.wglmakie-spinner)::before {
+    content: "正在初始化 Julia / WGLMakie / Bonito 交互图形";
+    position: fixed;
+    left: 50%;
+    top: calc(50% + 54px);
+    z-index: 1001;
+    width: min(520px, calc(100vw - 48px));
+    color: #c9d7e4;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.lissajous-diagnostic {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1002;
+    display: none;
+    padding: 10px 12px;
+    color: #f7d7d7;
+    background: rgba(64, 20, 28, .94);
+    border: 1px solid rgba(255, 85, 105, .65);
+    border-radius: 6px;
+    font: 13px/1.5 ui-monospace, Consolas, monospace;
+    white-space: pre-wrap;
+}
+.lissajous-diagnostic.visible { display: block; }
+"""
+
+const CLIENT_STATUS_SCRIPT = """
+(() => {
+    let ready = false;
+    const parentWindow = window.parent || window;
+    const send = (type, detail = "") => {
+        parentWindow.postMessage({ type, detail }, "*");
+    };
+    const showDiagnostic = detail => {
+        let box = document.getElementById("lissajous-diagnostic");
+        if (!box) {
+            box = document.createElement("div");
+            box.id = "lissajous-diagnostic";
+            box.className = "lissajous-diagnostic";
+            document.body.appendChild(box);
+        }
+        box.textContent = detail;
+        box.classList.add("visible");
+        send("lissajous-wgl-failed", detail);
+    };
+    const webglProbe = () => {
+        try {
+            const canvas = document.createElement("canvas");
+            const gl2 = canvas.getContext("webgl2", { antialias: true });
+            if (gl2) return "webgl2";
+            const gl1 = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
+            if (gl1) return "webgl1";
+        } catch (error) {
+            return "error: " + error.message;
+        }
+        return "none";
+    };
+    const glStatus = webglProbe();
+    if (glStatus === "none" || glStatus.startsWith("error:")) {
+        showDiagnostic("浏览器无法创建 WebGL 上下文：" + glStatus + "\\n请确认浏览器允许硬件加速，或使用程序自动打开的 Edge/Chrome 窗口。");
+        return;
+    }
+    const startedAt = performance.now();
+    const check = () => {
+        const canvas = document.querySelector("canvas");
+        const spinner = document.querySelector(".wglmakie-spinner");
+        if (canvas && !spinner) {
+            ready = true;
+            send("lissajous-wgl-ready", glStatus);
+            return;
+        }
+        if (!ready && performance.now() - startedAt > 45000) {
+            showDiagnostic(
+                "WGLMakie/Bonito 初始化超过 45 秒。\\n" +
+                "WebGL 状态：" + glStatus + "\\n" +
+                "页面地址：" + location.href + "\\n" +
+                "浏览器：" + navigator.userAgent
+            );
+            return;
+        }
+        window.setTimeout(check, 300);
+    };
+    window.addEventListener("error", event => {
+        showDiagnostic("浏览器脚本错误：" + event.message + "\\n" + event.filename + ":" + event.lineno);
+    });
+    window.addEventListener("unhandledrejection", event => {
+        showDiagnostic("浏览器 Promise 错误：" + String(event.reason));
+    });
+    check();
+})();
 """
 
 function experiment_app(title, builder)
@@ -542,6 +638,7 @@ function experiment_app(title, builder)
         return DOM.div(
             DOM.style(PAGE_STYLE),
             DOM.div(figure; class = "lab-page"),
+            DOM.script(CLIENT_STATUS_SCRIPT),
         )
     end
 end
@@ -589,7 +686,8 @@ function main()
     end
     host = get(ENV, "LISSAJOUS_WEB_HOST", "127.0.0.1")
     port = parse(Int, get(ENV, "LISSAJOUS_WEB_PORT", "9384"))
-    server = Bonito.Server(host, port)
+    browser_host = get(ENV, "LISSAJOUS_WEB_BROWSER_HOST", "127.0.0.1")
+    server = Bonito.Server(host, port; proxy_url = "http://$(browser_host):$(port)")
     Bonito.route!(server, "/" => index_app())
     Bonito.route!(server, "/phase" => experiment_app("相位差", phase_figure))
     Bonito.route!(server, "/amplitude" => experiment_app("振幅比", amplitude_figure))

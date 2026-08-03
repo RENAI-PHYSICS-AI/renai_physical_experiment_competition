@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import base64
+import json
+import os
 import random
 from pathlib import Path
 
@@ -9,8 +11,9 @@ import streamlit.components.v1 as components
 
 from agent import LissajousAgent
 from config import INDEX_DIR, JULIA_WEB_URL, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+from experiment_embed import render_julia_experiment
 from retrieval import HybridRetriever
-from tools import ensure_julia_web_server
+from tools import ensure_julia_web_server, launch_julia_web_server
 
 
 QUICK_QUESTION_POOL = (
@@ -36,6 +39,57 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+
+def install_launcher_heartbeat() -> None:
+    heartbeat_url = os.getenv("LISSAJOUS_HEARTBEAT_URL", "").strip()
+    if not heartbeat_url:
+        return
+    encoded_url = json.dumps(heartbeat_url)
+    components.html(
+        f"""
+        <script>
+        (() => {{
+            const host = window.parent;
+            const url = {encoded_url};
+            const closedUrl = url.endsWith("/heartbeat")
+                ? url.slice(0, -10) + "/closed"
+                : url + "/closed";
+            if (host.__lissajousHeartbeatTimer) {{
+                host.clearInterval(host.__lissajousHeartbeatTimer);
+            }}
+            if (host.__lissajousCloseHandler) {{
+                host.removeEventListener("pagehide", host.__lissajousCloseHandler);
+            }}
+            const pulse = () => host.fetch(url, {{mode: "no-cors", cache: "no-store"}}).catch(() => {{}});
+            const close = () => {{
+                try {{ host.navigator.sendBeacon(closedUrl, "closed"); }} catch (_) {{}}
+            }};
+            pulse();
+            host.__lissajousHeartbeatTimer = host.setInterval(pulse, 3000);
+            host.__lissajousCloseHandler = close;
+            host.addEventListener("pagehide", close);
+        }})();
+        </script>
+        """,
+        height=0,
+        width=0,
+    )
+
+
+install_launcher_heartbeat()
+
+
+@st.cache_resource(show_spinner=False)
+def prewarm_julia_runtime() -> object | None:
+    """Start Julia while the user reads the home page."""
+    try:
+        return launch_julia_web_server()
+    except Exception:
+        return None
+
+
+prewarm_julia_runtime()
 
 st.markdown(
     """
@@ -242,14 +296,16 @@ def set_stream_autoscroll(enabled: bool) -> None:
                 const root = doc.querySelector('[data-testid="stMain"]')
                     || doc.scrollingElement
                     || doc.documentElement;
-                root.scrollTo({ top: root.scrollHeight, behavior: "auto" });
+                if (root) root.scrollTo({ top: root.scrollHeight, behavior: "auto" });
             };
             const scheduleScroll = () => {
                 if (state.timer) return;
                 state.timer = host.setTimeout(scrollToLatest, 80);
             };
             state.observer = new host.MutationObserver(scheduleScroll);
-            state.observer.observe(doc.body, {
+            const target = doc.body || doc.documentElement;
+            if (!target) return;
+            state.observer.observe(target, {
                 childList: true,
                 subtree: true,
                 characterData: true,
@@ -272,7 +328,7 @@ def set_stream_autoscroll(enabled: bool) -> None:
             const root = doc.querySelector('[data-testid="stMain"]')
                 || doc.scrollingElement
                 || doc.documentElement;
-            root.scrollTo({ top: root.scrollHeight, behavior: "auto" });
+            if (root) root.scrollTo({ top: root.scrollHeight, behavior: "auto" });
             delete host.__lissajousStreamScroll;
         })();
         </script>
@@ -518,10 +574,15 @@ with demo_tab:
         label_visibility="collapsed",
         width="stretch",
     )
+
+    experiment_name = selected_experiment or "相位差"
     try:
-        with st.spinner("正在准备可视化实验..."):
+        with st.spinner("正在启动 Julia 可视化实验..."):
             ensure_julia_web_server()
-        route = experiment_routes[selected_experiment or "相位差"]
-        st.iframe(f"{JULIA_WEB_URL}{route}", height=800)
+        render_julia_experiment(
+            experiment_name,
+            JULIA_WEB_URL,
+            experiment_routes[experiment_name],
+        )
     except Exception as exc:
-        st.error(f"可视化实验暂时无法加载：{exc}")
+        st.error(f"Julia 实验启动失败：{exc}")

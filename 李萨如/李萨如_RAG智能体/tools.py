@@ -3,9 +3,9 @@ from __future__ import annotations
 import math
 import os
 import re
+import socket
 import subprocess
 import time
-import urllib.request
 from fractions import Fraction
 
 from config import (
@@ -14,7 +14,6 @@ from config import (
     JULIA_WEB_HOST,
     JULIA_WEB_PATH,
     JULIA_WEB_PORT,
-    JULIA_WEB_URL,
 )
 
 
@@ -141,10 +140,16 @@ def launch_julia_visualization() -> subprocess.Popen:
 
 
 def julia_web_server_ready(timeout: float = 0.8) -> bool:
+    # Rendering the WGLMakie root page is too expensive for a readiness probe.
+    # Check the dedicated listener instead, then let the embedded browser make
+    # the actual page request once Julia is accepting connections.
+    probe_host = JULIA_WEB_HOST
+    if probe_host in {"", "0.0.0.0", "::"}:
+        probe_host = "127.0.0.1"
     try:
-        with urllib.request.urlopen(f"{JULIA_WEB_URL}/", timeout=timeout) as response:
-            return response.status == 200
-    except (OSError, urllib.error.URLError):
+        with socket.create_connection((probe_host, JULIA_WEB_PORT), timeout=timeout):
+            return True
+    except OSError:
         return False
 
 

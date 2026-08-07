@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 *.log
+runtime_outputs/
 .agent.pid
 .streamlit/secrets.toml
 packaging/_embedded_secret.py

@@ -12,6 +12,7 @@ $EmbeddedSecret = Join-Path $PackagingDir "_embedded_secret.py"
 $Spec = Join-Path $PackagingDir "lissajous_onefile.spec"
 $Dist = Join-Path $PackagingDir "dist"
 $DefaultJuliaStage = Join-Path $env:LOCALAPPDATA "LissajousTutorBuild\julia_app"
+$DefaultJuliaBuild = Join-Path $env:LOCALAPPDATA "LissajousTutorBuild\julia_build"
 $AsciiStage = if ($JuliaAppSource) {
     (Resolve-Path -LiteralPath $JuliaAppSource -ErrorAction Stop).Path
 } else {
@@ -37,6 +38,7 @@ if (-not $SkipJulia) {
         throw "指定 -JuliaAppSource 时请同时使用 -SkipJulia。"
     }
     $env:LISSAJOUS_JULIA_OUTPUT_DIR = $AsciiStage
+    $env:LISSAJOUS_JULIA_BUILD_DIR = $DefaultJuliaBuild
     & julia --startup-file=no (Join-Path $PackagingDir "build_julia_app.jl")
     if ($LASTEXITCODE -ne 0) { throw "Julia 应用构建失败。" }
 }

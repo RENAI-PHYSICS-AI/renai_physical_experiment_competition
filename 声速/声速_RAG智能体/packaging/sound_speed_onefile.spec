@@ -18,11 +18,13 @@ datas = [
     (str(julia_app), "julia_app"),
 ]
 datas += collect_data_files("streamlit")
-for distribution in ("streamlit", "scikit-learn", "scipy", "numpy", "ddgs", "joblib"):
+datas += collect_data_files("matplotlib")
+for distribution in ("streamlit", "scikit-learn", "scipy", "numpy", "ddgs", "joblib", "matplotlib", "pillow"):
     datas += copy_metadata(distribution)
 
-hiddenimports = collect_submodules("streamlit") + [
+hiddenimports = collect_submodules("streamlit") + collect_submodules("matplotlib") + [
     "agent",
+    "code_runner",
     "config",
     "experiment_embed",
     "retrieval",
@@ -45,7 +47,6 @@ a = Analysis(
     hooksconfig={},
     runtime_hooks=[],
     excludes=[
-        "matplotlib",
         "notebook",
         "IPython",
         "pytest",

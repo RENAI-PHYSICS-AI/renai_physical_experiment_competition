@@ -4,11 +4,13 @@ import base64
 import json
 import os
 import random
+import subprocess
 from pathlib import Path
 
 import streamlit as st
 import streamlit.components.v1 as components
 
+import code_runner
 from agent import LissajousAgent
 from config import INDEX_DIR, JULIA_WEB_URL, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
 from experiment_embed import render_julia_experiment
@@ -31,6 +33,15 @@ QUICK_QUESTION_POOL = (
 
 MAX_IMAGE_COUNT = 3
 ALLOWED_IMAGE_TYPES = {"image/png", "image/jpeg", "image/webp"}
+CODE_RUNNER_ENABLED = os.getenv("LISSAJOUS_CODE_RUNNER_ENABLED", "true").lower() in {
+    "1", "true", "yes",
+}
+CODE_RUNNER_OUTPUT_DIR = Path(
+    os.getenv(
+        "LISSAJOUS_CODE_OUTPUT_DIR",
+        Path(__file__).resolve().parent / "runtime_outputs",
+    )
+).resolve()
 
 
 st.set_page_config(
@@ -414,6 +425,80 @@ def render_chat_message(message: dict) -> None:
         st.markdown(message["content"])
 
 
+def render_python_code_runner(content: str, key_prefix: str) -> None:
+    """Offer opt-in execution for Python blocks after applying the local blacklist."""
+    if not CODE_RUNNER_ENABLED:
+        return
+    blocks = code_runner.extract_python_blocks(content)
+    if not blocks:
+        return
+
+    with st.expander("运行回答中的 Python 可视化代码", expanded=False):
+        st.caption(
+            "执行前会检查受限模块、文件/进程操作和敏感配置访问；"
+            "每次运行使用独立输出目录，并受超时限制。请仍只运行你信任的代码。"
+        )
+        selected = 0
+        if len(blocks) > 1:
+            selected = st.selectbox(
+                "选择代码块",
+                options=list(range(len(blocks))),
+                format_func=lambda index: f"代码块 {index + 1}",
+                key=f"{key_prefix}_code_select",
+            )
+        timeout = st.slider(
+            "超时时间（秒）",
+            min_value=5,
+            max_value=180,
+            value=90,
+            key=f"{key_prefix}_timeout",
+            help="动画导出通常需要更长时间。",
+        )
+        if not st.button("运行并显示结果", key=f"{key_prefix}_run_code"):
+            return
+
+        code_runner.cleanup_old_runs(CODE_RUNNER_OUTPUT_DIR)
+        run_status = st.status("正在隔离目录中运行……", expanded=False)
+        try:
+            result = code_runner.run_python_block(
+                blocks[selected], CODE_RUNNER_OUTPUT_DIR, timeout=timeout
+            )
+        except subprocess.TimeoutExpired:
+            run_status.update(label="计算超时，进程已停止", state="error")
+            st.error(f"代码运行超过 {timeout} 秒，已停止。")
+            return
+        except Exception as exc:
+            run_status.update(label="代码运行失败", state="error")
+            st.error(f"代码运行失败：{exc}")
+            return
+
+        if result.get("blocked"):
+            run_status.update(label="代码已被安全策略阻止", state="error")
+            st.error(result.get("block_reason", "代码未通过安全检查。"))
+            return
+
+        run_status.update(label="代码运行完成", state="complete")
+        if result.get("stdout"):
+            st.code(result["stdout"], language="text")
+            if result.get("stdout_truncated"):
+                st.info("标准输出较长，页面仅显示末尾 20,000 个字符。")
+        if result.get("stderr"):
+            st.code(result["stderr"], language="text")
+            if result.get("stderr_truncated"):
+                st.info("错误输出较长，页面仅显示末尾 20,000 个字符。")
+        if result.get("returncode") != 0:
+            st.error(f"Python 进程退出码：{result.get('returncode')}")
+
+        visuals = result.get("visuals") or []
+        if not visuals:
+            st.info("代码已运行，但没有捕获到 GIF、PNG、JPG、MP4 或 WebM 输出。")
+        for path in visuals:
+            if path.lower().endswith((".mp4", ".webm")):
+                st.video(path)
+            else:
+                st.image(path, use_container_width=True)
+
+
 try:
     secret_base_url = st.secrets.get("llm_base_url", LLM_BASE_URL)
     secret_model = st.secrets.get("llm_model", LLM_MODEL)
@@ -490,9 +575,11 @@ with chat_tab:
                 with quick_columns[index]:
                     if st.button(prompt, key=f"quick_question_{index}", use_container_width=True):
                         quick_question = prompt
-    for message in st.session_state.messages:
+    for message_index, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"]):
             render_chat_message(message)
+            if message["role"] == "assistant":
+                render_python_code_runner(message.get("content", ""), f"message_{message_index}")
 
     st.markdown(
         '<p class="image-hint">点击聊天框后，可按 Ctrl+V 直接粘贴李萨如轨迹、示波器截图或实验装置照片。</p>',
@@ -558,6 +645,9 @@ with chat_tab:
                         "role": "assistant",
                         "content": answer,
                     }
+                )
+                render_python_code_runner(
+                    answer, f"message_{len(st.session_state.messages) - 1}"
                 )
 
 with demo_tab:

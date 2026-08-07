@@ -7,6 +7,7 @@
 - 本地文献 TF-IDF + BM25 混合检索；
 - Qwen 兼容接口的流式回答与联网搜索补充；
 - 在聊天输入框中直接粘贴波形、示波器截图和实验装置照片；
+- 可选择运行回答中的 Python 可视化代码；执行前进行黑名单检查，每次使用独立输出目录并设置超时；
 - 回声法、双麦克风时间差法、示波器相位差法、驻波法综合演示；
 - 回答流自动滚动，界面仅显示主题模式选择。
 
@@ -37,6 +38,8 @@ $env:SOUND_SPEED_LLM_API_KEY="your-key"
 ```
 
 也可复制 `.streamlit/secrets.toml.example` 为 `.streamlit/secrets.toml` 后填写本地密钥。密钥文件已被 `.gitignore` 排除。
+
+Python 代码执行默认开启，可通过 `SOUND_SPEED_CODE_RUNNER_ENABLED=false` 关闭。该功能会阻止文件、进程、网络、环境变量和 Streamlit secrets 等访问，但它不是操作系统级沙箱，只应运行可信代码。
 
 ## 单独操作
 

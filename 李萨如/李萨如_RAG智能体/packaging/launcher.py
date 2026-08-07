@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import runpy
 import socket
 import subprocess
 import sys
@@ -146,6 +147,7 @@ def application_environment(
             "LISSAJOUS_WEB_PORT": str(julia_port),
             "LISSAJOUS_STREAMLIT_PORT": str(streamlit_port),
             "LISSAJOUS_LOG_DIR": str(log_dir()),
+            "LISSAJOUS_CODE_OUTPUT_DIR": str(log_dir().parent / "runtime_outputs"),
             "LISSAJOUS_LLM_API_KEY": reveal_api_key(),
             "STREAMLIT_BROWSER_GATHER_USAGE_STATS": "false",
         }
@@ -331,7 +333,34 @@ def open_browser(url: str) -> None:
     )
 
 
+def restore_standard_streams() -> None:
+    """Restore redirected pipes for PyInstaller's windowed child process."""
+    for name, descriptor in (("stdout", 1), ("stderr", 2)):
+        if getattr(sys, name) is not None:
+            continue
+        try:
+            stream = open(
+                descriptor,
+                "w",
+                encoding="utf-8",
+                errors="replace",
+                buffering=1,
+                closefd=False,
+            )
+        except OSError:
+            stream = open(os.devnull, "w", encoding="utf-8")
+        setattr(sys, name, stream)
+
+
 def main() -> int:
+    if "--python-snippet" in sys.argv:
+        restore_standard_streams()
+        snippet_index = sys.argv.index("--python-snippet") + 1
+        if snippet_index >= len(sys.argv):
+            print("Missing Python snippet path.", file=sys.stderr)
+            return 2
+        runpy.run_path(sys.argv[snippet_index], run_name="__main__")
+        return 0
     if "--streamlit-child" in sys.argv:
         run_streamlit_child()
 

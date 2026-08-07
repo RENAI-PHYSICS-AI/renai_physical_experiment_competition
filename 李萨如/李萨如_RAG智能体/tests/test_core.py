@@ -3,6 +3,7 @@ from __future__ import annotations
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
@@ -10,7 +11,7 @@ sys.path.insert(0, str(PROJECT_DIR))
 
 from ingest import normalize_text, split_text
 from retrieval import HybridRetriever, index_status, tokenize
-from tools import calculate_lissajous, parse_calculation_request
+from tools import calculate_lissajous, julia_web_server_ready, parse_calculation_request
 
 
 class TextProcessingTests(unittest.TestCase):
@@ -46,6 +47,17 @@ class CalculatorTests(unittest.TestCase):
         result = parse_calculation_request("请计算 fx=2 Hz、fy=3 Hz、相位差=60 度")
         self.assertIsNotNone(result)
         self.assertEqual(result["ratio"], "2:3")
+
+
+class JuliaWebReadinessTests(unittest.TestCase):
+    @patch("tools.socket.create_connection")
+    def test_ready_when_port_accepts_connection(self, connect: MagicMock) -> None:
+        connect.return_value.__enter__.return_value = object()
+        self.assertTrue(julia_web_server_ready(timeout=0.2))
+
+    @patch("tools.socket.create_connection", side_effect=OSError("not listening"))
+    def test_not_ready_when_connection_fails(self, connect: MagicMock) -> None:
+        self.assertFalse(julia_web_server_ready(timeout=0.2))
 
 
 @unittest.skipUnless(index_status().get("ready"), "知识库索引尚未构建")

@@ -2,7 +2,11 @@ using Pkg
 
 const PACKAGING_DIR = @__DIR__
 const SOURCE_DIR = joinpath(PACKAGING_DIR, "packagecompiler_source")
-const BUILD_ENV = joinpath(PACKAGING_DIR, "julia_build")
+const BUILD_ENV = get(
+    ENV,
+    "LISSAJOUS_JULIA_BUILD_DIR",
+    joinpath(PACKAGING_DIR, "julia_build"),
+)
 const OUTPUT_DIR = get(
     ENV,
     "LISSAJOUS_JULIA_OUTPUT_DIR",
@@ -26,7 +30,11 @@ isfile(WEB_SOURCE) || error("找不到 Julia 网页实验源文件：$(WEB_SOURC
 isfile(FONT_SOURCE) || error("找不到内置中文字体：$(FONT_SOURCE)")
 cp(WEB_SOURCE, joinpath(SOURCE_DIR, "src", "web_impl.jl"); force = true)
 
+Pkg.activate(SOURCE_DIR)
+Pkg.instantiate()
+
 Pkg.activate(BUILD_ENV)
+Pkg.add(PackageSpec(name = "PackageCompiler", version = "2"))
 Pkg.develop(path = SOURCE_DIR)
 Pkg.instantiate()
 

@@ -1,0 +1,279 @@
+{"kind":"deck","id":"pr/8gachm","name":"Deck"}
+{"kind":"layout","layoutId":"8a9da702-7505-4f75-84ab-2d9e243dc525","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"a4f45e0f-25b6-4e22-9134-84e9ba0c011d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/jhw06n","slide":1,"title":"VIRTUAL PHYSICS LAB · INTELLIGENT TUTOR","textShapes":7}
+{"kind":"shape","id":"sh/9gfyho7a","slide":1,"name":"cover-top-accent","bbox":[0,0,1280,8]}
+{"kind":"shape","id":"sh/mdoz698j","slide":1,"name":"cover-coral-accent","bbox":[0,8,12,712]}
+{"kind":"textbox","id":"sh/7exgfep4","slide":1,"name":"cover-eyebrow","text":"VIRTUAL PHYSICS LAB · INTELLIGENT TUTOR","textPreview":"VIRTUAL PHYSICS LAB · INTELLIGENT TUTOR","textChars":39,"textLines":1,"bbox":[76,72,560,30]}
+{"kind":"textbox","id":"sh/w3qhc361","slide":1,"name":"cover-title","text":"让李萨如图形\n从漂亮曲线变成\n可验证实验","textPreview":"让李萨如图形 | 从漂亮曲线变成 | 可验证实验","textChars":20,"textLines":3,"bbox":[76,130,680,220]}
+{"kind":"textbox","id":"sh/h4zylo76","slide":1,"name":"cover-subtitle","text":"Python–Julia 混合编程 · 智能问答 · 单文件部署","textPreview":"Python–Julia 混合编程 · 智能问答 · 单文件部署","textChars":32,"textLines":1,"bbox":[78,370,680,40]}
+{"kind":"shape","id":"sh/u1ozat8v","slide":1,"name":"cover-rule","bbox":[78,426,650,0]}
+{"kind":"textbox","id":"sh/v2hgjypg","slide":1,"name":"cover-kicker","text":"模型给出结果，问答帮助解释，公式与数据负责裁决。","textPreview":"模型给出结果，问答帮助解释，公式与数据负责裁决。","textChars":24,"textLines":1,"bbox":[78,454,680,64]}
+{"kind":"textbox","id":"sh/58zip87i","slide":1,"name":"cover-four","text":"4 个实验模块","textPreview":"4 个实验模块","textChars":7,"textLines":1,"bbox":[808,472,174,32]}
+{"kind":"textbox","id":"sh/to7q5cfe","slide":1,"name":"cover-three","text":"3 条证据链","textPreview":"3 条证据链","textChars":6,"textLines":1,"bbox":[1004,472,174,32]}
+{"kind":"textbox","id":"sh/snypw7e9","slide":1,"name":"cover-page","text":"自选题2 · 教学资源和虚仿","textPreview":"自选题2 · 教学资源和虚仿","textChars":14,"textLines":1,"bbox":[78,648,360,30]}
+{"kind":"image","id":"im/lk32lsf2","slide":1,"name":"","alt":"透明背景的青绿色李萨如轨迹","bbox":[800,170,392,238]}
+{"kind":"notes","id":"nt/jhw06n","slide":1,"text":"开场先提出核心判断：本作品不是把李萨如图形做得更漂亮，而是把它变成能够预测、观察、复算和追问的实验。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（摘要、选题意义、创新性）\n- 李萨如/李萨如_RAG智能体/assets/lissajous_header.png\n[/Sources]"}
+{"kind":"slide","id":"sl/s3zl1p","slide":2,"title":"教学问题","textShapes":16}
+{"kind":"shape","id":"sh/5sny1onu","slide":2,"name":"top-accent-2","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/ipwf6t4j","slide":2,"name":"section-2","text":"教学问题","textPreview":"教学问题","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/jq5gze54","slide":2,"name":"title-2","text":"传统展示能看到结果，却难看清图形如何形成","textPreview":"传统展示能看到结果，却难看清图形如何形成","textChars":20,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/wnux4jmd","slide":2,"name":"header-line-2","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/xonyxony","slide":2,"name":"footer-2","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/alcf2947","slide":2,"name":"page-2","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"textbox","id":"sh/vmlgve5s","slide":2,"name":"problem-lead","text":"“像什么”不是终点，\n“为什么、如何验证”才是实验","textPreview":"“像什么”不是终点， | “为什么、如何验证”才是实验","textChars":25,"textLines":2,"bbox":[66,208,500,145]}
+{"kind":"textbox","id":"sh/gjyhg3mh","slide":2,"name":"problem-no-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[594,204,66,38]}
+{"kind":"textbox","id":"sh/1k7y98n2","slide":2,"name":"problem-title-0","text":"过程不可见","textPreview":"过程不可见","textChars":5,"textLines":1,"bbox":[674,203,220,34]}
+{"kind":"textbox","id":"sh/5s7a1072","slide":2,"name":"problem-body-0","text":"静态轨迹隐藏质点方向与形成顺序","textPreview":"静态轨迹隐藏质点方向与形成顺序","textChars":15,"textLines":1,"bbox":[674,243,470,48]}
+{"kind":"shape","id":"sh/kre98v6x","slide":2,"name":"problem-sep-0","bbox":[594,306,550,0]}
+{"kind":"textbox","id":"sh/jq5szqpc","slide":2,"name":"problem-no-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[594,330,66,38]}
+{"kind":"textbox","id":"sh/ipwr65or","slide":2,"name":"problem-title-1","text":"变量易混淆","textPreview":"变量易混淆","textChars":5,"textLines":1,"bbox":[674,329,220,34]}
+{"kind":"textbox","id":"sh/xonax076","slide":2,"name":"problem-body-1","text":"相位、振幅、频率都能改变外观","textPreview":"相位、振幅、频率都能改变外观","textChars":14,"textLines":1,"bbox":[674,369,470,48]}
+{"kind":"shape","id":"sh/wne94v6l","slide":2,"name":"problem-sep-1","bbox":[594,432,550,0]}
+{"kind":"textbox","id":"sh/v25svqp0","slide":2,"name":"problem-no-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[594,456,66,38]}
+{"kind":"textbox","id":"sh/a1wr2lof","slide":2,"name":"problem-title-2","text":"结论难复核","textPreview":"结论难复核","textChars":5,"textLines":1,"bbox":[674,455,220,34]}
+{"kind":"textbox","id":"sh/hkra9k7a","slide":2,"name":"problem-body-2","text":"凭叶数、形状和截图缺少定量判据","textPreview":"凭叶数、形状和截图缺少定量判据","textChars":15,"textLines":1,"bbox":[674,495,470,48]}
+{"kind":"shape","id":"sh/gjytgf6p","slide":2,"name":"problem-goal","bbox":[66,538,1078,92]}
+{"kind":"textbox","id":"sh/0fqlsnid","slide":2,"name":"problem-goal-label","text":"作品目标","textPreview":"作品目标","textChars":4,"textLines":1,"bbox":[92,562,110,30]}
+{"kind":"textbox","id":"sh/lgzm1szy","slide":2,"name":"problem-goal-copy","text":"把学习路径变成：预测 → 操作 → 记录 → 解释 → 复核 → 迁移","textPreview":"把学习路径变成：预测 → 操作 → 记录 → 解释 → 复核 → 迁移","textChars":35,"textLines":1,"bbox":[222,553,850,48]}
+{"kind":"notes","id":"nt/s3zl1p","slide":2,"text":"本页说明作品要解决的教学缺口。不要从技术栈开始讲，先让评委看到静态图形教学为何不足。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（选题意义与目标定位，第 71–158 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/1l4oy6","slide":3,"title":"物理模型","textShapes":18}
+{"kind":"shape","id":"sh/fa54ralo","slide":3,"name":"top-accent-3","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/0vel0f29","slide":3,"name":"section-3","text":"物理模型","textPreview":"物理模型","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/1w7mtk3u","slide":3,"name":"title-3","text":"一个统一方程连接全部四类实验","textPreview":"一个统一方程连接全部四类实验","textChars":14,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"textbox","id":"sh/q5w3u5k7","slide":3,"name":"subtitle-3","text":"先建立可解析检验的理想模型，再讨论真实仪器误差","textPreview":"先建立可解析检验的理想模型，再讨论真实仪器误差","textChars":23,"textLines":1,"bbox":[64,130,1110,34]}
+{"kind":"shape","id":"sh/r65knals","slide":3,"name":"header-line-3","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/s7elwf2d","slide":3,"name":"footer-3","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/d8n2pk3i","slide":3,"name":"page-3","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/a1g36pkb","slide":3,"name":"model-equation-panel","bbox":[68,196,1144,132]}
+{"kind":"textbox","id":"sh/b2p4zulw","slide":3,"name":"model-equation","text":"x(t) = A sin(2πfₓt + φₓ)      y(t) = B sin(2πfᵧt + φᵧ)","textPreview":"x(t) = A sin(2πfₓt + φₓ)      y(t) = B sin(2πfᵧt + φᵧ)","textChars":54,"textLines":1,"bbox":[112,224,1056,56]}
+{"kind":"textbox","id":"sh/fqtgne1s","slide":3,"name":"model-delta","text":"相位差 φ = φᵧ − φₓ","textPreview":"相位差 φ = φᵧ − φₓ","textChars":15,"textLines":1,"bbox":[450,286,380,26]}
+{"kind":"shape","id":"sh/up0fe9k7","slide":3,"name":"model-col-line-0","bbox":[68,372,324,0]}
+{"kind":"textbox","id":"sh/hcbypojy","slide":3,"name":"model-col-head-0","text":"几何","textPreview":"几何","textChars":2,"textLines":1,"bbox":[68,390,324,32]}
+{"kind":"textbox","id":"sh/gr2xgj2d","slide":3,"name":"model-col-eq-0","text":"S = πAB|sin φ|","textPreview":"S = πAB|sin φ|","textChars":14,"textLines":1,"bbox":[68,435,324,52]}
+{"kind":"textbox","id":"sh/3etgry14","slide":3,"name":"model-col-body-0","text":"面积成为可复算的不变量","textPreview":"面积成为可复算的不变量","textChars":11,"textLines":1,"bbox":[68,500,324,44]}
+{"kind":"shape","id":"sh/2dkfitkj","slide":3,"name":"model-col-line-1","bbox":[456,372,324,0]}
+{"kind":"textbox","id":"sh/pgbytoju","slide":3,"name":"model-col-head-1","text":"方向","textPreview":"方向","textChars":2,"textLines":1,"bbox":[456,390,324,32]}
+{"kind":"textbox","id":"sh/of2hkj2p","slide":3,"name":"model-col-eq-1","text":"xẏ − yẋ = −AB·2πf·sin φ","textPreview":"xẏ − yẋ = −AB·2πf·sin φ","textChars":23,"textLines":1,"bbox":[456,435,324,52]}
+{"kind":"textbox","id":"sh/bidgvy10","slide":3,"name":"model-col-body-1","text":"符号区分顺、逆时针运动","textPreview":"符号区分顺、逆时针运动","textChars":11,"textLines":1,"bbox":[456,500,324,44]}
+{"kind":"shape","id":"sh/qhkzmtkf","slide":3,"name":"model-col-line-2","bbox":[844,372,324,0]}
+{"kind":"textbox","id":"sh/mdojux4n","slide":3,"name":"model-col-head-2","text":"闭合","textPreview":"闭合","textChars":2,"textLines":1,"bbox":[844,390,324,32]}
+{"kind":"textbox","id":"sh/nex0n2l8","slide":3,"name":"model-col-eq-2","text":"Tclose = 1/(g f₀)","textPreview":"Tclose = 1/(g f₀)","textChars":17,"textLines":1,"bbox":[844,435,324,52]}
+{"kind":"textbox","id":"sh/8f61w7mt","slide":3,"name":"model-close-def","text":"fₓ = m f₀，fᵧ = n f₀；g = gcd(m,n)","textPreview":"fₓ = m f₀，fᵧ = n f₀；g = gcd(m,n)","textChars":32,"textLines":1,"bbox":[844,482,360,30]}
+{"kind":"textbox","id":"sh/9gfipc3e","slide":3,"name":"model-col-body-2","text":"有理频率比决定最短周期","textPreview":"有理频率比决定最短周期","textChars":11,"textLines":1,"bbox":[844,532,324,44]}
+{"kind":"textbox","id":"sh/y9ojqx4r","slide":3,"name":"model-boundary","text":"模型边界：同一时钟、正交坐标、稳定正弦信号；噪声、带宽和通道误差留作虚实对照任务。","textPreview":"模型边界：同一时钟、正交坐标、稳定正弦信号；噪声、带宽和通道误差留作虚实对照任务。","textChars":41,"textLines":1,"bbox":[68,590,1080,42]}
+{"kind":"notes","id":"nt/1l4oy6","slide":3,"text":"用统一方程建立可信起点。强调轨迹不是由 AI 生成，全部指标都能回到解析式复算。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（物理原理与计算模型，第 160–259 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/96jd11","slide":4,"title":"实验设计","textShapes":21}
+{"kind":"shape","id":"sh/ru9obmh4","slide":4,"name":"top-accent-4","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/cvipkrip","slide":4,"name":"section-4","text":"实验设计","textPreview":"实验设计","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/dgr6dwza","slide":4,"name":"title-4","text":"四个控制变量实验回答四个不同问题","textPreview":"四个控制变量实验回答四个不同问题","textChars":16,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/2pgneh0n","slide":4,"name":"header-line-4","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/3qpo7mh8","slide":4,"name":"footer-4","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/4ry5grid","slide":4,"name":"page-4","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/ps769czy","slide":4,"name":"phase-interface-frame","bbox":[60,214,722,282]}
+{"kind":"textbox","id":"sh/nmtoj6hc","slide":4,"name":"phase-crop-caption","text":"双通道时域波形  ↔  轨迹形状与运动方向","textPreview":"双通道时域波形  ↔  轨迹形状与运动方向","textChars":21,"textLines":1,"bbox":[92,516,660,34]}
+{"kind":"textbox","id":"sh/rmxw3e18","slide":4,"name":"exp-index-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[794,206,48,30]}
+{"kind":"textbox","id":"sh/qlofa903","slide":4,"name":"exp-head-0","text":"相位差","textPreview":"相位差","textChars":3,"textLines":1,"bbox":[850,204,140,28]}
+{"kind":"textbox","id":"sh/dofe5oze","slide":4,"name":"exp-sub-0","text":"形状与方向","textPreview":"形状与方向","textChars":5,"textLines":1,"bbox":[992,206,190,25]}
+{"kind":"textbox","id":"sh/cn6xcjit","slide":4,"name":"exp-body-0","text":"φ → 椭圆、退化直线与绕行方向","textPreview":"φ → 椭圆、退化直线与绕行方向","textChars":16,"textLines":1,"bbox":[850,241,332,45]}
+{"kind":"shape","id":"sh/zahg7ehk","slide":4,"name":"exp-sep-0","bbox":[794,294,388,0]}
+{"kind":"textbox","id":"sh/e9ofe90z","slide":4,"name":"exp-index-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[794,310,48,30]}
+{"kind":"textbox","id":"sh/1czy9ozq","slide":4,"name":"exp-head-1","text":"振幅比","textPreview":"振幅比","textChars":3,"textLines":1,"bbox":[850,308,140,28]}
+{"kind":"textbox","id":"sh/0bqxgji5","slide":4,"name":"exp-sub-1","text":"尺度与归一化","textPreview":"尺度与归一化","textChars":6,"textLines":1,"bbox":[992,310,190,25]}
+{"kind":"textbox","id":"sh/nehgbyhg","slide":4,"name":"exp-body-1","text":"A:B → 轨迹尺度；归一化保留相位","textPreview":"A:B → 轨迹尺度；归一化保留相位","textChars":18,"textLines":1,"bbox":[850,345,332,45]}
+{"kind":"shape","id":"sh/md8fit0v","slide":4,"name":"exp-sep-1","bbox":[794,398,388,0]}
+{"kind":"textbox","id":"sh/ilcrqhof","slide":4,"name":"exp-index-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[794,414,48,30]}
+{"kind":"textbox","id":"sh/jm58zm50","slide":4,"name":"exp-head-2","text":"有理频率比","textPreview":"有理频率比","textChars":5,"textLines":1,"bbox":[850,412,140,28]}
+{"kind":"textbox","id":"sh/4ne9sr6l","slide":4,"name":"exp-sub-2","text":"闭合与周期","textPreview":"闭合与周期","textChars":5,"textLines":1,"bbox":[992,414,190,25]}
+{"kind":"textbox","id":"sh/5onq1wn6","slide":4,"name":"exp-body-2","text":"m:n → 约分频率比与最短闭合周期","textPreview":"m:n → 约分频率比与最短闭合周期","textChars":18,"textLines":1,"bbox":[850,449,332,45]}
+{"kind":"shape","id":"sh/uhcrmhoj","slide":4,"name":"exp-sep-2","bbox":[794,502,388,0]}
+{"kind":"textbox","id":"sh/vil8vmp4","slide":4,"name":"exp-index-3","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[794,518,48,30]}
+{"kind":"textbox","id":"sh/wju9or6p","slide":4,"name":"exp-head-3","text":"频率失谐","textPreview":"频率失谐","textChars":4,"textLines":1,"bbox":[850,516,140,28]}
+{"kind":"textbox","id":"sh/hk3qxc7u","slide":4,"name":"exp-sub-3","text":"快慢时间尺度","textPreview":"快慢时间尺度","textChars":6,"textLines":1,"bbox":[992,518,190,25]}
+{"kind":"textbox","id":"sh/edwry1on","slide":4,"name":"exp-body-3","text":"Δf → Tshape = 1/|Δf|","textPreview":"Δf → Tshape = 1/|Δf|","textChars":20,"textLines":1,"bbox":[850,553,332,45]}
+{"kind":"image","id":"im/vi98fux4","slide":4,"name":"","geometry":"roundRect","alt":"裁切放大的 Julia 双通道时域波形与李萨如轨迹","bbox":[66,220,710,270]}
+{"kind":"notes","id":"nt/96jd11","slide":4,"text":"四个模块不是四张孤立图，而是同一方程下的控制变量实验。左侧真实界面重点指出时域波形、轨迹方向和实时解析量。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（实验一至实验四，第 184–254 行）\n- 李萨如/李萨如图形可视化实验说明/实验一_Julia可视化方案/output/interface_preview.png\n[/Sources]"}
+{"kind":"slide","id":"sl/kpzknm","slide":5,"title":"交互界面","textShapes":7}
+{"kind":"shape","id":"sh/x4ja54z2","slide":5,"name":"top-accent-5","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/a18ra9gr","slide":5,"name":"section-5","text":"交互界面","textPreview":"交互界面","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/v2hs3ehc","slide":5,"name":"title-5","text":"界面把“波形—轨迹—指标”放在同一证据链上","textPreview":"界面把“波形—轨迹—指标”放在同一证据链上","textChars":21,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/k7a9gjyt","slide":5,"name":"header-line-5","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/58ja9oze","slide":5,"name":"footer-5","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/i5sre9gn","slide":5,"name":"page-5","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/j61s7eh8","slide":5,"name":"demo-interface-frame","bbox":[74,188,1132,486]}
+{"kind":"shape","id":"sh/tw3adoza","slide":5,"name":"demo-label-bg-1","bbox":[108,198,206,38]}
+{"kind":"textbox","id":"sh/t87md8v6","slide":5,"name":"demo-label-1","text":"① 双通道时域信号","textPreview":"① 双通道时域信号","textChars":9,"textLines":1,"bbox":[120,207,182,22]}
+{"kind":"shape","id":"sh/snyl43el","slide":5,"name":"demo-label-bg-2","bbox":[514,198,194,38]}
+{"kind":"textbox","id":"sh/rm54byd0","slide":5,"name":"demo-label-2","text":"② 轨迹形成过程","textPreview":"② 轨迹形成过程","textChars":8,"textLines":1,"bbox":[526,207,170,22]}
+{"kind":"shape","id":"sh/6lw32twf","slide":5,"name":"demo-label-bg-3","bbox":[856,198,222,38]}
+{"kind":"textbox","id":"sh/1c7mhsv2","slide":5,"name":"demo-label-3","text":"③ 定量辅助与导出","textPreview":"③ 定量辅助与导出","textChars":9,"textLines":1,"bbox":[868,207,198,22]}
+{"kind":"image","id":"im/l4betsjy","slide":5,"name":"","geometry":"roundRect","alt":"四个李萨如实验的 Julia 综合可视化真实界面","bbox":[80,194,1120,474]}
+{"kind":"notes","id":"nt/kpzknm","slide":5,"text":"该页建议停留稍久：左边是因，中间是过程，右边是可复核指标；底部参数和导出使屏幕动画成为可追溯数据。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（界面与交互，第 326–335 行）\n- 李萨如/设计报告/assets/lissajous_demo_interface.png\n[/Sources]"}
+{"kind":"slide","id":"sl/dom08e","slide":6,"title":"混合编程","textShapes":11}
+{"kind":"shape","id":"sh/f2lkj2xo","slide":6,"name":"top-accent-6","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/g3u1s7e9","slide":6,"name":"section-6","text":"混合编程","textPreview":"混合编程","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/1432lcfu","slide":6,"name":"title-6","text":"Python 组织学习流程，Julia 保证物理计算可信","textPreview":"Python 组织学习流程，Julia 保证物理计算可信","textChars":28,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"textbox","id":"sh/6xsjmxw7","slide":6,"name":"subtitle-6","text":"进程级解耦 · 网页级组合 · 数值与问答隔离","textPreview":"进程级解耦 · 网页级组合 · 数值与问答隔离","textChars":23,"textLines":1,"bbox":[64,130,1110,34]}
+{"kind":"shape","id":"sh/ry1kf2xs","slide":6,"name":"header-line-6","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/sza1o7ed","slide":6,"name":"footer-6","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/t032hcfi","slide":6,"name":"page-6","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/i9sjidgv","slide":6,"name":"python-panel","bbox":[72,214,466,338]}
+{"kind":"shape","id":"sh/ju10bixg","slide":6,"name":"julia-panel","bbox":[742,214,466,338]}
+{"kind":"textbox","id":"sh/r21k7ytg","slide":6,"name":"python-head","text":"Python / Streamlit","textPreview":"Python / Streamlit","textChars":18,"textLines":1,"bbox":[104,242,390,36]}
+{"kind":"textbox","id":"sh/61sjetcv","slide":6,"name":"python-list","text":"统一入口：页面导航、对话状态与图片输入\n智能层：专题检索、问答与受限绘图\n编排层：端口、子进程、日志和就绪检测","textPreview":"统一入口：页面导航、对话状态与图片输入 | 智能层：专题检索、问答与受限绘图 | 编排层：端口、子进程、日志和就绪检测","textChars":55,"textLines":3,"bbox":[104,302,388,184]}
+{"kind":"textbox","id":"sh/t4j298b6","slide":6,"name":"julia-head","text":"Julia / WGLMakie","textPreview":"Julia / WGLMakie","textChars":16,"textLines":1,"bbox":[774,242,390,36]}
+{"kind":"textbox","id":"sh/s3a1g3u1","slide":6,"name":"julia-list","text":"模型层：方程计算、离散采样与派生量\n交互层：可观察状态、控件与 WebGL 绘图\n成果层：CSV / PNG 与模型自检结果","textPreview":"模型层：方程计算、离散采样与派生量 | 交互层：可观察状态、控件与 WebGL 绘图 | 成果层：CSV / PNG 与模型自检结果","textChars":62,"textLines":3,"bbox":[774,302,388,184]}
+{"kind":"shape","id":"sh/f6lkbitc","slide":6,"name":"bridge","bbox":[558,292,164,130]}
+{"kind":"textbox","id":"sh/e5cjidcr","slide":6,"name":"bridge-label","text":"localhost\n网页内嵌","textPreview":"localhost | 网页内嵌","textChars":14,"textLines":2,"bbox":[582,320,116,66]}
+{"kind":"shape","id":"sh/1s32d8bi","slide":6,"bbox":[538,383,204,0]}
+{"kind":"shape","id":"sh/gru1knux","slide":6,"name":"hybrid-boundary","bbox":[164,580,952,54]}
+{"kind":"textbox","id":"sh/vah0fet8","slide":6,"name":"hybrid-boundary-copy","text":"问答可以解释和建议，但不能改写 Julia 的真实参数与实验结果。","textPreview":"问答可以解释和建议，但不能改写 Julia 的真实参数与实验结果。","textChars":33,"textLines":1,"bbox":[194,594,892,26]}
+{"kind":"notes","id":"nt/dom08e","slide":6,"text":"这是答辩的核心技术页。强调混合编程不是机械拼接，也不是加载动态库，而是两种语言各自发挥优势，并用网页组合。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（软件架构与 Python–Julia 混合编程，第 261–311 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/8y8dq1","slide":7,"title":"运行机制","textShapes":24}
+{"kind":"shape","id":"sh/twje1cfa","slide":7,"name":"top-accent-7","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/69sf6xgz","slide":7,"name":"section-7","text":"运行机制","textPreview":"运行机制","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/ru1wz2xk","slide":7,"name":"title-7","text":"网页内嵌缩短交互链路，也形成故障隔离","textPreview":"网页内嵌缩短交互链路，也形成故障隔离","textChars":18,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/47ax4nyt","slide":7,"name":"header-line-7","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/58jexsfe","slide":7,"name":"footer-7","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/i58v2xgn","slide":7,"name":"page-7","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/j6hwvix8","slide":7,"name":"runtime-node-0","bbox":[64,230,194,136]}
+{"kind":"textbox","id":"sh/w3qd0nyx","slide":7,"name":"runtime-no-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[82,248,42,26]}
+{"kind":"textbox","id":"sh/h4zetsf2","slide":7,"name":"runtime-head-0","text":"主程序启动","textPreview":"主程序启动","textChars":5,"textLines":1,"bbox":[82,284,158,32]}
+{"kind":"textbox","id":"sh/xovu9wr6","slide":7,"name":"runtime-sub-0","text":"Streamlit 入口","textPreview":"Streamlit 入口","textChars":12,"textLines":1,"bbox":[82,326,158,26]}
+{"kind":"shape","id":"sh/wnmdgrql","slide":7,"name":"runtime-node-1","bbox":[302,230,194,136]}
+{"kind":"textbox","id":"sh/b2dc7m90","slide":7,"name":"runtime-no-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[320,248,42,26]}
+{"kind":"textbox","id":"sh/a14beh8f","slide":7,"name":"runtime-head-1","text":"分配端口","textPreview":"分配端口","textChars":4,"textLines":1,"bbox":[320,284,158,32]}
+{"kind":"textbox","id":"sh/90vu5cru","slide":7,"name":"runtime-sub-1","text":"启动 Julia 子进程","textPreview":"启动 Julia 子进程","textChars":12,"textLines":1,"bbox":[320,326,158,26]}
+{"kind":"shape","id":"sh/ozmtc7q9","slide":7,"name":"runtime-node-2","bbox":[540,230,194,136]}
+{"kind":"textbox","id":"sh/nydc329o","slide":7,"name":"runtime-no-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[558,248,42,26]}
+{"kind":"textbox","id":"sh/mxkbax8j","slide":7,"name":"runtime-head-2","text":"轻量检查","textPreview":"轻量检查","textChars":4,"textLines":1,"bbox":[558,284,158,32]}
+{"kind":"textbox","id":"sh/1wbu1cry","slide":7,"name":"runtime-sub-2","text":"TCP 监听就绪","textPreview":"TCP 监听就绪","textChars":8,"textLines":1,"bbox":[558,326,158,26]}
+{"kind":"shape","id":"sh/0v2t87qd","slide":7,"name":"runtime-node-3","bbox":[778,230,194,136]}
+{"kind":"textbox","id":"sh/crql4rm5","slide":7,"name":"runtime-no-3","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[796,248,42,26]}
+{"kind":"textbox","id":"sh/dszmdw3q","slide":7,"name":"runtime-head-3","text":"网页内嵌","textPreview":"网页内嵌","textChars":4,"textLines":1,"bbox":[796,284,158,32]}
+{"kind":"textbox","id":"sh/qp83214f","slide":7,"name":"runtime-sub-3","text":"加载 WGLMakie","textPreview":"加载 WGLMakie","textChars":11,"textLines":1,"bbox":[796,326,158,26]}
+{"kind":"shape","id":"sh/rqh4b6l0","slide":7,"name":"runtime-node-4","bbox":[1016,230,194,136]}
+{"kind":"textbox","id":"sh/4n6l0rm9","slide":7,"name":"runtime-no-4","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1034,248,42,26]}
+{"kind":"textbox","id":"sh/pof29w3u","slide":7,"name":"runtime-head-4","text":"浏览器直连","textPreview":"浏览器直连","textChars":5,"textLines":1,"bbox":[1034,284,158,32]}
+{"kind":"textbox","id":"sh/2lo3yh43","slide":7,"name":"runtime-sub-4","text":"滑块→Bonito","textPreview":"滑块→Bonito","textChars":9,"textLines":1,"bbox":[1034,326,158,26]}
+{"kind":"shape","id":"sh/3mxk7mlo","slide":7,"bbox":[258,298,44,0]}
+{"kind":"shape","id":"sh/ojalcb2d","slide":7,"bbox":[496,298,44,0]}
+{"kind":"shape","id":"sh/9kjmlg3y","slide":7,"bbox":[734,298,44,0]}
+{"kind":"shape","id":"sh/jeloba50","slide":7,"bbox":[972,298,44,0]}
+{"kind":"textbox","id":"sh/ydc7ip4v","slide":7,"name":"runtime-key","text":"交互事件不经过 Python 逐点复制大数组，动画链路更短。","textPreview":"交互事件不经过 Python 逐点复制大数组，动画链路更短。","textChars":30,"textLines":1,"bbox":[130,396,1020,35]}
+{"kind":"shape","id":"sh/lgn6dkn6","slide":7,"name":"runtime-fail-julia","bbox":[118,474,494,112]}
+{"kind":"textbox","id":"sh/kfupkfml","slide":7,"name":"runtime-fail-julia-head","text":"Julia 初始化失败","textPreview":"Julia 初始化失败","textChars":11,"textLines":1,"bbox":[146,496,220,30]}
+{"kind":"textbox","id":"sh/7i5ofu5c","slide":7,"name":"runtime-fail-julia-body","text":"主页面继续显示状态、日志和智能问答","textPreview":"主页面继续显示状态、日志和智能问答","textChars":17,"textLines":1,"bbox":[146,538,430,32]}
+{"kind":"shape","id":"sh/6hw7mp4r","slide":7,"name":"runtime-fail-ai","bbox":[668,474,494,112]}
+{"kind":"textbox","id":"sh/t4n6h4ni","slide":7,"name":"runtime-fail-ai-head","text":"问答服务不可用","textPreview":"问答服务不可用","textChars":7,"textLines":1,"bbox":[696,496,240,30]}
+{"kind":"textbox","id":"sh/sjepozmx","slide":7,"name":"runtime-fail-ai-body","text":"四个确定性 Julia 实验仍可独立运行","textPreview":"四个确定性 Julia 实验仍可独立运行","textChars":20,"textLines":1,"bbox":[696,538,430,32]}
+{"kind":"notes","id":"nt/8y8dq1","slide":7,"text":"按启动顺序快速说明，不必展开端口号。重点是浏览器直接交互和双向降级能力。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（Python–Julia 进程协同，第 289–324 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/gsi2a7","slide":8,"title":"智能问答","textShapes":7}
+{"kind":"shape","id":"sh/143qhk7m","slide":8,"name":"top-accent-8","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/ehcrm5ob","slide":8,"name":"section-8","text":"智能问答","textPreview":"智能问答","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/f2l8fapg","slide":8,"name":"title-8","text":"智能问答不是通用聊天，而是实验中的认知支架","textPreview":"智能问答不是通用聊天，而是实验中的认知支架","textChars":21,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/o7u9sf6d","slide":8,"name":"header-line-8","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/p8nalk7y","slide":8,"name":"footer-8","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/25crqpo7","slide":8,"name":"page-8","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"textbox","id":"sh/n6l8jups","slide":8,"name":"qa-points","text":"观察后追问：从“这条轨迹为何不闭合”进入物理解释\n多模态输入：可粘贴轨迹、示波器截图或装置照片\n依据优先：本地专题文献与确定性工具共同约束回答\n回到实验：把参数建议直接带入 Julia 页面复核","textPreview":"观察后追问：从“这条轨迹为何不闭合”进入物理解释 | 多模态输入：可粘贴轨迹、示波器截图或装置照片 | 依据优先：本地专题文献与确定性工具共同约束回答 | 回到实验：把参数建议直接带入 Julia 页面复核","textChars":97,"textLines":4,"bbox":[70,224,490,250]}
+{"kind":"shape","id":"sh/4ba9gv6t","slide":8,"name":"qa-loop","bbox":[70,500,490,108]}
+{"kind":"textbox","id":"sh/5cjq907e","slide":8,"name":"qa-loop-title","text":"教学闭环","textPreview":"教学闭环","textChars":4,"textLines":1,"bbox":[94,520,110,25]}
+{"kind":"textbox","id":"sh/d8re1w7u","slide":8,"name":"qa-loop-copy","text":"现象观察 → 文献检索 → 物理推导\n→ 确定性计算 → 可视化验证","textPreview":"现象观察 → 文献检索 → 物理推导 | → 确定性计算 → 可视化验证","textChars":34,"textLines":2,"bbox":[94,552,430,48]}
+{"kind":"shape","id":"sh/s7idsrq9","slide":8,"name":"qa-interface-frame","bbox":[594,184,612,458]}
+{"kind":"image","id":"im/kf6l87e5","slide":8,"name":"","geometry":"roundRect","alt":"带完整输入框的李萨如智能问答真实界面","bbox":[600,190,600,446]}
+{"kind":"notes","id":"nt/gsi2a7","slide":8,"text":"指向右侧真实界面的快速提问、图片提示和完整输入框。强调问答服务贯穿预习、实验和复盘，而不是只在结束后答疑。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（智能问答特色设计，第 337–377 行）\n- 李萨如/设计报告/assets/lissajous_qa_interface_real.png\n[/Sources]"}
+{"kind":"slide","id":"sl/5lblmf","slide":9,"title":"可信问答","textShapes":21}
+{"kind":"shape","id":"sh/utg7ehs3","slide":9,"name":"top-accent-9","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/hg769wbe","slide":9,"name":"section-9","text":"可信问答","textPreview":"可信问答","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/wfypgrat","slide":9,"name":"title-9","text":"文献、确定性工具和安全执行共同约束回答","textPreview":"文献、确定性工具和安全执行共同约束回答","textChars":19,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/ji98b6tk","slide":9,"name":"header-line-9","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/ihg7i1sz","slide":9,"name":"footer-9","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/5krqdwbq","slide":9,"name":"page-9","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/4jipkra5","slide":9,"name":"trust-stage-0","bbox":[72,228,236,118]}
+{"kind":"textbox","id":"sh/zm5oz2tg","slide":9,"name":"trust-head-0","text":"本地专题文献","textPreview":"本地专题文献","textChars":6,"textLines":1,"bbox":[90,248,200,30]}
+{"kind":"textbox","id":"sh/ylw76xcv","slide":9,"name":"trust-sub-0","text":"PDF 提取与元数据","textPreview":"PDF 提取与元数据","textChars":10,"textLines":1,"bbox":[90,294,200,26]}
+{"kind":"shape","id":"sh/sjmp4rad","slide":9,"name":"trust-stage-1","bbox":[366,228,236,118]}
+{"kind":"textbox","id":"sh/dkvqxwry","slide":9,"name":"trust-head-1","text":"混合检索","textPreview":"混合检索","textChars":4,"textLines":1,"bbox":[384,248,200,30]}
+{"kind":"textbox","id":"sh/qx4721sn","slide":9,"name":"trust-sub-1","text":"TF–IDF + BM25","textPreview":"TF–IDF + BM25","textChars":13,"textLines":1,"bbox":[384,294,200,26]}
+{"kind":"shape","id":"sh/ryd8v698","slide":9,"name":"trust-stage-2","bbox":[660,228,236,118]}
+{"kind":"textbox","id":"sh/0n6p8bap","slide":9,"name":"trust-head-2","text":"确定性工具","textPreview":"确定性工具","textChars":5,"textLines":1,"bbox":[678,248,200,30]}
+{"kind":"textbox","id":"sh/1ofq1gra","slide":9,"name":"trust-sub-2","text":"周期 · 面积 · 形状","textPreview":"周期 · 面积 · 形状","textChars":12,"textLines":1,"bbox":[678,294,200,26]}
+{"kind":"shape","id":"sh/el4761sj","slide":9,"name":"trust-stage-3","bbox":[954,228,236,118]}
+{"kind":"textbox","id":"sh/fmd8z694","slide":9,"name":"trust-head-3","text":"受限绘图","textPreview":"受限绘图","textChars":4,"textLines":1,"bbox":[972,248,200,30]}
+{"kind":"textbox","id":"sh/gr2pw7al","slide":9,"name":"trust-sub-3","text":"用户确认后执行","textPreview":"用户确认后执行","textChars":7,"textLines":1,"bbox":[972,294,200,26]}
+{"kind":"shape","id":"sh/hsbqpcrq","slide":9,"bbox":[308,287,58,0]}
+{"kind":"shape","id":"sh/xcjedozi","slide":9,"bbox":[602,287,58,0]}
+{"kind":"shape","id":"sh/wbaxkjyx","slide":9,"bbox":[896,287,58,0]}
+{"kind":"textbox","id":"sh/ba1wbehc","slide":9,"name":"trust-metric-0","text":"≤ 6","textPreview":"≤ 6","textChars":3,"textLines":1,"bbox":[78,412,212,54]}
+{"kind":"textbox","id":"sh/a9sfi9gr","slide":9,"name":"trust-metric-label-0","text":"每轮去重来源","textPreview":"每轮去重来源","textChars":6,"textLines":1,"bbox":[78,468,212,26]}
+{"kind":"textbox","id":"sh/lg3ehofe","slide":9,"name":"trust-metric-1","text":"55%","textPreview":"55%","textChars":3,"textLines":1,"bbox":[370,412,212,54]}
+{"kind":"textbox","id":"sh/kfux8jy9","slide":9,"name":"trust-metric-label-1","text":"候选阈值 ≥\n最高分的 55%","textPreview":"候选阈值 ≥ | 最高分的 55%","textChars":15,"textLines":2,"bbox":[370,462,212,46]}
+{"kind":"textbox","id":"sh/jelwfeho","slide":9,"name":"trust-metric-2","text":"60 s","textPreview":"60 s","textChars":4,"textLines":1,"bbox":[662,412,212,54]}
+{"kind":"textbox","id":"sh/ydsf69g3","slide":9,"name":"trust-metric-label-2","text":"绘图执行超时","textPreview":"绘图执行超时","textChars":6,"textLines":1,"bbox":[662,468,212,26]}
+{"kind":"textbox","id":"sh/t43el8fq","slide":9,"name":"trust-metric-3","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[954,412,212,54]}
+{"kind":"textbox","id":"sh/83uxc3y5","slide":9,"name":"trust-metric-label-3","text":"最近运行目录","textPreview":"最近运行目录","textChars":6,"textLines":1,"bbox":[954,468,212,26]}
+{"kind":"shape","id":"sh/qpob6lwn","slide":9,"name":"trust-caveat","bbox":[102,548,1076,72]}
+{"kind":"textbox","id":"sh/rqxcfqx8","slide":9,"name":"trust-caveat-copy","text":"文件、网络、进程和敏感环境访问被阻止；该机制不是操作系统级沙箱，公共机房可关闭代码执行。","textPreview":"文件、网络、进程和敏感环境访问被阻止；该机制不是操作系统级沙箱，公共机房可关闭代码执行。","textChars":44,"textLines":1,"bbox":[132,568,1016,32]}
+{"kind":"notes","id":"nt/5lblmf","slide":9,"text":"本页把智能问答的可信性拆成三层：检索有来源、数值由工具算、代码执行有边界。安全机制要如实说明局限。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（专题知识库、确定性计算与受限 Python 可视化，第 379–429 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/ir3kym","slide":10,"title":"部署交付","textShapes":11}
+{"kind":"shape","id":"sh/3qxora5w","slide":10,"name":"top-accent-10","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/4rq50f6h","slide":10,"name":"section-10","text":"部署交付","textPreview":"部署交付","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/psz6tkn2","slide":10,"name":"title-10","text":"单文件封装让双语言系统能进入普通课堂","textPreview":"单文件封装让双语言系统能进入普通课堂","textChars":18,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/qt8n2pon","slide":10,"name":"header-line-10","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/ruhovu5s","slide":10,"name":"footer-10","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/cvq54z6d","slide":10,"name":"page-10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/dwz6x4ny","slide":10,"name":"pack-python","bbox":[76,224,244,82]}
+{"kind":"textbox","id":"sh/ex8n6poj","slide":10,"name":"pack-python-text","text":"Python 前端\nPyInstaller","textPreview":"Python 前端 | PyInstaller","textChars":21,"textLines":2,"bbox":[96,238,204,58]}
+{"kind":"shape","id":"sh/zy1ozu54","slide":10,"name":"pack-julia","bbox":[76,332,244,82]}
+{"kind":"textbox","id":"sh/vq5wje5s","slide":10,"name":"pack-julia-text","text":"Julia 图形运行时\nPackageCompiler","textPreview":"Julia 图形运行时 | PackageCompiler","textChars":27,"textLines":2,"bbox":[96,346,204,58]}
+{"kind":"shape","id":"sh/apwfat4n","slide":10,"name":"pack-kb","bbox":[76,440,244,82]}
+{"kind":"textbox","id":"sh/xcnelony","slide":10,"name":"pack-kb-text","text":"专题知识库\n模型与资源清单","textPreview":"专题知识库 | 模型与资源清单","textChars":13,"textLines":2,"bbox":[96,454,204,58]}
+{"kind":"shape","id":"sh/wbexcjmd","slide":10,"name":"pack-exe","bbox":[430,300,242,162]}
+{"kind":"textbox","id":"sh/nmlwfe5w","slide":10,"name":"pack-exe-icon","text":"EXE","textPreview":"EXE","textChars":3,"textLines":1,"bbox":[472,325,158,58]}
+{"kind":"textbox","id":"sh/mlcf694b","slide":10,"name":"pack-exe-copy","text":"一个启动器\n协同释放与启动","textPreview":"一个启动器 | 协同释放与启动","textChars":13,"textLines":2,"bbox":[460,388,182,62]}
+{"kind":"shape","id":"sh/9o3ehon2","slide":10,"bbox":[320,265,110,116]}
+{"kind":"shape","id":"sh/8nux8jmh","slide":10,"bbox":[320,373,110,8]}
+{"kind":"shape","id":"sh/7ipgri50","slide":10,"bbox":[320,381,110,100]}
+{"kind":"textbox","id":"sh/6hgfid4v","slide":10,"name":"deploy-points","text":"目标机器：无需预装 Python 或 Julia\n统一体验：浏览器内同时使用演示实验与智能问答\n运行要求：64 位 Windows 10/11 与支持 WebGL 的浏览器\n首次启动：解包与 WGLMakie 初始化较慢，显示进度和日志","textPreview":"目标机器：无需预装 Python 或 Julia | 统一体验：浏览器内同时使用演示实验与智能问答 | 运行要求：64 位 Windows 10/11 与支持 WebGL 的浏览器 | 首次启动：解包与 WGLMakie 初始化较慢，显示进度和日志","textChars":118,"textLines":4,"bbox":[758,224,446,266]}
+{"kind":"shape","id":"sh/2pkr61sz","slide":10,"name":"deploy-bottom","bbox":[758,514,446,86]}
+{"kind":"textbox","id":"sh/3qt8z6tk","slide":10,"name":"deploy-bottom-copy","text":"课堂关注“稳定打开并使用”，\n而不是开发环境是否配置完整。","textPreview":"课堂关注“稳定打开并使用”， | 而不是开发环境是否配置完整。","textChars":29,"textLines":2,"bbox":[786,526,390,68]}
+{"kind":"notes","id":"nt/ir3kym","slide":10,"text":"把单文件部署讲成教学可用性问题，而不是单纯打包技巧。首次启动较慢要主动说明进度反馈和日志机制。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（参赛单文件版与开发复现环境，第 563–580 行）\n[/Sources]"}
+{"kind":"slide","id":"sl/suicsr","slide":11,"title":"验证证据","textShapes":13}
+{"kind":"shape","id":"sh/5on6dsf6","slide":11,"name":"top-accent-11","bbox":[0,0,1280,6]}
+{"kind":"textbox","id":"sh/ilc7idgf","slide":11,"name":"section-11","text":"验证证据","textPreview":"验证证据","textChars":4,"textLines":1,"bbox":[64,34,420,24]}
+{"kind":"textbox","id":"sh/jmlobix0","slide":11,"name":"title-11","text":"验证不止看界面，而要用解析量和测试集复核","textPreview":"验证不止看界面，而要用解析量和测试集复核","textChars":20,"textLines":1,"bbox":[64,66,1140,66]}
+{"kind":"shape","id":"sh/sreponyh","slide":11,"name":"header-line-11","bbox":[64,170,1152,0]}
+{"kind":"textbox","id":"sh/tsnqhsf2","slide":11,"name":"footer-11","text":"李萨如图形实验智能助教","textPreview":"李萨如图形实验智能助教","textChars":11,"textLines":1,"bbox":[64,684,300,20]}
+{"kind":"textbox","id":"sh/6pw7mdgr","slide":11,"name":"page-11","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,680,56,22]}
+{"kind":"shape","id":"sh/rq58fixc","slide":11,"name":"validation-left","bbox":[70,212,420,372]}
+{"kind":"textbox","id":"sh/gfyps7yt","slide":11,"name":"validation-left-label","text":"解析模型自检","textPreview":"解析模型自检","textChars":6,"textLines":1,"bbox":[100,242,340,32]}
+{"kind":"textbox","id":"sh/1g7qlcfe","slide":11,"name":"validation-left-formula","text":"S = πAB|sin φ|","textPreview":"S = πAB|sin φ|","textChars":14,"textLines":1,"bbox":[100,302,340,54]}
+{"kind":"textbox","id":"sh/x8jy1cri","slide":11,"name":"validation-left-arrow","text":"理论值  ↔  数值面积","textPreview":"理论值  ↔  数值面积","textChars":12,"textLines":1,"bbox":[100,370,340,32]}
+{"kind":"textbox","id":"sh/w7ax8rqx","slide":11,"name":"validation-left-copy","text":"同时检查二次曲线残差、SVD 半轴、\n闭合终点误差与特殊相位边界。","textPreview":"同时检查二次曲线残差、SVD 半轴、 | 闭合终点误差与特殊相位边界。","textChars":33,"textLines":2,"bbox":[100,426,340,78]}
+{"kind":"textbox","id":"sh/v6hgzm9c","slide":11,"name":"validation-left-sample","text":"界面样例残差约 4.44×10⁻¹⁶","textPreview":"界面样例残差约 4.44×10⁻¹⁶","textChars":18,"textLines":1,"bbox":[100,526,340,28]}
+{"kind":"textbox","id":"sh/a58f6h8r","slide":11,"name":"validation-metric","text":"10 / 10","textPreview":"10 / 10","textChars":7,"textLines":1,"bbox":[570,222,300,88]}
+{"kind":"textbox","id":"sh/5cjy5wre","slide":11,"name":"validation-metric-label","text":"检索评估题 Top-5 主题命中","textPreview":"检索评估题 Top-5 主题命中","textChars":16,"textLines":1,"bbox":[574,312,420,34]}
+{"kind":"textbox","id":"sh/kbaxcrqt","slide":11,"name":"validation-right","text":"参数扫描：检查面积对称性、互质组合与正负失谐\n界面冒烟：参数联动、播放、重置和导出一致\n封装复测：送审单文件应在清洁机器重复同一组理论量\n教学评价：学习增益必须来自真实课堂数据，不能由界面完整性代替","textPreview":"参数扫描：检查面积对称性、互质组合与正负失谐 | 界面冒烟：参数联动、播放、重置和导出一致 | 封装复测：送审单文件应在清洁机器重复同一组理论量 | 教学评价：学习增益必须来自真实课堂数据，不能由界面完整性代替","textChars":99,"textLines":4,"bbox":[570,386,610,202]}
+{"kind":"textbox","id":"sh/ja1g3m9o","slide":11,"name":"validation-caveat","text":"仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。","textPreview":"仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。","textChars":28,"textLines":1,"bbox":[570,596,610,28]}
+{"kind":"notes","id":"nt/suicsr","slide":11,"text":"先讲物理自检，再讲检索评估，最后说明尚须实测的证据边界。不要把计划中的清洁机测试或教学效果说成已完成。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（模型校验、评价框架与结果验证，第 256–259、431–456、493–527 行）\n- 李萨如/设计报告/assets/lissajous_demo_interface.png（界面显示残差样例）\n[/Sources]"}
+{"kind":"slide","id":"sl/849ved","slide":12,"title":"CONCLUSION","textShapes":16}
+{"kind":"shape","id":"sh/cfqhw361","slide":12,"name":"close-top-accent","bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/reh0ny5g","slide":12,"name":"close-eyebrow","text":"CONCLUSION","textPreview":"CONCLUSION","textChars":10,"textLines":1,"bbox":[72,70,260,28]}
+{"kind":"textbox","id":"sh/qd8zutov","slide":12,"name":"close-title","text":"一份文件 · 两种语言\n三条证据链 · 四个实验","textPreview":"一份文件 · 两种语言 | 三条证据链 · 四个实验","textChars":24,"textLines":2,"bbox":[72,148,1136,145]}
+{"kind":"shape","id":"sh/pcfilona","slide":12,"name":"close-rule","bbox":[280,334,720,0]}
+{"kind":"textbox","id":"sh/4b6hsj6p","slide":12,"name":"close-n-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[84,382,56,60]}
+{"kind":"textbox","id":"sh/3ax0jy54","slide":12,"name":"close-head-0","text":"文件","textPreview":"文件","textChars":2,"textLines":1,"bbox":[148,388,190,34]}
+{"kind":"textbox","id":"sh/i9ozqtoj","slide":12,"name":"close-body-0","text":"降低部署门槛","textPreview":"降低部署门槛","textChars":6,"textLines":1,"bbox":[148,430,190,54]}
+{"kind":"textbox","id":"sh/hofihone","slide":12,"name":"close-n-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[380,382,56,60]}
+{"kind":"textbox","id":"sh/gn6hoj6t","slide":12,"name":"close-head-1","text":"语言","textPreview":"语言","textChars":2,"textLines":1,"bbox":[444,388,190,34]}
+{"kind":"textbox","id":"sh/yt07q10j","slide":12,"name":"close-body-1","text":"Python 编排 / Julia 计算","textPreview":"Python 编排 / Julia 计算","textChars":20,"textLines":1,"bbox":[444,430,190,54]}
+{"kind":"textbox","id":"sh/zu9oz6h4","slide":12,"name":"close-n-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[676,382,56,60]}
+{"kind":"textbox","id":"sh/0vipsbip","slide":12,"name":"close-head-2","text":"证据链","textPreview":"证据链","textChars":3,"textLines":1,"bbox":[740,388,190,34]}
+{"kind":"textbox","id":"sh/lwr61wzu","slide":12,"name":"close-body-2","text":"模型 / 交互 / 问答","textPreview":"模型 / 交互 / 问答","textChars":12,"textLines":1,"bbox":[740,430,190,54]}
+{"kind":"textbox","id":"sh/qpg7mh07","slide":12,"name":"close-n-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[972,382,56,60]}
+{"kind":"textbox","id":"sh/bqpovm1s","slide":12,"name":"close-head-3","text":"实验","textPreview":"实验","textChars":2,"textLines":1,"bbox":[1036,388,190,34]}
+{"kind":"textbox","id":"sh/cryporid","slide":12,"name":"close-body-3","text":"相位 / 振幅 / 频比 / 失谐","textPreview":"相位 / 振幅 / 频比 / 失谐","textChars":17,"textLines":1,"bbox":[1036,430,190,54]}
+{"kind":"shape","id":"sh/dsr6xwjy","slide":12,"name":"close-statement","bbox":[186,534,908,92]}
+{"kind":"textbox","id":"sh/21g7ih0b","slide":12,"name":"close-statement-text","text":"模型给出结果，问答帮助解释，公式与数据负责裁决。","textPreview":"模型给出结果，问答帮助解释，公式与数据负责裁决。","textChars":24,"textLines":1,"bbox":[222,560,836,42]}
+{"kind":"textbox","id":"sh/32porm1w","slide":12,"name":"close-footer","text":"面向预习、课堂演示、自主探究与实验复盘","textPreview":"面向预习、课堂演示、自主探究与实验复盘","textChars":19,"textLines":1,"bbox":[72,668,1136,24]}
+{"kind":"notes","id":"nt/849ved","slide":12,"text":"结尾回扣开场：本作品的价值不是技术堆叠，而是让学生沿着可核查证据从图形现象走向物理解释。\n\n[Sources]\n- 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex（创新性、推广场景与结论，第 529–547、631–636 行）\n[/Sources]"}

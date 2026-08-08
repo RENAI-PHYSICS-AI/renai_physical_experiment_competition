@@ -116,7 +116,7 @@ st.markdown(
         margin-bottom: 1.25rem;
         overflow: hidden;
         color: #f7fbff;
-        background: #17334f;
+        background: #15365b;
         border: 1px solid #2e526f;
         border-radius: 8px;
     }

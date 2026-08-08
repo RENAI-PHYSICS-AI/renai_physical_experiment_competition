@@ -1,0 +1,1224 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/suicsr",
+    "id": "suicsr",
+    "slide": 11,
+    "layoutId": "a4f45e0f-25b6-4e22-9134-84e9ba0c011d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "8a9da702-7505-4f75-84ab-2d9e243dc525",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#07131D",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Cambria Math",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a4f45e0f-25b6-4e22-9134-84e9ba0c011d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "8a9da702-7505-4f75-84ab-2d9e243dc525",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "8a9da702-7505-4f75-84ab-2d9e243dc525",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5on6dsf6",
+      "id": "1",
+      "name": "top-accent-11",
+      "bbox": [
+        0,
+        0,
+        1280,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#45D6CB",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ilc7idgf",
+      "id": "2",
+      "name": "section-11",
+      "bbox": [
+        64,
+        34,
+        420,
+        24
+      ],
+      "geometry": "rect",
+      "text": "验证证据",
+      "textPreview": "验证证据",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Microsoft YaHei",
+        "color": "#45D6CB",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "验证证据"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "验证证据",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Microsoft YaHei",
+            "color": "#45D6CB",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "验证证据",
+              "fontSize": 13,
+              "typeface": "Microsoft YaHei",
+              "color": "#45D6CB",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jmlobix0",
+      "id": "3",
+      "name": "title-11",
+      "bbox": [
+        64,
+        66,
+        1140,
+        66
+      ],
+      "geometry": "rect",
+      "text": "验证不止看界面，而要用解析量和测试集复核",
+      "textPreview": "验证不止看界面，而要用解析量和测试集复核",
+      "resolvedFontSize": 47,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 47,
+        "typeface": "Microsoft YaHei",
+        "color": "#F3F7FA",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "验证不止看界面，而要用解析量和测试集复核"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "验证不止看界面，而要用解析量和测试集复核",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 47,
+            "typeface": "Microsoft YaHei",
+            "color": "#F3F7FA",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "验证不止看界面，而要用解析量和测试集复核",
+              "fontSize": 47,
+              "typeface": "Microsoft YaHei",
+              "color": "#F3F7FA",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sreponyh",
+      "id": "4",
+      "name": "header-line-11",
+      "bbox": [
+        64,
+        170,
+        1152,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#29495C",
+      "lineWidth": 1
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsnqhsf2",
+      "id": "5",
+      "name": "footer-11",
+      "bbox": [
+        64,
+        684,
+        300,
+        20
+      ],
+      "geometry": "rect",
+      "text": "李萨如图形实验智能助教",
+      "textPreview": "李萨如图形实验智能助教",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "Microsoft YaHei",
+        "color": "#6E8798",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "李萨如图形实验智能助教"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "李萨如图形实验智能助教",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "typeface": "Microsoft YaHei",
+            "color": "#6E8798",
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "李萨如图形实验智能助教",
+              "fontSize": 10,
+              "typeface": "Microsoft YaHei",
+              "color": "#6E8798",
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6pw7mdgr",
+      "id": "6",
+      "name": "page-11",
+      "bbox": [
+        1160,
+        680,
+        56,
+        22
+      ],
+      "geometry": "rect",
+      "text": "11",
+      "textPreview": "11",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "Microsoft YaHei",
+        "color": "#45D6CB",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "11"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "11",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Microsoft YaHei",
+            "color": "#45D6CB",
+            "bold": true,
+            "alignment": "right",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "11",
+              "fontSize": 12,
+              "typeface": "Microsoft YaHei",
+              "color": "#45D6CB",
+              "bold": true,
+              "alignment": "right",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rq58fixc",
+      "id": "7",
+      "name": "validation-left",
+      "bbox": [
+        70,
+        212,
+        420,
+        372
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0C2232",
+      "lineColor": "#29495C",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfyps7yt",
+      "id": "8",
+      "name": "validation-left-label",
+      "bbox": [
+        100,
+        242,
+        340,
+        32
+      ],
+      "geometry": "rect",
+      "text": "解析模型自检",
+      "textPreview": "解析模型自检",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Microsoft YaHei",
+        "color": "#79F0E8",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "解析模型自检"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "解析模型自检",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#79F0E8",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "解析模型自检",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#79F0E8",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1g7qlcfe",
+      "id": "9",
+      "name": "validation-left-formula",
+      "bbox": [
+        100,
+        302,
+        340,
+        54
+      ],
+      "geometry": "rect",
+      "text": "S = πAB|sin φ|",
+      "textPreview": "S = πAB|sin φ|",
+      "resolvedFontSize": 31,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 31,
+        "typeface": "Cambria Math",
+        "color": "#F3F7FA",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "S = πAB|sin φ|"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "S = πAB|sin φ|",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 31,
+            "typeface": "Cambria Math",
+            "color": "#F3F7FA",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "S = πAB|sin φ|",
+              "fontSize": 31,
+              "typeface": "Cambria Math",
+              "color": "#F3F7FA",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8jy1cri",
+      "id": "10",
+      "name": "validation-left-arrow",
+      "bbox": [
+        100,
+        370,
+        340,
+        32
+      ],
+      "geometry": "rect",
+      "text": "理论值  ↔  数值面积",
+      "textPreview": "理论值  ↔  数值面积",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Microsoft YaHei",
+        "color": "#FF9B91",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "理论值  ↔  数值面积"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "理论值  ↔  数值面积",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#FF9B91",
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "理论值  ↔  数值面积",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#FF9B91",
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7ax8rqx",
+      "id": "11",
+      "name": "validation-left-copy",
+      "bbox": [
+        100,
+        426,
+        340,
+        78
+      ],
+      "geometry": "rect",
+      "text": "同时检查二次曲线残差、SVD 半轴、\n闭合终点误差与特殊相位边界。",
+      "textPreview": "同时检查二次曲线残差、SVD 半轴、 | 闭合终点误差与特殊相位边界。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Microsoft YaHei",
+        "color": "#A7BAC8",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "同时检查二次曲线残差、SVD"
+          },
+          {
+            "index": 2,
+            "text": "半轴、"
+          },
+          {
+            "index": 3,
+            "text": "闭合终点误差与特殊相位边界。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "同时检查二次曲线残差、SVD 半轴、",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#A7BAC8",
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "同时检查二次曲线残差、SVD 半轴、",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#A7BAC8",
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "闭合终点误差与特殊相位边界。",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#A7BAC8",
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "闭合终点误差与特殊相位边界。",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#A7BAC8",
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6hgzm9c",
+      "id": "12",
+      "name": "validation-left-sample",
+      "bbox": [
+        100,
+        526,
+        340,
+        28
+      ],
+      "geometry": "rect",
+      "text": "界面样例残差约 4.44×10⁻¹⁶",
+      "textPreview": "界面样例残差约 4.44×10⁻¹⁶",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#F5C66B",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "界面样例残差约 4.44×10⁻¹⁶"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "界面样例残差约 4.44×10⁻¹⁶",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#F5C66B",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "界面样例残差约 4.44×10⁻¹⁶",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#F5C66B",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a58f6h8r",
+      "id": "13",
+      "name": "validation-metric",
+      "bbox": [
+        570,
+        222,
+        300,
+        88
+      ],
+      "geometry": "rect",
+      "text": "10 / 10",
+      "textPreview": "10 / 10",
+      "resolvedFontSize": 52,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 52,
+        "typeface": "Microsoft YaHei",
+        "color": "#79F0E8",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10 / 10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10 / 10",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 52,
+            "typeface": "Microsoft YaHei",
+            "color": "#79F0E8",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10 / 10",
+              "fontSize": 52,
+              "typeface": "Microsoft YaHei",
+              "color": "#79F0E8",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cjy5wre",
+      "id": "14",
+      "name": "validation-metric-label",
+      "bbox": [
+        574,
+        312,
+        420,
+        34
+      ],
+      "geometry": "rect",
+      "text": "检索评估题 Top-5 主题命中",
+      "textPreview": "检索评估题 Top-5 主题命中",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Microsoft YaHei",
+        "color": "#F3F7FA",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "检索评估题 Top-5 主题命中"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "检索评估题 Top-5 主题命中",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#F3F7FA",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "检索评估题 Top-5 主题命中",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#F3F7FA",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kbaxcrqt",
+      "id": "15",
+      "name": "validation-right",
+      "bbox": [
+        570,
+        386,
+        610,
+        202
+      ],
+      "geometry": "rect",
+      "text": "参数扫描：检查面积对称性、互质组合与正负失谐\n界面冒烟：参数联动、播放、重置和导出一致\n封装复测：送审单文件应在清洁机器重复同一组理论量\n教学评价：学习增益必须来自真实课堂数据，不能由界面完整性代替",
+      "textPreview": "参数扫描：检查面积对称性、互质组合与正负失谐 | 界面冒烟：参数联动、播放、重置和导出一致 | 封装复测：送审单文件应在清洁机器重复同一组理论量 | 教学评价：学习增益必须来自真实课堂数据，不能由界面完整性代替",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Microsoft YaHei",
+        "color": "#DDE8EE",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 参数扫描：检查面积对称性、互质组合与正负失谐"
+          },
+          {
+            "index": 2,
+            "text": "• 界面冒烟：参数联动、播放、重置和导出一致"
+          },
+          {
+            "index": 3,
+            "text": "• 封装复测：送审单文件应在清洁机器重复同一组理论量"
+          },
+          {
+            "index": 4,
+            "text": "• 教学评价："
+          },
+          {
+            "index": 5,
+            "text": "学习增益必须来自真实课堂数据，不能由界面完整性代替"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "参数扫描：检查面积对称性、互质组合与正负失谐",
+          "bulletCharacter": "•",
+          "marginLeft": 24,
+          "indent": -14,
+          "lineSpacingPercent": 108000,
+          "spaceAfter": 9,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#DDE8EE",
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "参数扫描：",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            },
+            {
+              "index": 2,
+              "text": "检查面积对称性、互质组合与正负失谐",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "界面冒烟：参数联动、播放、重置和导出一致",
+          "bulletCharacter": "•",
+          "marginLeft": 24,
+          "indent": -14,
+          "lineSpacingPercent": 108000,
+          "spaceAfter": 9,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#DDE8EE",
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "界面冒烟：",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            },
+            {
+              "index": 2,
+              "text": "参数联动、播放、重置和导出一致",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "text": "封装复测：送审单文件应在清洁机器重复同一组理论量",
+          "bulletCharacter": "•",
+          "marginLeft": 24,
+          "indent": -14,
+          "lineSpacingPercent": 108000,
+          "spaceAfter": 9,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#DDE8EE",
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "封装复测：",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            },
+            {
+              "index": 2,
+              "text": "送审单文件应在清洁机器重复同一组理论量",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "text": "教学评价：学习增益必须来自真实课堂数据，不能由界面完整性代替",
+          "bulletCharacter": "•",
+          "marginLeft": 24,
+          "indent": -14,
+          "lineSpacingPercent": 108000,
+          "spaceAfter": 9,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Microsoft YaHei",
+            "color": "#DDE8EE",
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "教学评价：",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            },
+            {
+              "index": 2,
+              "text": "学习增益必须来自真实课堂数据，不能由界面完整性代替",
+              "fontSize": 22,
+              "typeface": "Microsoft YaHei",
+              "color": "#DDE8EE",
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ]
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ja1g3m9o",
+      "id": "16",
+      "name": "validation-caveat",
+      "bbox": [
+        570,
+        596,
+        610,
+        28
+      ],
+      "geometry": "rect",
+      "text": "仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。",
+      "textPreview": "仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#FF9B91",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#FF9B91",
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅展示已有证据；最终测试矩阵与教学数据按送审版实测填写。",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#FF9B91",
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

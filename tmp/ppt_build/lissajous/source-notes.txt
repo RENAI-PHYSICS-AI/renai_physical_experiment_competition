@@ -1,0 +1,8 @@
+All claims and visuals are sourced from the current local project.
+Primary source: 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex
+Images:
+- 李萨如/李萨如_RAG智能体/assets/lissajous_header.png
+- 李萨如/李萨如图形可视化实验说明/实验一_Julia可视化方案/output/interface_preview.png
+- 李萨如/设计报告/assets/lissajous_demo_interface.png
+- 李萨如/设计报告/assets/lissajous_qa_interface_real.png
+No external web assets were used.

@@ -1,9 +1,0 @@
-All visible claims and speaker notes are grounded in the current local project report.
-Primary source: 李萨如/设计报告/李萨如图形虚拟实验教学资源设计报告.tex
-Template source: 李萨如/设计报告/李萨如图形实验智能助教_答辩PPT.pptx (captured as template-starter.pptx before editing)
-Existing local images retained:
-- 李萨如/李萨如_RAG智能体/assets/lissajous_header.png
-- 李萨如/设计报告/assets/lissajous_demo_interface.png
-- 李萨如/设计报告/assets/lissajous_qa_interface_real.png
-- tmp/ppt_build/lissajous/phase_interface_focus.png
-No external web assets or unverified result claims were introduced.

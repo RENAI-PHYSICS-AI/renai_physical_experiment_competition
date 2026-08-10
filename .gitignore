@@ -13,3 +13,23 @@ __pycache__/
 
 # 数据库
 *.db
+
+# LaTeX 中间文件
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+
+# 文档与演示文稿检查缓存
+*.inspect.ndjson
+**/tmp/
+
+# Python 测试与工具缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/

@@ -1,26 +1,40 @@
-声速测量实验智能助教答辩PPT QA
+声速测量实验智能助教答辩 PPT 最终 QA（2026-08-10）
 
-最终文件：声速/设计报告/声速测量实验智能助教_答辩PPT.pptx
+最终 PPTX：声速/设计报告/声速测量实验智能助教_答辩PPT.pptx
+最终讲稿：声速/设计报告/声速测量实验智能助教_10分钟讲稿.txt
 页数：12
-最终文件大小：2,226,974 字节
-SHA-256：54B64030A80C5DAFC4888477638B7C628F1C1A9D78889165D77B6A4E63335FB0
-speaker notes：12/12 页包含 [Sources]...[/Sources]
-最终重渲染：tmp/ppt_build/sound/render_single_image/slide-1.png 至 slide-12.png
+PPTX 大小：2,232,416 字节
+PPTX SHA-256：0D2515A53E5757DAA7BE5B98693ECD2BDE320747AA860F7646F045EC17F33AC9
+讲稿 SHA-256：7167A71B66C8F6AD20BF793741A0BA3874F4787F0BEA8A0FE967625B1F3206FF
 
-本轮更新：
-- 第1页删除左半幅纯色覆盖层，改为同一张主视觉图片完整铺满整页。
-- 声波在原接缝位置连续呈现，不再出现被色块截断或两图拼接的视觉效果。
-- 标题、眉题、副标题、强调线和底部说明的位置及样式保持不变。
-- 第2至第12页重渲染结果与更新前逐文件哈希一致；网页、报告和单文件程序未改动。
+模板路线：
+- inspect_template_deck 已检查源稿全部 12 页；源预览和 layout JSON 位于 template-inspect/。
+- template-frame-map.json 通过 validate_template_plan，12 页逐页 1:1 duplicate-slide，无新增页面或覆盖式重建。
+- template-starter.pptx 已生成；最终只改写 frame map 指定的既有文本框并写入 speaker notes。
+- check_template_fidelity：pass，issueCount 0。
+- 母版、版式、坐标、配色、字体、图片、页眉和页脚保持不变。
 
-逐页全尺寸视觉检查：12/12 通过。
-- 第1页：单图全幅背景连续，无接缝或灰蓝分区；完整声波、暖钛色音叉和琥珀强调色清晰协调，文字可读性正常。
-- 第8页：截图未拉伸或裁切；标题、快速提问、换一组按钮及底部输入框均完整可辨。
-- 其余页面：未发现标题异常换行、内容裁切、意外遮挡、图像失真或页码/页脚缺失。
+内容更新：
+- 第 3 页：统一误差指标与准确度、稳定性、二义性、适用条件比较。
+- 第 6 页：参数重算与播放推进分离；读数、动画、曲线和 CSV 共享结果对象。
+- 第 7 页：Python/Streamlit 与 Julia/WGLMakie 的职责和数据边界。
+- 第 9 页：仅参数完整时触发条件复算，并与检索证据汇合。
+- 第 10 页：当前唯一发布版大小更新为 618,567,730 字节；加入干净账户离线验收与异常矩阵。
+- 第 11 页：前后测、任务完成率、误差解释和迁移题构成评价证据。
+- 第 12 页：推广资源包与干净环境验收。
 
-slides_test.py：Test passed. No overflow detected.
+讲稿与备注：
+- 12/12 页均含完整中文讲稿、建议时长和 [Sources]...[/Sources]。
+- 建议总时长：620 秒（10 分 20 秒）。
+- 正文汉字数：2,286；按普通中文答辩语速约 220–250 字/分钟控制。
+- 独立讲稿与 PPT speaker notes 内容一致。
 
-环境说明：Windows bundled canvas runtime 在自然退出阶段仍可能返回非零状态，
-但构建与独立导入重渲染均生成了完整的 12 页文件。slides_test 通过独立放大画布
-渲染检查确认无越界；最终 PPTX 的 OOXML 同时确认 12 页、12 个 notesSlide、
-12/12 个 [Sources] 块。
+最终验证：
+- 最终 PPTX 独立导入并渲染 12/12 页；render_20260810/ 和 final-contact-sheet.png 已生成。
+- 逐页全尺寸视觉检查 12/12 通过：无意外重叠、裁切、异常换行、图像失真或页脚缺失。
+- slides_test.py：Test passed. No overflow detected.
+- 最终 PPTX OOXML：12 个 slide XML，空 slide placeholder 数为 0。
+- 最终 PPTX OOXML：12 个 notesSlide，12 个建议时长标签，12 个 [Sources] 块。
+- layout/inspect 搜索未发现 overflow、overlap、warning 或 clipping 标记。
+
+环境说明：Windows bundled canvas runtime 在所有文件与 JSON manifest 已写完后的自然 teardown 阶段可能返回 exit 1。QA 渲染器只在 manifest 可解析且全部 12 个文件存在时接受这一窄化情形；其后的 slides_test、模板 fidelity、OOXML 检查和逐页视觉检查均通过。

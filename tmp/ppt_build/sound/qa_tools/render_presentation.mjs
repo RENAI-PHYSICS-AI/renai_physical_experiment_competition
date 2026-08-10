@@ -65,8 +65,13 @@ async function main() {
   console.log(JSON.stringify({ input, outputDir, slideCount: slides.length, paths }, null, 2));
 }
 
-main().catch((error) => {
-  console.error(error.stack || error.message || String(error));
-  console.error(usage());
-  process.exit(1);
-});
+main()
+  .then(() => {
+    if (typeof process.reallyExit === "function") process.reallyExit(0);
+    else process.exit(0);
+  })
+  .catch((error) => {
+    console.error(error.stack || error.message || String(error));
+    console.error(usage());
+    process.exit(1);
+  });

@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/lqhq1z",
-    "id": "lqhq1z",
+    "aid": "sl/y90nupkv",
+    "id": "y90nupkv",
     "slide": 1,
-    "layoutId": "9dc7bc7c-d511-4138-a9c4-9aeae9e7c782",
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
     "masterLayoutName": "Master",
     "backgroundColor": "#253238",
     "frame": {
@@ -27,10 +27,6 @@
       "accent4": "#0F9ED5",
       "accent5": "#A02B93",
       "accent6": "#4EA72E",
-      "bg1": "#FFFFFF",
-      "bg2": "#000000",
-      "tx1": "#1F1F1F",
-      "tx2": "#FFFFFF",
       "dk1": "#000000",
       "lt1": "#FFFFFF",
       "dk2": "#0E2841",
@@ -38,22 +34,37 @@
       "hlink": "#467886",
       "folHlink": "#96607D"
     },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
     "typefaces": [
+      "Calibri",
+      "Calibri Light",
       "Microsoft YaHei"
     ]
   },
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "9dc7bc7c-d511-4138-a9c4-9aeae9e7c782",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,23 +75,28 @@
       "order": 1,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/qdo7et4n",
-      "id": "1",
+      "aid": "im/6lgjadw3",
+      "id": "8",
       "bbox": [
         0,
         0,
         1280,
         720
       ],
-      "geometry": "rect",
-      "alt": "音叉与声波波前主视觉",
       "contentType": "image/png",
-      "imageFit": "cover",
-      "imageMask": {
-        "geometry": "rect"
+      "imageCrop": {
+        "left": 0.11088,
+        "top": 0,
+        "right": 0.11088,
+        "bottom": 0
       },
       "asset": {
-        "assetId": "64f14aa5-2db9-4849-8df6-ae109d4baabb",
+        "assetId": "/ppt/media/image.png",
+        "contentType": "image/png",
+        "byteLength": 1484992
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image.png",
         "contentType": "image/png",
         "byteLength": 1484992
       }
@@ -89,7 +105,7 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/s3utkfa1",
+      "aid": "sh/547294r6",
       "id": "2",
       "bbox": [
         76,
@@ -100,13 +116,12 @@
       "geometry": "rect",
       "text": "第十二届全国大学生物理实验竞赛（创新）",
       "textPreview": "第十二届全国大学生物理实验竞赛（创新）",
-      "resolvedFontSize": 17,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 17,
-        "typeface": "Microsoft YaHei",
-        "color": "#4FAF9B",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -138,8 +153,7 @@
             "typeface": "Microsoft YaHei",
             "color": "#4FAF9B",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -148,11 +162,10 @@
               "fontSize": 17,
               "typeface": "Microsoft YaHei",
               "color": "#4FAF9B",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -162,7 +175,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/d43udkbm",
+      "aid": "sh/k3yl0zql",
       "id": "3",
       "bbox": [
         76,
@@ -173,13 +186,12 @@
       "geometry": "rect",
       "text": "声速测量实验\n智能助教",
       "textPreview": "声速测量实验 | 智能助教",
-      "resolvedFontSize": 66,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 66,
-        "typeface": "Microsoft YaHei",
-        "color": "#F4EFE5",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -215,8 +227,7 @@
             "typeface": "Microsoft YaHei",
             "color": "#F4EFE5",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 0.9
+            "alignment": "left"
           },
           "runs": [
             {
@@ -225,11 +236,10 @@
               "fontSize": 66,
               "typeface": "Microsoft YaHei",
               "color": "#F4EFE5",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 0.9
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         },
         {
@@ -241,8 +251,7 @@
             "typeface": "Microsoft YaHei",
             "color": "#F4EFE5",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 0.9
+            "alignment": "left"
           },
           "runs": [
             {
@@ -251,11 +260,10 @@
               "fontSize": 66,
               "typeface": "Microsoft YaHei",
               "color": "#F4EFE5",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 0.9
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -265,7 +273,7 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/e5cbmps7",
+      "aid": "sh/7qp4be9c",
       "id": "4",
       "bbox": [
         76,
@@ -281,7 +289,7 @@
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/f6lcfats",
+      "aid": "sh/65g3298r",
       "id": "5",
       "bbox": [
         76,
@@ -292,13 +300,12 @@
       "geometry": "rect",
       "text": "回声 · 时间差 · 相位 · 驻波",
       "textPreview": "回声 · 时间差 · 相位 · 驻波",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 28,
-        "typeface": "Microsoft YaHei",
-        "color": "#FFFDF8",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -330,8 +337,7 @@
             "typeface": "Microsoft YaHei",
             "color": "#FFFDF8",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -340,11 +346,10 @@
               "fontSize": 28,
               "typeface": "Microsoft YaHei",
               "color": "#FFFDF8",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -354,7 +359,7 @@
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/07utofad",
+      "aid": "sh/ts7md4r2",
       "id": "6",
       "bbox": [
         76,
@@ -365,12 +370,12 @@
       "geometry": "rect",
       "text": "同一真实声速　不同观测路径　全过程可复算",
       "textPreview": "同一真实声速　不同观测路径　全过程可复算",
-      "resolvedFontSize": 21,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 21,
-        "typeface": "Microsoft YaHei",
-        "color": "#C7D1CF",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -401,8 +406,7 @@
             "fontSize": 21,
             "typeface": "Microsoft YaHei",
             "color": "#C7D1CF",
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -410,11 +414,10 @@
               "text": "同一真实声速　不同观测路径　全过程可复算",
               "fontSize": 21,
               "typeface": "Microsoft YaHei",
-              "color": "#C7D1CF",
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "color": "#C7D1CF"
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -424,7 +427,7 @@
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/18nuhkby",
+      "aid": "sh/sryl4zqx",
       "id": "7",
       "bbox": [
         76,
@@ -435,13 +438,12 @@
       "geometry": "rect",
       "text": "自选题 2 · 教学资源和虚仿",
       "textPreview": "自选题 2 · 教学资源和虚仿",
-      "resolvedFontSize": 18,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 18,
-        "typeface": "Microsoft YaHei",
-        "color": "#E5A43A",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -473,8 +475,7 @@
             "typeface": "Microsoft YaHei",
             "color": "#E5A43A",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -483,11 +484,10 @@
               "fontSize": 18,
               "typeface": "Microsoft YaHei",
               "color": "#E5A43A",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],

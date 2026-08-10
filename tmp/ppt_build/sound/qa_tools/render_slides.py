@@ -131,25 +131,23 @@ def _render_presentation_with_artifact_tool(
             check=False,
             env=runtime_env(),
         )
-    # The bundled Windows canvas runtime may terminate with 0xC0000409 during
-    # native teardown after it has already written every PNG and emitted valid
-    # JSON. Accept that specific successful-output case for QA; still fail if
-    # JSON is invalid or any announced image is missing.
     if proc.returncode != 0:
+        # Windows canvas can fault during process teardown after every PNG and
+        # the complete JSON manifest have already been written.  Accept only
+        # that narrow case; all reported files must exist.
         try:
-            candidate = json.loads(proc.stdout)
-            paths = candidate.get("paths", [])
-            if not paths or not all(exists(item) for item in paths):
-                raise ValueError("render output is incomplete")
-            payload = candidate
-        except Exception:
-            details = (proc.stderr or proc.stdout or "").strip()
-            raise RuntimeError(
-                "Failed to render presentation with artifact-tool."
-                + (f"\n{details}" if details else "")
-            )
-    else:
-        payload = json.loads(proc.stdout)
+            payload = json.loads(proc.stdout)
+            paths = cast(Sequence[str], payload["paths"])
+            if paths and all(exists(item) for item in paths):
+                return paths
+        except (json.JSONDecodeError, KeyError, TypeError):
+            pass
+        details = (proc.stderr or proc.stdout or "").strip()
+        raise RuntimeError(
+            "Failed to render presentation with artifact-tool."
+            + (f"\n{details}" if details else "")
+        )
+    payload = json.loads(proc.stdout)
     return cast(Sequence[str], payload["paths"])
 
 

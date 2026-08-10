@@ -1,285 +1,285 @@
-{"kind":"deck","id":"pr/fkhi4o","name":"Deck"}
-{"kind":"layout","layoutId":"d6514f1d-8ebb-435b-8438-1426c8e86c6d","name":"Master","type":"master"}
-{"kind":"layout","layoutId":"9dc7bc7c-d511-4138-a9c4-9aeae9e7c782","name":"Title Slide","type":"title"}
-{"kind":"slide","id":"sl/lqhq1z","slide":1,"title":"第十二届全国大学生物理实验竞赛（创新）","textShapes":5}
-{"kind":"textbox","id":"sh/s3utkfa1","slide":1,"text":"第十二届全国大学生物理实验竞赛（创新）","textPreview":"第十二届全国大学生物理实验竞赛（创新）","textChars":19,"textLines":1,"bbox":[76,70,510,32]}
-{"kind":"textbox","id":"sh/d43udkbm","slide":1,"text":"声速测量实验\n智能助教","textPreview":"声速测量实验 | 智能助教","textChars":11,"textLines":2,"bbox":[76,144,520,166]}
-{"kind":"shape","id":"sh/e5cbmps7","slide":1,"bbox":[76,334,92,7]}
-{"kind":"textbox","id":"sh/f6lcfats","slide":1,"text":"回声 · 时间差 · 相位 · 驻波","textPreview":"回声 · 时间差 · 相位 · 驻波","textChars":18,"textLines":1,"bbox":[76,374,500,42]}
-{"kind":"textbox","id":"sh/07utofad","slide":1,"text":"同一真实声速　不同观测路径　全过程可复算","textPreview":"同一真实声速　不同观测路径　全过程可复算","textChars":20,"textLines":1,"bbox":[76,432,520,60]}
-{"kind":"textbox","id":"sh/18nuhkby","slide":1,"text":"自选题 2 · 教学资源和虚仿","textPreview":"自选题 2 · 教学资源和虚仿","textChars":15,"textLines":1,"bbox":[76,622,420,28]}
-{"kind":"image","id":"im/qdo7et4n","slide":1,"name":"","geometry":"rect","alt":"音叉与声波波前主视觉","bbox":[0,0,1280,720]}
-{"kind":"notes","id":"nt/lqhq1z","slide":1,"text":"开场只提出一个问题：公式很简单，学生真正理解的是怎样从观测量得到声速吗？\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex\n- 声速/声速_RAG智能体/assets/sound_speed_header.png\n[/Sources]"}
-{"kind":"slide","id":"sl/abgens","slide":2,"title":"WHY THIS LAB","textShapes":22}
-{"kind":"textbox","id":"sh/ex0f6583","slide":2,"text":"WHY THIS LAB","textPreview":"WHY THIS LAB","textChars":12,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/10ryhkre","slide":2,"text":"难点不在公式，而在“声速怎样被测出来”","textPreview":"难点不在公式，而在“声速怎样被测出来”","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/0zix8fqt","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/rapgba9c","slide":2,"bbox":[76,192,11,11]}
-{"kind":"textbox","id":"sh/q9gf258r","slide":2,"text":"四种方法最终都求 v，但直接观测量完全不同。","textPreview":"四种方法最终都求 v，但直接观测量完全不同。","textChars":22,"textLines":1,"bbox":[100,184,470,58]}
-{"kind":"shape","id":"sh/dwrydkri","slide":2,"bbox":[76,268,11,11]}
-{"kind":"textbox","id":"sh/svix4fqx","slide":2,"text":"传统课堂常只保留最终数值，测量链被隐藏。","textPreview":"传统课堂常只保留最终数值，测量链被隐藏。","textChars":20,"textLines":1,"bbox":[100,260,470,58]}
-{"kind":"shape","id":"sh/36pg7q9g","slide":2,"bbox":[76,344,11,11]}
-{"kind":"textbox","id":"sh/i5gfyl8v","slide":2,"text":"实体实验难以连续扫描采样率、噪声、角度与反射条件。","textPreview":"实体实验难以连续扫描采样率、噪声、角度与反射条件。","textChars":25,"textLines":1,"bbox":[100,336,470,58]}
-{"kind":"textbox","id":"sh/gfut0rex","slide":2,"text":"v = ?","textPreview":"v = ?","textChars":5,"textLines":1,"bbox":[810,178,300,100]}
-{"kind":"shape","id":"sh/h03atwf2","slide":2,"bbox":[624,392,110,42]}
-{"kind":"shape","id":"sh/udsby1wr","slide":2,"bbox":[785,392,110,42]}
-{"kind":"shape","id":"sh/felsr6xc","slide":2,"bbox":[946,392,110,42]}
-{"kind":"textbox","id":"sh/sba9wrel","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[590,338,52,28]}
-{"kind":"textbox","id":"sh/tcjapwf6","slide":2,"text":"传播过程","textPreview":"传播过程","textChars":4,"textLines":1,"bbox":[590,448,142,34]}
-{"kind":"textbox","id":"sh/69sruhwf","slide":2,"text":"声波走过哪段路程","textPreview":"声波走过哪段路程","textChars":8,"textLines":1,"bbox":[586,488,150,62]}
-{"kind":"textbox","id":"sh/7a1snmx0","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[751,338,52,28]}
-{"kind":"textbox","id":"sh/c7et8bep","slide":2,"text":"传感器信号","textPreview":"传感器信号","textChars":5,"textLines":1,"bbox":[751,448,142,34]}
-{"kind":"textbox","id":"sh/d8na1gfa","slide":2,"text":"仪器实际记录什么","textPreview":"仪器实际记录什么","textChars":8,"textLines":1,"bbox":[747,488,150,62]}
-{"kind":"textbox","id":"sh/lojalg7e","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[912,338,52,28]}
-{"kind":"textbox","id":"sh/knatsb69","slide":2,"text":"分析观测量","textPreview":"分析观测量","textChars":5,"textLines":1,"bbox":[912,448,142,34]}
-{"kind":"textbox","id":"sh/zm1sj6po","slide":2,"text":"峰值与相关\n相位与波节","textPreview":"峰值与相关 | 相位与波节","textChars":11,"textLines":2,"bbox":[908,488,150,62]}
-{"kind":"textbox","id":"sh/ylsrqlo3","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1073,338,52,28]}
-{"kind":"textbox","id":"sh/d0jahg7i","slide":2,"text":"声速估计","textPreview":"声速估计","textChars":4,"textLines":1,"bbox":[1073,448,142,34]}
-{"kind":"textbox","id":"sh/czq9ob6x","slide":2,"text":"公式、单位与误差","textPreview":"公式、单位与误差","textChars":8,"textLines":1,"bbox":[1069,488,150,62]}
-{"kind":"textbox","id":"sh/byhsf6pc","slide":2,"text":"作品目标：让四层证据同时可见、相互校验。","textPreview":"作品目标：让四层证据同时可见、相互校验。","textChars":20,"textLines":1,"bbox":[74,586,1120,46]}
-{"kind":"shape","id":"sh/qx8rm1or","slide":2,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/pwzadw7m","slide":2,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/ovq9kr61","slide":2,"text":"2 / 12","textPreview":"2 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/abgens","slide":2,"text":"先建立教学痛点，再自然引出统一测量链。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第1章）\n[/Sources]"}
-{"kind":"slide","id":"sl/qbjekd","slide":3,"title":"ONE SPEED, FOUR OBSERVATIONS","textShapes":22}
-{"kind":"textbox","id":"sh/dk3q94ju","slide":3,"text":"ONE SPEED, FOUR OBSERVATIONS","textPreview":"ONE SPEED, FOUR OBSERVATIONS","textChars":28,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/qhs7ep03","slide":3,"text":"同一声速，四条独立反演路径","textPreview":"同一声速，四条独立反演路径","textChars":13,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/ril87u1o","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"textbox","id":"sh/0nupkzi5","slide":3,"text":"共同模型","textPreview":"共同模型","textChars":4,"textLines":1,"bbox":[76,168,170,32]}
-{"kind":"textbox","id":"sh/1o3qd4jq","slide":3,"text":"v = fλ","textPreview":"v = fλ","textChars":6,"textLines":1,"bbox":[76,212,214,78]}
-{"kind":"textbox","id":"sh/elc7ip0f","slide":3,"text":"真实声速生成信号；\n估计值由观测量反演。","textPreview":"真实声速生成信号； | 估计值由观测量反演。","textChars":20,"textLines":2,"bbox":[76,304,248,104]}
-{"kind":"textbox","id":"sh/fml8bu1k","slide":3,"text":"εᵣ = (v̂ − v) / v × 100%","textPreview":"εᵣ = (v̂ − v) / v × 100%","textChars":24,"textLines":1,"bbox":[76,446,276,48]}
-{"kind":"shape","id":"sh/ore9ojih","slide":3,"bbox":[382,168,8,74]}
-{"kind":"textbox","id":"sh/9snqhoj2","slide":3,"text":"回声法","textPreview":"回声法","textChars":3,"textLines":1,"bbox":[410,168,160,34]}
-{"kind":"textbox","id":"sh/lkzeh8rm","slide":3,"text":"往返时延 Δt","textPreview":"往返时延 Δt","textChars":7,"textLines":1,"bbox":[580,170,244,64]}
-{"kind":"textbox","id":"sh/0jqd83q1","slide":3,"text":"v̂ = 2d / Δt","textPreview":"v̂ = 2d / Δt","textChars":12,"textLines":1,"bbox":[824,168,370,38]}
-{"kind":"shape","id":"sh/zihcfy9g","slide":3,"bbox":[410,240,784,0]}
-{"kind":"shape","id":"sh/yh8v6t8v","slide":3,"bbox":[382,272,8,74]}
-{"kind":"textbox","id":"sh/98jel8ri","slide":3,"text":"双麦克风","textPreview":"双麦克风","textChars":4,"textLines":1,"bbox":[410,272,160,34]}
-{"kind":"textbox","id":"sh/87adc3qx","slide":3,"text":"互相关峰时延","textPreview":"互相关峰时延","textChars":6,"textLines":1,"bbox":[580,274,244,64]}
-{"kind":"textbox","id":"sh/nm1wjy9c","slide":3,"text":"v̂ = d cosθ / Δt","textPreview":"v̂ = d cosθ / Δt","textChars":16,"textLines":1,"bbox":[824,272,370,38]}
-{"kind":"shape","id":"sh/mlsvat87","slide":3,"bbox":[410,344,784,0]}
-{"kind":"shape","id":"sh/pcfu9ore","slide":3,"bbox":[382,376,8,74]}
-{"kind":"textbox","id":"sh/4r6d0jat","slide":3,"text":"相位差","textPreview":"相位差","textChars":3,"textLines":1,"bbox":[410,376,160,34]}
-{"kind":"textbox","id":"sh/gvadgjip","slide":3,"text":"包裹相位 φw\nn：完整周期数","textPreview":"包裹相位 φw | n：完整周期数","textChars":15,"textLines":2,"bbox":[580,378,244,64]}
-{"kind":"textbox","id":"sh/hwjepoza","slide":3,"text":"v̂ = 2πfd / (2πn + φw)","textPreview":"v̂ = 2πfd / (2πn + φw)","textChars":22,"textLines":1,"bbox":[824,376,370,38]}
-{"kind":"shape","id":"sh/utsve90j","slide":3,"bbox":[410,448,784,0]}
-{"kind":"shape","id":"sh/vu1wneh4","slide":3,"bbox":[382,480,8,74]}
-{"kind":"textbox","id":"sh/4zudkjil","slide":3,"text":"驻波法","textPreview":"驻波法","textChars":3,"textLines":1,"bbox":[410,480,160,34]}
-{"kind":"textbox","id":"sh/503etoz6","slide":3,"text":"q 个波节间隔 Dq\nq：跨越的波节间隔数","textPreview":"q 个波节间隔 Dq | q：跨越的波节间隔数","textChars":21,"textLines":2,"bbox":[580,482,244,64]}
-{"kind":"textbox","id":"sh/ixsvit0v","slide":3,"text":"v̂ = 2fDq / q","textPreview":"v̂ = 2fDq / q","textChars":13,"textLines":1,"bbox":[824,480,370,38]}
-{"kind":"shape","id":"sh/3y1wryh0","slide":3,"bbox":[410,552,784,0]}
-{"kind":"textbox","id":"sh/cnudo3yx","slide":3,"text":"差别不在公式数量，而在观测机制、二义性与误差传播。","textPreview":"差别不在公式数量，而在观测机制、二义性与误差传播。","textChars":25,"textLines":1,"bbox":[382,598,812,42]}
-{"kind":"shape","id":"sh/do3ex8zi","slide":3,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/nipgn21k","slide":3,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/mhwzexkz","slide":3,"text":"3 / 12","textPreview":"3 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/qbjekd","slide":3,"text":"用一页建立四种方法的统一语言，后续两页再分别展开时间域与相位/空间域。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第163—314行）\n[/Sources]"}
-{"kind":"slide","id":"sl/m3hz0t","slide":4,"title":"TIME-DOMAIN METHODS","textShapes":11}
-{"kind":"textbox","id":"sh/gv6l8ry9","slide":4,"text":"TIME-DOMAIN METHODS","textPreview":"TIME-DOMAIN METHODS","textChars":19,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/fuxkzmho","slide":4,"text":"时间域方法把传播距离变成可测时延","textPreview":"时间域方法把传播距离变成可测时延","textChars":16,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/uto36hg3","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"textbox","id":"sh/pkz25wfq","slide":4,"text":"回声法","textPreview":"回声法","textChars":3,"textLines":1,"bbox":[72,160,190,38]}
-{"kind":"textbox","id":"sh/4jqlcryl","slide":4,"text":"双麦克风时间差","textPreview":"双麦克风时间差","textChars":7,"textLines":1,"bbox":[654,160,280,38]}
-{"kind":"textbox","id":"sh/lov2tczm","slide":4,"text":"v̂ = 2d / Δt","textPreview":"v̂ = 2d / Δt","textChars":12,"textLines":1,"bbox":[86,556,230,40]}
-{"kind":"textbox","id":"sh/k3m107y1","slide":4,"text":"识别直达脉冲与回波；\n反射系数、SNR 与采样率共同影响峰值可靠性。","textPreview":"识别直达脉冲与回波； | 反射系数、SNR 与采样率共同影响峰值可靠性。","textChars":34,"textLines":2,"bbox":[320,552,304,72]}
-{"kind":"textbox","id":"sh/ulkjatgb","slide":4,"text":"v̂ = d cosθ / Δt","textPreview":"v̂ = d cosθ / Δt","textChars":16,"textLines":1,"bbox":[668,556,294,40]}
-{"kind":"textbox","id":"sh/fmtkjexw","slide":4,"text":"归一化互相关利用整段波形；\n同步采样、方向修正与时延量化决定精度。","textPreview":"归一化互相关利用整段波形； | 同步采样、方向修正与时延量化决定精度。","textChars":33,"textLines":2,"bbox":[964,552,244,72]}
-{"kind":"shape","id":"sh/gnm1cjy1","slide":4,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/hov2lofm","slide":4,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/2p4jetg7","slide":4,"text":"4 / 12","textPreview":"4 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"image","id":"im/ypwvyh0r","slide":4,"name":"","geometry":"roundRect","alt":"回声法双脉冲波形重点视图","bbox":[72,208,552,332]}
-{"kind":"image","id":"im/zqpwrm1c","slide":4,"name":"","geometry":"roundRect","alt":"双麦克风互相关峰重点视图","bbox":[654,208,554,332]}
-{"kind":"notes","id":"nt/m3hz0t","slide":4,"text":"强调两种方法都测时延，但一个是往返路径，一个是单程投影路径。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第200—249行）\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_echo.png\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_dual_microphone.png\n[/Sources]"}
-{"kind":"slide","id":"sl/dcum7y","slide":5,"title":"PHASE & SPACE","textShapes":11}
-{"kind":"textbox","id":"sh/zelofepg","slide":5,"text":"PHASE & SPACE","textPreview":"PHASE & SPACE","textChars":13,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/0zu5ojq1","slide":5,"text":"相位与驻波把短时延转化为相位或空间周期","textPreview":"相位与驻波把短时延转化为相位或空间周期","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/l036ho7m","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/cbu5kzqp","slide":5,"bbox":[72,514,6,30]}
-{"kind":"textbox","id":"sh/dc36d47a","slide":5,"text":"相位差法","textPreview":"相位差法","textChars":4,"textLines":1,"bbox":[90,508,182,42]}
-{"kind":"textbox","id":"sh/25snep8n","slide":5,"text":"v̂ = 2πfd / (2πn + φw)","textPreview":"v̂ = 2πfd / (2πn + φw)","textChars":22,"textLines":1,"bbox":[292,510,330,38]}
-{"kind":"textbox","id":"sh/361o7up8","slide":5,"text":"高灵敏度来自相位读数；完整周期数 n 误判一周，会造成远大于一般噪声的系统偏差。","textPreview":"高灵敏度来自相位读数；完整周期数 n 误判一周，会造成远大于一般噪声的系统偏差。","textChars":40,"textLines":1,"bbox":[72,560,550,72]}
-{"kind":"shape","id":"sh/vmd4fix8","slide":5,"bbox":[654,514,6,30]}
-{"kind":"textbox","id":"sh/ul436dwn","slide":5,"text":"驻波法","textPreview":"驻波法","textChars":3,"textLines":1,"bbox":[672,508,162,42]}
-{"kind":"textbox","id":"sh/hofmhsfe","slide":5,"text":"v̂ = 2fDq / q","textPreview":"v̂ = 2fDq / q","textChars":13,"textLines":1,"bbox":[902,510,306,38]}
-{"kind":"textbox","id":"sh/wnml8net","slide":5,"text":"跨多个波节间隔降低相对读数误差；反射不完全时，波节是非零振幅极小值。","textPreview":"跨多个波节间隔降低相对读数误差；反射不完全时，波节是非零振幅极小值。","textChars":34,"textLines":1,"bbox":[654,560,554,72]}
-{"kind":"shape","id":"sh/jqx4jixk","slide":5,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/ipo3adwz","slide":5,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/5sfmlsfa","slide":5,"text":"5 / 12","textPreview":"5 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"image","id":"im/36pczapk","slide":5,"name":"","geometry":"roundRect","alt":"相位周期曲线重点视图","bbox":[72,168,550,326]}
-{"kind":"image","id":"im/i5gvq58z","slide":5,"name":"","geometry":"roundRect","alt":"驻波包络重点视图","bbox":[654,168,554,326]}
-{"kind":"notes","id":"nt/dcum7y","slide":5,"text":"这页突出二义性与非理想边界，而不是只展示漂亮的正弦曲线。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第251—307行）\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_oscilloscope_phase.png\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_standing_wave.png\n[/Sources]"}
-{"kind":"slide","id":"sl/jxnr5t","slide":6,"title":"VISIBLE MEASUREMENT CHAIN","textShapes":12}
-{"kind":"textbox","id":"sh/f2p8byds","slide":6,"text":"VISIBLE MEASUREMENT CHAIN","textPreview":"VISIBLE MEASUREMENT CHAIN","textChars":25,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/0nip43ud","slide":6,"text":"空间过程、原始信号与分析结果同步呈现","textPreview":"空间过程、原始信号与分析结果同步呈现","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/1orqd8vy","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"textbox","id":"sh/ryp87ydw","slide":6,"text":"三层证据","textPreview":"三层证据","textChars":4,"textLines":1,"bbox":[72,174,250,38]}
-{"kind":"shape","id":"sh/szyp03uh","slide":6,"bbox":[76,246,11,11]}
-{"kind":"textbox","id":"sh/d07q98v2","slide":6,"text":"空间传播：声波走过哪段路程","textPreview":"空间传播：声波走过哪段路程","textChars":13,"textLines":1,"bbox":[100,238,262,50]}
-{"kind":"shape","id":"sh/at0raxcf","slide":6,"bbox":[76,311,11,11]}
-{"kind":"textbox","id":"sh/but8jid0","slide":6,"text":"原始信号：传感器记录了什么","textPreview":"原始信号：传感器记录了什么","textChars":13,"textLines":1,"bbox":[100,303,262,50]}
-{"kind":"shape","id":"sh/j2x8jqtk","slide":6,"bbox":[76,376,11,11]}
-{"kind":"textbox","id":"sh/ihoralsz","slide":6,"text":"分析曲线：算法怎样提取读数","textPreview":"分析曲线：算法怎样提取读数","textChars":13,"textLines":1,"bbox":[100,368,262,50]}
-{"kind":"shape","id":"sh/54zal0bq","slide":6,"bbox":[76,441,11,11]}
-{"kind":"textbox","id":"sh/4369cva5","slide":6,"text":"实时结果：理论、测量与误差并列","textPreview":"实时结果：理论、测量与误差并列","textChars":15,"textLines":1,"bbox":[100,433,262,50]}
-{"kind":"shape","id":"sh/r6hsnatw","slide":6,"bbox":[72,518,282,112]}
-{"kind":"textbox","id":"sh/658re5sb","slide":6,"text":"343 m/s → 341.64 m/s","textPreview":"343 m/s → 341.64 m/s","textChars":20,"textLines":1,"bbox":[92,538,242,38]}
-{"kind":"textbox","id":"sh/t8zap0bm","slide":6,"text":"回声示例相对误差约 −0.40%\nCSV 可独立复算全部中间量","textPreview":"回声示例相对误差约 −0.40% | CSV 可独立复算全部中间量","textChars":31,"textLines":2,"bbox":[92,582,242,40]}
-{"kind":"shape","id":"sh/s7q9gva1","slide":6,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/fahsrats","slide":6,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/e98ri5s7","slide":6,"text":"6 / 12","textPreview":"6 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"image","id":"im/bups3qpw","slide":6,"name":"","geometry":"roundRect","alt":"声速四种测量方法综合界面","bbox":[390,160,818,482]}
-{"kind":"notes","id":"nt/jxnr5t","slide":6,"text":"现场可用这页引导评委从左到右看界面：空间、波形、分析、读数。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第366—388、555—573行）\n- 声速/设计报告/assets/sound_demo_interface.png\n[/Sources]"}
-{"kind":"slide","id":"sl/fo9biw","slide":7,"title":"HYBRID PROGRAMMING","textShapes":12}
-{"kind":"textbox","id":"sh/6p4b2547","slide":7,"text":"HYBRID PROGRAMMING","textPreview":"HYBRID PROGRAMMING","textChars":18,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/dcvad03y","slide":7,"text":"Python 管应用，Julia 管科学计算","textPreview":"Python 管应用，Julia 管科学计算","textChars":22,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/srmt4vmd","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/jmts7qlw","slide":7,"bbox":[486,284,308,82]}
-{"kind":"shape","id":"sh/ilkbyl4b","slide":7,"bbox":[486,404,308,54]}
-{"kind":"shape","id":"sh/5ova903m","slide":7,"bbox":[72,168,430,420]}
-{"kind":"shape","id":"sh/4nmt0vm1","slide":7,"bbox":[778,168,430,420]}
-{"kind":"textbox","id":"sh/nixcjal0","slide":7,"text":"PYTHON / STREAMLIT","textPreview":"PYTHON / STREAMLIT","textChars":18,"textLines":1,"bbox":[102,202,370,40]}
-{"kind":"textbox","id":"sh/2hobap4f","slide":7,"text":"统一网页与对话状态\n本地文献检索与智能问答\n图片输入与安全代码执行\n端口、日志与进程生命周期","textPreview":"统一网页与对话状态 | 本地文献检索与智能问答 | 图片输入与安全代码执行 | 端口、日志与进程生命周期","textChars":46,"textLines":4,"bbox":[102,270,346,232]}
-{"kind":"textbox","id":"sh/cjypgvm9","slide":7,"text":"JULIA / WGLMAKIE","textPreview":"JULIA / WGLMAKIE","textChars":16,"textLines":1,"bbox":[808,202,370,40]}
-{"kind":"textbox","id":"sh/dk769g3u","slide":7,"text":"四种确定性物理模型\n含噪信号与分析算法\nBonito 可观察状态\n浏览器 WebGL 交互图形","textPreview":"四种确定性物理模型 | 含噪信号与分析算法 | Bonito 可观察状态 | 浏览器 WebGL 交互图形","textChars":47,"textLines":4,"bbox":[808,270,346,232]}
-{"kind":"textbox","id":"sh/qhg7el43","slide":7,"text":"本机回环网页嵌入","textPreview":"本机回环网页嵌入","textChars":8,"textLines":1,"bbox":[510,302,260,34]}
-{"kind":"textbox","id":"sh/ripo7qlo","slide":7,"text":"CSV / PNG","textPreview":"CSV / PNG","textChars":9,"textLines":1,"bbox":[532,417,210,28]}
-{"kind":"textbox","id":"sh/4fypcbmx","slide":7,"text":"实验控件由浏览器与 Julia 直接交换状态；Python 不逐帧转发大数组。","textPreview":"实验控件由浏览器与 Julia 直接交换状态；Python 不逐帧转发大数组。","textChars":39,"textLines":1,"bbox":[240,616,800,38]}
-{"kind":"shape","id":"sh/pg765g3i","slide":7,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/2tw7a147","slide":7,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/3upo36ls","slide":7,"text":"7 / 12","textPreview":"7 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/fo9biw","slide":7,"text":"这是技术特色页：强调职责边界、直接交互与进程级故障隔离。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第318—364行）\n- 声速/声速_RAG智能体/app.py\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/web/web.jl\n[/Sources]"}
-{"kind":"slide","id":"sl/x4335x","slide":8,"title":"EXPERIMENT-SPECIFIC TUTOR","textShapes":12}
-{"kind":"textbox","id":"sh/jmpgnyp8","slide":8,"text":"EXPERIMENT-SPECIFIC TUTOR","textPreview":"EXPERIMENT-SPECIFIC TUTOR","textChars":25,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/knyhg36t","slide":8,"text":"智能问答不是答案机，而是实验解释层","textPreview":"智能问答不是答案机，而是实验解释层","textChars":17,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/l8ryp87y","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"textbox","id":"sh/7a9grip4","slide":8,"text":"围绕四种测量方法","textPreview":"围绕四种测量方法","textChars":8,"textLines":1,"bbox":[72,174,382,38]}
-{"kind":"shape","id":"sh/sbihk36p","slide":8,"bbox":[76,246,11,11]}
-{"kind":"textbox","id":"sh/tcryt87a","slide":8,"text":"快速提问、连续追问与多图粘贴","textPreview":"快速提问、连续追问与多图粘贴","textChars":14,"textLines":1,"bbox":[100,238,362,44]}
-{"kind":"shape","id":"sh/mdwf69of","slide":8,"bbox":[76,303,11,11]}
-{"kind":"textbox","id":"sh/ne5gfep0","slide":8,"text":"本地声学文献提供主要依据","textPreview":"本地声学文献提供主要依据","textChars":12,"textLines":1,"bbox":[100,295,362,44]}
-{"kind":"shape","id":"sh/7ups321o","slide":8,"bbox":[76,360,11,11]}
-{"kind":"textbox","id":"sh/mtwrax03","slide":8,"text":"明确参数调用自研公式工具复算","textPreview":"明确参数调用自研公式工具复算","textChars":14,"textLines":1,"bbox":[100,352,362,44]}
-{"kind":"shape","id":"sh/9w7a5sju","slide":8,"bbox":[76,417,11,11]}
-{"kind":"textbox","id":"sh/8vy9c7i9","slide":8,"text":"问答不生成、不修改 Julia 测量值","textPreview":"问答不生成、不修改 Julia 测量值","textChars":19,"textLines":1,"bbox":[100,409,362,44]}
-{"kind":"shape","id":"sh/z65szi1s","slide":8,"bbox":[76,474,11,11]}
-{"kind":"textbox","id":"sh/y5wr6d07","slide":8,"text":"校内版本仅使用服务器本地模型","textPreview":"校内版本仅使用服务器本地模型","textChars":14,"textLines":1,"bbox":[100,466,362,44]}
-{"kind":"textbox","id":"sh/lsna1sji","slide":8,"text":"观察信号 → 检索文献 → 解释算法 → 确定性复算 → 比较方案","textPreview":"观察信号 → 检索文献 → 解释算法 → 确定性复算 → 比较方案","textChars":33,"textLines":1,"bbox":[76,580,386,62]}
-{"kind":"shape","id":"sh/kre98nix","slide":8,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/b25svi1g","slide":8,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/a1cr2d0v","slide":8,"text":"8 / 12","textPreview":"8 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"image","id":"im/rapoj6t4","slide":8,"name":"","geometry":"roundRect","alt":"声速实验智能问答真实界面","bbox":[500,152,708,504]}
-{"kind":"notes","id":"nt/x4335x","slide":8,"text":"用真实界面说明问答支持文字、快速提问和完整输入框；强调模型只负责解释。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第390—430、472—477行）\n- 声速/设计报告/assets/sound_qa_interface_real.png\n[/Sources]"}
-{"kind":"slide","id":"sl/2so8t9","slide":9,"title":"TRACEABLE & CONTROLLED","textShapes":22}
-{"kind":"textbox","id":"sh/vihgfiho","slide":9,"text":"TRACEABLE & CONTROLLED","textPreview":"TRACEABLE & CONTROLLED","textChars":22,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/wjqh8ni9","slide":9,"text":"用检索、确定性工具和执行隔离约束回答","textPreview":"用检索、确定性工具和执行隔离约束回答","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/hkzyhszu","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/il8zax0z","slide":9,"bbox":[242,238,98,42]}
-{"kind":"shape","id":"sh/j6hgj2hk","slide":9,"bbox":[448,238,98,42]}
-{"kind":"shape","id":"sh/47qhc7i5","slide":9,"bbox":[654,238,98,42]}
-{"kind":"shape","id":"sh/58zilczq","slide":9,"bbox":[860,238,98,42]}
-{"kind":"shape","id":"sh/yp4zyt0v","slide":9,"bbox":[72,186,178,138]}
-{"kind":"textbox","id":"sh/zaxg7y1g","slide":9,"text":"问题 / 图片","textPreview":"问题 / 图片","textChars":7,"textLines":1,"bbox":[84,210,154,32]}
-{"kind":"textbox","id":"sh/7ylw3exo","slide":9,"text":"描述实验现象","textPreview":"描述实验现象","textChars":6,"textLines":1,"bbox":[84,258,154,42]}
-{"kind":"shape","id":"sh/mxcva9w3","slide":9,"bbox":[278,186,178,138]}
-{"kind":"textbox","id":"sh/903e5ofu","slide":9,"text":"查询扩展","textPreview":"查询扩展","textChars":4,"textLines":1,"bbox":[290,210,154,32]}
-{"kind":"textbox","id":"sh/8zudcje9","slide":9,"text":"识别声学主题","textPreview":"识别声学主题","textChars":6,"textLines":1,"bbox":[290,258,154,42]}
-{"kind":"shape","id":"sh/zalwzexc","slide":9,"bbox":[484,186,178,138]}
-{"kind":"textbox","id":"sh/y9sv69w7","slide":9,"text":"混合检索","textPreview":"混合检索","textChars":4,"textLines":1,"bbox":[496,210,154,32]}
-{"kind":"textbox","id":"sh/lw3e14fi","slide":9,"text":"TF–IDF + BM25","textPreview":"TF–IDF + BM25","textChars":13,"textLines":1,"bbox":[496,258,154,42]}
-{"kind":"shape","id":"sh/kvud8zex","slide":9,"bbox":[690,186,178,138]}
-{"kind":"textbox","id":"sh/b61wvuxg","slide":9,"text":"确定性复算","textPreview":"确定性复算","textChars":5,"textLines":1,"bbox":[702,210,154,32]}
-{"kind":"textbox","id":"sh/a5sv2pwv","slide":9,"text":"公式、单位、量纲","textPreview":"公式、单位、量纲","textChars":8,"textLines":1,"bbox":[702,258,154,42]}
-{"kind":"shape","id":"sh/e18fep0n","slide":9,"bbox":[896,186,178,138]}
-{"kind":"textbox","id":"sh/f2hw7uh8","slide":9,"text":"流式解释","textPreview":"流式解释","textChars":4,"textLines":1,"bbox":[908,210,154,32]}
-{"kind":"textbox","id":"sh/03axgzit","slide":9,"text":"或本地检索回退","textPreview":"或本地检索回退","textChars":7,"textLines":1,"bbox":[908,258,154,42]}
-{"kind":"textbox","id":"sh/14je94ze","slide":9,"text":"8 / 8","textPreview":"8 / 8","textChars":5,"textLines":1,"bbox":[90,400,170,76]}
-{"kind":"textbox","id":"sh/25sfip0z","slide":9,"text":"跨主题问题前 5 条检索结果均命中预设主题\n仅代表召回覆盖，不替代回答正确性评价","textPreview":"跨主题问题前 5 条检索结果均命中预设主题 | 仅代表召回覆盖，不替代回答正确性评价","textChars":40,"textLines":2,"bbox":[72,486,280,92]}
-{"kind":"shape","id":"sh/n61wbuhk","slide":9,"bbox":[408,400,6,30]}
-{"kind":"textbox","id":"sh/o7axkzip","slide":9,"text":"图像边界","textPreview":"图像边界","textChars":4,"textLines":1,"bbox":[426,394,202,42]}
-{"kind":"textbox","id":"sh/p8jyd4za","slide":9,"text":"缺少刻度或信息不足时，必须说明不确定性，不编造精确读数。","textPreview":"缺少刻度或信息不足时，必须说明不确定性，不编造精确读数。","textChars":28,"textLines":1,"bbox":[426,450,318,86]}
-{"kind":"shape","id":"sh/a9sfm9gv","slide":9,"bbox":[802,400,6,30]}
-{"kind":"textbox","id":"sh/bulgfehg","slide":9,"text":"受限执行","textPreview":"受限执行","textChars":4,"textLines":1,"bbox":[820,394,202,42]}
-{"kind":"textbox","id":"sh/lonil8ji","slide":9,"text":"用户主动确认 → 正则与 AST 检查 → 独立输出目录 → 默认 60 s 超时。","textPreview":"用户主动确认 → 正则与 AST 检查 → 独立输出目录 → 默认 60 s 超时。","textChars":42,"textLines":1,"bbox":[820,450,344,86]}
-{"kind":"textbox","id":"sh/k3ehc32x","slide":9,"text":"生成式解释不能覆盖确定性计算结果。","textPreview":"生成式解释不能覆盖确定性计算结果。","textChars":17,"textLines":1,"bbox":[398,594,760,40]}
-{"kind":"shape","id":"sh/z250jy1s","slide":9,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/y1czatk7","slide":9,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/9snipsju","slide":9,"text":"9 / 12","textPreview":"9 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/2so8t9","slide":9,"text":"特别限定 8/8 的含义：这是检索主题命中，不是回答正确率。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第432—509行）\n- 声速/声速_RAG智能体/evaluate.py\n- 声速/声速_RAG智能体/code_runner.py\n[/Sources]"}
-{"kind":"slide","id":"sl/s6yta8","slide":10,"title":"ONE-FILE DELIVERY","textShapes":21}
-{"kind":"textbox","id":"sh/x8b650ni","slide":10,"text":"ONE-FILE DELIVERY","textPreview":"ONE-FILE DELIVERY","textChars":17,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/a5knal4r","slide":10,"text":"单文件封装让完整助教脱离开发环境运行","textPreview":"单文件封装让完整助教脱离开发环境运行","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/v6to3q5c","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/83i58bml","slide":10,"bbox":[292,288,126,58]}
-{"kind":"shape","id":"sh/94r61gn6","slide":10,"bbox":[572,288,126,58]}
-{"kind":"shape","id":"sh/m10n6l4v","slide":10,"bbox":[852,288,126,58]}
-{"kind":"shape","id":"sh/n29oz65g","slide":10,"bbox":[72,210,236,210]}
-{"kind":"textbox","id":"sh/0zi54bmp","slide":10,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[94,232,50,28]}
-{"kind":"textbox","id":"sh/l0r6xgna","slide":10,"text":"PackageCompiler","textPreview":"PackageCompiler","textChars":15,"textLines":1,"bbox":[94,280,192,38]}
-{"kind":"textbox","id":"sh/p4buhwr2","slide":10,"text":"Julia + WGLMakie\n字体与着色器","textPreview":"Julia + WGLMakie | 字体与着色器","textChars":23,"textLines":2,"bbox":[94,334,192,64]}
-{"kind":"shape","id":"sh/432d8rqh","slide":10,"bbox":[352,210,236,210]}
-{"kind":"textbox","id":"sh/32tcfm9w","slide":10,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[374,232,50,28]}
-{"kind":"textbox","id":"sh/21kv6h8b","slide":10,"text":"PyInstaller","textPreview":"PyInstaller","textChars":11,"textLines":1,"bbox":[374,280,192,38]}
-{"kind":"textbox","id":"sh/h0budcrq","slide":10,"text":"Python 前端\n知识库与启动器","textPreview":"Python 前端 | 知识库与启动器","textChars":17,"textLines":2,"bbox":[374,334,192,64]}
-{"kind":"shape","id":"sh/gz2d4rq5","slide":10,"bbox":[632,210,236,210]}
-{"kind":"textbox","id":"sh/fy9cbm9k","slide":10,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[654,232,50,28]}
-{"kind":"textbox","id":"sh/ux0b2h8z","slide":10,"text":"单文件 EXE","textPreview":"单文件 EXE","textChars":7,"textLines":1,"bbox":[654,280,192,38]}
-{"kind":"textbox","id":"sh/twru9cru","slide":10,"text":"资源解包\n动态端口与日志","textPreview":"资源解包 | 动态端口与日志","textChars":12,"textLines":2,"bbox":[654,334,192,64]}
-{"kind":"shape","id":"sh/svit07q9","slide":10,"bbox":[912,210,236,210]}
-{"kind":"textbox","id":"sh/kr6lcbm1","slide":10,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[934,232,50,28]}
-{"kind":"textbox","id":"sh/5sfm5g3m","slide":10,"text":"浏览器运行","textPreview":"浏览器运行","textChars":5,"textLines":1,"bbox":[934,280,192,38]}
-{"kind":"textbox","id":"sh/ip43a14b","slide":10,"text":"无需预装\nPython / Julia","textPreview":"无需预装 | Python / Julia","textChars":19,"textLines":2,"bbox":[934,334,192,64]}
-{"kind":"shape","id":"sh/jqx436lw","slide":10,"bbox":[72,472,1136,150]}
-{"kind":"textbox","id":"sh/wnml8rm5","slide":10,"text":"589.7 MiB","textPreview":"589.7 MiB","textChars":9,"textLines":1,"bbox":[100,500,262,58]}
-{"kind":"textbox","id":"sh/xovm1w3q","slide":10,"text":"当前单文件\n618,384,360 字节","textPreview":"当前单文件 | 618,384,360 字节","textChars":20,"textLines":2,"bbox":[102,560,260,44]}
-{"kind":"textbox","id":"sh/al43614z","slide":10,"text":"64 位 Windows 10 / 11\n支持 WebGL 的 Edge 或 Chrome","textPreview":"64 位 Windows 10 / 11 | 支持 WebGL 的 Edge 或 Chrome","textChars":45,"textLines":2,"bbox":[438,504,324,80]}
-{"kind":"textbox","id":"sh/vmd4zmlk","slide":10,"text":"首次启动：解包并初始化 Julia\n启动器持续显示阶段与日志位置","textPreview":"首次启动：解包并初始化 Julia | 启动器持续显示阶段与日志位置","textChars":32,"textLines":2,"bbox":[824,504,336,80]}
-{"kind":"shape","id":"sh/gjq5kv29","slide":10,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/hkzmd03u","slide":10,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/re1o3u5w","slide":10,"text":"10 / 12","textPreview":"10 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/s6yta8","slide":10,"text":"明确区分构建环境和目标环境：开发时需要 Python/Julia，最终目标机不需要。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第644—661行）\n- 声速/声速_RAG智能体/packaging/README.md\n- 声速/声速_RAG智能体/packaging/build_onefile.ps1\n- 声速/声速_RAG智能体/packaging/build_julia_app.jl\n- 声速/声速_RAG智能体/packaging/launcher.py\n- 声速/声速_RAG智能体/packaging/dist/single/声速测量实验智能助教_单文件版.exe\n[/Sources]"}
-{"kind":"slide","id":"sl/7sxgkh","slide":11,"title":"LEARNING LOOP","textShapes":18}
-{"kind":"textbox","id":"sh/yhw76lk3","slide":11,"text":"LEARNING LOOP","textPreview":"LEARNING LOOP","textChars":13,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/lknqhgju","slide":11,"text":"“预测—观察—复算—解释”构成教学闭环","textPreview":"“预测—观察—复算—解释”构成教学闭环","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/kjep8b29","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"shape","id":"sh/7mp8jq10","slide":11,"bbox":[154,316,946,70]}
-{"kind":"shape","id":"sh/6lw7alkf","slide":11,"bbox":[96,260,116,116]}
-{"kind":"textbox","id":"sh/t87ql0j6","slide":11,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[96,286,116,54]}
-{"kind":"textbox","id":"sh/87ypcv2l","slide":11,"text":"预习预测","textPreview":"预习预测","textChars":4,"textLines":1,"bbox":[60,404,188,38]}
-{"kind":"textbox","id":"sh/vap8na1w","slide":11,"text":"辨认直接观测量\n先判断参数影响方向","textPreview":"辨认直接观测量 | 先判断参数影响方向","textChars":17,"textLines":2,"bbox":[40,458,228,72]}
-{"kind":"shape","id":"sh/u9g7e5kb","slide":11,"bbox":[380,260,116,116]}
-{"kind":"textbox","id":"sh/oratwryt","slide":11,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[380,286,116,54]}
-{"kind":"textbox","id":"sh/psjapwfe","slide":11,"text":"实验观察","textPreview":"实验观察","textChars":4,"textLines":1,"bbox":[344,404,188,38]}
-{"kind":"textbox","id":"sh/2psbu1gn","slide":11,"text":"单变量扫描\n追踪传播与信号形成","textPreview":"单变量扫描 | 追踪传播与信号形成","textChars":15,"textLines":2,"bbox":[324,458,228,72]}
-{"kind":"shape","id":"sh/nq1snmx8","slide":11,"bbox":[664,260,116,116]}
-{"kind":"textbox","id":"sh/cvut0byp","slide":11,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[664,286,116,54]}
-{"kind":"textbox","id":"sh/xw3atgfa","slide":11,"text":"数据复算","textPreview":"数据复算","textChars":4,"textLines":1,"bbox":[628,404,188,38]}
-{"kind":"textbox","id":"sh/atsby1gj","slide":11,"text":"导出 CSV\n核对中间量与单位","textPreview":"导出 CSV | 核对中间量与单位","textChars":15,"textLines":2,"bbox":[608,458,228,72]}
-{"kind":"shape","id":"sh/bu1sr6x4","slide":11,"bbox":[948,260,116,116]}
-{"kind":"textbox","id":"sh/kzut4by1","slide":11,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[948,286,116,54]}
-{"kind":"textbox","id":"sh/l03uxgfm","slide":11,"text":"证据解释","textPreview":"证据解释","textChars":4,"textLines":1,"bbox":[912,404,188,38]}
-{"kind":"textbox","id":"sh/tgzahg7q","slide":11,"text":"问答辅助讨论\n结论回到公式和数据","textPreview":"问答辅助讨论 | 结论回到公式和数据","textChars":16,"textLines":2,"bbox":[892,458,228,72]}
-{"kind":"textbox","id":"sh/8fqtobq5","slide":11,"text":"同一界面支持实验前预习、课堂演示、分组比较、课后复盘与开放探究。","textPreview":"同一界面支持实验前预习、课堂演示、分组比较、课后复盘与开放探究。","textChars":32,"textLines":1,"bbox":[132,590,1016,42]}
-{"kind":"shape","id":"sh/7ehsf6pk","slide":11,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/6d8bm18z","slide":11,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/hkjal07m","slide":11,"text":"11 / 12","textPreview":"11 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/7sxgkh","slide":11,"text":"价值不在于缩短思考，而是让学生形成可以被检查的实验论证过程。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第127—160、513—551、592—603行）\n[/Sources]"}
-{"kind":"slide","id":"sl/bau72d","slide":12,"title":"TAKEAWAY","textShapes":16}
-{"kind":"textbox","id":"sh/z2xkny10","slide":12,"text":"TAKEAWAY","textPreview":"TAKEAWAY","textChars":8,"textLines":1,"bbox":[72,40,520,26]}
-{"kind":"textbox","id":"sh/k36lw3il","slide":12,"text":"把“公式验证”升级为“测量方案设计”","textPreview":"把“公式验证”升级为“测量方案设计”","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
-{"kind":"textbox","id":"sh/l4f2p8j6","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
-{"kind":"textbox","id":"sh/ax43qt0j","slide":12,"text":"让每个声速结论都能回到","textPreview":"让每个声速结论都能回到","textChars":11,"textLines":1,"bbox":[112,182,1056,54]}
-{"kind":"textbox","id":"sh/bydkje1o","slide":12,"text":"传播过程 · 原始信号 · 物理公式 · 数据来源","textPreview":"传播过程 · 原始信号 · 物理公式 · 数据来源","textChars":25,"textLines":1,"bbox":[86,252,1108,74]}
-{"kind":"shape","id":"sh/czmlsji9","slide":12,"bbox":[430,350,420,7]}
-{"kind":"textbox","id":"sh/x0v2loju","slide":12,"text":"四种方法","textPreview":"四种方法","textChars":4,"textLines":1,"bbox":[58,410,220,38]}
-{"kind":"textbox","id":"sh/ut832d0n","slide":12,"text":"统一条件横向比较","textPreview":"统一条件横向比较","textChars":8,"textLines":1,"bbox":[46,458,244,48]}
-{"kind":"textbox","id":"sh/vuh4vi18","slide":12,"text":"确定性核心","textPreview":"确定性核心","textChars":5,"textLines":1,"bbox":[342,410,220,38]}
-{"kind":"textbox","id":"sh/fy9ove94","slide":12,"text":"结果透明、可复算","textPreview":"结果透明、可复算","textChars":8,"textLines":1,"bbox":[330,458,244,48]}
-{"kind":"textbox","id":"sh/ex072t8j","slide":12,"text":"智能解释","textPreview":"智能解释","textChars":4,"textLines":1,"bbox":[626,410,220,38]}
-{"kind":"textbox","id":"sh/1kr6xora","slide":12,"text":"本地知识与工具约束","textPreview":"本地知识与工具约束","textChars":9,"textLines":1,"bbox":[614,458,244,48]}
-{"kind":"textbox","id":"sh/0zip4jqp","slide":12,"text":"单文件部署","textPreview":"单文件部署","textChars":5,"textLines":1,"bbox":[910,410,220,38]}
-{"kind":"textbox","id":"sh/nmtozy9g","slide":12,"text":"无 Python / Julia 环境","textPreview":"无 Python / Julia 环境","textChars":19,"textLines":1,"bbox":[898,458,244,48]}
-{"kind":"textbox","id":"sh/2l076t8v","slide":12,"text":"下一步：真实双声道录音 · 温湿度修正 · 亚采样时延 · 课堂对照评价","textPreview":"下一步：真实双声道录音 · 温湿度修正 · 亚采样时延 · 课堂对照评价","textChars":36,"textLines":1,"bbox":[170,584,940,40]}
-{"kind":"shape","id":"sh/pob61876","slide":12,"bbox":[72,686,1136,0]}
-{"kind":"textbox","id":"sh/on2p83ql","slide":12,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
-{"kind":"textbox","id":"sh/bqto3ypc","slide":12,"text":"12 / 12","textPreview":"12 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
-{"kind":"notes","id":"nt/bau72d","slide":12,"text":"结尾回扣开场：作品不是四个动画和一个聊天框的叠加，而是一条可核查的测量学习链。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第605—642、713—718行）\n[/Sources]"}
+{"kind":"deck","id":"pr/ru7pcn","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"第十二届全国大学生物理实验竞赛（创新）","textShapes":5}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"text":"第十二届全国大学生物理实验竞赛（创新）","textPreview":"第十二届全国大学生物理实验竞赛（创新）","textChars":19,"textLines":1,"bbox":[76,70,510,32]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"text":"声速测量实验\n智能助教","textPreview":"声速测量实验 | 智能助教","textChars":11,"textLines":2,"bbox":[76,144,520,166]}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"bbox":[76,334,92,7]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"text":"回声 · 时间差 · 相位 · 驻波","textPreview":"回声 · 时间差 · 相位 · 驻波","textChars":18,"textLines":1,"bbox":[76,374,500,42]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"text":"同一真实声速　不同观测路径　全过程可复算","textPreview":"同一真实声速　不同观测路径　全过程可复算","textChars":20,"textLines":1,"bbox":[76,432,520,60]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"text":"自选题 2 · 教学资源和虚仿","textPreview":"自选题 2 · 教学资源和虚仿","textChars":15,"textLines":1,"bbox":[76,622,420,28]}
+{"kind":"image","id":"im/6lgjadw3","slide":1,"name":"","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[建议时长：40 秒]\n\n各位评委老师好，我们的作品是声速测量实验智能助教。它围绕回声、双麦克风时间差、相位差和驻波四条经典测量路径展开。我们没有把四种方法做成互不相关的动画，而是让它们共享同一个真实声速，并把传播过程、传感器信号、分析步骤和最终读数连接起来。接下来请大家始终关注一条主线：一个声速结论，能否回到可观察、可计算、可复核的证据。后续每一页都将围绕这条证据链说明物理、软件与教学设计。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（摘要、作品定位）\n- 声速/声速_RAG智能体/assets/sound_speed_header.png\n[/Sources]"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"WHY THIS LAB","textShapes":22}
+{"kind":"textbox","id":"sh/mlgvq147","slide":2,"text":"WHY THIS LAB","textPreview":"WHY THIS LAB","textChars":12,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"text":"难点不在公式，而在“声速怎样被测出来”","textPreview":"难点不在公式，而在“声速怎样被测出来”","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"bbox":[76,192,11,11]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"text":"四种方法最终都求 v，但直接观测量完全不同。","textPreview":"四种方法最终都求 v，但直接观测量完全不同。","textChars":22,"textLines":1,"bbox":[100,184,470,58]}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"bbox":[76,268,11,11]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"text":"传统课堂常只保留最终数值，测量链被隐藏。","textPreview":"传统课堂常只保留最终数值，测量链被隐藏。","textChars":20,"textLines":1,"bbox":[100,260,470,58]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"bbox":[76,344,11,11]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"text":"实体实验难以连续扫描采样率、噪声、角度与反射条件。","textPreview":"实体实验难以连续扫描采样率、噪声、角度与反射条件。","textChars":25,"textLines":1,"bbox":[100,336,470,58]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"text":"v = ?","textPreview":"v = ?","textChars":5,"textLines":1,"bbox":[810,178,300,100]}
+{"kind":"shape","id":"sh/9wnqhczy","slide":2,"bbox":[624,392,110,42]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"bbox":[785,392,110,42]}
+{"kind":"shape","id":"sh/nu58f2hs","slide":2,"bbox":[946,392,110,42]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[590,338,52,28]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"text":"传播过程","textPreview":"传播过程","textChars":4,"textLines":1,"bbox":[590,448,142,34]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"text":"声波走过哪段路程","textPreview":"声波走过哪段路程","textChars":8,"textLines":1,"bbox":[586,488,150,62]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[751,338,52,28]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"text":"传感器信号","textPreview":"传感器信号","textChars":5,"textLines":1,"bbox":[751,448,142,34]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"text":"仪器实际记录什么","textPreview":"仪器实际记录什么","textChars":8,"textLines":1,"bbox":[747,488,150,62]}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[912,338,52,28]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"text":"分析观测量","textPreview":"分析观测量","textChars":5,"textLines":1,"bbox":[912,448,142,34]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"text":"峰值与相关\n相位与波节","textPreview":"峰值与相关 | 相位与波节","textChars":11,"textLines":2,"bbox":[908,488,150,62]}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1073,338,52,28]}
+{"kind":"textbox","id":"sh/hcvy14ne","slide":2,"text":"声速估计","textPreview":"声速估计","textChars":4,"textLines":1,"bbox":[1073,448,142,34]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"text":"公式、单位与误差","textPreview":"公式、单位与误差","textChars":8,"textLines":1,"bbox":[1069,488,150,62]}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"text":"作品目标：让四层证据同时可见、相互校验。","textPreview":"作品目标：让四层证据同时可见、相互校验。","textChars":20,"textLines":1,"bbox":[74,586,1120,46]}
+{"kind":"shape","id":"sh/u94fqp4n","slide":2,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/p0vy54na","slide":2,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/4zmxwzmp","slide":2,"text":"2 / 12","textPreview":"2 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[建议时长：50 秒]\n\n声速公式本身并不复杂，教学难点在于学生往往只记住结果，却不知道仪器实际记录了什么。回声法看两个脉冲，双麦克风法看相关峰，相位法读取包裹相位，驻波法寻找空间极小值。实体实验又很难连续改变噪声、采样率、夹角和反射系数。因此我们的目标不是替代真实实验，而是把传播、信号、分析和估计四层证据同时放到屏幕上，使学生能够追问每一步的数据来源。虚拟环境负责放大过程，真实实验仍负责提供装置经验和测量约束，两者形成互补。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（教学背景、主要困难、教学目标）\n[/Sources]"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"ONE SPEED, FOUR OBSERVATIONS","textShapes":22}
+{"kind":"textbox","id":"sh/z2d07mh4","slide":3,"text":"ONE SPEED, FOUR OBSERVATIONS","textPreview":"ONE SPEED, FOUR OBSERVATIONS","textChars":28,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"text":"同一声速，四种方法在统一误差指标下比较","textPreview":"同一声速，四种方法在统一误差指标下比较","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"text":"共同模型","textPreview":"共同模型","textChars":4,"textLines":1,"bbox":[76,168,170,32]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"text":"v = fλ","textPreview":"v = fλ","textChars":6,"textLines":1,"bbox":[76,212,214,78]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"text":"真实声速生成信号；\n估计值由观测量反演。","textPreview":"真实声速生成信号； | 估计值由观测量反演。","textChars":20,"textLines":2,"bbox":[76,304,248,104]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"text":"εᵣ = (v̂ − v) / v × 100%","textPreview":"εᵣ = (v̂ − v) / v × 100%","textChars":24,"textLines":1,"bbox":[76,446,276,48]}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"bbox":[382,168,8,74]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"text":"回声法","textPreview":"回声法","textChars":3,"textLines":1,"bbox":[410,168,160,34]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"text":"往返时延 Δt","textPreview":"往返时延 Δt","textChars":7,"textLines":1,"bbox":[580,170,244,64]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"text":"v̂ = 2d / Δt","textPreview":"v̂ = 2d / Δt","textChars":12,"textLines":1,"bbox":[824,168,370,38]}
+{"kind":"shape","id":"sh/943mhgre","slide":3,"bbox":[410,240,784,0]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"bbox":[382,272,8,74]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"text":"双麦克风","textPreview":"双麦克风","textChars":4,"textLines":1,"bbox":[410,272,160,34]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"text":"互相关峰时延","textPreview":"互相关峰时延","textChars":6,"textLines":1,"bbox":[580,274,244,64]}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"text":"v̂ = d cosθ / Δt","textPreview":"v̂ = d cosθ / Δt","textChars":16,"textLines":1,"bbox":[824,272,370,38]}
+{"kind":"shape","id":"sh/w7ulsvqp","slide":3,"bbox":[410,344,784,0]}
+{"kind":"shape","id":"sh/ja54na9g","slide":3,"bbox":[382,376,8,74]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"text":"相位差","textPreview":"相位差","textChars":3,"textLines":1,"bbox":[410,376,160,34]}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"text":"包裹相位 φw\nn：完整周期数","textPreview":"包裹相位 φw | n：完整周期数","textChars":15,"textLines":2,"bbox":[580,378,244,64]}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"text":"v̂ = 2πfd / (2πn + φw)","textPreview":"v̂ = 2πfd / (2πn + φw)","textChars":22,"textLines":1,"bbox":[824,376,370,38]}
+{"kind":"shape","id":"sh/03ix43e5","slide":3,"bbox":[410,448,784,0]}
+{"kind":"shape","id":"sh/14ryd8fq","slide":3,"bbox":[382,480,8,74]}
+{"kind":"textbox","id":"sh/6d0fytg3","slide":3,"text":"驻波法","textPreview":"驻波法","textChars":3,"textLines":1,"bbox":[410,480,160,34]}
+{"kind":"textbox","id":"sh/re9g7yxo","slide":3,"text":"q 个波节间隔 Dq\nq：跨越的波节间隔数","textPreview":"q 个波节间隔 Dq | q：跨越的波节间隔数","textChars":21,"textLines":2,"bbox":[580,482,244,64]}
+{"kind":"textbox","id":"sh/sfix03y9","slide":3,"text":"v̂ = 2fDq / q","textPreview":"v̂ = 2fDq / q","textChars":13,"textLines":1,"bbox":[824,480,370,38]}
+{"kind":"shape","id":"sh/tgry9ofu","slide":3,"bbox":[410,552,784,0]}
+{"kind":"textbox","id":"sh/a9kfadwn","slide":3,"text":"统一比较准确度、稳定性、二义性与适用条件。","textPreview":"统一比较准确度、稳定性、二义性与适用条件。","textChars":21,"textLines":1,"bbox":[382,598,812,42]}
+{"kind":"shape","id":"sh/batgjixs","slide":3,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/l4fi9cza","slide":3,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/k3m1g7yp","slide":3,"text":"3 / 12","textPreview":"3 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[建议时长：55 秒]\n\n四种方法共享波动关系，但反演所用的直接观测量不同。回声法由往返时延求速度；双麦克风法还要加入声源方向的余弦修正；相位法必须判断完整周期数，否则会出现整周二义性；驻波法则用多个波节间隔降低位置读数的相对误差。我们在同一真实声速、相同噪声与采样条件下计算相对误差，并进一步比较准确度、稳定性、二义性和适用条件。这样学生比较的不再只是四个公式，而是四种测量方案。统一基准也允许教师追问：误差变化究竟来自物理边界、采样量化，还是读数算法。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（物理原理与计算模型、误差与方法比较）\n[/Sources]"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"TIME-DOMAIN METHODS","textShapes":11}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"text":"TIME-DOMAIN METHODS","textPreview":"TIME-DOMAIN METHODS","textChars":19,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"text":"时间域方法把传播距离变成可测时延","textPreview":"时间域方法把传播距离变成可测时延","textChars":16,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"text":"回声法","textPreview":"回声法","textChars":3,"textLines":1,"bbox":[72,160,190,38]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"text":"双麦克风时间差","textPreview":"双麦克风时间差","textChars":7,"textLines":1,"bbox":[654,160,280,38]}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":4,"text":"v̂ = 2d / Δt","textPreview":"v̂ = 2d / Δt","textChars":12,"textLines":1,"bbox":[86,556,230,40]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"text":"识别直达脉冲与回波；\n反射系数、SNR 与采样率共同影响峰值可靠性。","textPreview":"识别直达脉冲与回波； | 反射系数、SNR 与采样率共同影响峰值可靠性。","textChars":34,"textLines":2,"bbox":[320,552,304,72]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"text":"v̂ = d cosθ / Δt","textPreview":"v̂ = d cosθ / Δt","textChars":16,"textLines":1,"bbox":[668,556,294,40]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"text":"归一化互相关利用整段波形；\n同步采样、方向修正与时延量化决定精度。","textPreview":"归一化互相关利用整段波形； | 同步采样、方向修正与时延量化决定精度。","textChars":33,"textLines":2,"bbox":[964,552,244,72]}
+{"kind":"shape","id":"sh/i94r6xgz","slide":4,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/jadsz2xk","slide":4,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/w72947yt","slide":4,"text":"4 / 12","textPreview":"4 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"image","id":"im/tcvm5gji","slide":4,"name":"","geometry":"roundRect","bbox":[100.93,208,494.14,332]}
+{"kind":"image","id":"im/sbm5cbix","slide":4,"name":"","geometry":"roundRect","bbox":[660.77,208,540.47,332]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[建议时长：50 秒]\n\n先看时间域方法。左侧回声法把直达脉冲和反射脉冲之间的延迟换算成往返传播时间，所以距离要乘二。峰值是否可靠会受到采样率、信噪比和反射系数共同影响。右侧双麦克风法不只寻找两个局部峰值，而是对整段波形做归一化互相关，相关峰给出时延；若声源并非正对阵列，还必须修正传播方向。两种方法都测时间差，但路径定义和主要误差来源并不相同。界面允许固定其他变量逐项扫描，使峰位置、相关峰展宽和最终误差同时变化。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（回声法、双麦克风时间差）\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_echo.png\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_dual_microphone.png\n[/Sources]"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"PHASE & SPACE","textShapes":11}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"text":"PHASE & SPACE","textPreview":"PHASE & SPACE","textChars":13,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"text":"相位与驻波把短时延转化为相位或空间周期","textPreview":"相位与驻波把短时延转化为相位或空间周期","textChars":19,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"bbox":[72,514,6,30]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"text":"相位差法","textPreview":"相位差法","textChars":4,"textLines":1,"bbox":[90,508,182,42]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"text":"v̂ = 2πfd / (2πn + φw)","textPreview":"v̂ = 2πfd / (2πn + φw)","textChars":22,"textLines":1,"bbox":[292,510,330,38]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"text":"高灵敏度来自相位读数；完整周期数 n 误判一周，会造成远大于一般噪声的系统偏差。","textPreview":"高灵敏度来自相位读数；完整周期数 n 误判一周，会造成远大于一般噪声的系统偏差。","textChars":40,"textLines":1,"bbox":[72,560,550,72]}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"bbox":[654,514,6,30]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"text":"驻波法","textPreview":"驻波法","textChars":3,"textLines":1,"bbox":[672,508,162,42]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"text":"v̂ = 2fDq / q","textPreview":"v̂ = 2fDq / q","textChars":13,"textLines":1,"bbox":[902,510,306,38]}
+{"kind":"textbox","id":"sh/v2twb6dw","slide":5,"text":"跨多个波节间隔降低相对读数误差；反射不完全时，波节是非零振幅极小值。","textPreview":"跨多个波节间隔降低相对读数误差；反射不完全时，波节是非零振幅极小值。","textChars":34,"textLines":1,"bbox":[654,560,554,72]}
+{"kind":"shape","id":"sh/k7mxovud","slide":5,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"text":"5 / 12","textPreview":"5 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"image","id":"im/vitwz65k","slide":5,"name":"","geometry":"roundRect","bbox":[72,173.33,550,315.33]}
+{"kind":"image","id":"im/uhkvq14z","slide":5,"name":"","geometry":"roundRect","bbox":[654,174.28,554,313.45]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[建议时长：50 秒]\n\n相位法和驻波法把很短的传播时延转化成更容易观察的相位量或空间周期。相位读数灵敏，但示波器只给出包裹后的相位；完整周期数判断错误一周，就会产生显著系统偏差。驻波法通过移动测量位置寻找包络极小值，并跨越多个波节间隔计算波长。我们还保留不完全反射条件，所以图中的波节不一定等于零振幅。学生可以看到理想公式在真实边界条件下如何修正。通过同时观察入射波、反射波与包络，还能区分瞬时零点和稳定的空间极小值。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（相位差、非理想反射下的驻波包络）\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_oscilloscope_phase.png\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_standing_wave.png\n[/Sources]"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"VISIBLE MEASUREMENT CHAIN","textShapes":12}
+{"kind":"textbox","id":"sh/cbe5g3ih","slide":6,"text":"VISIBLE MEASUREMENT CHAIN","textPreview":"VISIBLE MEASUREMENT CHAIN","textChars":25,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"text":"参数重算与播放分离，结果对象保持一致","textPreview":"参数重算与播放分离，结果对象保持一致","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"text":"四层证据","textPreview":"四层证据","textChars":4,"textLines":1,"bbox":[72,174,250,38]}
+{"kind":"shape","id":"sh/ml07i9sv","slide":6,"bbox":[76,246,11,11]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"text":"空间传播：声波走过哪段路程","textPreview":"空间传播：声波走过哪段路程","textChars":13,"textLines":1,"bbox":[100,238,262,50]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"bbox":[76,311,11,11]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"text":"原始信号：传感器记录了什么","textPreview":"原始信号：传感器记录了什么","textChars":13,"textLines":1,"bbox":[100,303,262,50]}
+{"kind":"shape","id":"sh/h4bupgn6","slide":6,"bbox":[76,376,11,11]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"text":"参数变化：触发当前方法重新计算","textPreview":"参数变化：触发当前方法重新计算","textChars":15,"textLines":1,"bbox":[100,368,262,50]}
+{"kind":"shape","id":"sh/v2tcn650","slide":6,"bbox":[76,441,11,11]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"text":"播放推进：只读结果，不重抽随机噪声","textPreview":"播放推进：只读结果，不重抽随机噪声","textChars":17,"textLines":1,"bbox":[100,433,262,50]}
+{"kind":"shape","id":"sh/5svutgni","slide":6,"bbox":[72,518,282,112]}
+{"kind":"textbox","id":"sh/47mt0b6x","slide":6,"text":"343 m/s → 341.64 m/s","textPreview":"343 m/s → 341.64 m/s","textChars":20,"textLines":1,"bbox":[92,538,242,38]}
+{"kind":"textbox","id":"sh/j6dcr65c","slide":6,"text":"同一结果对象驱动读数、动画与 CSV\n回声示例相对误差约 −0.40%","textPreview":"同一结果对象驱动读数、动画与 CSV | 回声示例相对误差约 −0.40%","textChars":35,"textLines":2,"bbox":[92,582,242,40]}
+{"kind":"shape","id":"sh/i54bylor","slide":6,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/svmt4v6t","slide":6,"text":"6 / 12","textPreview":"6 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"image","id":"im/e9orqlsj","slide":6,"name":"","geometry":"roundRect","bbox":[421.07,160,755.86,482]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[建议时长：55 秒]\n\n综合实验界面遵循从空间过程到原始信号、再到分析曲线和实时读数的阅读顺序。这里特别把参数重算和播放推进分成两条路径：改变距离、频率、噪声或方法专用参数时，Julia 重新生成当前方法的数据；拖动播放进度时，只读取已经保存的结果更新当前帧，不重新抽取随机噪声。读数、动画、参考曲线和 CSV 都读取同一个结果对象，因此屏幕观察与课后复算始终对应同一组实验条件。这种设计还给排障提供明确顺序：先查状态同步，再查采样和反演，而不把随机变化误认为程序错误。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（数值计算与界面更新流程、界面与交互）\n- 声速/设计报告/assets/sound_demo_interface.png\n[/Sources]"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"HYBRID PROGRAMMING","textShapes":12}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"text":"HYBRID PROGRAMMING","textPreview":"HYBRID PROGRAMMING","textChars":18,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"text":"Python 管应用，Julia 管科学计算","textPreview":"Python 管应用，Julia 管科学计算","textChars":22,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/ydkbm5sv","slide":7,"bbox":[486,284,308,82]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"bbox":[486,404,308,54]}
+{"kind":"shape","id":"sh/kzmdova1","slide":7,"bbox":[72,168,430,420]}
+{"kind":"shape","id":"sh/l0vuh0rm","slide":7,"bbox":[778,168,430,420]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"text":"PYTHON / STREAMLIT","textPreview":"PYTHON / STREAMLIT","textChars":18,"textLines":1,"bbox":[102,202,370,40]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"text":"统一网页、问答与图片输入\n本地文献检索与受限执行\n端口选择、日志与进程调度\n只管理服务，不转发实验数组","textPreview":"统一网页、问答与图片输入 | 本地文献检索与受限执行 | 端口选择、日志与进程调度 | 只管理服务，不转发实验数组","textChars":51,"textLines":4,"bbox":[102,270,346,232]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"text":"JULIA / WGLMAKIE","textPreview":"JULIA / WGLMAKIE","textChars":16,"textLines":1,"bbox":[808,202,370,40]}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"text":"四种确定性物理模型\n参数校验与当前结果对象\nBonito 直接处理控件状态\nWebGL 图形、CSV 与 PNG","textPreview":"四种确定性物理模型 | 参数校验与当前结果对象 | Bonito 直接处理控件状态 | WebGL 图形、CSV 与 PNG","textChars":56,"textLines":4,"bbox":[808,270,346,232]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"text":"本机回环网页嵌入","textPreview":"本机回环网页嵌入","textChars":8,"textLines":1,"bbox":[510,302,260,34]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"text":"CSV / PNG","textPreview":"CSV / PNG","textChars":9,"textLines":1,"bbox":[532,417,210,28]}
+{"kind":"textbox","id":"sh/n6x0fqlo","slide":7,"text":"边界清楚：参数、曲线、读数留在 Julia；Python 只嵌入网页并监测就绪。","textPreview":"边界清楚：参数、曲线、读数留在 Julia；Python 只嵌入网页并监测就绪。","textChars":40,"textLines":1,"bbox":[240,616,800,38]}
+{"kind":"shape","id":"sh/25ojml43","slide":7,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"text":"7 / 12","textPreview":"7 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[建议时长：60 秒]\n\n系统采用 Python 与 Julia 的进程级混合编程。Python/Streamlit 负责统一网页、专题检索、智能问答、图片输入、受限代码执行以及端口、日志和进程生命周期；Julia/WGLMakie 负责四种确定性物理模型、参数校验、含噪信号、分析算法和 WebGL 图形。实验控件由浏览器与 Julia 的 Bonito 会话直接交换状态，Python 只嵌入本机网页并监测服务就绪，不逐帧转发大数组。两端通过地址、状态、日志以及 CSV、PNG 交换必要信息，职责和数据边界都可以分别测试。即使 Julia 首次加载较慢或问答服务异常，主页面、日志提示和已完成的确定性结果也不会相互污染。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（软件架构、Python--Julia 混合编程与进程协同）\n- 声速/声速_RAG智能体/app.py\n- 声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/web/web.jl\n[/Sources]"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"EXPERIMENT-SPECIFIC TUTOR","textShapes":12}
+{"kind":"textbox","id":"sh/tw7e9gnq","slide":8,"text":"EXPERIMENT-SPECIFIC TUTOR","textPreview":"EXPERIMENT-SPECIFIC TUTOR","textChars":25,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"text":"智能问答不是答案机，而是实验解释层","textPreview":"智能问答不是答案机，而是实验解释层","textChars":17,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"text":"围绕四种测量方法","textPreview":"围绕四种测量方法","textChars":8,"textLines":1,"bbox":[72,174,382,38]}
+{"kind":"shape","id":"sh/tkby9kzm","slide":8,"bbox":[76,246,11,11]}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"text":"快速提问、连续追问与多图粘贴","textPreview":"快速提问、连续追问与多图粘贴","textChars":14,"textLines":1,"bbox":[100,238,362,44]}
+{"kind":"shape","id":"sh/je9g3ahk","slide":8,"bbox":[76,303,11,11]}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"text":"本地声学文献提供主要依据","textPreview":"本地声学文献提供主要依据","textChars":12,"textLines":1,"bbox":[100,295,362,44]}
+{"kind":"shape","id":"sh/o7ydoret","slide":8,"bbox":[76,360,11,11]}
+{"kind":"textbox","id":"sh/98rehwve","slide":8,"text":"明确参数调用自研公式工具复算","textPreview":"明确参数调用自研公式工具复算","textChars":14,"textLines":1,"bbox":[100,352,362,44]}
+{"kind":"shape","id":"sh/m5gvmhwn","slide":8,"bbox":[76,417,11,11]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"text":"问答不生成、不修改 Julia 测量值","textPreview":"问答不生成、不修改 Julia 测量值","textChars":19,"textLines":1,"bbox":[100,409,362,44]}
+{"kind":"shape","id":"sh/0jydkreh","slide":8,"bbox":[76,474,11,11]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"text":"校内版本仅使用服务器本地模型","textPreview":"校内版本仅使用服务器本地模型","textChars":14,"textLines":1,"bbox":[100,466,362,44]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"text":"观察信号 → 检索文献 → 解释算法 → 确定性复算 → 比较方案","textPreview":"观察信号 → 检索文献 → 解释算法 → 确定性复算 → 比较方案","textChars":33,"textLines":1,"bbox":[76,580,386,62]}
+{"kind":"shape","id":"sh/zipwbmdc","slide":8,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/lgbepgvm","slide":8,"text":"8 / 12","textPreview":"8 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"image","id":"im/jqhsb2ls","slide":8,"name":"","geometry":"roundRect","bbox":[510.95,152,686.1,504]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[建议时长：55 秒]\n\n智能问答是本作品的实验解释层。学生可以使用快速提问、连续追问，也可以粘贴波形、示波器截图或装置照片。系统优先从本地声学文献检索依据；遇到包含距离、时延、频率、波长、夹角或相位等完整参数的问题，会调用自研公式工具确定性复算。模型负责组织解释，但不能生成或修改 Julia 的实验测量值。校内版本作为大学物理智能助教平台的专题模块，只使用学校服务器上的本地模型，专题知识库与其他单位成果严格分开。它的价值是帮助学生提出下一步可验证的问题，而不是替学生完成观察、推导和方案选择。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（智能问答特色设计、与校内平台的关系、多模态追问与确定性复算）\n- 声速/设计报告/assets/sound_qa_interface_real.png\n[/Sources]"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"TRACEABLE & CONTROLLED","textShapes":22}
+{"kind":"textbox","id":"sh/bqxg7q50","slide":9,"text":"TRACEABLE & CONTROLLED","textPreview":"TRACEABLE & CONTROLLED","textChars":22,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"text":"检索与条件复算共同约束回答","textPreview":"检索与条件复算共同约束回答","textChars":13,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/nex4jq5k","slide":9,"bbox":[242,238,98,42]}
+{"kind":"shape","id":"sh/mdonql4z","slide":9,"bbox":[448,238,98,42]}
+{"kind":"shape","id":"sh/9gzml0nq","slide":9,"bbox":[654,238,98,42]}
+{"kind":"shape","id":"sh/ofq5svm5","slide":9,"bbox":[860,238,98,42]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"bbox":[72,186,178,138]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"text":"问题 / 图片","textPreview":"问题 / 图片","textChars":7,"textLines":1,"bbox":[84,210,154,32]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"text":"描述实验现象","textPreview":"描述实验现象","textChars":6,"textLines":1,"bbox":[84,258,154,42]}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"bbox":[278,186,178,138]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"text":"查询扩展","textPreview":"查询扩展","textChars":4,"textLines":1,"bbox":[290,210,154,32]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"text":"识别声学主题","textPreview":"识别声学主题","textChars":6,"textLines":1,"bbox":[290,258,154,42]}
+{"kind":"shape","id":"sh/cnu1kzyd","slide":9,"bbox":[484,186,178,138]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"text":"混合检索","textPreview":"混合检索","textChars":4,"textLines":1,"bbox":[496,210,154,32]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"text":"TF–IDF + BM25","textPreview":"TF–IDF + BM25","textChars":13,"textLines":1,"bbox":[496,258,154,42]}
+{"kind":"shape","id":"sh/bml0buxs","slide":9,"bbox":[690,186,178,138]}
+{"kind":"textbox","id":"sh/0ru1ozyp","slide":9,"text":"条件复算","textPreview":"条件复算","textChars":4,"textLines":1,"bbox":[702,210,154,32]}
+{"kind":"textbox","id":"sh/lsn2h4fa","slide":9,"text":"参数完整才触发","textPreview":"参数完整才触发","textChars":7,"textLines":1,"bbox":[702,258,154,42]}
+{"kind":"shape","id":"sh/98ji147e","slide":9,"bbox":[896,186,178,138]}
+{"kind":"textbox","id":"sh/87a18zqt","slide":9,"text":"证据解释","textPreview":"证据解释","textChars":4,"textLines":1,"bbox":[908,210,154,32]}
+{"kind":"textbox","id":"sh/76h0zup8","slide":9,"text":"检索与复算汇合","textPreview":"检索与复算汇合","textChars":7,"textLines":1,"bbox":[908,258,154,42]}
+{"kind":"textbox","id":"sh/ml8j6p8n","slide":9,"text":"8 / 8","textPreview":"8 / 8","textChars":5,"textLines":1,"bbox":[90,400,170,76]}
+{"kind":"textbox","id":"sh/hcji5o7a","slide":9,"text":"跨主题问题前 5 条检索结果均命中预设主题\n仅代表召回覆盖，不替代回答正确性评价","textPreview":"跨主题问题前 5 条检索结果均命中预设主题 | 仅代表召回覆盖，不替代回答正确性评价","textChars":40,"textLines":2,"bbox":[72,486,280,92]}
+{"kind":"shape","id":"sh/wba1cjqp","slide":9,"bbox":[408,400,6,30]}
+{"kind":"textbox","id":"sh/va103ep4","slide":9,"text":"图像边界","textPreview":"图像边界","textChars":4,"textLines":1,"bbox":[426,394,202,42]}
+{"kind":"textbox","id":"sh/u9sja98z","slide":9,"text":"缺少刻度或信息不足时，必须说明不确定性，不编造精确读数。","textPreview":"缺少刻度或信息不足时，必须说明不确定性，不编造精确读数。","textChars":28,"textLines":1,"bbox":[426,450,318,86]}
+{"kind":"shape","id":"sh/xgzitk76","slide":9,"bbox":[802,400,6,30]}
+{"kind":"textbox","id":"sh/cf6h0fql","slide":9,"text":"受限执行","textPreview":"受限执行","textChars":4,"textLines":1,"bbox":[820,394,202,42]}
+{"kind":"textbox","id":"sh/2l4faloj","slide":9,"text":"用户主动确认 → 正则与 AST 检查 → 独立输出目录 → 默认 60 s 超时。","textPreview":"用户主动确认 → 正则与 AST 检查 → 独立输出目录 → 默认 60 s 超时。","textChars":42,"textLines":1,"bbox":[820,450,344,86]}
+{"kind":"textbox","id":"sh/nmdg3q54","slide":9,"text":"生成式解释不能覆盖确定性计算结果。","textPreview":"生成式解释不能覆盖确定性计算结果。","textChars":17,"textLines":1,"bbox":[398,594,760,40]}
+{"kind":"shape","id":"sh/onmxcv69","slide":9,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/pofy50nu","slide":9,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/apofe5of","slide":9,"text":"9 / 12","textPreview":"9 / 12","textChars":6,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[建议时长：55 秒]\n\n回答可信性由三类约束共同保证。第一，查询扩展和混合检索给出可追溯的本地文献证据；第二，只有识别到完整测量参数时才进入确定性复算，公式、单位和数量级检查结果再与检索证据汇合；第三，图片缺少刻度时必须明确不确定性，不能编造精确读数。回答中的 Python 绘图代码不会自动运行，必须由用户确认，并经过正则与抽象语法树检查，在独立目录中限时执行。生成式解释始终不能覆盖确定性计算结果。模型不可用时仍保留本地检索和公式工具，所以降级的是表达能力，不是实验和复算能力。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（专题知识库与混合检索、确定性复算、受限制的 Python 可视化、回答约束）\n- 声速/声速_RAG智能体/evaluate.py\n- 声速/声速_RAG智能体/code_runner.py\n[/Sources]"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"ONE-FILE DELIVERY","textShapes":21}
+{"kind":"textbox","id":"sh/ru18r2to","slide":10,"text":"ONE-FILE DELIVERY","textPreview":"ONE-FILE DELIVERY","textChars":17,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"text":"单文件版须在无开发环境机器上独立验收","textPreview":"单文件版须在无开发环境机器上独立验收","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/zelojyl8","slide":10,"bbox":[292,288,126,58]}
+{"kind":"shape","id":"sh/ydcnatkn","slide":10,"bbox":[572,288,126,58]}
+{"kind":"shape","id":"sh/l036l83y","slide":10,"bbox":[852,288,126,58]}
+{"kind":"shape","id":"sh/kzu5c32t","slide":10,"bbox":[72,210,236,210]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[94,232,50,28]}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"text":"PackageCompiler","textPreview":"PackageCompiler","textChars":15,"textLines":1,"bbox":[94,280,192,38]}
+{"kind":"textbox","id":"sh/s7yt4b21","slide":10,"text":"Julia + WGLMakie\n字体与着色器","textPreview":"Julia + WGLMakie | 字体与着色器","textChars":23,"textLines":2,"bbox":[94,334,192,64]}
+{"kind":"shape","id":"sh/d87uxg3m","slide":10,"bbox":[352,210,236,210]}
+{"kind":"textbox","id":"sh/q5gb21kb","slide":10,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[374,232,50,28]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"text":"PyInstaller","textPreview":"PyInstaller","textChars":11,"textLines":1,"bbox":[374,280,192,38]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"text":"Python 前端\n知识库与启动器","textPreview":"Python 前端 | 知识库与启动器","textChars":17,"textLines":2,"bbox":[374,334,192,64]}
+{"kind":"shape","id":"sh/1cru1g3y","slide":10,"bbox":[632,210,236,210]}
+{"kind":"textbox","id":"sh/e9gb61k7","slide":10,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[654,232,50,28]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"text":"单文件 EXE","textPreview":"单文件 EXE","textChars":7,"textLines":1,"bbox":[654,280,192,38]}
+{"kind":"textbox","id":"sh/ozitcv29","slide":10,"text":"资源解包\n端口、缓存与日志分区","textPreview":"资源解包 | 端口、缓存与日志分区","textChars":15,"textLines":2,"bbox":[654,334,192,64]}
+{"kind":"shape","id":"sh/p0ru503u","slide":10,"bbox":[912,210,236,210]}
+{"kind":"textbox","id":"sh/xwnupgvy","slide":10,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[934,232,50,28]}
+{"kind":"textbox","id":"sh/wvetgbud","slide":10,"text":"浏览器运行","textPreview":"浏览器运行","textChars":5,"textLines":1,"bbox":[934,280,192,38]}
+{"kind":"textbox","id":"sh/bu5cnqd8","slide":10,"text":"无需预装\nPython / Julia","textPreview":"无需预装 | Python / Julia","textChars":19,"textLines":2,"bbox":[934,334,192,64]}
+{"kind":"shape","id":"sh/atwbelcn","slide":10,"bbox":[72,472,1136,150]}
+{"kind":"textbox","id":"sh/lk7ut0va","slide":10,"text":"590 MiB","textPreview":"590 MiB","textChars":7,"textLines":1,"bbox":[100,500,262,58]}
+{"kind":"textbox","id":"sh/kjytkvup","slide":10,"text":"当前唯一发布版\n618,567,730 字节","textPreview":"当前唯一发布版 | 618,567,730 字节","textChars":22,"textLines":2,"bbox":[102,560,260,44]}
+{"kind":"textbox","id":"sh/jypcrqd4","slide":10,"text":"干净账户、离线启动\n四种实验与 CSV 导出","textPreview":"干净账户、离线启动 | 四种实验与 CSV 导出","textChars":22,"textLines":2,"bbox":[438,504,324,80]}
+{"kind":"textbox","id":"sh/yxgbilcj","slide":10,"text":"覆盖冷/热启动、中文路径\n端口占用与 WebGL 降级","textPreview":"覆盖冷/热启动、中文路径 | 端口占用与 WebGL 降级","textChars":27,"textLines":2,"bbox":[824,504,336,80]}
+{"kind":"shape","id":"sh/1o3ahwvq","slide":10,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/0nut8rul","slide":10,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/q9srixs3","slide":10,"text":"10 / 12","textPreview":"10 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[建议时长：55 秒]\n\n为降低课堂部署门槛，我们用 PackageCompiler 封装 Julia、WGLMakie、字体和着色器，再用 PyInstaller 封装 Python 前端、知识库与启动器，形成当前唯一的单文件发布版，约五百九十 MiB。验收不能只看能否打开网页，而要在未安装 Python 和 Julia 的干净账户中断网启动，进入四种实验、调节参数并导出 CSV；还要覆盖首次冷启动、缓存后的热启动、中文路径、普通权限、端口占用和 WebGL 不可用等情况，并保存版本、哈希和独立日志。缓存、知识库、用户导出和故障日志分目录保存，升级或清理时不会误删学生成果。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（参赛单文件版、开发与复现环境）\n- 声速/声速_RAG智能体/packaging/README.md\n- 声速/声速_RAG智能体/packaging/build_onefile.ps1\n- 声速/声速_RAG智能体/packaging/build_julia_app.jl\n- 声速/声速_RAG智能体/packaging/launcher.py\n- 声速/声速_RAG智能体/packaging/dist/single/声速测量实验智能助教_单文件版.exe（618,567,730 字节）\n[/Sources]"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"LEARNING LOOP","textShapes":18}
+{"kind":"textbox","id":"sh/k3uhcb6h","slide":11,"text":"LEARNING LOOP","textPreview":"LEARNING LOOP","textChars":13,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/xcryxg7y","slide":11,"text":"教学闭环既要可复算，也要可评价","textPreview":"教学闭环既要可复算，也要可评价","textChars":15,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"shape","id":"sh/n69grmpw","slide":11,"bbox":[154,316,946,70]}
+{"kind":"shape","id":"sh/250zy18b","slide":11,"bbox":[96,260,116,116]}
+{"kind":"textbox","id":"sh/98rytw72","slide":11,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[96,286,116,54]}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"text":"预测前测","textPreview":"预测前测","textChars":4,"textLines":1,"bbox":[60,404,188,38]}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"text":"辨认直接观测量\n记录参数影响判断","textPreview":"辨认直接观测量 | 记录参数影响判断","textChars":16,"textLines":2,"bbox":[40,458,228,72]}
+{"kind":"shape","id":"sh/61kzalof","slide":11,"bbox":[380,260,116,116]}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[380,286,116,54]}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"text":"操作观察","textPreview":"操作观察","textChars":4,"textLines":1,"bbox":[344,404,188,38]}
+{"kind":"textbox","id":"sh/mdobedg3","slide":11,"text":"单变量扫描\n记录操作与任务完成","textPreview":"单变量扫描 | 记录操作与任务完成","textChars":15,"textLines":2,"bbox":[324,458,228,72]}
+{"kind":"shape","id":"sh/nehs7iho","slide":11,"bbox":[664,260,116,116]}
+{"kind":"textbox","id":"sh/0b6tc3yx","slide":11,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[664,286,116,54]}
+{"kind":"textbox","id":"sh/1cfa58zi","slide":11,"text":"数据复算","textPreview":"数据复算","textChars":4,"textLines":1,"bbox":[628,404,188,38]}
+{"kind":"textbox","id":"sh/epobatgr","slide":11,"text":"导出 CSV\n核对中间量、单位与误差","textPreview":"导出 CSV | 核对中间量、单位与误差","textChars":18,"textLines":2,"bbox":[608,458,228,72]}
+{"kind":"shape","id":"sh/zaxs3yhc","slide":11,"bbox":[948,260,116,116]}
+{"kind":"textbox","id":"sh/cn6t83y1","slide":11,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[948,286,116,54]}
+{"kind":"textbox","id":"sh/dofa18z6","slide":11,"text":"解释迁移","textPreview":"解释迁移","textChars":4,"textLines":1,"bbox":[912,404,188,38]}
+{"kind":"textbox","id":"sh/tsnip0ny","slide":11,"text":"问答辅助讨论\n完成迁移题与方案评价","textPreview":"问答辅助讨论 | 完成迁移题与方案评价","textChars":17,"textLines":2,"bbox":[892,458,228,72]}
+{"kind":"textbox","id":"sh/87ehgv6d","slide":11,"text":"以前后测、任务完成率、误差解释和迁移题表现构成评价证据。","textPreview":"以前后测、任务完成率、误差解释和迁移题表现构成评价证据。","textChars":28,"textLines":1,"bbox":[132,590,1016,42]}
+{"kind":"shape","id":"sh/7650nq5s","slide":11,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/65wzelo7","slide":11,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/l43ilgn2","slide":11,"text":"11 / 12","textPreview":"11 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"[建议时长：55 秒]\n\n教学使用按照预测、观察、复算和解释组织，但我们还为每一步设计评价证据。实验前让学生辨认直接观测量并预测参数影响；操作阶段记录单变量扫描和任务完成情况；复算阶段检查 CSV 中间量、单位与误差传播；最后要求学生解释异常，并在迁移题中选择合适方法。教学有效性不靠主观好评判断，而比较概念前后测、操作任务完成率、误差解释质量和新情境迁移表现。问答日志只用于分析高频概念困难，不直接替代教师评分。评价结果还可反向调整默认参数、任务难度和提示顺序，形成课程改进闭环。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（适用场景、教学目标、教学有效性评价方案）\n[/Sources]"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"TAKEAWAY","textShapes":16}
+{"kind":"textbox","id":"sh/1oj61kn6","slide":12,"text":"TAKEAWAY","textPreview":"TAKEAWAY","textChars":8,"textLines":1,"bbox":[72,40,520,26]}
+{"kind":"textbox","id":"sh/1gbm9s3a","slide":12,"text":"把“公式验证”升级为“测量方案设计”","textPreview":"把“公式验证”升级为“测量方案设计”","textChars":18,"textLines":1,"bbox":[72,76,1060,64]}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,48,48,26]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"text":"让每个声速结论都能回到","textPreview":"让每个声速结论都能回到","textChars":11,"textLines":1,"bbox":[112,182,1056,54]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"text":"传播过程 · 原始信号 · 物理公式 · 数据来源","textPreview":"传播过程 · 原始信号 · 物理公式 · 数据来源","textChars":25,"textLines":1,"bbox":[86,252,1108,74]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"bbox":[430,350,420,7]}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"text":"四种方法","textPreview":"四种方法","textChars":4,"textLines":1,"bbox":[58,410,220,38]}
+{"kind":"textbox","id":"sh/b6d4f2lc","slide":12,"text":"统一条件横向比较","textPreview":"统一条件横向比较","textChars":8,"textLines":1,"bbox":[46,458,244,48]}
+{"kind":"textbox","id":"sh/a543mx4r","slide":12,"text":"确定性核心","textPreview":"确定性核心","textChars":5,"textLines":1,"bbox":[342,410,220,38]}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"text":"结果透明、可复算","textPreview":"结果透明、可复算","textChars":8,"textLines":1,"bbox":[330,458,244,48]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"text":"智能解释","textPreview":"智能解释","textChars":4,"textLines":1,"bbox":[626,410,220,38]}
+{"kind":"textbox","id":"sh/atc7epon","slide":12,"text":"本地知识与条件复算","textPreview":"本地知识与条件复算","textChars":9,"textLines":1,"bbox":[614,458,244,48]}
+{"kind":"textbox","id":"sh/bulo7u58","slide":12,"text":"单文件部署","textPreview":"单文件部署","textChars":5,"textLines":1,"bbox":[910,410,220,38]}
+{"kind":"textbox","id":"sh/orapcf6h","slide":12,"text":"干净环境可验收","textPreview":"干净环境可验收","textChars":7,"textLines":1,"bbox":[898,458,244,48]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"text":"推广资源包：教师说明 · 学生任务单 · CSV 基准 · 异常案例 · 评价量表","textPreview":"推广资源包：教师说明 · 学生任务单 · CSV 基准 · 异常案例 · 评价量表","textChars":41,"textLines":1,"bbox":[170,584,940,40]}
+{"kind":"shape","id":"sh/mps7a5or","slide":12,"bbox":[72,686,1136,0]}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"text":"声速测量实验智能助教","textPreview":"声速测量实验智能助教","textChars":10,"textLines":1,"bbox":[72,694,320,18]}
+{"kind":"textbox","id":"sh/0nap8f6l","slide":12,"text":"12 / 12","textPreview":"12 / 12","textChars":7,"textLines":1,"bbox":[1120,694,88,18]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"[建议时长：40 秒]\n\n最后总结：本作品把声速实验从公式验证升级为测量方案设计。四种方法在统一条件下比较，数值由确定性模型产生并可独立复算，智能问答以本地文献和条件复算约束解释，单文件则在无开发环境机器上接受完整验收。推广时交付的不应只有一个程序，还应包括教师说明、学生任务单、默认参数基准、异常案例、CSV 复算示例和评价量表。不同学校可保留核心模型，只替换任务单、默认参数和实体设备说明。我们希望学生最终能够回答的不只是声速是多少，而是这个结论为什么可信。谢谢各位老师。\n\n[Sources]\n- 声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（主要创新点、推广价值、结论与展望）\n[/Sources]"}

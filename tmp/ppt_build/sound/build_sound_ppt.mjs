@@ -1,496 +1,264 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Presentation, PresentationFile } from "@oai/artifact-tool";
+import { FileBlob, PresentationFile } from "@oai/artifact-tool";
 
 const ROOT = "D:/OneDrive/文档/我的文件/git/仁爱物理竞赛";
-const OUT = path.join(ROOT, "声速/设计报告/声速测量实验智能助教_答辩PPT.pptx");
 const BUILD = path.join(ROOT, "tmp/ppt_build/sound");
+const STARTER = path.join(BUILD, "template-starter.pptx");
+const OUT = path.join(ROOT, "声速/设计报告/声速测量实验智能助教_答辩PPT.pptx");
+const SCRIPT_OUT = path.join(ROOT, "声速/设计报告/声速测量实验智能助教_10分钟讲稿.txt");
 const PREVIEW = path.join(BUILD, "artifact_render");
 
-const ASSETS = {
-  header: path.join(ROOT, "声速/声速_RAG智能体/assets/sound_speed_header.png"),
-  demo: path.join(ROOT, "声速/设计报告/assets/sound_demo_interface.png"),
-  qa: path.join(ROOT, "声速/设计报告/assets/sound_qa_interface_real.png"),
-  echo: path.join(ROOT, "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_echo.png"),
-  dual: path.join(ROOT, "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_dual_microphone.png"),
-  phase: path.join(ROOT, "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_oscilloscope_phase.png"),
-  standing: path.join(ROOT, "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_standing_wave.png"),
-  echoCrop: path.join(ROOT, "tmp/ppt_build/sound/crops/echo_double_pulse.png"),
-  dualCrop: path.join(ROOT, "tmp/ppt_build/sound/crops/dual_correlation_peak.png"),
-  phaseCrop: path.join(ROOT, "tmp/ppt_build/sound/crops/phase_periodicity.png"),
-  standingCrop: path.join(ROOT, "tmp/ppt_build/sound/crops/standing_envelope.png"),
-};
-
-const C = {
-  cream: "#F4EFE5",
-  paper: "#FBF8F1",
-  slate: "#253238",
-  slate2: "#34434A",
-  ink: "#263238",
-  muted: "#667276",
-  rule: "#D8D0C2",
-  amber: "#E5A43A",
-  amberDark: "#A96B12",
-  amberPale: "#F4E4C2",
-  mint: "#4FAF9B",
-  mintDark: "#247B6E",
-  mintPale: "#DCEFE9",
-  white: "#FFFDF8",
-  softSlate: "#E7EBE9",
-};
-
-const FONT_CN = "Microsoft YaHei";
-const FONT_LATIN = "Segoe UI";
-
-async function imageBytes(filePath) {
-  const bytes = await fs.readFile(filePath);
-  return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
-}
-
-function addShape(slide, geometry, pos, fill = "none", line = { style: "solid", fill: "none", width: 0 }, opts = {}) {
-  return slide.shapes.add({ geometry, position: pos, fill, line, ...opts });
-}
-
-function addText(slide, text, pos, opts = {}) {
-  const shape = addShape(slide, "textbox", pos, opts.fill ?? "none", opts.line ?? { style: "solid", fill: "none", width: 0 }, {
-    name: opts.name,
-    borderRadius: opts.borderRadius,
-  });
-  shape.text = text;
-  shape.text.style = {
-    fontSize: opts.fontSize ?? 24,
-    bold: opts.bold ?? false,
-    color: opts.color ?? C.ink,
-    alignment: opts.align ?? "left",
-    verticalAlignment: opts.valign ?? "top",
-    autoFit: opts.autoFit ?? "shrinkText",
-    wrap: "square",
-    insets: opts.insets ?? { top: 0, right: 0, bottom: 0, left: 0 },
-    typeface: opts.typeface ?? FONT_CN,
-    lineSpacing: opts.lineSpacing ?? 1.05,
-  };
-  return shape;
-}
-
-function addBulletList(slide, items, pos, opts = {}) {
-  const gap = opts.gap ?? 16;
-  const bulletSize = opts.bulletSize ?? 11;
-  const textSize = opts.fontSize ?? 22;
-  const itemHeight = opts.itemHeight ?? 54;
-  const color = opts.color ?? C.ink;
-  const bulletColor = opts.bulletColor ?? C.mint;
-  items.forEach((item, i) => {
-    const top = pos.top + i * (itemHeight + gap);
-    addShape(slide, "ellipse", { left: pos.left, top: top + 8, width: bulletSize, height: bulletSize }, bulletColor);
-    addText(slide, item, { left: pos.left + 24, top, width: pos.width - 24, height: itemHeight }, {
-      fontSize: textSize, color, lineSpacing: 1.08,
-    });
-  });
-}
-
-function addHeader(slide, eyebrow, title, page, dark = false) {
-  const primary = dark ? C.cream : C.ink;
-  const secondary = dark ? C.mint : C.mintDark;
-  addText(slide, eyebrow, { left: 72, top: 40, width: 520, height: 26 }, {
-    fontSize: 17, bold: true, color: secondary, typeface: FONT_LATIN,
-  });
-  addText(slide, title, { left: 72, top: 76, width: 1060, height: 64 }, {
-    fontSize: 48, bold: true, color: primary, lineSpacing: 0.95,
-  });
-  addText(slide, String(page).padStart(2, "0"), { left: 1160, top: 48, width: 48, height: 26 }, {
-    fontSize: 18, bold: true, color: dark ? C.amber : C.amberDark, align: "right", typeface: FONT_LATIN,
-  });
-}
-
-function addFooter(slide, page, dark = false) {
-  const lineColor = dark ? C.slate2 : C.rule;
-  addShape(slide, "line", { left: 72, top: 686, width: 1136, height: 0 }, "none", { style: "solid", fill: lineColor, width: 1 });
-  addText(slide, "声速测量实验智能助教", { left: 72, top: 694, width: 320, height: 18 }, {
-    fontSize: 12, color: dark ? "#AEB9B7" : C.muted, typeface: FONT_CN,
-  });
-  addText(slide, `${page} / 12`, { left: 1120, top: 694, width: 88, height: 18 }, {
-    fontSize: 12, color: dark ? "#AEB9B7" : C.muted, align: "right", typeface: FONT_LATIN,
-  });
-}
-
-function setNotes(slide, narration, sources) {
-  slide.speakerNotes.textFrame.setText(`${narration}\n\n[Sources]\n${sources.map((s) => `- ${s}`).join("\n")}\n[/Sources]`);
-  slide.speakerNotes.setVisible(true);
-}
-
-function newSlide(presentation, dark = false) {
-  const slide = presentation.slides.add();
-  slide.background.fill = dark ? C.slate : C.cream;
-  return slide;
-}
-
-function addImage(slide, blob, alt, pos, opts = {}) {
-  const im = slide.images.add({
-    blob,
-    contentType: "image/png",
-    alt,
-    fit: opts.fit ?? "cover",
-    crop: opts.crop,
-    position: pos,
-    geometry: opts.geometry ?? "roundRect",
-    borderRadius: opts.radius ?? "rounded-xl",
-  });
-  return im;
-}
-
-function addLabel(slide, text, pos, dark = false, accent = C.amber) {
-  addShape(slide, "rect", { left: pos.left, top: pos.top + 6, width: 6, height: pos.height - 12 }, accent);
-  addText(slide, text, { left: pos.left + 18, top: pos.top, width: pos.width - 18, height: pos.height }, {
-    fontSize: 24, bold: true, color: dark ? C.cream : C.ink, valign: "middle",
-  });
-}
-
-async function main() {
-  await fs.mkdir(PREVIEW, { recursive: true });
-  await fs.mkdir(path.dirname(OUT), { recursive: true });
-  const img = {};
-  for (const [key, filePath] of Object.entries(ASSETS)) img[key] = await imageBytes(filePath);
-
-  const presentation = Presentation.create({ slideSize: { width: 1280, height: 720 } });
-
-  // 1 — Title
+const pages = [
   {
-    const s = newSlide(presentation, true);
-    addImage(s, img.header, "音叉与声波波前主视觉", { left: 0, top: 0, width: 1280, height: 720 }, { fit: "cover", geometry: "rect", radius: 0 });
-    addText(s, "第十二届全国大学生物理实验竞赛（创新）", { left: 76, top: 70, width: 510, height: 32 }, {
-      fontSize: 17, bold: true, color: C.mint, typeface: FONT_CN,
-    });
-    addText(s, "声速测量实验\n智能助教", { left: 76, top: 144, width: 520, height: 166 }, {
-      fontSize: 66, bold: true, color: C.cream, lineSpacing: 0.9,
-    });
-    addShape(s, "rect", { left: 76, top: 334, width: 92, height: 7 }, C.amber);
-    addText(s, "回声 · 时间差 · 相位 · 驻波", { left: 76, top: 374, width: 500, height: 42 }, {
-      fontSize: 28, bold: true, color: C.white,
-    });
-    addText(s, "同一真实声速　不同观测路径　全过程可复算", { left: 76, top: 432, width: 520, height: 60 }, {
-      fontSize: 21, color: "#C7D1CF",
-    });
-    addText(s, "自选题 2 · 教学资源和虚仿", { left: 76, top: 622, width: 420, height: 28 }, {
-      fontSize: 18, bold: true, color: C.amber,
-    });
-    setNotes(s, "开场只提出一个问题：公式很简单，学生真正理解的是怎样从观测量得到声速吗？", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex",
-      "声速/声速_RAG智能体/assets/sound_speed_header.png",
-    ]);
-  }
-
-  // 2 — Challenge
+    seconds: 40,
+    narration: "各位评委老师好，我们的作品是声速测量实验智能助教。它围绕回声、双麦克风时间差、相位差和驻波四条经典测量路径展开。我们没有把四种方法做成互不相关的动画，而是让它们共享同一个真实声速，并把传播过程、传感器信号、分析步骤和最终读数连接起来。接下来请大家始终关注一条主线：一个声速结论，能否回到可观察、可计算、可复核的证据。后续每一页都将围绕这条证据链说明物理、软件与教学设计。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（摘要、作品定位）",
+      "声速/声速_RAG智能体/assets/sound_speed_header.png"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "WHY THIS LAB", "难点不在公式，而在“声速怎样被测出来”", 2, false);
-    addBulletList(s, [
-      "四种方法最终都求 v，但直接观测量完全不同。",
-      "传统课堂常只保留最终数值，测量链被隐藏。",
-      "实体实验难以连续扫描采样率、噪声、角度与反射条件。",
-    ], { left: 76, top: 184, width: 494 }, { itemHeight: 58, gap: 18, fontSize: 22, bulletColor: C.amber });
-
-    addText(s, "v = ?", { left: 810, top: 178, width: 300, height: 100 }, {
-      fontSize: 76, bold: true, color: C.amberDark, align: "center", valign: "middle", typeface: FONT_LATIN,
-    });
-    // arrows first, labels above them
-    [624, 785, 946].forEach((left) => addShape(s, "rightArrow", { left, top: 392, width: 110, height: 42 }, C.mintPale, { style: "solid", fill: C.mint, width: 1 }));
-    const stages = [
-      [590, "传播过程", "声波走过哪段路程"],
-      [751, "传感器信号", "仪器实际记录什么"],
-      [912, "分析观测量", "峰值与相关\n相位与波节"],
-      [1073, "声速估计", "公式、单位与误差"],
-    ];
-    stages.forEach(([left, title, body], i) => {
-      addText(s, String(i + 1).padStart(2, "0"), { left, top: 338, width: 52, height: 28 }, { fontSize: 18, bold: true, color: C.mintDark, typeface: FONT_LATIN });
-      addText(s, title, { left, top: 448, width: 142, height: 34 }, { fontSize: 21, bold: true, color: C.ink, align: "center" });
-      addText(s, body, { left: left - 4, top: 488, width: 150, height: 62 }, { fontSize: 17, color: C.muted, align: "center", lineSpacing: 1.08 });
-    });
-    addText(s, "作品目标：让四层证据同时可见、相互校验。", { left: 74, top: 586, width: 1120, height: 46 }, {
-      fontSize: 29, bold: true, color: C.mintDark, align: "center",
-    });
-    addFooter(s, 2, false);
-    setNotes(s, "先建立教学痛点，再自然引出统一测量链。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第1章）",
-    ]);
-  }
-
-  // 3 — Four inverse paths
+    seconds: 50,
+    narration: "声速公式本身并不复杂，教学难点在于学生往往只记住结果，却不知道仪器实际记录了什么。回声法看两个脉冲，双麦克风法看相关峰，相位法读取包裹相位，驻波法寻找空间极小值。实体实验又很难连续改变噪声、采样率、夹角和反射系数。因此我们的目标不是替代真实实验，而是把传播、信号、分析和估计四层证据同时放到屏幕上，使学生能够追问每一步的数据来源。虚拟环境负责放大过程，真实实验仍负责提供装置经验和测量约束，两者形成互补。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（教学背景、主要困难、教学目标）"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "ONE SPEED, FOUR OBSERVATIONS", "同一声速，四条独立反演路径", 3, false);
-    addText(s, "共同模型", { left: 76, top: 168, width: 170, height: 32 }, { fontSize: 23, bold: true, color: C.mintDark });
-    addText(s, "v = fλ", { left: 76, top: 212, width: 214, height: 78 }, { fontSize: 58, bold: true, color: C.amberDark, typeface: FONT_LATIN });
-    addText(s, "真实声速生成信号；\n估计值由观测量反演。", { left: 76, top: 304, width: 248, height: 104 }, { fontSize: 21, color: C.muted, lineSpacing: 1.1 });
-    addText(s, "εᵣ = (v̂ − v) / v × 100%", { left: 76, top: 446, width: 276, height: 48 }, { fontSize: 24, bold: true, color: C.ink, typeface: FONT_LATIN });
-
-    const rows = [
-      ["回声法", "往返时延 Δt", "v̂ = 2d / Δt", C.amber],
-      ["双麦克风", "互相关峰时延", "v̂ = d cosθ / Δt", C.mint],
-      ["相位差", "包裹相位 φw\nn：完整周期数", "v̂ = 2πfd / (2πn + φw)", C.amber],
-      ["驻波法", "q 个波节间隔 Dq\nq：跨越的波节间隔数", "v̂ = 2fDq / q", C.mint],
-    ];
-    rows.forEach((r, i) => {
-      const y = 168 + i * 104;
-      addShape(s, "rect", { left: 382, top: y, width: 8, height: 74 }, r[3]);
-      addText(s, r[0], { left: 410, top: y, width: 160, height: 34 }, { fontSize: 25, bold: true, color: C.ink });
-      addText(s, r[1], { left: 580, top: y + 2, width: 244, height: 64 }, { fontSize: 22, color: C.muted, lineSpacing: 1.08 });
-      addText(s, r[2], { left: 824, top: y, width: 370, height: 38 }, { fontSize: 27, bold: true, color: i % 2 ? C.mintDark : C.amberDark, typeface: FONT_LATIN });
-      addShape(s, "line", { left: 410, top: y + 72, width: 784, height: 0 }, "none", { style: "solid", fill: C.rule, width: 1 });
-    });
-    addText(s, "差别不在公式数量，而在观测机制、二义性与误差传播。", { left: 382, top: 598, width: 812, height: 42 }, { fontSize: 26, bold: true, color: C.ink });
-    addFooter(s, 3, false);
-    setNotes(s, "用一页建立四种方法的统一语言，后续两页再分别展开时间域与相位/空间域。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第163—314行）",
-    ]);
-  }
-
-  // 4 — Time domain methods
+    seconds: 55,
+    narration: "四种方法共享波动关系，但反演所用的直接观测量不同。回声法由往返时延求速度；双麦克风法还要加入声源方向的余弦修正；相位法必须判断完整周期数，否则会出现整周二义性；驻波法则用多个波节间隔降低位置读数的相对误差。我们在同一真实声速、相同噪声与采样条件下计算相对误差，并进一步比较准确度、稳定性、二义性和适用条件。这样学生比较的不再只是四个公式，而是四种测量方案。统一基准也允许教师追问：误差变化究竟来自物理边界、采样量化，还是读数算法。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（物理原理与计算模型、误差与方法比较）"
+    ]
+  },
   {
-    const s = newSlide(presentation, true);
-    addHeader(s, "TIME-DOMAIN METHODS", "时间域方法把传播距离变成可测时延", 4, true);
-    addText(s, "回声法", { left: 72, top: 160, width: 190, height: 38 }, { fontSize: 28, bold: true, color: C.amber });
-    addText(s, "双麦克风时间差", { left: 654, top: 160, width: 280, height: 38 }, { fontSize: 28, bold: true, color: C.mint });
-    addImage(s, img.echoCrop, "回声法双脉冲波形重点视图", { left: 72, top: 208, width: 552, height: 332 }, { fit: "contain" });
-    addImage(s, img.dualCrop, "双麦克风互相关峰重点视图", { left: 654, top: 208, width: 554, height: 332 }, { fit: "contain" });
-    addText(s, "v̂ = 2d / Δt", { left: 86, top: 556, width: 230, height: 40 }, { fontSize: 31, bold: true, color: C.amber, typeface: FONT_LATIN });
-    addText(s, "识别直达脉冲与回波；\n反射系数、SNR 与采样率共同影响峰值可靠性。", { left: 320, top: 552, width: 304, height: 72 }, { fontSize: 18, color: "#CBD4D2", lineSpacing: 1.08 });
-    addText(s, "v̂ = d cosθ / Δt", { left: 668, top: 556, width: 294, height: 40 }, { fontSize: 31, bold: true, color: C.mint, typeface: FONT_LATIN });
-    addText(s, "归一化互相关利用整段波形；\n同步采样、方向修正与时延量化决定精度。", { left: 964, top: 552, width: 244, height: 72 }, { fontSize: 18, color: "#CBD4D2", lineSpacing: 1.08 });
-    addFooter(s, 4, true);
-    setNotes(s, "强调两种方法都测时延，但一个是往返路径，一个是单程投影路径。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第200—249行）",
+    seconds: 50,
+    narration: "先看时间域方法。左侧回声法把直达脉冲和反射脉冲之间的延迟换算成往返传播时间，所以距离要乘二。峰值是否可靠会受到采样率、信噪比和反射系数共同影响。右侧双麦克风法不只寻找两个局部峰值，而是对整段波形做归一化互相关，相关峰给出时延；若声源并非正对阵列，还必须修正传播方向。两种方法都测时间差，但路径定义和主要误差来源并不相同。界面允许固定其他变量逐项扫描，使峰位置、相关峰展宽和最终误差同时变化。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（回声法、双麦克风时间差）",
       "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_echo.png",
-      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_dual_microphone.png",
-    ]);
-  }
-
-  // 5 — Phase and standing waves
+      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_dual_microphone.png"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "PHASE & SPACE", "相位与驻波把短时延转化为相位或空间周期", 5, false);
-    addImage(s, img.phaseCrop, "相位周期曲线重点视图", { left: 72, top: 168, width: 550, height: 326 }, { fit: "contain" });
-    addImage(s, img.standingCrop, "驻波包络重点视图", { left: 654, top: 168, width: 554, height: 326 }, { fit: "contain" });
-    addLabel(s, "相位差法", { left: 72, top: 508, width: 200, height: 42 }, false, C.amber);
-    addText(s, "v̂ = 2πfd / (2πn + φw)", { left: 292, top: 510, width: 330, height: 38 }, { fontSize: 27, bold: true, color: C.amberDark, align: "right", typeface: FONT_LATIN });
-    addText(s, "高灵敏度来自相位读数；完整周期数 n 误判一周，会造成远大于一般噪声的系统偏差。", { left: 72, top: 560, width: 550, height: 72 }, { fontSize: 19, color: C.muted, lineSpacing: 1.08 });
-    addLabel(s, "驻波法", { left: 654, top: 508, width: 180, height: 42 }, false, C.mint);
-    addText(s, "v̂ = 2fDq / q", { left: 902, top: 510, width: 306, height: 38 }, { fontSize: 29, bold: true, color: C.mintDark, align: "right", typeface: FONT_LATIN });
-    addText(s, "跨多个波节间隔降低相对读数误差；反射不完全时，波节是非零振幅极小值。", { left: 654, top: 560, width: 554, height: 72 }, { fontSize: 19, color: C.muted, lineSpacing: 1.08 });
-    addFooter(s, 5, false);
-    setNotes(s, "这页突出二义性与非理想边界，而不是只展示漂亮的正弦曲线。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第251—307行）",
+    seconds: 50,
+    narration: "相位法和驻波法把很短的传播时延转化成更容易观察的相位量或空间周期。相位读数灵敏，但示波器只给出包裹后的相位；完整周期数判断错误一周，就会产生显著系统偏差。驻波法通过移动测量位置寻找包络极小值，并跨越多个波节间隔计算波长。我们还保留不完全反射条件，所以图中的波节不一定等于零振幅。学生可以看到理想公式在真实边界条件下如何修正。通过同时观察入射波、反射波与包络，还能区分瞬时零点和稳定的空间极小值。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（相位差、非理想反射下的驻波包络）",
       "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_oscilloscope_phase.png",
-      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_standing_wave.png",
-    ]);
-  }
-
-  // 6 — Interface
+      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/output/smoke_standing_wave.png"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "VISIBLE MEASUREMENT CHAIN", "空间过程、原始信号与分析结果同步呈现", 6, false);
-    addImage(s, img.demo, "声速四种测量方法综合界面", { left: 390, top: 160, width: 818, height: 482 }, { fit: "contain" });
-    addText(s, "三层证据", { left: 72, top: 174, width: 250, height: 38 }, { fontSize: 30, bold: true, color: C.amberDark });
-    addBulletList(s, [
-      "空间传播：声波走过哪段路程",
-      "原始信号：传感器记录了什么",
-      "分析曲线：算法怎样提取读数",
-      "实时结果：理论、测量与误差并列",
-    ], { left: 76, top: 238, width: 286 }, { itemHeight: 50, gap: 15, fontSize: 20, bulletColor: C.mint });
-    addShape(s, "roundRect", { left: 72, top: 518, width: 282, height: 112 }, C.amberPale, { style: "solid", fill: C.amber, width: 1 }, { borderRadius: "rounded-xl" });
-    addText(s, "343 m/s → 341.64 m/s", { left: 92, top: 538, width: 242, height: 38 }, { fontSize: 24, bold: true, color: C.ink, align: "center", typeface: FONT_LATIN });
-    addText(s, "回声示例相对误差约 −0.40%\nCSV 可独立复算全部中间量", { left: 92, top: 582, width: 242, height: 40 }, { fontSize: 16, color: C.muted, align: "center" });
-    addFooter(s, 6, false);
-    setNotes(s, "现场可用这页引导评委从左到右看界面：空间、波形、分析、读数。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第366—388、555—573行）",
-      "声速/设计报告/assets/sound_demo_interface.png",
-    ]);
-  }
-
-  // 7 — Python Julia
+    seconds: 55,
+    narration: "综合实验界面遵循从空间过程到原始信号、再到分析曲线和实时读数的阅读顺序。这里特别把参数重算和播放推进分成两条路径：改变距离、频率、噪声或方法专用参数时，Julia 重新生成当前方法的数据；拖动播放进度时，只读取已经保存的结果更新当前帧，不重新抽取随机噪声。读数、动画、参考曲线和 CSV 都读取同一个结果对象，因此屏幕观察与课后复算始终对应同一组实验条件。这种设计还给排障提供明确顺序：先查状态同步，再查采样和反演，而不把随机变化误认为程序错误。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（数值计算与界面更新流程、界面与交互）",
+      "声速/设计报告/assets/sound_demo_interface.png"
+    ]
+  },
   {
-    const s = newSlide(presentation, true);
-    addHeader(s, "HYBRID PROGRAMMING", "Python 管应用，Julia 管科学计算", 7, true);
-    // connectors first
-    addShape(s, "rightArrow", { left: 486, top: 284, width: 308, height: 82 }, C.mintDark, { style: "solid", fill: C.mint, width: 1 });
-    addShape(s, "rightArrow", { left: 486, top: 404, width: 308, height: 54 }, C.amberDark, { style: "solid", fill: C.amber, width: 1 });
-    addShape(s, "roundRect", { left: 72, top: 168, width: 430, height: 420 }, C.slate2, { style: "solid", fill: C.mint, width: 2 }, { borderRadius: "rounded-2xl" });
-    addShape(s, "roundRect", { left: 778, top: 168, width: 430, height: 420 }, "#1E292E", { style: "solid", fill: C.amber, width: 2 }, { borderRadius: "rounded-2xl" });
-    addText(s, "PYTHON / STREAMLIT", { left: 102, top: 202, width: 370, height: 40 }, { fontSize: 28, bold: true, color: C.mint, typeface: FONT_LATIN });
-    addText(s, "统一网页与对话状态\n本地文献检索与智能问答\n图片输入与安全代码执行\n端口、日志与进程生命周期", { left: 102, top: 270, width: 346, height: 232 }, { fontSize: 23, color: C.cream, lineSpacing: 1.45 });
-    addText(s, "JULIA / WGLMAKIE", { left: 808, top: 202, width: 370, height: 40 }, { fontSize: 28, bold: true, color: C.amber, typeface: FONT_LATIN });
-    addText(s, "四种确定性物理模型\n含噪信号与分析算法\nBonito 可观察状态\n浏览器 WebGL 交互图形", { left: 808, top: 270, width: 346, height: 232 }, { fontSize: 23, color: C.cream, lineSpacing: 1.45 });
-    addText(s, "本机回环网页嵌入", { left: 510, top: 302, width: 260, height: 34 }, { fontSize: 20, bold: true, color: C.white, align: "center" });
-    addText(s, "CSV / PNG", { left: 532, top: 417, width: 210, height: 28 }, { fontSize: 18, bold: true, color: C.white, align: "center", typeface: FONT_LATIN });
-    addText(s, "实验控件由浏览器与 Julia 直接交换状态；Python 不逐帧转发大数组。", { left: 240, top: 616, width: 800, height: 38 }, { fontSize: 23, bold: true, color: C.mint, align: "center" });
-    addFooter(s, 7, true);
-    setNotes(s, "这是技术特色页：强调职责边界、直接交互与进程级故障隔离。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第318—364行）",
+    seconds: 60,
+    narration: "系统采用 Python 与 Julia 的进程级混合编程。Python/Streamlit 负责统一网页、专题检索、智能问答、图片输入、受限代码执行以及端口、日志和进程生命周期；Julia/WGLMakie 负责四种确定性物理模型、参数校验、含噪信号、分析算法和 WebGL 图形。实验控件由浏览器与 Julia 的 Bonito 会话直接交换状态，Python 只嵌入本机网页并监测服务就绪，不逐帧转发大数组。两端通过地址、状态、日志以及 CSV、PNG 交换必要信息，职责和数据边界都可以分别测试。即使 Julia 首次加载较慢或问答服务异常，主页面、日志提示和已完成的确定性结果也不会相互污染。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（软件架构、Python--Julia 混合编程与进程协同）",
       "声速/声速_RAG智能体/app.py",
-      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/web/web.jl",
-    ]);
-  }
-
-  // 8 — Intelligent Q&A
+      "声速/声速测量可视化实验说明/声速四种方法_Julia综合可视化方案/web/web.jl"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "EXPERIMENT-SPECIFIC TUTOR", "智能问答不是答案机，而是实验解释层", 8, false);
-    addImage(s, img.qa, "声速实验智能问答真实界面", { left: 500, top: 152, width: 708, height: 504 }, { fit: "contain" });
-    addText(s, "围绕四种测量方法", { left: 72, top: 174, width: 382, height: 38 }, { fontSize: 30, bold: true, color: C.amberDark });
-    addBulletList(s, [
-      "快速提问、连续追问与多图粘贴",
-      "本地声学文献提供主要依据",
-      "明确参数调用自研公式工具复算",
-      "问答不生成、不修改 Julia 测量值",
-      "校内版本仅使用服务器本地模型",
-    ], { left: 76, top: 238, width: 386 }, { itemHeight: 44, gap: 13, fontSize: 20, bulletColor: C.mint });
-    addText(s, "观察信号 → 检索文献 → 解释算法 → 确定性复算 → 比较方案", { left: 76, top: 580, width: 386, height: 62 }, { fontSize: 21, bold: true, color: C.mintDark, lineSpacing: 1.1 });
-    addFooter(s, 8, false);
-    setNotes(s, "用真实界面说明问答支持文字、快速提问和完整输入框；强调模型只负责解释。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第390—430、472—477行）",
-      "声速/设计报告/assets/sound_qa_interface_real.png",
-    ]);
-  }
-
-  // 9 — Trust chain
+    seconds: 55,
+    narration: "智能问答是本作品的实验解释层。学生可以使用快速提问、连续追问，也可以粘贴波形、示波器截图或装置照片。系统优先从本地声学文献检索依据；遇到包含距离、时延、频率、波长、夹角或相位等完整参数的问题，会调用自研公式工具确定性复算。模型负责组织解释，但不能生成或修改 Julia 的实验测量值。校内版本作为大学物理智能助教平台的专题模块，只使用学校服务器上的本地模型，专题知识库与其他单位成果严格分开。它的价值是帮助学生提出下一步可验证的问题，而不是替学生完成观察、推导和方案选择。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（智能问答特色设计、与校内平台的关系、多模态追问与确定性复算）",
+      "声速/设计报告/assets/sound_qa_interface_real.png"
+    ]
+  },
   {
-    const s = newSlide(presentation, false);
-    addHeader(s, "TRACEABLE & CONTROLLED", "用检索、确定性工具和执行隔离约束回答", 9, false);
-    // pipeline arrows first
-    [242, 448, 654, 860].forEach((left) => addShape(s, "rightArrow", { left, top: 238, width: 98, height: 42 }, C.mintPale, { style: "solid", fill: C.mint, width: 1 }));
-    const flow = [
-      [72, "问题 / 图片", "描述实验现象"],
-      [278, "查询扩展", "识别声学主题"],
-      [484, "混合检索", "TF–IDF + BM25"],
-      [690, "确定性复算", "公式、单位、量纲"],
-      [896, "流式解释", "或本地检索回退"],
-    ];
-    flow.forEach(([x, title, body], i) => {
-      addShape(s, "roundRect", { left: x, top: 186, width: 178, height: 138 }, i === 3 ? C.amberPale : C.white, { style: "solid", fill: i === 3 ? C.amber : C.rule, width: 1 }, { borderRadius: "rounded-xl", shadow: "shadow-sm" });
-      addText(s, title, { left: x + 12, top: 210, width: 154, height: 32 }, { fontSize: 23, bold: true, color: i === 3 ? C.amberDark : C.ink, align: "center" });
-      addText(s, body, { left: x + 12, top: 258, width: 154, height: 42 }, { fontSize: 16, color: C.muted, align: "center" });
-    });
-    addText(s, "8 / 8", { left: 90, top: 400, width: 170, height: 76 }, { fontSize: 54, bold: true, color: C.amberDark, align: "center", typeface: FONT_LATIN });
-    addText(s, "跨主题问题前 5 条检索结果均命中预设主题\n仅代表召回覆盖，不替代回答正确性评价", { left: 72, top: 486, width: 280, height: 92 }, { fontSize: 18, color: C.muted, align: "center", lineSpacing: 1.1 });
-    addLabel(s, "图像边界", { left: 408, top: 394, width: 220, height: 42 }, false, C.mint);
-    addText(s, "缺少刻度或信息不足时，必须说明不确定性，不编造精确读数。", { left: 426, top: 450, width: 318, height: 86 }, { fontSize: 20, color: C.ink, lineSpacing: 1.1 });
-    addLabel(s, "受限执行", { left: 802, top: 394, width: 220, height: 42 }, false, C.amber);
-    addText(s, "用户主动确认 → 正则与 AST 检查 → 独立输出目录 → 默认 60 s 超时。", { left: 820, top: 450, width: 344, height: 86 }, { fontSize: 20, color: C.ink, lineSpacing: 1.1 });
-    addText(s, "生成式解释不能覆盖确定性计算结果。", { left: 398, top: 594, width: 760, height: 40 }, { fontSize: 28, bold: true, color: C.mintDark, align: "center" });
-    addFooter(s, 9, false);
-    setNotes(s, "特别限定 8/8 的含义：这是检索主题命中，不是回答正确率。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第432—509行）",
+    seconds: 55,
+    narration: "回答可信性由三类约束共同保证。第一，查询扩展和混合检索给出可追溯的本地文献证据；第二，只有识别到完整测量参数时才进入确定性复算，公式、单位和数量级检查结果再与检索证据汇合；第三，图片缺少刻度时必须明确不确定性，不能编造精确读数。回答中的 Python 绘图代码不会自动运行，必须由用户确认，并经过正则与抽象语法树检查，在独立目录中限时执行。生成式解释始终不能覆盖确定性计算结果。模型不可用时仍保留本地检索和公式工具，所以降级的是表达能力，不是实验和复算能力。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（专题知识库与混合检索、确定性复算、受限制的 Python 可视化、回答约束）",
       "声速/声速_RAG智能体/evaluate.py",
-      "声速/声速_RAG智能体/code_runner.py",
-    ]);
-  }
-
-  // 10 — Single file
+      "声速/声速_RAG智能体/code_runner.py"
+    ]
+  },
   {
-    const s = newSlide(presentation, true);
-    addHeader(s, "ONE-FILE DELIVERY", "单文件封装让完整助教脱离开发环境运行", 10, true);
-    // arrows first
-    [292, 572, 852].forEach((left) => addShape(s, "rightArrow", { left, top: 288, width: 126, height: 58 }, C.amberDark, { style: "solid", fill: C.amber, width: 1 }));
-    const stages = [
-      [72, "PackageCompiler", "Julia + WGLMakie\n字体与着色器"],
-      [352, "PyInstaller", "Python 前端\n知识库与启动器"],
-      [632, "单文件 EXE", "资源解包\n动态端口与日志"],
-      [912, "浏览器运行", "无需预装\nPython / Julia"],
-    ];
-    stages.forEach(([x, title, body], i) => {
-      addShape(s, "roundRect", { left: x, top: 210, width: 236, height: 210 }, i === 2 ? "#39484F" : C.slate2, { style: "solid", fill: i % 2 ? C.mint : C.amber, width: 2 }, { borderRadius: "rounded-2xl" });
-      addText(s, String(i + 1).padStart(2, "0"), { left: x + 22, top: 232, width: 50, height: 28 }, { fontSize: 18, bold: true, color: i % 2 ? C.mint : C.amber, typeface: FONT_LATIN });
-      addText(s, title, { left: x + 22, top: 280, width: 192, height: 38 }, { fontSize: i === 0 ? 20 : 25, bold: true, color: C.cream, align: "center", typeface: i < 2 ? FONT_LATIN : FONT_CN });
-      addText(s, body, { left: x + 22, top: 334, width: 192, height: 64 }, { fontSize: 19, color: "#C9D3D1", align: "center", lineSpacing: 1.1 });
-    });
-    addShape(s, "roundRect", { left: 72, top: 472, width: 1136, height: 150 }, "#1E292E", { style: "solid", fill: C.mint, width: 1 }, { borderRadius: "rounded-xl" });
-    addText(s, "589.7 MiB", { left: 100, top: 500, width: 262, height: 58 }, { fontSize: 47, bold: true, color: C.amber, typeface: FONT_LATIN });
-    addText(s, "当前单文件\n618,384,360 字节", { left: 102, top: 560, width: 260, height: 44 }, { fontSize: 16, color: "#C9D3D1", typeface: FONT_CN });
-    addText(s, "64 位 Windows 10 / 11\n支持 WebGL 的 Edge 或 Chrome", { left: 438, top: 504, width: 324, height: 80 }, { fontSize: 23, bold: true, color: C.cream, align: "center", lineSpacing: 1.15 });
-    addText(s, "首次启动：解包并初始化 Julia\n启动器持续显示阶段与日志位置", { left: 824, top: 504, width: 336, height: 80 }, { fontSize: 22, color: C.cream, align: "center", lineSpacing: 1.15 });
-    addFooter(s, 10, true);
-    setNotes(s, "明确区分构建环境和目标环境：开发时需要 Python/Julia，最终目标机不需要。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第644—661行）",
+    seconds: 55,
+    narration: "为降低课堂部署门槛，我们用 PackageCompiler 封装 Julia、WGLMakie、字体和着色器，再用 PyInstaller 封装 Python 前端、知识库与启动器，形成当前唯一的单文件发布版，约五百九十 MiB。验收不能只看能否打开网页，而要在未安装 Python 和 Julia 的干净账户中断网启动，进入四种实验、调节参数并导出 CSV；还要覆盖首次冷启动、缓存后的热启动、中文路径、普通权限、端口占用和 WebGL 不可用等情况，并保存版本、哈希和独立日志。缓存、知识库、用户导出和故障日志分目录保存，升级或清理时不会误删学生成果。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（参赛单文件版、开发与复现环境）",
       "声速/声速_RAG智能体/packaging/README.md",
       "声速/声速_RAG智能体/packaging/build_onefile.ps1",
       "声速/声速_RAG智能体/packaging/build_julia_app.jl",
       "声速/声速_RAG智能体/packaging/launcher.py",
-      "声速/声速_RAG智能体/packaging/dist/single/声速测量实验智能助教_单文件版.exe",
-    ]);
+      "声速/声速_RAG智能体/packaging/dist/single/声速测量实验智能助教_单文件版.exe（618,567,730 字节）"
+    ]
+  },
+  {
+    seconds: 55,
+    narration: "教学使用按照预测、观察、复算和解释组织，但我们还为每一步设计评价证据。实验前让学生辨认直接观测量并预测参数影响；操作阶段记录单变量扫描和任务完成情况；复算阶段检查 CSV 中间量、单位与误差传播；最后要求学生解释异常，并在迁移题中选择合适方法。教学有效性不靠主观好评判断，而比较概念前后测、操作任务完成率、误差解释质量和新情境迁移表现。问答日志只用于分析高频概念困难，不直接替代教师评分。评价结果还可反向调整默认参数、任务难度和提示顺序，形成课程改进闭环。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（适用场景、教学目标、教学有效性评价方案）"
+    ]
+  },
+  {
+    seconds: 40,
+    narration: "最后总结：本作品把声速实验从公式验证升级为测量方案设计。四种方法在统一条件下比较，数值由确定性模型产生并可独立复算，智能问答以本地文献和条件复算约束解释，单文件则在无开发环境机器上接受完整验收。推广时交付的不应只有一个程序，还应包括教师说明、学生任务单、默认参数基准、异常案例、CSV 复算示例和评价量表。不同学校可保留核心模型，只替换任务单、默认参数和实体设备说明。我们希望学生最终能够回答的不只是声速是多少，而是这个结论为什么可信。谢谢各位老师。",
+    sources: [
+      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（主要创新点、推广价值、结论与展望）"
+    ]
+  }
+];
+
+const edits = [
+  [3, "同一声速，四条独立反演路径", "同一声速，四种方法在统一误差指标下比较"],
+  [3, "差别不在公式数量，而在观测机制、二义性与误差传播。", "统一比较准确度、稳定性、二义性与适用条件。"],
+  [6, "空间过程、原始信号与分析结果同步呈现", "参数重算与播放分离，结果对象保持一致"],
+  [6, "三层证据", "四层证据"],
+  [6, "分析曲线：算法怎样提取读数", "参数变化：触发当前方法重新计算"],
+  [6, "实时结果：理论、测量与误差并列", "播放推进：只读结果，不重抽随机噪声"],
+  [6, "回声示例相对误差约 −0.40%\nCSV 可独立复算全部中间量", "同一结果对象驱动读数、动画与 CSV\n回声示例相对误差约 −0.40%"],
+  [7, "统一网页与对话状态\n本地文献检索与智能问答\n图片输入与安全代码执行\n端口、日志与进程生命周期", "统一网页、问答与图片输入\n本地文献检索与受限执行\n端口选择、日志与进程调度\n只管理服务，不转发实验数组"],
+  [7, "四种确定性物理模型\n含噪信号与分析算法\nBonito 可观察状态\n浏览器 WebGL 交互图形", "四种确定性物理模型\n参数校验与当前结果对象\nBonito 直接处理控件状态\nWebGL 图形、CSV 与 PNG"],
+  [7, "实验控件由浏览器与 Julia 直接交换状态；Python 不逐帧转发大数组。", "边界清楚：参数、曲线、读数留在 Julia；Python 只嵌入网页并监测就绪。"],
+  [9, "用检索、确定性工具和执行隔离约束回答", "检索与条件复算共同约束回答"],
+  [9, "确定性复算", "条件复算"],
+  [9, "公式、单位、量纲", "参数完整才触发"],
+  [9, "流式解释", "证据解释"],
+  [9, "或本地检索回退", "检索与复算汇合"],
+  [10, "单文件封装让完整助教脱离开发环境运行", "单文件版须在无开发环境机器上独立验收"],
+  [10, "资源解包\n动态端口与日志", "资源解包\n端口、缓存与日志分区"],
+  [10, "589.7 MiB", "590 MiB"],
+  [10, "当前单文件\n618,384,360 字节", "当前唯一发布版\n618,567,730 字节"],
+  [10, "64 位 Windows 10 / 11\n支持 WebGL 的 Edge 或 Chrome", "干净账户、离线启动\n四种实验与 CSV 导出"],
+  [10, "首次启动：解包并初始化 Julia\n启动器持续显示阶段与日志位置", "覆盖冷/热启动、中文路径\n端口占用与 WebGL 降级"],
+  [11, "“预测—观察—复算—解释”构成教学闭环", "教学闭环既要可复算，也要可评价"],
+  [11, "预习预测", "预测前测"],
+  [11, "辨认直接观测量\n先判断参数影响方向", "辨认直接观测量\n记录参数影响判断"],
+  [11, "实验观察", "操作观察"],
+  [11, "单变量扫描\n追踪传播与信号形成", "单变量扫描\n记录操作与任务完成"],
+  [11, "导出 CSV\n核对中间量与单位", "导出 CSV\n核对中间量、单位与误差"],
+  [11, "证据解释", "解释迁移"],
+  [11, "问答辅助讨论\n结论回到公式和数据", "问答辅助讨论\n完成迁移题与方案评价"],
+  [11, "同一界面支持实验前预习、课堂演示、分组比较、课后复盘与开放探究。", "以前后测、任务完成率、误差解释和迁移题表现构成评价证据。"],
+  [12, "本地知识与工具约束", "本地知识与条件复算"],
+  [12, "无 Python / Julia 环境", "干净环境可验收"],
+  [12, "下一步：真实双声道录音 · 温湿度修正 · 亚采样时延 · 课堂对照评价", "推广资源包：教师说明 · 学生任务单 · CSV 基准 · 异常案例 · 评价量表"]
+];
+
+function parseNdjson(ndjson) {
+  return ndjson.split(/\r?\n/).map(function (line) { return line.trim(); }).filter(Boolean).map(function (line) { return JSON.parse(line); });
+}
+
+function normalizeText(value) {
+  return String(value || "").replace(/\r\n/g, "\n");
+}
+
+function buildNotes(page) {
+  return [
+    "[建议时长：" + page.seconds + " 秒]",
+    "",
+    page.narration,
+    "",
+    "[Sources]",
+    ...page.sources.map(function (source) { return "- " + source; }),
+    "[/Sources]"
+  ].join("\n");
+}
+
+async function main() {
+  await fs.mkdir(PREVIEW, { recursive: true });
+  const presentation = await PresentationFile.importPptx(await FileBlob.load(STARTER));
+  if (presentation.slides.items.length !== 12) {
+    throw new Error("Expected 12 starter slides, found " + presentation.slides.items.length);
   }
 
-  // 11 — Teaching loop
-  {
-    const s = newSlide(presentation, false);
-    addHeader(s, "LEARNING LOOP", "“预测—观察—复算—解释”构成教学闭环", 11, false);
-    // long line first
-    addShape(s, "rightArrow", { left: 154, top: 316, width: 946, height: 70 }, C.mintPale, { style: "solid", fill: C.mint, width: 1 });
-    const phases = [
-      [96, "01", "预习预测", "辨认直接观测量\n先判断参数影响方向"],
-      [380, "02", "实验观察", "单变量扫描\n追踪传播与信号形成"],
-      [664, "03", "数据复算", "导出 CSV\n核对中间量与单位"],
-      [948, "04", "证据解释", "问答辅助讨论\n结论回到公式和数据"],
-    ];
-    phases.forEach(([x, num, title, body], i) => {
-      addShape(s, "ellipse", { left: x, top: 260, width: 116, height: 116 }, i % 2 ? C.amber : C.mint, { style: "solid", fill: C.white, width: 5 });
-      addText(s, num, { left: x, top: 286, width: 116, height: 54 }, { fontSize: 36, bold: true, color: C.white, align: "center", valign: "middle", typeface: FONT_LATIN });
-      addText(s, title, { left: x - 36, top: 404, width: 188, height: 38 }, { fontSize: 25, bold: true, color: C.ink, align: "center" });
-      addText(s, body, { left: x - 56, top: 458, width: 228, height: 72 }, { fontSize: 18, color: C.muted, align: "center", lineSpacing: 1.1 });
+  const snapshot = await presentation.inspect({
+    kind: "textbox",
+    include: "id,slide,text,textPreview,bbox",
+    maxChars: 240000
+  });
+  const records = parseNdjson(snapshot.ndjson);
+
+  for (const edit of edits) {
+    const slideNumber = edit[0];
+    const oldText = normalizeText(edit[1]);
+    const newText = edit[2];
+    const matches = records.filter(function (record) {
+      return record.kind === "textbox" && record.slide === slideNumber && normalizeText(record.text) === oldText;
     });
-    addText(s, "同一界面支持实验前预习、课堂演示、分组比较、课后复盘与开放探究。", { left: 132, top: 590, width: 1016, height: 42 }, { fontSize: 27, bold: true, color: C.mintDark, align: "center" });
-    addFooter(s, 11, false);
-    setNotes(s, "价值不在于缩短思考，而是让学生形成可以被检查的实验论证过程。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第127—160、513—551、592—603行）",
-    ]);
+    if (matches.length !== 1) {
+      throw new Error("Expected one textbox on slide " + slideNumber + " for: " + oldText + "; found " + matches.length);
+    }
+    const target = presentation.resolve(matches[0].id);
+    if (oldText.includes("\n")) target.text = newText;
+    else target.text.replace(oldText, newText);
   }
 
-  // 12 — Close
-  {
-    const s = newSlide(presentation, true);
-    addHeader(s, "TAKEAWAY", "把“公式验证”升级为“测量方案设计”", 12, true);
-    addText(s, "让每个声速结论都能回到", { left: 112, top: 182, width: 1056, height: 54 }, { fontSize: 34, color: "#C5CFCD", align: "center" });
-    addText(s, "传播过程 · 原始信号 · 物理公式 · 数据来源", { left: 86, top: 252, width: 1108, height: 74 }, { fontSize: 45, bold: true, color: C.cream, align: "center" });
-    addShape(s, "rect", { left: 430, top: 350, width: 420, height: 7 }, C.amber);
-    const proof = [
-      [118, "四种方法", "统一条件横向比较"],
-      [402, "确定性核心", "结果透明、可复算"],
-      [686, "智能解释", "本地知识与工具约束"],
-      [970, "单文件部署", "无 Python / Julia 环境"],
-    ];
-    proof.forEach(([x, title, body], i) => {
-      addText(s, title, { left: x - 60, top: 410, width: 220, height: 38 }, { fontSize: 26, bold: true, color: i % 2 ? C.mint : C.amber, align: "center" });
-      addText(s, body, { left: x - 72, top: 458, width: 244, height: 48 }, { fontSize: 18, color: "#C5CFCD", align: "center" });
-    });
-    addText(s, "下一步：真实双声道录音 · 温湿度修正 · 亚采样时延 · 课堂对照评价", { left: 170, top: 584, width: 940, height: 40 }, { fontSize: 23, bold: true, color: C.mint, align: "center" });
-    addFooter(s, 12, true);
-    setNotes(s, "结尾回扣开场：作品不是四个动画和一个聊天框的叠加，而是一条可核查的测量学习链。", [
-      "声速/设计报告/声速测量虚拟实验教学资源设计报告.tex（第605—642、713—718行）",
-    ]);
+  for (let index = 0; index < pages.length; index += 1) {
+    const slide = presentation.slides.getItem(index);
+    slide.speakerNotes.textFrame.setText(buildNotes(pages[index]));
+    slide.speakerNotes.setVisible(true);
   }
+
+  const hanCount = pages.reduce(function (sum, page) {
+    const matches = page.narration.match(/[\u3400-\u4DBF\u4E00-\u9FFF]/g);
+    return sum + (matches ? matches.length : 0);
+  }, 0);
+  if (hanCount < 2200 || hanCount > 2500) {
+    throw new Error("Speaker script Han-character count must be 2200-2500, found " + hanCount);
+  }
+  const totalSeconds = pages.reduce(function (sum, page) { return sum + page.seconds; }, 0);
+  const scriptLines = [
+    "声速测量实验智能助教——约10分钟答辩讲稿",
+    "",
+    "建议总时长：" + Math.floor(totalSeconds / 60) + " 分 " + (totalSeconds % 60) + " 秒",
+    "讲稿正文汉字数：" + hanCount,
+    "建议语速：普通中文答辩语速，约 220–250 字/分钟。",
+    ""
+  ];
+  pages.forEach(function (page, index) {
+    scriptLines.push("第 " + (index + 1) + " 页（建议 " + page.seconds + " 秒）");
+    scriptLines.push(page.narration);
+    scriptLines.push("");
+  });
+  await fs.writeFile(SCRIPT_OUT, scriptLines.join("\n"), "utf8");
 
   for (const [index, slide] of presentation.slides.items.entries()) {
-    const stem = `slide-${String(index + 1).padStart(2, "0")}`;
-    const png = await presentation.export({ slide, format: "png", scale: 1 });
-    await fs.writeFile(path.join(PREVIEW, `${stem}.png`), new Uint8Array(await png.arrayBuffer()));
+    const stem = "slide-" + String(index + 1).padStart(2, "0");
+    const png = await presentation.export({ slide: slide, format: "png", scale: 1.5 });
+    await fs.writeFile(path.join(PREVIEW, stem + ".png"), new Uint8Array(await png.arrayBuffer()));
     const layout = await slide.export({ format: "layout" });
-    await fs.writeFile(path.join(PREVIEW, `${stem}.layout.json`), await layout.text(), "utf8");
+    await fs.writeFile(path.join(PREVIEW, stem + ".layout.json"), await layout.text(), "utf8");
   }
-  const pptx = await PresentationFile.exportPptx(presentation);
-  await pptx.save(OUT);
-  console.log(`Wrote ${OUT}`);
-  console.log(`Slides: ${presentation.slides.items.length}`);
+
+  const finalInspect = await presentation.inspect({
+    kind: "slide,textbox,shape,image,notes,layout",
+    include: "id,slide,name,title,text,textPreview,bbox,placeholders",
+    maxChars: 320000
+  });
+  await fs.writeFile(path.join(BUILD, "final_inspect.ndjson"), finalInspect.ndjson, "utf8");
 
   const montage = await presentation.export({ format: "webp", montage: true, scale: 1 });
   await fs.writeFile(path.join(PREVIEW, "deck-montage.webp"), new Uint8Array(await montage.arrayBuffer()));
+
+  const pptx = await PresentationFile.exportPptx(presentation);
+  await pptx.save(OUT);
+  console.log("Wrote " + OUT);
+  console.log("Wrote " + SCRIPT_OUT);
+  console.log("Slides: " + presentation.slides.items.length);
+  console.log("Suggested duration: " + totalSeconds + " seconds");
+  console.log("Speaker-script Han characters: " + hanCount);
 }
 
 main()
-  .then(() => {
-    // The bundled Windows canvas runtime can fault during natural teardown
-    // after all files are safely written; exit explicitly after completion.
+  .then(function () {
     if (typeof process.reallyExit === "function") process.reallyExit(0);
     else process.exit(0);
   })
-  .catch((error) => {
+  .catch(function (error) {
     console.error(error);
     process.exitCode = 1;
   });

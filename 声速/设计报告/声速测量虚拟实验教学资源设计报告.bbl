@@ -1,0 +1,75 @@
+\begin{thebibliography}{10}
+
+\bibitem{rayleigh1877}
+{J. W. Strutt (Lord Rayleigh)}.
+\newblock \emph{The Theory of Sound}, 1877.
+
+\bibitem{morse1948}
+{P. M. Morse}.
+\newblock {\em Vibration and Sound}.
+\newblock McGraw-Hill, 1948.
+
+\bibitem{crawford1968}
+{F. S. Crawford}.
+\newblock {\em Waves: Berkeley Physics Course, Vol. 3}.
+\newblock McGraw-Hill, 1968.
+
+\bibitem{berg2011}
+{A. Berg and M. Courtney}.
+\newblock Echo-based measurement of the speed of sound, 2011.
+
+\bibitem{carvalho2007}
+{C. C. Carvalho, J. M. B. Lopes dos Santos, and M. B. Marques}.
+\newblock A time-of-flight method to measure the speed of sound using a stereo
+  sound card, 2007.
+
+\bibitem{water2020}
+水中声速测量实验的模型修正.
+\newblock \emph{物理实验}, 40(8):40--45, 2020.
+
+\bibitem{standing2024}
+{金靓婕等}.
+\newblock 驻波法测声速原理教学的讨论, 2024.
+
+\bibitem{staacks2018}
+{S. Staacks et al.}
+\newblock Simple time-of-flight measurement of the speed of sound using
+  smartphones, 2018.
+
+\bibitem{hellesund2018}
+{S. Hellesund}.
+\newblock Measuring the speed of sound in air using a smartphone and a
+  cardboard tube, 2018.
+
+\bibitem{sjtuultra}
+{赵西梅、李向亭、周红、沈学浩、杨卫群}.
+\newblock 超声波声速测量的拓展实验.
+\newblock 上海交通大学物理实验教学中心.
+
+\bibitem{kundt1868}
+{A. Kundt and H. V. Regnault}.
+\newblock Historical studies on sound velocity and {Kundt}-tube standing waves.
+\newblock {\em Archives des sciences physiques et naturelles}, 1868.
+
+\bibitem{software}
+{JuliaLang contributors}.
+\newblock {Julia} 1.10 documentation; {Makie}, {WGLMakie}, {Bonito},
+  {PackageCompiler}, {Streamlit} and {PyInstaller} project documentation.
+\newblock 访问日期：\todoitem{填写}.
+
+\bibitem{laplace1816}
+{P.-S. Laplace}.
+\newblock Sur la vitesse du son dans l'air et dans l'eau.
+\newblock {\em Annales de Chimie et de Physique}, 1816.
+
+\bibitem{liu2000}
+{Z. Liu et al.}
+\newblock Locally resonant sonic materials.
+\newblock {\em Science}, 289:1734--1736, 2000.
+
+\bibitem{masheng2016}
+{G. Ma and P. Sheng}.
+\newblock Acoustic metamaterials: From local resonances to broad horizons.
+\newblock {\em Science Advances}, 2:e1501595, 2016.
+
+\end{thebibliography}

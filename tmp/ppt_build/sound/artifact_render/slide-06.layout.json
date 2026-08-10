@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/jxnr5t",
-    "id": "jxnr5t",
+    "aid": "sl/x8f69ofe",
+    "id": "x8f69ofe",
     "slide": 6,
-    "layoutId": "9dc7bc7c-d511-4138-a9c4-9aeae9e7c782",
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
     "masterLayoutName": "Master",
     "backgroundColor": "#F4EFE5",
     "frame": {
@@ -27,10 +27,6 @@
       "accent4": "#0F9ED5",
       "accent5": "#A02B93",
       "accent6": "#4EA72E",
-      "bg1": "#FFFFFF",
-      "bg2": "#000000",
-      "tx1": "#1F1F1F",
-      "tx2": "#FFFFFF",
       "dk1": "#000000",
       "lt1": "#FFFFFF",
       "dk2": "#0E2841",
@@ -38,7 +34,22 @@
       "hlink": "#467886",
       "folHlink": "#96607D"
     },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
     "typefaces": [
+      "Calibri",
+      "Calibri Light",
       "Microsoft YaHei",
       "Segoe UI"
     ]
@@ -46,15 +57,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "9dc7bc7c-d511-4138-a9c4-9aeae9e7c782",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "d6514f1d-8ebb-435b-8438-1426c8e86c6d",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -65,8 +76,8 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/f2p8byds",
-      "id": "1",
+      "aid": "sh/cbe5g3ih",
+      "id": "20",
       "bbox": [
         72,
         40,
@@ -76,13 +87,12 @@
       "geometry": "rect",
       "text": "VISIBLE MEASUREMENT CHAIN",
       "textPreview": "VISIBLE MEASUREMENT CHAIN",
-      "resolvedFontSize": 17,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 17,
-        "typeface": "Segoe UI",
-        "color": "#247B6E",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -114,8 +124,7 @@
             "typeface": "Segoe UI",
             "color": "#247B6E",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -124,11 +133,10 @@
               "fontSize": 17,
               "typeface": "Segoe UI",
               "color": "#247B6E",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -138,7 +146,7 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0nip43ud",
+      "aid": "sh/yhg7epsj",
       "id": "2",
       "bbox": [
         72,
@@ -147,15 +155,14 @@
         64
       ],
       "geometry": "rect",
-      "text": "空间过程、原始信号与分析结果同步呈现",
-      "textPreview": "空间过程、原始信号与分析结果同步呈现",
-      "resolvedFontSize": 48,
+      "text": "参数重算与播放分离，结果对象保持一致",
+      "textPreview": "参数重算与播放分离，结果对象保持一致",
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 48,
-        "typeface": "Microsoft YaHei",
-        "color": "#263238",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -173,35 +180,33 @@
         "lines": [
           {
             "index": 1,
-            "text": "空间过程、原始信号与分析结果同步呈现"
+            "text": "参数重算与播放分离，结果对象保持一致"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "空间过程、原始信号与分析结果同步呈现",
+          "text": "参数重算与播放分离，结果对象保持一致",
           "lineSpacingPercent": 95000,
           "resolvedTextStyle": {
             "fontSize": 48,
             "typeface": "Microsoft YaHei",
             "color": "#263238",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 0.95
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "空间过程、原始信号与分析结果同步呈现",
+              "text": "参数重算与播放分离，结果对象保持一致",
               "fontSize": 48,
               "typeface": "Microsoft YaHei",
               "color": "#263238",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 0.95
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -211,7 +216,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1orqd8vy",
+      "aid": "sh/zi98nu94",
       "id": "3",
       "bbox": [
         1160,
@@ -222,14 +227,13 @@
       "geometry": "rect",
       "text": "06",
       "textPreview": "06",
-      "resolvedFontSize": 18,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 18,
-        "typeface": "Segoe UI",
-        "color": "#A96B12",
-        "bold": true,
-        "alignment": "right",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
         "autoFit": "shrinkText",
@@ -260,8 +264,7 @@
             "typeface": "Segoe UI",
             "color": "#A96B12",
             "bold": true,
-            "alignment": "right",
-            "lineSpacing": 1.05
+            "alignment": "right"
           },
           "runs": [
             {
@@ -270,11 +273,10 @@
               "fontSize": 18,
               "typeface": "Segoe UI",
               "color": "#A96B12",
-              "bold": true,
-              "alignment": "right",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -284,18 +286,16 @@
       "order": 4,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/bups3qpw",
-      "id": "4",
+      "aid": "im/e9orqlsj",
+      "id": "21",
       "bbox": [
-        390,
+        421.07,
         160,
-        818,
+        755.86,
         482
       ],
       "geometry": "roundRect",
-      "alt": "声速四种测量方法综合界面",
       "contentType": "image/png",
-      "imageFit": "contain",
       "imageMask": {
         "geometry": "roundRect",
         "adjustmentList": [
@@ -306,7 +306,12 @@
         ]
       },
       "asset": {
-        "assetId": "0d02a8af-76a1-4b2b-aed9-1bab0b046987",
+        "assetId": "/ppt/media/image6.png",
+        "contentType": "image/png",
+        "byteLength": 185284
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image6.png",
         "contentType": "image/png",
         "byteLength": 185284
       }
@@ -315,7 +320,7 @@
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ryp87ydw",
+      "aid": "sh/98rqt4r6",
       "id": "5",
       "bbox": [
         72,
@@ -324,15 +329,14 @@
         38
       ],
       "geometry": "rect",
-      "text": "三层证据",
-      "textPreview": "三层证据",
-      "resolvedFontSize": 30,
+      "text": "四层证据",
+      "textPreview": "四层证据",
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 30,
-        "typeface": "Microsoft YaHei",
-        "color": "#A96B12",
-        "bold": true,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -350,35 +354,33 @@
         "lines": [
           {
             "index": 1,
-            "text": "三层证据"
+            "text": "四层证据"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "三层证据",
+          "text": "四层证据",
           "lineSpacingPercent": 105000,
           "resolvedTextStyle": {
             "fontSize": 30,
             "typeface": "Microsoft YaHei",
             "color": "#A96B12",
             "bold": true,
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "三层证据",
+              "text": "四层证据",
               "fontSize": 30,
               "typeface": "Microsoft YaHei",
               "color": "#A96B12",
-              "bold": true,
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -388,7 +390,7 @@
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/szyp03uh",
+      "aid": "sh/ml07i9sv",
       "id": "6",
       "bbox": [
         76,
@@ -404,7 +406,7 @@
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/d07q98v2",
+      "aid": "sh/7m98ru9g",
       "id": "7",
       "bbox": [
         100,
@@ -415,12 +417,12 @@
       "geometry": "rect",
       "text": "空间传播：声波走过哪段路程",
       "textPreview": "空间传播：声波走过哪段路程",
-      "resolvedFontSize": 20,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 20,
-        "typeface": "Microsoft YaHei",
-        "color": "#263238",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -451,8 +453,7 @@
             "fontSize": 20,
             "typeface": "Microsoft YaHei",
             "color": "#263238",
-            "alignment": "left",
-            "lineSpacing": 1.08
+            "alignment": "left"
           },
           "runs": [
             {
@@ -460,11 +461,10 @@
               "text": "空间传播：声波走过哪段路程",
               "fontSize": 20,
               "typeface": "Microsoft YaHei",
-              "color": "#263238",
-              "alignment": "left",
-              "lineSpacing": 1.08
+              "color": "#263238"
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -474,7 +474,7 @@
       "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/at0raxcf",
+      "aid": "sh/oryp8fah",
       "id": "8",
       "bbox": [
         76,
@@ -490,7 +490,7 @@
       "order": 9,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/but8jid0",
+      "aid": "sh/pc76hkr2",
       "id": "9",
       "bbox": [
         100,
@@ -501,12 +501,12 @@
       "geometry": "rect",
       "text": "原始信号：传感器记录了什么",
       "textPreview": "原始信号：传感器记录了什么",
-      "resolvedFontSize": 20,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 20,
-        "typeface": "Microsoft YaHei",
-        "color": "#263238",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -537,8 +537,7 @@
             "fontSize": 20,
             "typeface": "Microsoft YaHei",
             "color": "#263238",
-            "alignment": "left",
-            "lineSpacing": 1.08
+            "alignment": "left"
           },
           "runs": [
             {
@@ -546,11 +545,10 @@
               "text": "原始信号：传感器记录了什么",
               "fontSize": 20,
               "typeface": "Microsoft YaHei",
-              "color": "#263238",
-              "alignment": "left",
-              "lineSpacing": 1.08
+              "color": "#263238"
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -560,7 +558,7 @@
       "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/j2x8jqtk",
+      "aid": "sh/h4bupgn6",
       "id": "10",
       "bbox": [
         76,
@@ -576,7 +574,7 @@
       "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ihoralsz",
+      "aid": "sh/w32twb6l",
       "id": "11",
       "bbox": [
         100,
@@ -585,100 +583,14 @@
         50
       ],
       "geometry": "rect",
-      "text": "分析曲线：算法怎样提取读数",
-      "textPreview": "分析曲线：算法怎样提取读数",
-      "resolvedFontSize": 20,
+      "text": "参数变化：触发当前方法重新计算",
+      "textPreview": "参数变化：触发当前方法重新计算",
+      "resolvedFontSize": 23.15,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 20,
-        "typeface": "Microsoft YaHei",
-        "color": "#263238",
-        "alignment": "left",
-        "verticalAlignment": "top",
-        "wrap": "square",
-        "autoFit": "shrinkText",
-        "autoFitScale": 1,
-        "insets": {
-          "top": 0,
-          "right": 0,
-          "bottom": 0,
-          "left": 0
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "分析曲线：算法怎样提取读数"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "分析曲线：算法怎样提取读数",
-          "lineSpacingPercent": 108000,
-          "resolvedTextStyle": {
-            "fontSize": 20,
-            "typeface": "Microsoft YaHei",
-            "color": "#263238",
-            "alignment": "left",
-            "lineSpacing": 1.08
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "分析曲线：算法怎样提取读数",
-              "fontSize": 20,
-              "typeface": "Microsoft YaHei",
-              "color": "#263238",
-              "alignment": "left",
-              "lineSpacing": 1.08
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 12,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/54zal0bq",
-      "id": "12",
-      "bbox": [
-        76,
-        441,
-        11,
-        11
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#4FAF9B",
-      "lineWidth": 0
-    },
-    {
-      "order": 13,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/4369cva5",
-      "id": "13",
-      "bbox": [
-        100,
-        433,
-        262,
-        50
-      ],
-      "geometry": "rect",
-      "text": "实时结果：理论、测量与误差并列",
-      "textPreview": "实时结果：理论、测量与误差并列",
-      "resolvedFontSize": 19.29,
-      "resolvedTextStyle": {
-        "anchor": 1,
-        "fontSize": 20,
-        "typeface": "Microsoft YaHei",
-        "color": "#263238",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -696,37 +608,123 @@
         "lines": [
           {
             "index": 1,
-            "text": "实时结果：理论、测量与误差"
+            "text": "参数变化：触发当前方法重新"
           },
           {
             "index": 2,
-            "text": "并列"
+            "text": "计算"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "实时结果：理论、测量与误差并列",
+          "text": "参数变化：触发当前方法重新计算",
           "lineSpacingPercent": 108000,
           "resolvedTextStyle": {
             "fontSize": 20,
             "typeface": "Microsoft YaHei",
             "color": "#263238",
-            "alignment": "left",
-            "lineSpacing": 1.08
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "实时结果：理论、测量与误差并列",
+              "text": "参数变化：触发当前方法重新计算",
               "fontSize": 20,
               "typeface": "Microsoft YaHei",
-              "color": "#263238",
-              "alignment": "left",
-              "lineSpacing": 1.08
+              "color": "#263238"
             }
           ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2tcn650",
+      "id": "12",
+      "bbox": [
+        76,
+        441,
+        11,
+        11
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#4FAF9B",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1kbu1ov",
+      "id": "13",
+      "bbox": [
+        100,
+        433,
+        262,
+        50
+      ],
+      "geometry": "rect",
+      "text": "播放推进：只读结果，不重抽随机噪声",
+      "textPreview": "播放推进：只读结果，不重抽随机噪声",
+      "resolvedFontSize": 23.15,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.96,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "播放推进：只读结果，不重抽"
+          },
+          {
+            "index": 2,
+            "text": "随机噪声"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "播放推进：只读结果，不重抽随机噪声",
+          "lineSpacingPercent": 108000,
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Microsoft YaHei",
+            "color": "#263238",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "播放推进：只读结果，不重抽随机噪声",
+              "fontSize": 20,
+              "typeface": "Microsoft YaHei",
+              "color": "#263238"
+            }
+          ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -736,7 +734,7 @@
       "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/r6hsnatw",
+      "aid": "sh/5svutgni",
       "id": "14",
       "bbox": [
         72,
@@ -753,7 +751,7 @@
       "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/658re5sb",
+      "aid": "sh/47mt0b6x",
       "id": "15",
       "bbox": [
         92,
@@ -768,10 +766,9 @@
       "resolvedTextStyle": {
         "anchor": 1,
         "fontSize": 24,
-        "typeface": "Segoe UI",
-        "color": "#263238",
-        "bold": true,
-        "alignment": "center",
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
         "autoFit": "shrinkText",
@@ -802,8 +799,7 @@
             "typeface": "Segoe UI",
             "color": "#263238",
             "bold": true,
-            "alignment": "center",
-            "lineSpacing": 1.05
+            "alignment": "center"
           },
           "runs": [
             {
@@ -812,11 +808,10 @@
               "fontSize": 24,
               "typeface": "Segoe UI",
               "color": "#263238",
-              "bold": true,
-              "alignment": "center",
-              "lineSpacing": 1.05
+              "bold": true
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -826,7 +821,7 @@
       "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/t8zap0bm",
+      "aid": "sh/j6dcr65c",
       "id": "16",
       "bbox": [
         92,
@@ -835,19 +830,19 @@
         40
       ],
       "geometry": "rect",
-      "text": "回声示例相对误差约 −0.40%\nCSV 可独立复算全部中间量",
-      "textPreview": "回声示例相对误差约 −0.40% | CSV 可独立复算全部中间量",
-      "resolvedFontSize": 15.87,
+      "text": "同一结果对象驱动读数、动画与 CSV\n回声示例相对误差约 −0.40%",
+      "textPreview": "同一结果对象驱动读数、动画与 CSV | 回声示例相对误差约 −0.40%",
+      "resolvedFontSize": 22.38,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 16,
-        "typeface": "Microsoft YaHei",
-        "color": "#667276",
-        "alignment": "center",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
         "autoFit": "shrinkText",
-        "autoFitScale": 0.99,
+        "autoFitScale": 0.93,
         "insets": {
           "top": 0,
           "right": 0,
@@ -860,25 +855,46 @@
         "lines": [
           {
             "index": 1,
-            "text": "回声示例相对误差约 −0.40%"
+            "text": "同一结果对象驱动读数、动画与 CSV"
           },
           {
             "index": 2,
-            "text": "CSV 可独立复算全部中间量"
+            "text": "回声示例相对误差约 −0.40%"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
+          "text": "同一结果对象驱动读数、动画与 CSV",
+          "lineSpacingPercent": 105000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#667276",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "同一结果对象驱动读数、动画与 CSV",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#667276"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
           "text": "回声示例相对误差约 −0.40%",
           "lineSpacingPercent": 105000,
           "resolvedTextStyle": {
             "fontSize": 16,
             "typeface": "Microsoft YaHei",
             "color": "#667276",
-            "alignment": "center",
-            "lineSpacing": 1.05
+            "alignment": "center"
           },
           "runs": [
             {
@@ -886,35 +902,10 @@
               "text": "回声示例相对误差约 −0.40%",
               "fontSize": 16,
               "typeface": "Microsoft YaHei",
-              "color": "#667276",
-              "alignment": "center",
-              "lineSpacing": 1.05
+              "color": "#667276"
             }
           ],
-          "marginLeft": 0
-        },
-        {
-          "index": 2,
-          "text": "CSV 可独立复算全部中间量",
-          "lineSpacingPercent": 105000,
-          "resolvedTextStyle": {
-            "fontSize": 16,
-            "typeface": "Microsoft YaHei",
-            "color": "#667276",
-            "alignment": "center",
-            "lineSpacing": 1.05
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "CSV 可独立复算全部中间量",
-              "fontSize": 16,
-              "typeface": "Microsoft YaHei",
-              "color": "#667276",
-              "alignment": "center",
-              "lineSpacing": 1.05
-            }
-          ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -924,7 +915,7 @@
       "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/s7q9gva1",
+      "aid": "sh/i54bylor",
       "id": "17",
       "bbox": [
         72,
@@ -940,7 +931,7 @@
       "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fahsrats",
+      "aid": "sh/twfux0ne",
       "id": "18",
       "bbox": [
         72,
@@ -951,12 +942,12 @@
       "geometry": "rect",
       "text": "声速测量实验智能助教",
       "textPreview": "声速测量实验智能助教",
-      "resolvedFontSize": 12,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 12,
-        "typeface": "Microsoft YaHei",
-        "color": "#667276",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
         "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
@@ -987,8 +978,7 @@
             "fontSize": 12,
             "typeface": "Microsoft YaHei",
             "color": "#667276",
-            "alignment": "left",
-            "lineSpacing": 1.05
+            "alignment": "left"
           },
           "runs": [
             {
@@ -996,11 +986,10 @@
               "text": "声速测量实验智能助教",
               "fontSize": 12,
               "typeface": "Microsoft YaHei",
-              "color": "#667276",
-              "alignment": "left",
-              "lineSpacing": 1.05
+              "color": "#667276"
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],
@@ -1010,7 +999,7 @@
       "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/e98ri5s7",
+      "aid": "sh/svmt4v6t",
       "id": "19",
       "bbox": [
         1120,
@@ -1021,13 +1010,13 @@
       "geometry": "rect",
       "text": "6 / 12",
       "textPreview": "6 / 12",
-      "resolvedFontSize": 12,
+      "resolvedFontSize": 24,
       "resolvedTextStyle": {
         "anchor": 1,
-        "fontSize": 12,
-        "typeface": "Segoe UI",
-        "color": "#667276",
-        "alignment": "right",
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
         "verticalAlignment": "top",
         "wrap": "square",
         "autoFit": "shrinkText",
@@ -1057,8 +1046,7 @@
             "fontSize": 12,
             "typeface": "Segoe UI",
             "color": "#667276",
-            "alignment": "right",
-            "lineSpacing": 1.05
+            "alignment": "right"
           },
           "runs": [
             {
@@ -1066,11 +1054,10 @@
               "text": "6 / 12",
               "fontSize": 12,
               "typeface": "Segoe UI",
-              "color": "#667276",
-              "alignment": "right",
-              "lineSpacing": 1.05
+              "color": "#667276"
             }
           ],
+          "bulletCharacter": "",
           "marginLeft": 0
         }
       ],

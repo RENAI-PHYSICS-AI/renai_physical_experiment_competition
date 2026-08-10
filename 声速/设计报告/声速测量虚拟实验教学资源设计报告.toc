@@ -16,32 +16,32 @@
 \contentsline {subsection}{\numberline {3.1}软件架构}{8}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Python--Julia 混合编程与进程协同}{9}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}数值计算与界面更新流程}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}界面与交互}{10}{subsection.3.4}%
-\contentsline {section}{\numberline {4}智能问答特色设计}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}面向实验学习的功能定位}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.4}界面与交互}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}智能问答特色设计}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}面向实验学习的功能定位}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}与校内大学物理智能助教平台的关系}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}智能问答界面与交互链路}{12}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}专题知识库与混合检索}{13}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}多模态追问与确定性复算}{14}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}可选择、受限制的 Python 可视化}{15}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}回答约束、降级机制与质量评价}{15}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.3}智能问答界面与交互链路}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}专题知识库与混合检索}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}多模态追问与确定性复算}{15}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}可选择、受限制的 Python 可视化}{16}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}回答约束、降级机制与质量评价}{16}{subsection.4.7}%
 \contentsline {section}{\numberline {5}使用方法与参数范围}{17}{section.5}%
 \contentsline {subsection}{\numberline {5.1}基本操作}{17}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}当前网页实验参数范围}{17}{subsection.5.2}%
-\contentsline {section}{\numberline {6}结果的物理意义、有效性与验证}{18}{section.6}%
-\contentsline {subsection}{\numberline {6.1}可复算的理论与程序样例}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {5.2}当前网页实验参数范围}{18}{subsection.5.2}%
+\contentsline {section}{\numberline {6}结果的物理意义、有效性与验证}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}可复算的理论与程序样例}{19}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}误差与方法比较}{19}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}教学有效性评价方案}{19}{subsection.6.3}%
-\contentsline {section}{\numberline {7}创新性、先进性与现实意义}{20}{section.7}%
-\contentsline {subsection}{\numberline {7.1}主要创新点}{20}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}推广价值}{21}{subsection.7.2}%
-\contentsline {section}{\numberline {8}局限性与改进思路}{21}{section.8}%
-\contentsline {section}{\numberline {9}运行环境与部署要求}{22}{section.9}%
-\contentsline {subsection}{\numberline {9.1}参赛单文件版}{22}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}开发与复现环境}{22}{subsection.9.2}%
-\contentsline {section}{\numberline {10}软件组成、自研边界与学术规范}{22}{section.10}%
-\contentsline {subsection}{\numberline {10.1}软件模块说明}{22}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}\LaTeX {} 文档编制说明}{23}{subsection.10.2}%
-\contentsline {section}{\numberline {11}成员贡献与开发历程}{24}{section.11}%
-\contentsline {section}{\numberline {12}结论与展望}{25}{section.12}%
-\contentsline {section}{\numberline {A}提交前合规检查表}{26}{appendix.A}%
+\contentsline {subsection}{\numberline {6.3}教学有效性评价方案}{21}{subsection.6.3}%
+\contentsline {section}{\numberline {7}创新性、先进性与现实意义}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}主要创新点}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}推广价值}{22}{subsection.7.2}%
+\contentsline {section}{\numberline {8}局限性与改进思路}{23}{section.8}%
+\contentsline {section}{\numberline {9}运行环境与部署要求}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}参赛单文件版}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}开发与复现环境}{24}{subsection.9.2}%
+\contentsline {section}{\numberline {10}软件组成、自研边界与学术规范}{24}{section.10}%
+\contentsline {subsection}{\numberline {10.1}软件模块说明}{24}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}\LaTeX {} 文档编制说明}{25}{subsection.10.2}%
+\contentsline {section}{\numberline {11}成员贡献与开发历程}{26}{section.11}%
+\contentsline {section}{\numberline {12}结论与展望}{27}{section.12}%
+\contentsline {section}{\numberline {A}提交前合规检查表}{28}{appendix.A}%

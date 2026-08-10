@@ -42,9 +42,9 @@
 \newlabel{eq:phase-signals}{{11}{6}{方法三：相位差、相位包裹与整周期二义性}{equation.11}{}}
 \citation{water2020}
 \citation{sjtuultra}
-\citation{kundt1868}
-\citation{hellesund2018}
 \citation{standing2024}
+\citation{hellesund2018}
+\citation{kundt1868}
 \newlabel{eq:phase-speed}{{12}{7}{方法三：相位差、相位包裹与整周期二义性}{equation.12}{}}
 \newlabel{eq:phase-projection}{{13}{7}{方法三：相位差、相位包裹与整周期二义性}{equation.13}{}}
 \newlabel{eq:phase-uncertainty}{{14}{7}{方法三：相位差、相位包裹与整周期二义性}{equation.14}{}}
@@ -58,81 +58,81 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Python 控制层与 Julia 仿真层组成的混合架构。智能问答不参与四种测量模型的数据计算。}}{8}{figure.1}\protected@file@percent }
 \citation{software}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Python--Julia 混合编程与进程协同}{9}{subsection.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Python 与 Julia 在声速助教中的职责边界}}{9}{table.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Python 与 Julia 在声速助教中的职责边界}}{10}{table.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}数值计算与界面更新流程}{10}{subsection.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}界面与交互}{10}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}界面与交互}{11}{subsection.3.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 声速四种测量方法综合界面示例。图中为回声法：空间传播、脉冲信号和路程—时间关系同步显示。}}{11}{figure.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}智能问答特色设计}{11}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}面向实验学习的功能定位}{11}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}智能问答特色设计}{12}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}面向实验学习的功能定位}{12}{subsection.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}与校内大学物理智能助教平台的关系}{12}{subsection.4.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 校内平台与本竞赛专题模块的关系}}{12}{table.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}智能问答界面与交互链路}{12}{subsection.4.3}\protected@file@percent }
-\citation{laplace1816}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 校内平台与本竞赛专题模块的关系}}{13}{table.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 声速测量实验智能助教的真实运行界面。图中展示智能问答入口、专题说明、快速提问、图片粘贴提示与完整的问题输入框。}}{13}{figure.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}智能问答界面与交互链路}{13}{subsection.4.3}\protected@file@percent }
 \citation{rayleigh1877}
+\citation{laplace1816}
 \citation{berg2011}
 \citation{carvalho2007}
-\citation{kundt1868}
 \citation{water2020}
+\citation{kundt1868}
 \citation{liu2000}
 \citation{masheng2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 声速测量实验智能助教的真实运行界面。图中展示智能问答入口、专题说明、快速提问、图片粘贴提示与完整的问题输入框。}}{13}{figure.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}专题知识库与混合检索}{13}{subsection.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 声速专题问答的数据链路。虚线表示含明确测量参数的问题可触发确定性计算。}}{14}{figure.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}多模态追问与确定性复算}{14}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}可选择、受限制的 Python 可视化}{15}{subsection.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}回答约束、降级机制与质量评价}{15}{subsection.4.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 智能问答评价框架}}{16}{table.5}\protected@file@percent }
-\newlabel{tab:sound-rag-eval}{{5}{16}{智能问答评价框架}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}专题知识库与混合检索}{14}{subsection.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 声速专题问答的数据链路。上方为常规检索主链；仅当识别到完整测量参数时，系统才启动确定性复算，并将计算结果与检索证据汇合后生成回答。}}{15}{figure.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}多模态追问与确定性复算}{15}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}可选择、受限制的 Python 可视化}{16}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}回答约束、降级机制与质量评价}{16}{subsection.4.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 智能问答评价框架}}{17}{table.5}\protected@file@percent }
+\newlabel{tab:sound-rag-eval}{{5}{17}{智能问答评价框架}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}使用方法与参数范围}{17}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}基本操作}{17}{subsection.5.1}\protected@file@percent }
 \gdef \LT@i {\LT@entry 
     {1}{103.04872pt}\LT@entry 
     {1}{97.35826pt}\LT@entry 
     {1}{131.50148pt}\LT@entry 
     {1}{117.2751pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}使用方法与参数范围}{17}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}基本操作}{17}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}当前网页实验参数范围}{17}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}结果的物理意义、有效性与验证}{18}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}可复算的理论与程序样例}{18}{subsection.6.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 可由公式独立复算的模型样例。}}{18}{table.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}当前网页实验参数范围}{18}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}结果的物理意义、有效性与验证}{19}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}可复算的理论与程序样例}{19}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}误差与方法比较}{19}{subsection.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}教学有效性评价方案}{19}{subsection.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}创新性、先进性与现实意义}{20}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}主要创新点}{20}{subsection.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}推广价值}{21}{subsection.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}局限性与改进思路}{21}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}运行环境与部署要求}{22}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}参赛单文件版}{22}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}开发与复现环境}{22}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}软件组成、自研边界与学术规范}{22}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}软件模块说明}{22}{subsection.10.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 可由公式独立复算的模型样例。}}{20}{table.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}教学有效性评价方案}{21}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}创新性、先进性与现实意义}{21}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}主要创新点}{21}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}推广价值}{22}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}局限性与改进思路}{23}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}运行环境与部署要求}{23}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}参赛单文件版}{23}{subsection.9.1}\protected@file@percent }
 \gdef \LT@ii {\LT@entry 
     {1}{108.73918pt}\LT@entry 
     {1}{159.95424pt}\LT@entry 
     {1}{154.26378pt}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}\LaTeX  {} 文档编制说明}{23}{subsection.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11}成员贡献与开发历程}{24}{section.11}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 贡献与历程必须据实填写，并与代码提交、实验记录和素材版本对应。}}{24}{table.9}\protected@file@percent }
-\bibcite{laplace1816}{1}
-\bibcite{rayleigh1877}{2}
-\bibcite{morse1948}{3}
-\bibcite{crawford1968}{4}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}开发与复现环境}{24}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}软件组成、自研边界与学术规范}{24}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}软件模块说明}{24}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}\LaTeX  {} 文档编制说明}{25}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}成员贡献与开发历程}{26}{section.11}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 贡献与历程必须据实填写，并与代码提交、实验记录和素材版本对应。}}{26}{table.9}\protected@file@percent }
+\bibstyle{unsrt}
+\bibdata{sound_speed_references}
+\bibcite{rayleigh1877}{1}
+\bibcite{morse1948}{2}
+\bibcite{crawford1968}{3}
+\bibcite{berg2011}{4}
 \bibcite{carvalho2007}{5}
-\bibcite{staacks2018}{6}
-\bibcite{berg2011}{7}
-\bibcite{hellesund2018}{8}
-\bibcite{kundt1868}{9}
-\bibcite{water2020}{10}
-\bibcite{sjtuultra}{11}
-\@writefile{toc}{\contentsline {section}{\numberline {12}结论与展望}{25}{section.12}\protected@file@percent }
-\bibcite{liu2000}{12}
-\bibcite{masheng2016}{13}
-\bibcite{tjnu}{14}
-\bibcite{standing2024}{15}
-\bibcite{course2023}{16}
-\bibcite{software}{17}
+\bibcite{water2020}{6}
+\bibcite{standing2024}{7}
+\bibcite{staacks2018}{8}
+\bibcite{hellesund2018}{9}
+\bibcite{sjtuultra}{10}
+\bibcite{kundt1868}{11}
+\@writefile{toc}{\contentsline {section}{\numberline {12}结论与展望}{27}{section.12}\protected@file@percent }
+\bibcite{software}{12}
+\bibcite{laplace1816}{13}
+\bibcite{liu2000}{14}
+\bibcite{masheng2016}{15}
 \gdef \LT@iii {\LT@entry 
     {1}{282.30118pt}\LT@entry 
     {1}{68.9055pt}\LT@entry 
     {1}{83.13188pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}提交前合规检查表}{26}{appendix.A}\protected@file@percent }
-\gdef \@abspage@last{31}
+\@writefile{toc}{\contentsline {section}{\numberline {A}提交前合规检查表}{28}{appendix.A}\protected@file@percent }
+\gdef \@abspage@last{33}

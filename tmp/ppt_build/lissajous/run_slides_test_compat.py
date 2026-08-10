@@ -57,7 +57,10 @@ def render_accepting_known_native_exit(input_path: str, out_dir: str, dpi: int):
     if not paths or not all(Path(p).is_file() for p in paths):
         raise RuntimeError("Renderer did not create every expected slide PNG.")
 
-    if proc.returncode not in (0, -1073740791, 3221226505):
+    # Current artifact-tool builds can also return 1 during native teardown after
+    # emitting valid JSON and every requested PNG. Accept it only after the file
+    # existence gate above has passed.
+    if proc.returncode not in (0, 1, -1073740791, 3221226505):
         details = (proc.stderr or "").strip()
         raise RuntimeError(f"Unexpected renderer exit code {proc.returncode}.\n{details}")
     return paths

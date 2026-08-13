@@ -31,6 +31,9 @@ if (-not (Test-Path -LiteralPath $Secrets)) {
     throw "找不到本地密钥文件：$Secrets"
 }
 
+& $Python -B -m unittest discover -s (Join-Path $AppDir "tests") -v
+if ($LASTEXITCODE -ne 0) { throw "自动化测试失败，已停止单文件构建。" }
+
 & $Python (Join-Path $PackagingDir "encode_secret.py") $Secrets $EmbeddedSecret
 
 if (-not $SkipJulia) {

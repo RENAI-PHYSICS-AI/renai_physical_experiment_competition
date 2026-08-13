@@ -72,14 +72,48 @@ def install_launcher_heartbeat() -> None:
             if (host.__lissajousCloseHandler) {{
                 host.removeEventListener("pagehide", host.__lissajousCloseHandler);
             }}
-            const pulse = () => host.fetch(url, {{mode: "no-cors", cache: "no-store"}}).catch(() => {{}});
-            const close = () => {{
-                try {{ host.navigator.sendBeacon(closedUrl, "closed"); }} catch (_) {{}}
+            if (host.__lissajousShowHandler) {{
+                host.removeEventListener("pageshow", host.__lissajousShowHandler);
+            }}
+            const lifecycle = host.__lissajousLifecycle || {{
+                client: host.crypto && host.crypto.randomUUID
+                    ? host.crypto.randomUUID()
+                    : `${{Date.now()}}-${{Math.random().toString(16).slice(2)}}`,
+                seq: 0,
             }};
+            host.__lissajousLifecycle = lifecycle;
+            const eventUrl = (base) => {{
+                lifecycle.seq += 1;
+                const joiner = base.includes("?") ? "&" : "?";
+                return `${{base}}${{joiner}}client=${{encodeURIComponent(lifecycle.client)}}&seq=${{lifecycle.seq}}`;
+            }};
+            const pulse = () => host.fetch(eventUrl(url), {{mode: "no-cors", cache: "no-store"}}).catch(() => {{}});
+            const close = (event) => {{
+                if (event && event.persisted) return;
+                if (host.__lissajousHeartbeatTimer) {{
+                    host.clearInterval(host.__lissajousHeartbeatTimer);
+                    host.__lissajousHeartbeatTimer = null;
+                }}
+                let queued = false;
+                const target = eventUrl(closedUrl);
+                try {{ queued = host.navigator.sendBeacon(target, "closed"); }} catch (_) {{}}
+                if (!queued) {{
+                    host.fetch(target, {{
+                        method: "POST",
+                        body: "closed",
+                        mode: "no-cors",
+                        cache: "no-store",
+                        keepalive: true,
+                    }}).catch(() => {{}});
+                }}
+            }};
+            const resume = () => pulse();
             pulse();
             host.__lissajousHeartbeatTimer = host.setInterval(pulse, 3000);
             host.__lissajousCloseHandler = close;
+            host.__lissajousShowHandler = resume;
             host.addEventListener("pagehide", close);
+            host.addEventListener("pageshow", resume);
         }})();
         </script>
         """,

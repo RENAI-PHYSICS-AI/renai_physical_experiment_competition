@@ -5,7 +5,9 @@ import os
 import re
 import socket
 import subprocess
+import sys
 import time
+from contextlib import contextmanager
 from pathlib import Path
 
 from config import (
@@ -20,6 +22,56 @@ from config import (
 NUMBER = r"([-+]?\d+(?:\.\d+)?)"
 _JULIA_WEB_PROCESS: subprocess.Popen | None = None
 _JULIA_WEB_LOG = None
+
+
+def _external_process_environment() -> dict[str, str]:
+    environment = os.environ.copy()
+    for name in tuple(environment):
+        if name.startswith("_PYI_"):
+            environment.pop(name, None)
+    environment.pop("_MEIPASS2", None)
+    mei_value = str(getattr(sys, "_MEIPASS", "")).strip()
+    if mei_value and environment.get("PATH"):
+        try:
+            mei_path = Path(mei_value).resolve()
+            environment["PATH"] = os.pathsep.join(
+                item
+                for item in environment["PATH"].split(os.pathsep)
+                if item and (not Path(item).exists() or Path(item).resolve() != mei_path)
+            )
+        except OSError:
+            pass
+    return environment
+
+
+@contextmanager
+def _external_dll_search_path():
+    if os.name != "nt" or not getattr(sys, "frozen", False):
+        yield
+        return
+    kernel32 = None
+    changed = False
+    previous = None
+    try:
+        import ctypes
+        from ctypes import wintypes
+
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel32.GetDllDirectoryW.argtypes = [wintypes.DWORD, wintypes.LPWSTR]
+        kernel32.GetDllDirectoryW.restype = wintypes.DWORD
+        kernel32.SetDllDirectoryW.argtypes = [wintypes.LPCWSTR]
+        kernel32.SetDllDirectoryW.restype = wintypes.BOOL
+        buffer = ctypes.create_unicode_buffer(32768)
+        length = kernel32.GetDllDirectoryW(len(buffer), buffer)
+        previous = buffer.value if 0 < length < len(buffer) else None
+        changed = bool(kernel32.SetDllDirectoryW(None))
+    except Exception:
+        kernel32 = None
+    try:
+        yield
+    finally:
+        if changed and kernel32 is not None:
+            kernel32.SetDllDirectoryW(previous)
 
 
 def calculate_sound_speed(
@@ -166,11 +218,13 @@ def launch_julia_visualization() -> subprocess.Popen:
             "--no-instantiate",
         ]
     )
-    return subprocess.Popen(
-        command,
-        cwd=JULIA_PROJECT_DIR if packaged_executable else JULIA_RUN_PATH.parent,
-        creationflags=creation_flags,
-    )
+    with _external_dll_search_path():
+        return subprocess.Popen(
+            command,
+            cwd=JULIA_PROJECT_DIR if packaged_executable else JULIA_RUN_PATH.parent,
+            env=_external_process_environment(),
+            creationflags=creation_flags,
+        )
 
 
 def julia_web_server_ready(timeout: float = 0.8) -> bool:
@@ -209,7 +263,7 @@ def launch_julia_web_server() -> subprocess.Popen | None:
     _JULIA_WEB_LOG = log_path.open("a", encoding="utf-8")
     creation_flags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
     creation_flags |= getattr(subprocess, "CREATE_NO_WINDOW", 0)
-    environment = os.environ.copy()
+    environment = _external_process_environment()
     environment["SOUND_SPEED_WEB_HOST"] = JULIA_WEB_HOST
     environment["SOUND_SPEED_WEB_PORT"] = str(JULIA_WEB_PORT)
     environment["SOUND_SPEED_WEB_BROWSER_HOST"] = "127.0.0.1"
@@ -223,14 +277,15 @@ def launch_julia_web_server() -> subprocess.Popen | None:
             "--no-instantiate",
         ]
     )
-    _JULIA_WEB_PROCESS = subprocess.Popen(
-        command,
-        cwd=JULIA_PROJECT_DIR,
-        env=environment,
-        stdout=_JULIA_WEB_LOG,
-        stderr=subprocess.STDOUT,
-        creationflags=creation_flags,
-    )
+    with _external_dll_search_path():
+        _JULIA_WEB_PROCESS = subprocess.Popen(
+            command,
+            cwd=JULIA_PROJECT_DIR,
+            env=environment,
+            stdout=_JULIA_WEB_LOG,
+            stderr=subprocess.STDOUT,
+            creationflags=creation_flags,
+        )
     return _JULIA_WEB_PROCESS
 
 

@@ -53,7 +53,7 @@ def experiment_html(name: str) -> str:
     return _HTML.replace("__CONFIG__", payload)
 
 
-def render_experiment(name: str, height: int = 820) -> None:
+def render_experiment(name: str, height: int = 900) -> None:
     components.html(
         experiment_html(name),
         height=height,
@@ -61,7 +61,7 @@ def render_experiment(name: str, height: int = 820) -> None:
     )
 
 
-def render_julia_experiment(name: str, julia_url: str, route: str, height: int = 820) -> None:
+def render_julia_experiment(name: str, julia_url: str, route: str, height: int = 900) -> None:
     heartbeat_url = os.getenv("LISSAJOUS_HEARTBEAT_URL", "").strip()
     client_log_url = (
         heartbeat_url[:-10] + "/client-log"
@@ -89,7 +89,7 @@ def render_hybrid_experiment(
     name: str,
     julia_url: str,
     route: str,
-    height: int = 820,
+    height: int = 900,
     timeout_seconds: float = 12.0,
 ) -> None:
     fallback = base64.b64encode(experiment_html(name).encode("utf-8")).decode("ascii")
@@ -120,7 +120,7 @@ _HTML = r"""
   * { box-sizing:border-box; }
   html,body { margin:0; background:transparent; color:var(--text); font:15px/1.45 system-ui,
     "Microsoft YaHei",sans-serif; letter-spacing:0; overflow:hidden; }
-  .lab { height:800px; padding:18px; background:var(--bg); border:1px solid #252c35;
+  .lab { height:880px; padding:18px; background:var(--bg); border:1px solid #252c35;
     border-radius:8px; display:grid; grid-template-rows:auto minmax(0,1fr) auto auto; gap:14px; }
   header { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
   h2 { margin:0; font-size:24px; }
@@ -147,7 +147,7 @@ _HTML = r"""
   .metric strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
     font-size:15px; font-variant-numeric:tabular-nums; }
   @media (max-width:900px) {
-    .lab { height:800px; }
+    .lab { height:880px; }
     .plots { grid-template-columns:1fr 1fr; }
     .plot:last-child { display:none; }
     .metrics { grid-template-columns:1fr 1fr; }
@@ -291,7 +291,7 @@ _JULIA_ONLY_HTML = r"""
 <style>
   * { box-sizing:border-box; }
   html,body { margin:0; background:transparent; overflow:hidden; font-family:system-ui,"Microsoft YaHei",sans-serif; }
-  .stage { position:relative; width:100%; height:800px; overflow:hidden; background:#0b0f14; border-radius:6px; }
+  .stage { position:relative; width:100%; height:880px; overflow:hidden; background:#0b0f14; border-radius:6px; }
   iframe { display:block; width:100%; height:100%; border:0; background:#0b0f14; }
   .loading {
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;
@@ -304,6 +304,7 @@ _JULIA_ONLY_HTML = r"""
   }
   .text { font-size:18px; font-weight:650; letter-spacing:0; }
   .hint { max-width:580px; color:#93a4b7; font-size:14px; line-height:1.6; text-align:center; letter-spacing:0; }
+  .hint.error { color:#ff6b72; }
   @keyframes spin { to { transform:rotate(360deg); } }
 </style>
 </head>
@@ -312,8 +313,8 @@ _JULIA_ONLY_HTML = r"""
   <iframe id="julia" title="Julia 交互实验"></iframe>
   <div class="loading" id="loading">
     <div class="spinner"></div>
-    <div class="text">正在初始化 Julia 交互图形</div>
-    <div class="hint">首次启动需要解包并加载 Julia/WGLMakie 组件，请稍等。</div>
+    <div class="text" id="loading-title">正在初始化 Julia 交互图形</div>
+    <div class="hint" id="loading-detail">首次启动需要解包并加载 Julia/WGLMakie 组件，请稍等。</div>
   </div>
 </main>
 <script>
@@ -321,6 +322,8 @@ _JULIA_ONLY_HTML = r"""
   const settings = __SETTINGS__;
   const frame = document.getElementById('julia');
   const loading = document.getElementById('loading');
+  const title = document.getElementById('loading-title');
+  const detail = document.getElementById('loading-detail');
   function clientLog(type, detail) {
     if (!settings.clientLogUrl) return;
     const body = JSON.stringify({
@@ -333,25 +336,48 @@ _JULIA_ONLY_HTML = r"""
     });
     fetch(settings.clientLogUrl, {method:'POST', mode:'no-cors', cache:'no-store', body}).catch(() => {});
   }
+  const showSlowLoading = (message = '') => {
+    title.textContent = '实验加载时间较长';
+    detail.textContent = message || '首次启动可能超过 1 分钟，程序仍在初始化，请继续等待，无需刷新页面。';
+    detail.classList.remove('error');
+  };
+  let slowTimer = null;
+  const armSlowTimer = () => {
+    if (slowTimer !== null) window.clearTimeout(slowTimer);
+    slowTimer = window.setTimeout(() => {
+      showSlowLoading();
+      clientLog('wrapper-slow', 'WGL ready message was not received 60 seconds after iframe load');
+    }, 60000);
+  };
   clientLog('wrapper-start', 'opening Julia iframe');
   frame.src = settings.juliaUrl + (settings.juliaUrl.includes('?') ? '&' : '?') + 'attempt=' + Date.now();
-  frame.addEventListener('load', () => clientLog('iframe-load', frame.src));
+  frame.addEventListener('load', () => {
+    clientLog('iframe-load', frame.src);
+    armSlowTimer();
+  });
   frame.addEventListener('error', () => clientLog('iframe-error', frame.src));
   window.addEventListener('message', event => {
     if (event.source !== frame.contentWindow || !event.data) return;
     if (event.data.type === 'lissajous-wgl-ready') {
+      if (slowTimer !== null) window.clearTimeout(slowTimer);
       clientLog('wgl-ready', event.data.detail || '');
+      detail.classList.remove('error');
       loading.classList.add('hidden');
     }
+    if (event.data.type === 'lissajous-wgl-slow') {
+      showSlowLoading(event.data.detail || '首次启动可能超过 1 分钟，WGLMakie 仍在初始化，请继续等待。');
+      clientLog('wgl-slow', event.data.detail || '');
+    }
     if (event.data.type === 'lissajous-wgl-failed') {
+      if (slowTimer !== null) window.clearTimeout(slowTimer);
       clientLog('wgl-failed', event.data.detail || '');
+      title.textContent = 'Julia 实验初始化失败';
+      detail.textContent = event.data.detail || '请检查浏览器 WebGL 设置或 Julia 运行日志。';
+      detail.classList.add('error');
     }
   });
   window.addEventListener('error', event => clientLog('wrapper-error', `${event.message} ${event.filename}:${event.lineno}`));
   window.addEventListener('unhandledrejection', event => clientLog('wrapper-unhandledrejection', event.reason || ''));
-  setTimeout(() => {
-    if (!loading.classList.contains('hidden')) clientLog('wrapper-timeout', 'WGL ready message was not received after 60 seconds');
-  }, 60000);
 })();
 </script>
 </body>
@@ -368,7 +394,7 @@ _HYBRID_HTML = r"""
 <style>
   * { box-sizing:border-box; }
   html,body { margin:0; background:transparent; overflow:hidden; font-family:system-ui,"Microsoft YaHei",sans-serif; }
-  .stage { position:relative; width:100%; height:800px; overflow:hidden; background:#0b0f14; border-radius:6px; }
+  .stage { position:relative; width:100%; height:880px; overflow:hidden; background:#0b0f14; border-radius:6px; }
   iframe { display:block; width:100%; height:100%; border:0; background:#0b0f14; }
   iframe[hidden] { display:none; }
   .mode-note { position:absolute; right:14px; bottom:14px; z-index:4; display:none; align-items:center;

@@ -6,7 +6,7 @@ import os
 import streamlit.components.v1 as components
 
 
-def render_sound_speed_experiment(julia_url: str, height: int = 930) -> None:
+def render_sound_speed_experiment(julia_url: str, height: int = 1040) -> None:
     heartbeat_url = os.getenv("SOUND_SPEED_HEARTBEAT_URL", "").strip()
     client_log_url = (
         heartbeat_url[:-10] + "/client-log"
@@ -32,7 +32,7 @@ _HTML = r"""
 <style>
   * { box-sizing:border-box; }
   html,body { margin:0; overflow:hidden; background:transparent; font-family:system-ui,"Microsoft YaHei",sans-serif; }
-  .stage { position:relative; width:100%; height:910px; overflow:hidden; background:#0b0f14; border-radius:6px; }
+  .stage { position:relative; width:100%; height:1020px; overflow:hidden; background:#0b0f14; border-radius:6px; }
   iframe { display:block; width:100%; height:100%; border:0; background:#0b0f14; }
   .loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     flex-direction:column; gap:14px; color:#d4dde7; background:#0b0f14; transition:opacity .2s ease; }
@@ -72,25 +72,40 @@ _HTML = r"""
     });
     fetch(settings.clientLogUrl, {method:'POST', mode:'no-cors', cache:'no-store', body}).catch(() => {});
   };
-  const timeout = window.setTimeout(() => {
+  const showSlowLoading = (message = '') => {
     title.textContent = '实验加载时间较长';
-    detail.textContent = '请检查 Julia 服务窗口或 web_stdout.log；刷新页面可重新连接。';
-    detail.classList.add('error');
-    clientLog('wrapper-timeout', 'WGL ready message was not received after 70 seconds');
-  }, 70000);
+    detail.textContent = message || '首次启动可能超过 1 分钟，程序仍在初始化，请继续等待，无需刷新页面。';
+    detail.classList.remove('error');
+  };
+  let slowTimer = null;
+  const armSlowTimer = () => {
+    if (slowTimer !== null) window.clearTimeout(slowTimer);
+    slowTimer = window.setTimeout(() => {
+      showSlowLoading();
+      clientLog('wrapper-slow', 'WGL ready message was not received 70 seconds after iframe load');
+    }, 70000);
+  };
   clientLog('wrapper-start', 'opening Julia iframe');
   frame.src = settings.url + (settings.url.includes('?') ? '&' : '?') + 'attempt=' + Date.now();
-  frame.addEventListener('load', () => clientLog('iframe-load', frame.src));
+  frame.addEventListener('load', () => {
+    clientLog('iframe-load', frame.src);
+    armSlowTimer();
+  });
   frame.addEventListener('error', () => clientLog('iframe-error', frame.src));
   window.addEventListener('message', event => {
     if (event.source !== frame.contentWindow || !event.data) return;
     if (event.data.type === 'sound-speed-wgl-ready') {
-      window.clearTimeout(timeout);
+      if (slowTimer !== null) window.clearTimeout(slowTimer);
       clientLog('wgl-ready', event.data.detail || '');
+      detail.classList.remove('error');
       loading.classList.add('hidden');
     }
+    if (event.data.type === 'sound-speed-wgl-slow') {
+      showSlowLoading(event.data.detail || '首次启动可能超过 1 分钟，程序仍在初始化，请继续等待。');
+      clientLog('wgl-slow', event.data.detail || '');
+    }
     if (event.data.type === 'sound-speed-wgl-failed') {
-      window.clearTimeout(timeout);
+      if (slowTimer !== null) window.clearTimeout(slowTimer);
       clientLog('wgl-failed', event.data.detail || '');
       title.textContent = 'Julia 实验初始化失败';
       detail.textContent = event.data.detail || '请查看 web_stdout.log。';

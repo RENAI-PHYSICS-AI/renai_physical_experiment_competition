@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+import socket
 import subprocess
 import sys
 import tempfile
@@ -9,6 +10,7 @@ import unittest
 import importlib.util
 import os
 from pathlib import Path
+from urllib.parse import urlsplit
 from unittest.mock import MagicMock, patch
 
 
@@ -44,6 +46,114 @@ class FakeProcess:
 
 
 class LauncherLifecycleTests(unittest.TestCase):
+    def test_port_pools_are_reserved_for_lissajous(self) -> None:
+        self.assertEqual(launcher.DEFAULT_STREAMLIT_PORT, 8501)
+        self.assertEqual(launcher.DEFAULT_JULIA_PORT, 9384)
+        self.assertEqual(launcher.STREAMLIT_FALLBACK_PORTS, range(18501, 18551))
+        self.assertEqual(launcher.JULIA_FALLBACK_PORTS, range(19384, 19434))
+        self.assertTrue(
+            set(launcher.STREAMLIT_FALLBACK_PORTS).isdisjoint(
+                launcher.JULIA_FALLBACK_PORTS
+            )
+        )
+        own_ports = {
+            launcher.DEFAULT_STREAMLIT_PORT,
+            launcher.DEFAULT_JULIA_PORT,
+            *launcher.STREAMLIT_FALLBACK_PORTS,
+            *launcher.JULIA_FALLBACK_PORTS,
+            *launcher.HEARTBEAT_PORTS,
+        }
+        sound_speed_ports = {
+            8502,
+            9385,
+            *range(28502, 28552),
+            *range(29385, 29435),
+            *range(29850, 29900),
+        }
+        self.assertTrue(own_ports.isdisjoint(sound_speed_ports))
+
+    def test_heartbeat_server_uses_reserved_pool(self) -> None:
+        server, _state, url = launcher.start_heartbeat_server()
+        try:
+            port = int(urlsplit(url).port or 0)
+            self.assertIn(port, launcher.HEARTBEAT_PORTS)
+        finally:
+            server.shutdown()
+            server.server_close()
+
+    def test_heartbeat_server_skips_occupied_pool_port(self) -> None:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as occupied:
+            occupied.bind(("127.0.0.1", launcher.HEARTBEAT_PORTS.start))
+            occupied.listen(1)
+            server, _state, url = launcher.start_heartbeat_server()
+            try:
+                port = int(urlsplit(url).port or 0)
+                self.assertEqual(port, launcher.HEARTBEAT_PORTS.start + 1)
+            finally:
+                server.shutdown()
+                server.server_close()
+
+    def test_export_directory_is_persistent_and_passed_to_child(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            configured = Path(temporary) / "实验导出" / "李萨如图形"
+            with patch.dict(
+                launcher.os.environ,
+                {launcher.EXPORT_DIR_ENV: str(configured)},
+                clear=False,
+            ):
+                selected = launcher.export_dir()
+                environment = launcher.application_environment(
+                    streamlit_port=launcher.DEFAULT_STREAMLIT_PORT,
+                    julia_port=launcher.DEFAULT_JULIA_PORT,
+                )
+            self.assertEqual(selected, configured.resolve())
+            self.assertTrue(selected.is_dir())
+            self.assertEqual(environment[launcher.EXPORT_DIR_ENV], str(selected))
+            self.assertEqual(list(selected.glob(".write-test-*.tmp")), [])
+
+    def test_busy_preferred_ports_use_dedicated_fallback_pools(self) -> None:
+        available = {
+            launcher.STREAMLIT_FALLBACK_PORTS.start,
+            launcher.JULIA_FALLBACK_PORTS.start,
+        }
+        with (
+            patch.dict(
+                launcher.os.environ,
+                {
+                    "LISSAJOUS_STREAMLIT_PORT": "41001",
+                    "LISSAJOUS_WEB_PORT": "41001",
+                },
+                clear=False,
+            ),
+            patch.object(
+                launcher,
+                "local_port_available",
+                side_effect=lambda port: port in available,
+            ),
+        ):
+            streamlit_port, julia_port = launcher.select_service_ports()
+        self.assertEqual(streamlit_port, launcher.STREAMLIT_FALLBACK_PORTS.start)
+        self.assertEqual(julia_port, launcher.JULIA_FALLBACK_PORTS.start)
+        self.assertNotEqual(streamlit_port, julia_port)
+
+    def test_external_port_override_cannot_leave_assigned_pool(self) -> None:
+        with (
+            patch.dict(
+                launcher.os.environ,
+                {
+                    "LISSAJOUS_STREAMLIT_PORT": "28502",
+                    "LISSAJOUS_WEB_PORT": "29385",
+                },
+                clear=False,
+            ),
+            patch.object(launcher, "local_port_available", return_value=True),
+            patch.object(launcher, "safe_write_log") as write_log,
+        ):
+            streamlit_port, julia_port = launcher.select_service_ports()
+        self.assertEqual(streamlit_port, launcher.DEFAULT_STREAMLIT_PORT)
+        self.assertEqual(julia_port, launcher.DEFAULT_JULIA_PORT)
+        self.assertEqual(write_log.call_count, 2)
+
     @unittest.skipUnless(sys.platform == "win32", "Windows Job Object test")
     def test_named_job_child_attaches_before_descendants(self) -> None:
         import uuid
@@ -162,6 +272,11 @@ class LauncherLifecycleTests(unittest.TestCase):
         arguments = popen.call_args.args[0]
         self.assertIn("--app=http://127.0.0.1:8501", arguments)
         self.assertIn("--disable-background-mode", arguments)
+        self.assertIn("--disable-extensions", arguments)
+        self.assertIn("--disable-sync", arguments)
+        self.assertIn("--disable-default-apps", arguments)
+        self.assertIn("--disable-component-extensions-with-background-pages", arguments)
+        self.assertIn("--no-service-autorun", arguments)
         self.assertTrue(any(arg.startswith("--user-data-dir=") for arg in arguments))
         if profile_dir is not None:
             shutil.rmtree(profile_dir, ignore_errors=True)

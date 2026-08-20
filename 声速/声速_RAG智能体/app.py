@@ -685,6 +685,12 @@ with chat_tab:
                 )
 
 with demo_tab:
+    export_location = os.getenv("SOUND_SPEED_EXPORT_DIR", "").strip()
+    if not export_location:
+        export_location = str(
+            Path.home() / "Documents" / "物理实验助教" / "实验导出" / "声速测量"
+        )
+    st.caption(f"CSV 保存位置：{export_location}")
     try:
         with st.spinner("正在启动 Julia 可视化实验..."):
             ensure_julia_web_server()

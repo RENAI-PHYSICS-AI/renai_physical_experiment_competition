@@ -23,6 +23,11 @@ from _embedded_secret import reveal_api_key
 APP_NAME = "声速测量实验智能助教"
 DEFAULT_STREAMLIT_PORT = 8502
 DEFAULT_JULIA_PORT = 9385
+# Dedicated fallback pools keep this application disjoint from the Lissajous
+# tutor even when both default port pairs are already occupied.
+STREAMLIT_FALLBACK_PORTS = range(28502, 28552)
+JULIA_FALLBACK_PORTS = range(29385, 29435)
+HEARTBEAT_PORTS = range(29850, 29900)
 BROWSER_PROFILE_PREFIX = "sound_speed_tutor_browser_"
 FIRST_CLIENT_GRACE = 180.0
 CLOSE_GRACE = 20.0
@@ -30,6 +35,8 @@ CLIENT_LEASE = 120.0
 MANAGED_BROWSER_STARTUP_GRACE = 30.0
 JOB_NAME_ENV = "SOUND_SPEED_JOB_NAME"
 JOB_ACK_ENV = "SOUND_SPEED_JOB_ACK"
+EXPORT_DIR_ENV = "SOUND_SPEED_EXPORT_DIR"
+EXPORT_SUBDIR = "声速测量"
 
 
 class BrowserSession:
@@ -128,12 +135,22 @@ def heartbeat_handler(state: HeartbeatState) -> type[BaseHTTPRequestHandler]:
 
 def start_heartbeat_server() -> tuple[ThreadingHTTPServer, HeartbeatState, str]:
     state = HeartbeatState()
-    server = ThreadingHTTPServer(("127.0.0.1", 0), heartbeat_handler(state))
+    server: ThreadingHTTPServer | None = None
+    for port in HEARTBEAT_PORTS:
+        try:
+            server = ThreadingHTTPServer(
+                ("127.0.0.1", port), heartbeat_handler(state)
+            )
+            break
+        except OSError:
+            continue
+    if server is None:
+        raise RuntimeError("No port is available in the heartbeat port pool.")
     server.daemon_threads = True
     thread = threading.Thread(target=server.serve_forever, name="browser-heartbeat", daemon=True)
     thread.start()
-    port = server.server_address[1]
-    return server, state, f"http://127.0.0.1:{port}/heartbeat"
+    heartbeat_port = server.server_address[1]
+    return server, state, f"http://127.0.0.1:{heartbeat_port}/heartbeat"
 
 
 def log_path() -> Path:
@@ -167,6 +184,39 @@ def bundle_root() -> Path:
     return Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 
 
+def _prepare_writable_directory(candidate: Path) -> Path | None:
+    try:
+        directory = candidate.expanduser().resolve()
+        directory.mkdir(parents=True, exist_ok=True)
+        probe = directory / f".write-test-{os.getpid()}-{uuid.uuid4().hex}.tmp"
+        with probe.open("x", encoding="utf-8") as handle:
+            handle.write("ok")
+        probe.unlink()
+        return directory
+    except OSError:
+        return None
+
+
+def export_dir() -> Path:
+    configured = os.getenv(EXPORT_DIR_ENV, "").strip()
+    candidates: list[Path] = []
+    if configured:
+        candidates.append(Path(configured))
+    if getattr(sys, "frozen", False):
+        candidates.append(Path(sys.executable).resolve().parent / "实验导出" / EXPORT_SUBDIR)
+    candidates.extend(
+        [
+            Path.home() / "Documents" / "物理实验助教" / "实验导出" / EXPORT_SUBDIR,
+            log_dir().parent / "exports" / EXPORT_SUBDIR,
+        ]
+    )
+    for candidate in candidates:
+        prepared = _prepare_writable_directory(candidate)
+        if prepared is not None:
+            return prepared
+    raise RuntimeError("无法创建声速实验导出目录。")
+
+
 def env_int(name: str, default: int) -> int:
     try:
         return int(os.getenv(name, "").strip() or default)
@@ -174,15 +224,66 @@ def env_int(name: str, default: int) -> int:
         return default
 
 
-def find_available_port(preferred: int) -> int:
-    for candidate in (preferred, 0):
-        try:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
-                probe.bind(("127.0.0.1", candidate))
-                return int(probe.getsockname()[1])
-        except OSError:
+def local_port_available(candidate: int) -> bool:
+    if not 1 <= candidate <= 65535:
+        return False
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+            probe.bind(("127.0.0.1", candidate))
+            return True
+    except OSError:
+        return False
+
+
+def find_available_port(
+    preferred: int,
+    fallback_ports: range,
+    excluded: set[int] | None = None,
+) -> int:
+    excluded = excluded or set()
+    for candidate in (preferred, *fallback_ports):
+        if candidate in excluded:
             continue
-    raise RuntimeError("No local TCP port is available.")
+        try:
+            if local_port_available(candidate):
+                return candidate
+        except (OSError, ValueError):
+            pass
+    raise RuntimeError("No port is available in this application's local port pool.")
+
+
+def configured_port(name: str, default: int, allowed_fallbacks: range) -> int:
+    raw_value = os.getenv(name, "").strip()
+    if not raw_value:
+        return default
+    try:
+        candidate = int(raw_value)
+    except ValueError:
+        candidate = default
+    if candidate == default or candidate in allowed_fallbacks:
+        return candidate
+    safe_write_log(
+        f"Ignoring {name}={raw_value!r}: outside this application's assigned port pool."
+    )
+    return default
+
+
+def select_service_ports() -> tuple[int, int]:
+    streamlit_preferred = configured_port(
+        "SOUND_SPEED_STREAMLIT_PORT",
+        DEFAULT_STREAMLIT_PORT,
+        STREAMLIT_FALLBACK_PORTS,
+    )
+    julia_preferred = configured_port(
+        "SOUND_SPEED_WEB_PORT", DEFAULT_JULIA_PORT, JULIA_FALLBACK_PORTS
+    )
+    streamlit_port = find_available_port(
+        streamlit_preferred, STREAMLIT_FALLBACK_PORTS
+    )
+    julia_port = find_available_port(
+        julia_preferred, JULIA_FALLBACK_PORTS, {streamlit_port}
+    )
+    return streamlit_port, julia_port
 
 
 def application_environment(
@@ -191,6 +292,7 @@ def application_environment(
     julia_port: int | None = None,
 ) -> dict[str, str]:
     root = bundle_root()
+    experiment_export_dir = export_dir()
     streamlit_port = streamlit_port or env_int("SOUND_SPEED_STREAMLIT_PORT", DEFAULT_STREAMLIT_PORT)
     julia_port = julia_port or env_int("SOUND_SPEED_WEB_PORT", DEFAULT_JULIA_PORT)
     environment = os.environ.copy()
@@ -207,6 +309,7 @@ def application_environment(
             "SOUND_SPEED_STREAMLIT_PORT": str(streamlit_port),
             "SOUND_SPEED_LOG_DIR": str(log_dir()),
             "SOUND_SPEED_CODE_OUTPUT_DIR": str(log_dir().parent / "runtime_outputs"),
+            EXPORT_DIR_ENV: str(experiment_export_dir),
             "SOUND_SPEED_LLM_API_KEY": reveal_api_key(),
             "STREAMLIT_BROWSER_GATHER_USAGE_STATS": "false",
         }
@@ -439,7 +542,7 @@ def attach_current_process_to_named_job() -> bool:
         handle = None
         attached = True
         result = f"ok:{os.getpid()}"
-        write_log(f"Streamlit child joined Windows job before startup; pid={os.getpid()}.")
+        safe_write_log(f"Streamlit child joined Windows job before startup; pid={os.getpid()}.")
     except Exception as exc:
         result = f"error:{exc}"
         safe_write_log(f"Unable to attach Streamlit child to Windows job: {exc}")
@@ -788,8 +891,7 @@ def main() -> int:
     if "--streamlit-child" in sys.argv:
         run_streamlit_child()
 
-    streamlit_port = find_available_port(DEFAULT_STREAMLIT_PORT)
-    julia_port = find_available_port(DEFAULT_JULIA_PORT)
+    streamlit_port, julia_port = select_service_ports()
     app_url = f"http://127.0.0.1:{streamlit_port}"
     write_log(
         "Launcher environment: "

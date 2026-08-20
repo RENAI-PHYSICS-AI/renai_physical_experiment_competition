@@ -8,6 +8,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
 end
 
 using Bonito
+using Dates
 using LinearAlgebra
 using Printf
 using WGLMakie
@@ -157,7 +158,7 @@ function base_layout(title, auxiliary_title, auxiliary_x, auxiliary_y)
     figure[3, 1:3] = controls
     figure[4, 1:3] = analysis
     Label(controls[1, 1:3], "实验参数", font = :bold, halign = :left, color = :white)
-    Label(analysis[1, 1:4], "实时分析", font = :bold, halign = :left, color = :white)
+    Label(analysis[1, 1], "实时分析", font = :bold, halign = :left, color = :white)
 
     rowsize!(figure.layout, 1, 48)
     rowsize!(figure.layout, 2, 330)
@@ -189,6 +190,269 @@ function add_metrics(analysis, metrics, detail)
         colsize!(analysis, column, Relative(0.25))
     end
     Label(analysis[3, 1:4], detail, halign = :left, color = MUTED)
+end
+
+function experiment_export_directory()
+    configured = strip(get(ENV, "LISSAJOUS_EXPORT_DIR", ""))
+    if !isempty(configured)
+        return normpath(abspath(configured))
+    end
+    return normpath(
+        joinpath(
+            homedir(),
+            "Documents",
+            "物理实验助教",
+            "实验导出",
+            "李萨如图形",
+        ),
+    )
+end
+
+function unique_export_path(directory, prefix; extension = ".csv")
+    timestamp = Dates.format(now(), "yyyymmdd_HHMMSS_sss")
+    candidate = joinpath(directory, "$(prefix)_$(timestamp)$(extension)")
+    counter = 1
+    while isfile(candidate)
+        candidate = joinpath(directory, "$(prefix)_$(timestamp)_$(counter)$(extension)")
+        counter += 1
+    end
+    return candidate
+end
+
+function csv_field(value)
+    text = value isa AbstractFloat ? @sprintf("%.12g", value) : string(value)
+    if any(character -> character in (',', '"', '\n', '\r'), text)
+        escaped = replace(text, "\"" => "\"\"")
+        return "\"$(escaped)\""
+    end
+    return text
+end
+
+function write_experiment_csv(path, metadata, headers, columns)
+    lengths = length.(columns)
+    isempty(lengths) && error("CSV 至少需要一列数据。")
+    all(==(first(lengths)), lengths) || error("CSV 各列长度不一致。")
+    open(path, "w") do io
+        write(io, UInt8[0xef, 0xbb, 0xbf])
+        println(io, "# 李萨如图形可视化实验")
+        for (key, value) in metadata
+            println(io, "# $(key)=$(value)")
+        end
+        println(io, join(headers, ','))
+        for row in 1:first(lengths)
+            println(io, join((csv_field(column[row]) for column in columns), ','))
+        end
+    end
+    return path
+end
+
+function write_experiment_csv_atomic(path, metadata, headers, columns)
+    temporary = "$(path).partial-$(time_ns())"
+    try
+        write_experiment_csv(temporary, metadata, headers, columns)
+        mv(temporary, path; force = false)
+    finally
+        isfile(temporary) && rm(temporary; force = true)
+    end
+    return path
+end
+
+function phase_csv_payload(current, amplitude, frequency, phase_degree, progress)
+    metadata = [
+        "experiment" => "phase",
+        "amplitude" => Float64(amplitude),
+        "frequency_hz" => Float64(frequency),
+        "phase_deg" => Int(phase_degree),
+        "progress_percent" => Float64(progress) / 10,
+        "shape" => shape_name(current.phi),
+        "direction" => rotation_name(current.phi),
+        "semimajor_axis" => current.axes[1],
+        "semiminor_axis" => current.axes[2],
+        "period_s" => current.period,
+    ]
+    headers = ["sample_index", "u", "time_s", "x", "y"]
+    columns = (
+        collect(0:(length(current.u) - 1)),
+        current.u,
+        current.u .* current.period,
+        current.x,
+        current.y,
+    )
+    return (; metadata, headers, columns)
+end
+
+function amplitude_csv_payload(current, amplitude_x, amplitude_y, phase_degree, progress)
+    a = Float64(amplitude_x)
+    b = Float64(amplitude_y)
+    metadata = [
+        "experiment" => "amplitude",
+        "amplitude_x" => a,
+        "amplitude_y" => b,
+        "amplitude_ratio_y_x" => current.ratio,
+        "phase_deg" => Int(phase_degree),
+        "progress_percent" => Float64(progress) / 10,
+        "semimajor_axis" => current.axes[1],
+        "semiminor_axis" => current.axes[2],
+        "ellipse_area" => current.area,
+        "trajectory_width" => 2 * maximum(abs, current.x),
+        "trajectory_height" => 2 * maximum(abs, current.y),
+    ]
+    headers = ["sample_index", "u", "x", "y", "x_over_A", "y_over_B"]
+    columns = (
+        collect(0:(length(current.u) - 1)),
+        current.u,
+        current.x,
+        current.y,
+        current.x ./ a,
+        current.y ./ b,
+    )
+    return (; metadata, headers, columns)
+end
+
+function ratio_csv_payload(current, base_frequency, m_value, n_value, phase_degree, progress)
+    f0 = Float64(base_frequency)
+    m = Int(m_value)
+    n = Int(n_value)
+    metadata = [
+        "experiment" => "ratio",
+        "base_frequency_hz" => f0,
+        "m" => m,
+        "n" => n,
+        "gcd" => gcd(m, n),
+        "reduced_m" => current.reduced_m,
+        "reduced_n" => current.reduced_n,
+        "frequency_x_hz" => current.frequency_x,
+        "frequency_y_hz" => current.frequency_y,
+        "phase_deg" => Int(phase_degree),
+        "progress_percent" => Float64(progress) / 10,
+        "close_period_s" => current.close_period,
+        "endpoint_error" => current.endpoint_error,
+    ]
+    headers = ["sample_index", "u", "time_s", "x", "y", "distance_to_start"]
+    columns = (
+        collect(0:(length(current.u) - 1)),
+        current.u,
+        current.u .* current.close_period,
+        current.x,
+        current.y,
+        current.distance,
+    )
+    return (; metadata, headers, columns)
+end
+
+function detune_csv_payload(
+    current,
+    amplitude,
+    frequency,
+    delta_frequency,
+    phase_degree,
+    progress,
+)
+    delta = Float64(delta_frequency)
+    initial_phase = deg2rad(Float64(phase_degree))
+    metadata = [
+        "experiment" => "detune",
+        "amplitude" => Float64(amplitude),
+        "frequency_x_hz" => Float64(frequency),
+        "delta_frequency_hz" => delta,
+        "frequency_y_hz" => current.frequency_y,
+        "phase_0_deg" => Int(phase_degree),
+        "progress_percent" => Float64(progress) / 10,
+        "current_time_s" => current.current_time,
+        "shape_period_s" => current.shape_period,
+        "effective_phase_rad" => current.effective_phase,
+    ]
+    headers = [
+        "sample_index",
+        "u",
+        "time_s",
+        "x",
+        "y",
+        "relative_phase_rad",
+    ]
+    columns = (
+        collect(0:(length(current.u) - 1)),
+        current.u,
+        current.local_time,
+        current.x,
+        current.y,
+        mod.(TWO_PI .* delta .* current.local_time .+ initial_phase, TWO_PI),
+    )
+    return (; metadata, headers, columns)
+end
+
+function open_export_directory(directory)
+    mkpath(directory)
+    if Sys.iswindows()
+        executable = joinpath(get(ENV, "WINDIR", raw"C:\Windows"), "explorer.exe")
+        if !isfile(executable)
+            executable = "explorer.exe"
+        end
+        run(Cmd([executable, directory]); wait = false)
+    elseif Sys.isapple()
+        run(Cmd(["open", directory]); wait = false)
+    else
+        run(Cmd(["xdg-open", directory]); wait = false)
+    end
+    return nothing
+end
+
+function display_path(path)
+    return replace(path, '\\' => "\\\u200b", '/' => "/\u200b")
+end
+
+function attach_csv_export!(writer, grid, analysis, slug)
+    output_dir = experiment_export_directory()
+    export_button = Makie.Button(
+        grid[2, 1],
+        label = "导出 CSV",
+        height = 31,
+        buttoncolor = BUTTON_BG,
+        labelcolor = :white,
+    )
+    open_button = Makie.Button(
+        grid[2, 2],
+        label = "打开导出文件夹",
+        height = 31,
+        buttoncolor = BUTTON_BG,
+        labelcolor = :white,
+    )
+    status = Observable("CSV 保存位置：$(display_path(output_dir))")
+    status_color = lift(
+        text -> startswith(text, "导出失败") ? ACCENT_Y : startswith(text, "正在") ? ACCENT_MAJOR : ACCENT_MINOR,
+        status,
+    )
+    Label(
+        analysis[1, 2:4],
+        status,
+        color = status_color,
+        fontsize = 12,
+        halign = :left,
+        valign = :center,
+        tellwidth = false,
+        word_wrap = true,
+    )
+    on(export_button.clicks) do _
+        status[] = "正在导出 CSV..."
+        yield()
+        try
+            mkpath(output_dir)
+            path = unique_export_path(output_dir, "lissajous_$(slug)")
+            writer(path)
+            status[] = "已导出：$(basename(path))；CSV 保存位置：$(display_path(output_dir))"
+        catch error
+            status[] = "导出失败：$(sprint(showerror, error))"
+        end
+    end
+    on(open_button.clicks) do _
+        try
+            open_export_directory(output_dir)
+            status[] = "已打开导出文件夹；CSV 保存位置：$(display_path(output_dir))"
+        catch error
+            status[] = "导出失败：无法打开文件夹（$(sprint(showerror, error))）"
+        end
+    end
+    return nothing
 end
 
 function bind_playback!(grid, progress_slider, reset_values)
@@ -322,6 +586,17 @@ function phase_figure()
     end
     add_metrics(analysis, metrics, detail)
     bind_playback!(motion_grid, progress, [(amplitude, 1.0), (frequency, 1.0), (phase, 60), (progress, 0)])
+    attach_csv_export!(motion_grid, analysis, "phase") do path
+        current = data[]
+        payload = phase_csv_payload(
+            current,
+            amplitude.value[],
+            frequency.value[],
+            phase.value[],
+            progress.value[],
+        )
+        write_experiment_csv_atomic(path, payload.metadata, payload.headers, payload.columns)
+    end
     return figure
 end
 
@@ -399,6 +674,17 @@ function amplitude_figure()
     detail = Observable("原始轨迹的宽高随振幅比改变；归一化后只保留相位关系。")
     add_metrics(analysis, metrics, detail)
     bind_playback!(motion_grid, progress, [(amplitude_x, 1.0), (amplitude_y, 0.65), (phase, 60), (progress, 0)])
+    attach_csv_export!(motion_grid, analysis, "amplitude") do path
+        current = data[]
+        payload = amplitude_csv_payload(
+            current,
+            amplitude_x.value[],
+            amplitude_y.value[],
+            phase.value[],
+            progress.value[],
+        )
+        write_experiment_csv_atomic(path, payload.metadata, payload.headers, payload.columns)
+    end
     return figure
 end
 
@@ -485,6 +771,18 @@ function ratio_figure()
     end
     add_metrics(analysis, metrics, detail)
     bind_playback!(motion_grid, progress, [(base_frequency, 1.0), (m_slider, 2), (n_slider, 3), (phase, 30), (progress, 0)])
+    attach_csv_export!(motion_grid, analysis, "ratio") do path
+        current = data[]
+        payload = ratio_csv_payload(
+            current,
+            base_frequency.value[],
+            m_slider.value[],
+            n_slider.value[],
+            phase.value[],
+            progress.value[],
+        )
+        write_experiment_csv_atomic(path, payload.metadata, payload.headers, payload.columns)
+    end
     return figure
 end
 
@@ -515,6 +813,8 @@ function detune_figure()
         phase_curve = phi0 / TWO_PI .+ delta .* collect(range(0.0, span; length = 1001))
         return (;
             u,
+            local_time,
+            current_time,
             x,
             y,
             trajectory = Point2f.(x, y),
@@ -552,6 +852,18 @@ function detune_figure()
     detail = Observable("频率差使相位持续累积；形变进程完成一周时，相对相位改变 2π。")
     add_metrics(analysis, metrics, detail)
     bind_playback!(motion_grid, progress, [(amplitude, 1.0), (frequency, 1.0), (delta_frequency, 0.05), (phase, 30), (progress, 0)])
+    attach_csv_export!(motion_grid, analysis, "detune") do path
+        current = data[]
+        payload = detune_csv_payload(
+            current,
+            amplitude.value[],
+            frequency.value[],
+            delta_frequency.value[],
+            phase.value[],
+            progress.value[],
+        )
+        write_experiment_csv_atomic(path, payload.metadata, payload.headers, payload.columns)
+    end
     return figure
 end
 
@@ -559,6 +871,11 @@ const PAGE_STYLE = """
 html, body { margin: 0; min-height: 100%; background: #0b0f14; color: #eef3f8; }
 body { overflow-x: auto; font-family: 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; }
 .lab-page { min-width: 960px; min-height: 760px; padding: 8px; box-sizing: border-box; background: #0b0f14; }
+.wglmakie-spinner {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 body:has(.wglmakie-spinner)::before {
     content: "正在初始化 Julia / WGLMakie / Bonito 交互图形";
     position: fixed;
@@ -593,7 +910,8 @@ body:has(.wglmakie-spinner)::before {
 
 const CLIENT_STATUS_SCRIPT = """
 (() => {
-    let ready = false;
+    let finished = false;
+    let slowSent = false;
     const parentWindow = window.parent || window;
     const send = (type, detail = "") => {
         parentWindow.postMessage({ type, detail }, "*");
@@ -608,6 +926,11 @@ const CLIENT_STATUS_SCRIPT = """
         }
         box.textContent = detail;
         box.classList.add("visible");
+    };
+    const fail = detail => {
+        if (finished) return;
+        finished = true;
+        showDiagnostic(detail);
         send("lissajous-wgl-failed", detail);
     };
     const webglProbe = () => {
@@ -624,34 +947,33 @@ const CLIENT_STATUS_SCRIPT = """
     };
     const glStatus = webglProbe();
     if (glStatus === "none" || glStatus.startsWith("error:")) {
-        showDiagnostic("浏览器无法创建 WebGL 上下文：" + glStatus + "\\n请确认浏览器允许硬件加速，或使用程序自动打开的 Edge/Chrome 窗口。");
+        fail("浏览器无法创建 WebGL 上下文：" + glStatus + "\\n请确认浏览器允许硬件加速，或使用程序自动打开的 Edge/Chrome 窗口。");
         return;
     }
     const startedAt = performance.now();
     const check = () => {
+        if (finished) return;
         const canvas = document.querySelector("canvas");
         const spinner = document.querySelector(".wglmakie-spinner");
         if (canvas && !spinner) {
-            ready = true;
-            send("lissajous-wgl-ready", glStatus);
+            finished = true;
+            send("lissajous-wgl-ready", "canvas-ready; " + glStatus);
             return;
         }
-        if (!ready && performance.now() - startedAt > 45000) {
-            showDiagnostic(
-                "WGLMakie/Bonito 初始化超过 45 秒。\\n" +
-                "WebGL 状态：" + glStatus + "\\n" +
-                "页面地址：" + location.href + "\\n" +
-                "浏览器：" + navigator.userAgent
+        if (!slowSent && performance.now() - startedAt > 45000) {
+            slowSent = true;
+            send(
+                "lissajous-wgl-slow",
+                "首次启动可能超过 1 分钟，WGLMakie/Bonito 仍在初始化（" + glStatus + "），请继续等待。"
             );
-            return;
         }
         window.setTimeout(check, 300);
     };
     window.addEventListener("error", event => {
-        showDiagnostic("浏览器脚本错误：" + event.message + "\\n" + event.filename + ":" + event.lineno);
+        fail("浏览器脚本错误：" + event.message + "\\n" + event.filename + ":" + event.lineno);
     });
     window.addEventListener("unhandledrejection", event => {
-        showDiagnostic("浏览器 Promise 错误：" + String(event.reason));
+        fail("浏览器 Promise 错误：" + String(event.reason));
     });
     check();
 })();
@@ -689,6 +1011,92 @@ function index_app()
     )
 end
 
+function run_csv_export_self_test()
+    u = [0.0, 0.5, 1.0]
+    phase_current = (;
+        u,
+        x = [0.0, 1.0, 0.0],
+        y = [1.0, 0.0, -1.0],
+        axes = [1.0, 1.0],
+        phi = pi / 2,
+        period = 0.5,
+    )
+    amplitude_current = (;
+        u,
+        x = [0.0, 1.0, 0.0],
+        y = [0.5, 0.0, -0.5],
+        axes = [1.0, 0.5],
+        area = pi / 2,
+        ratio = 0.5,
+    )
+    ratio_current = (;
+        u,
+        x = [0.0, 0.0, 0.0],
+        y = [0.5, -0.5, 0.5],
+        distance = [0.0, 1.0, 0.0],
+        reduced_m = 2,
+        reduced_n = 3,
+        frequency_x = 2.0,
+        frequency_y = 3.0,
+        close_period = 1.0,
+        endpoint_error = 0.0,
+    )
+    initial_phase = pi / 6
+    local_time = [4.0, 4.5, 5.0]
+    detune_current = (;
+        u,
+        local_time,
+        x = sin.(TWO_PI .* local_time),
+        y = sin.(TWO_PI .* 1.1 .* local_time .+ initial_phase),
+        frequency_y = 1.1,
+        current_time = 5.0,
+        shape_period = 10.0,
+        effective_phase = mod(TWO_PI * 0.1 * 5.0 + initial_phase, TWO_PI),
+    )
+    payloads = (
+        "phase" => phase_csv_payload(phase_current, 1.0, 2.0, 90, 500),
+        "amplitude" => amplitude_csv_payload(amplitude_current, 1.0, 0.5, 90, 500),
+        "ratio" => ratio_csv_payload(ratio_current, 1.0, 2, 3, 30, 500),
+        "detune" => detune_csv_payload(detune_current, 1.0, 1.0, 0.1, 30, 500),
+    )
+    expected_headers = Dict(
+        "phase" => "sample_index,u,time_s,x,y",
+        "amplitude" => "sample_index,u,x,y,x_over_A,y_over_B",
+        "ratio" => "sample_index,u,time_s,x,y,distance_to_start",
+        "detune" => "sample_index,u,time_s,x,y,relative_phase_rad",
+    )
+    mktempdir() do directory
+        for (slug, payload) in payloads
+            path = joinpath(directory, "$(slug).csv")
+            write_experiment_csv_atomic(
+                path,
+                payload.metadata,
+                payload.headers,
+                payload.columns,
+            )
+            bytes = read(path)
+            @assert length(bytes) > 3
+            @assert bytes[1:3] == UInt8[0xef, 0xbb, 0xbf]
+            lines = split(read(path, String), '\n'; keepempty = false)
+            header_index = findfirst(==(expected_headers[slug]), lines)
+            @assert !isnothing(header_index)
+            @assert length(lines) - header_index == length(u)
+            @assert occursin("# experiment=$(slug)", String(bytes[4:end]))
+            @assert occursin("# progress_percent=50", String(bytes[4:end]))
+        end
+        first_path = unique_export_path(directory, "collision")
+        touch(first_path)
+        second_path = unique_export_path(directory, "collision")
+        @assert first_path != second_path
+        @assert isempty(filter(path -> occursin(".partial-", path), readdir(directory)))
+    end
+    expected_relative_phase = mod(TWO_PI * 0.1 * first(local_time) + initial_phase, TWO_PI)
+    detune_phase_column = payloads[4].second.columns[6]
+    @assert isapprox(first(detune_phase_column), expected_relative_phase; atol = 1.0e-12)
+    @assert all(value -> 0.0 <= value < TWO_PI, detune_phase_column)
+    println("四路由 CSV 导出自检通过：BOM、表头、行数、唯一命名和失谐相位均正常。")
+end
+
 function run_self_test()
     axes, _ = ellipse_geometry(1.0, 1.0, pi / 2)
     @assert isapprox(axes[1], 1.0; atol = 1.0e-10)
@@ -699,6 +1107,7 @@ function run_self_test()
         figure = builder()
         @assert figure isa Figure
     end
+    run_csv_export_self_test()
     println("四个独立网页实验自检通过。")
 end
 

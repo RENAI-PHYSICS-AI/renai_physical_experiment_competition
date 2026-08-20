@@ -290,6 +290,7 @@ end
 
 function write_csv(path, mode, parameters, data)
     open(path, "w") do io
+        write(io, UInt8[0xef, 0xbb, 0xbf])
         println(io, "# 声速四种方法综合可视化实验")
         println(io, "# method=$(MODE_NAMES[mode])")
         println(io, "# true_speed_m_s=$(parameters.speed)")
@@ -339,6 +340,80 @@ function write_csv(path, mode, parameters, data)
     end
 end
 
+function experiment_export_directory()
+    configured = strip(get(ENV, "SOUND_SPEED_EXPORT_DIR", ""))
+    if !isempty(configured)
+        return normpath(abspath(configured))
+    end
+    return normpath(
+        joinpath(
+            homedir(),
+            "Documents",
+            "物理实验助教",
+            "实验导出",
+            "声速测量",
+        ),
+    )
+end
+
+function unique_export_path(directory, prefix; extension = ".csv")
+    timestamp = Dates.format(now(), "yyyymmdd_HHMMSS_sss")
+    candidate = joinpath(directory, "$(prefix)_$(timestamp)$(extension)")
+    counter = 1
+    while isfile(candidate)
+        candidate = joinpath(directory, "$(prefix)_$(timestamp)_$(counter)$(extension)")
+        counter += 1
+    end
+    return candidate
+end
+
+function write_csv_atomic(path, mode, parameters, data)
+    temporary = "$(path).partial-$(time_ns())"
+    try
+        write_csv(temporary, mode, parameters, data)
+        mv(temporary, path; force = false)
+    finally
+        isfile(temporary) && rm(temporary; force = true)
+    end
+    return path
+end
+
+function open_export_directory(directory)
+    mkpath(directory)
+    if Sys.iswindows()
+        executable = joinpath(get(ENV, "WINDIR", raw"C:\Windows"), "explorer.exe")
+        if !isfile(executable)
+            executable = "explorer.exe"
+        end
+        run(Cmd([executable, directory]); wait = false)
+    elseif Sys.isapple()
+        run(Cmd(["open", directory]); wait = false)
+    else
+        run(Cmd(["xdg-open", directory]); wait = false)
+    end
+    return nothing
+end
+
+function wrap_export_path(path; max_chars = 60)
+    characters = collect(abspath(path))
+    lines = String[]
+    while length(characters) > max_chars
+        separator = findlast(
+            character -> character == '\\' || character == '/',
+            characters[1:max_chars],
+        )
+        split_at =
+            separator === nothing || separator < max_chars ÷ 2 ?
+            max_chars : separator
+        push!(lines, String(characters[1:split_at]))
+        characters = characters[(split_at + 1):end]
+    end
+    isempty(characters) || push!(lines, String(characters))
+    return join(lines, "\n")
+end
+
+export_success_status(path) = "已导出（完整路径）：\n$(wrap_export_path(path))"
+
 function build_lab()
     fonts = cjk_font_family()
     set_theme!(
@@ -359,7 +434,7 @@ function build_lab()
         ),
     )
 
-    figure = Figure(size = (1000, 800), figure_padding = 24)
+    figure = Figure(size = (1000, 880), figure_padding = 24)
     Label(
         figure[2, 1:3],
         "同一真实声速 · 四种观测量 · 对比测量误差与适用条件",
@@ -385,13 +460,27 @@ function build_lab()
     space_title = Observable("空间传播：声源 → 墙面 → 声源")
     middle_title = Observable("接收波形：直达脉冲与回声脉冲")
     middle_xlabel = Observable("时间 / ms")
-    space_axis = Axis(figure[4, 1], title = space_title, xlabel = "位置 / m", ylabel = "归一化幅度")
-    middle_axis = Axis(figure[4, 2], title = middle_title, xlabel = middle_xlabel, ylabel = "信号")
+    status = Observable("就绪")
+    status_color = lift(
+        text -> startswith(text, "导出失败") ? PINK : startswith(text, "正在") ? AMBER : GREEN,
+        status,
+    )
+    Label(
+        figure[4, 1:3],
+        status,
+        color = status_color,
+        halign = :left,
+        font = :bold,
+        fontsize = 13,
+    )
 
-    echo_axis = Axis(figure[4, 3], title = "路程—时间关系（斜率为声速）", xlabel = "往返时间 / ms", ylabel = "路程 2d / m")
-    dual_axis = Axis(figure[4, 3], title = "互相关峰值定位时间差", xlabel = "时延 / ms", ylabel = "归一化相关")
-    phase_axis = Axis(figure[4, 3], title = "相位周期性与整数周歧义", xlabel = "麦克风间距 / m", ylabel = "相位 / °")
-    standing_axis = Axis(figure[4, 3], title = "驻波包络与波节位置", xlabel = "位置 / m", ylabel = "包络")
+    space_axis = Axis(figure[5, 1], title = space_title, xlabel = "位置 / m", ylabel = "归一化幅度")
+    middle_axis = Axis(figure[5, 2], title = middle_title, xlabel = middle_xlabel, ylabel = "信号")
+
+    echo_axis = Axis(figure[5, 3], title = "路程—时间关系（斜率为声速）", xlabel = "往返时间 / ms", ylabel = "路程 2d / m")
+    dual_axis = Axis(figure[5, 3], title = "互相关峰值定位时间差", xlabel = "时延 / ms", ylabel = "归一化相关")
+    phase_axis = Axis(figure[5, 3], title = "相位周期性与整数周歧义", xlabel = "麦克风间距 / m", ylabel = "相位 / °")
+    standing_axis = Axis(figure[5, 3], title = "驻波包络与波节位置", xlabel = "位置 / m", ylabel = "包络")
     analysis_axes = Dict(
         :echo => echo_axis,
         :dual => dual_axis,
@@ -461,7 +550,7 @@ function build_lab()
     scatter!(standing_axis, standing_nodes, color = AMBER, markersize = 9)
 
     controls = GridLayout()
-    figure[5, 1:3] = controls
+    figure[6, 1:3] = controls
     basic = GridLayout()
     special = GridLayout()
     motion = GridLayout()
@@ -509,13 +598,22 @@ function build_lab()
     playing = Observable(false)
     play_button = Button(motion[3, 1], label = lift(v -> v ? "暂停" : "播放", playing), height = 30, buttoncolor = BUTTON_BG)
     reset_button = Button(motion[3, 2], label = "重置", height = 30, buttoncolor = BUTTON_BG)
-    export_button = Button(motion[4, 1:2], label = "导出 CSV", height = 30, buttoncolor = BUTTON_BG)
-    status = Observable("就绪")
-    status_color = lift(text -> startswith(text, "正在") ? AMBER : GREEN, status)
-    Label(motion[5, 1:3], status, color = status_color, halign = :left, font = :bold)
-
+    export_button = Button(motion[4, 1], label = "导出 CSV", height = 30, buttoncolor = BUTTON_BG)
+    open_export_button = Button(
+        motion[4, 2],
+        label = "打开导出文件夹",
+        height = 30,
+        buttoncolor = BUTTON_BG,
+    )
+    Label(
+        motion[5, 1:3],
+        "保存位置显示在实验页上方；也可直接打开导出文件夹。",
+        color = MUTED,
+        fontsize = 12,
+        halign = :left,
+    )
     analysis = GridLayout()
-    figure[6, 1:3] = analysis
+    figure[7, 1:3] = analysis
     metric_1 = Observable("")
     metric_2 = Observable("")
     metric_3 = Observable("")
@@ -904,24 +1002,34 @@ function build_lab()
         status[] = "已重置"
     end
 
-    output_dir = joinpath(LAB_DIR, "output")
+    output_dir = experiment_export_directory()
     on(export_button.clicks) do _
         playing[] = false
         status[] = "正在导出..."
         yield()
-        mkpath(output_dir)
-        timestamp = Dates.format(now(), "yyyymmdd_HHMMSS")
-        prefix = "sound_speed_$(MODE_FILES[mode[]])_$timestamp"
         try
-            write_csv(
-                joinpath(output_dir, "$prefix.csv"),
+            mkpath(output_dir)
+            path = unique_export_path(
+                output_dir,
+                "sound_speed_$(MODE_FILES[mode[]])",
+            )
+            write_csv_atomic(
+                path,
                 mode[],
                 current_parameters[],
                 current_data[],
             )
-            status[] = "导出完成：output/$prefix"
+            status[] = export_success_status(path)
         catch error
             status[] = "导出失败：$(sprint(showerror, error))"
+        end
+    end
+    on(open_export_button.clicks) do _
+        try
+            open_export_directory(output_dir)
+            status[] = "已打开导出文件夹"
+        catch error
+            status[] = "导出失败：无法打开文件夹（$(sprint(showerror, error))）"
         end
     end
     colsize!(figure.layout, 1, Relative(0.34))
@@ -930,9 +1038,10 @@ function build_lab()
     rowsize!(figure.layout, 1, 44)
     rowsize!(figure.layout, 2, 26)
     rowsize!(figure.layout, 3, 40)
-    rowsize!(figure.layout, 4, 330)
-    rowsize!(figure.layout, 5, 230)
-    rowsize!(figure.layout, 6, 95)
+    rowsize!(figure.layout, 4, 54)
+    rowsize!(figure.layout, 5, 330)
+    rowsize!(figure.layout, 6, 190)
+    rowsize!(figure.layout, 7, 95)
     rowgap!(figure.layout, 6)
     for column in 1:4
         colsize!(mode_bar, column, Relative(0.25))
@@ -983,39 +1092,121 @@ function run_model_tests()
     @assert isapprox(standing.wavelength, 343 / 500; atol = 1.0e-12)
     @assert isapprox(standing.estimate, 343.0; atol = 1.0e-10)
 
+    mktempdir() do directory
+        withenv("SOUND_SPEED_EXPORT_DIR" => directory) do
+            @assert experiment_export_directory() == normpath(abspath(directory))
+            parameters = (; speed = 343.0)
+            cases = (
+                (:echo, echo, "time_s,direct,echo,measured"),
+                (:dual, dual, "time_s,microphone_1,microphone_2"),
+                (:phase, phase, "time_s,channel_1,channel_2"),
+                (:standing, standing, "position_m,incident,reflected,resultant,envelope"),
+            )
+            exported = String[]
+            for (mode, data, expected_header) in cases
+                path = unique_export_path(directory, "self_test_$(MODE_FILES[mode])")
+                write_csv_atomic(path, mode, parameters, data)
+                @assert isfile(path)
+                bytes = read(path)
+                @assert length(bytes) >= 3
+                @assert bytes[1:3] == UInt8[0xef, 0xbb, 0xbf]
+                content = String(bytes[4:end])
+                @assert occursin("# method=$(MODE_NAMES[mode])", content)
+                @assert occursin("# true_speed_m_s=343.0", content)
+                @assert occursin(expected_header, content)
+                @assert countlines(path) > 10
+                push!(exported, path)
+            end
+            @assert length(unique(exported)) == length(cases)
+            @assert isempty(filter(name -> occursin(".partial-", name), readdir(directory)))
+
+            first_path = exported[1]
+            wrapped_path = wrap_export_path(first_path)
+            @assert join(split(wrapped_path, '\n')) == abspath(first_path)
+            @assert all(length(collect(line)) <= 60 for line in split(wrapped_path, '\n'))
+            success_status = export_success_status(first_path)
+            @assert startswith(success_status, "已导出（完整路径）：\n")
+            @assert occursin(abspath(first_path), replace(success_status, "\n" => ""))
+            collision_safe_path = unique_export_path(
+                directory,
+                splitext(basename(first_path))[1],
+            )
+            @assert collision_safe_path != first_path
+        end
+    end
+
     _, state = build_lab()
     @assert state.mode[] == :echo
     @assert isfinite(state.current_data[].estimate)
-    println("四种声速测量模型自检通过：回声、互相关、相位和驻波计算均正常。")
+    println("四种声速测量模型与 CSV 导出自检通过：计算、表头、内容及原子写入均正常。")
 end
 
 const PAGE_STYLE = """
 html, body { margin: 0; width: 100%; min-height: 100%; background: #0b0f14; color: #eef3f8; }
 body { overflow: hidden; font-family: 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; }
-.sound-speed-lab { width: 1000px; max-width: 100%; min-height: 828px; margin: 0 auto; padding: 28px 0 0; box-sizing: content-box; overflow: hidden; background: #0b0f14; }
+.sound-speed-lab { width: 1000px; max-width: 100%; min-height: 880px; margin: 0 auto; padding: 28px 0 0; box-sizing: content-box; overflow: hidden; background: #0b0f14; }
 """
 
 const CLIENT_READY_SCRIPT = """
 (() => {
-    let sent = false;
+    let finished = false;
+    let slowSent = false;
     const startedAt = performance.now();
     const send = (type, detail = "") => window.parent.postMessage({ type, detail }, "*");
+    const fail = detail => {
+        if (finished) return;
+        finished = true;
+        send("sound-speed-wgl-failed", detail);
+    };
+    const webglProbe = () => {
+        try {
+            const probe = document.createElement("canvas");
+            const gl2 = probe.getContext("webgl2", { antialias: true });
+            if (gl2) return "webgl2";
+            const gl1 = probe.getContext("webgl", { antialias: true }) || probe.getContext("experimental-webgl");
+            if (gl1) return "webgl1";
+        } catch (error) {
+            return "error: " + error.message;
+        }
+        return "none";
+    };
+    const glStatus = webglProbe();
+    if (glStatus === "none" || glStatus.startsWith("error:")) {
+        fail("浏览器无法创建 WebGL 上下文：" + glStatus + "。请启用浏览器硬件加速，或使用程序自动打开的 Edge/Chrome 窗口。");
+        return;
+    }
     const check = () => {
+        if (finished) return;
         const canvas = document.querySelector("canvas");
         const spinner = document.querySelector(".wglmakie-spinner");
-        const spinnerVisible = spinner && spinner.getClientRects().length > 0;
+        const spinnerStyle = spinner ? window.getComputedStyle(spinner) : null;
+        const spinnerVisible = !!(
+            spinner &&
+            spinner.getClientRects().length > 0 &&
+            spinnerStyle.display !== "none" &&
+            spinnerStyle.visibility !== "hidden" &&
+            Number.parseFloat(spinnerStyle.opacity || "1") > 0
+        );
         if (canvas && !spinnerVisible) {
-            if (!sent) send("sound-speed-wgl-ready", "canvas-ready");
-            sent = true;
+            finished = true;
+            send("sound-speed-wgl-ready", "canvas-ready; " + glStatus);
             return;
         }
-        if (performance.now() - startedAt > 60000) {
-            send("sound-speed-wgl-failed", "WGLMakie 初始化超过 60 秒");
-            return;
+        if (!slowSent && performance.now() - startedAt > 60000) {
+            slowSent = true;
+            send(
+                "sound-speed-wgl-slow",
+                "首次启动可能超过 1 分钟，WGLMakie 仍在初始化（" + glStatus + "），请继续等待。"
+            );
         }
         window.setTimeout(check, 300);
     };
-    window.addEventListener("error", event => send("sound-speed-wgl-failed", event.message));
+    window.addEventListener("error", event => {
+        fail("浏览器脚本错误：" + event.message + "（" + event.filename + ":" + event.lineno + "）");
+    });
+    window.addEventListener("unhandledrejection", event => {
+        fail("浏览器 Promise 错误：" + String(event.reason));
+    });
     check();
 })()
 """

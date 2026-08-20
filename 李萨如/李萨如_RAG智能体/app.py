@@ -685,6 +685,12 @@ with chat_tab:
                 )
 
 with demo_tab:
+    export_location = os.getenv("LISSAJOUS_EXPORT_DIR", "").strip()
+    if not export_location:
+        export_location = str(
+            Path.home() / "Documents" / "物理实验助教" / "实验导出" / "李萨如图形"
+        )
+    st.caption(f"CSV 保存位置：{export_location}")
     experiment_routes = {
         "相位差": "/phase",
         "振幅比": "/amplitude",
